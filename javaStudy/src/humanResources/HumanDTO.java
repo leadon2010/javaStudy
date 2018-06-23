@@ -61,8 +61,8 @@ public class HumanDTO {
 	@Override
 	public String toString() {
 
-		return "HumanDTO [hNo=" + hNo + ", hName=" + hName + ", hBirth=" + hBirth + ", hPhone=" + hPhone + ", hAddress="
-				+ hAddress + ", hComments=" + hComments + "]";
+		return "HumanDTO [hNo=" + hNo + ", hName=" + hName + ", hBirth=" + hBirth + ", hPhone=" + hPhone
+				+ ", hAddress=" + hAddress + ", hComments=" + hComments + "]";
 	}
 
 	public Formatter toString1() {
@@ -72,7 +72,7 @@ public class HumanDTO {
 
 	public void showTitle() {
 		System.out.println("================================================================================");
-		System.out.println("HNo()      Name\t     Birth\t       Phone\t     Address\t  Contents");
+		System.out.println("HNo()      Name\t     Birth\t       Phone\t      Address\t  Contents");
 		System.out.println("================================================================================");
 	}
 
