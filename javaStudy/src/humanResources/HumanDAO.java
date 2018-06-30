@@ -29,6 +29,7 @@ public class HumanDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		} finally {
 			try {
 				conn.close();
