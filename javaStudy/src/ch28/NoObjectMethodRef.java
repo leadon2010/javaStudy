@@ -36,4 +36,8 @@ class NoObjectMethodRef {
 		int bigNum = bf.applyAsInt(ib1, ib2);
 		System.out.println(bigNum);
 	}
+
+	ToIntBiFunction<IBox, IBox> bf = (b1, b2) -> b1.larger(b2);
+	// int bigNum = bf.applyAsInt(ib1, ib2);
+	// System.out.println(bigNum);
 }
