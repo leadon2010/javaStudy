@@ -84,7 +84,7 @@ public class MemberDTO {
 	public String toString() {
 		@SuppressWarnings("resource")
 		Formatter fm = new Formatter();
-		String meminfo = fm.format("%5s\t  %-7s\t%-16s\t%-14s\t%-14s", no, name, ssn, phoneNum, registdate).toString();
+		String meminfo = fm.format("%6s\t  %-7s\t%-14s\t%-14s\t%-14s", no, name, ssn, phoneNum, registdate).toString();
 		return meminfo;
 	}
 
