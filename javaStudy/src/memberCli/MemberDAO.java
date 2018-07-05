@@ -86,12 +86,13 @@ public class MemberDAO {
 
 			// String sql = "INSERT INTO member01 VALUES
 			// (LPAD(seq_member02_no.nextval,4,'0'),:name,:ssn,:phoneNum,sysdate)";
-			String sql = "INSERT INTO member01 VALUES (LPAD((select nvl(max(m_no)+1 from member01),4,'0'),:name,:ssn,:phoneNum,sysdate)";
+			String sql = "INSERT INTO member01 VALUES (LPAD((select nvl(max(m_no),0)+1 from member01),4,'0'),:name,:ssn,:phoneNum,sysdate)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, dto.getName());
 			pstmt.setString(2, dto.getSsn());
 			pstmt.setString(3, dto.getPhoneNum());
+			System.out.println("input value: " + dto.getName() + "/" + dto.getSsn() + "/" + dto.getPhoneNum());
 
 			int r = pstmt.executeUpdate();
 
@@ -99,7 +100,8 @@ public class MemberDAO {
 				result = true;
 
 		} catch (Exception e) {
-			System.out.println("예외발생:insertMember()=> " + e.getMessage());
+			//System.out.println("예외발생:insertMember()=> " + e.getMessage());
+			e.printStackTrace();
 		} finally {
 			dbClose();
 		}

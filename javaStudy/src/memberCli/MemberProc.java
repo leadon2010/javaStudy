@@ -251,7 +251,7 @@ public class MemberProc {
 		String str = "";
 		while (true) {
 			str = scn.nextLine();
-			System.out.println("str ==== "+str);
+			System.out.println("str ==== " + str);
 			if (!(str == null || str.trim().equals(""))) {
 				break;
 			} else {
