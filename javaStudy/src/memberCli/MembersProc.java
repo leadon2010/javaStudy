@@ -1,7 +1,12 @@
 package memberCli;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import jxl.Workbook;
+import jxl.write.WritableWorkbook;
 
 public class MembersProc {
 
@@ -59,4 +64,8 @@ public class MembersProc {
 		getMemberListProc();
 	}// end of deleteProc()
 
+	public void exportExcel() throws IOException {
+		WritableWorkbook workbook = Workbook.createWorkbook(new File("newWork.xls"));
+
+	}
 }

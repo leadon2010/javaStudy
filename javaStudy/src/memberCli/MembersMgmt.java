@@ -36,6 +36,8 @@ public class MembersMgmt {
 			} else if (menu == 5) {
 				// 단건조회
 				mp.getMember();
+			} else if (menu == 6) {
+				mp.exportExcel();
 			} else {
 				System.out.println("프로그램을 종료합니다.");
 				sc.close();
