@@ -3,7 +3,7 @@ package memberCli;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class MembProc {
+public class MembersProc {
 
 	MembersDAO dao = new MembersDAO();
 	Scanner sc = new Scanner(System.in);

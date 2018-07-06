@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MemberShow {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		MembProc mp = new MembProc();
+		MembersProc mp = new MembersProc();
 		// String menu = "";
 		int menu = 0;
 		Scanner sc = new Scanner(System.in);
