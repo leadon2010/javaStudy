@@ -3,7 +3,7 @@ package memberCli;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class MemberShow {
+public class MembersMgmt {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		MembersProc mp = new MembersProc();
