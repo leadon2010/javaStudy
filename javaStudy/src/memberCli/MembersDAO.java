@@ -36,15 +36,36 @@ public class MembersDAO {
 			rs.close();
 	}
 
-	public void deleteMember(String m_no) throws SQLException {
+	public void getMemberDTO(String m_no) throws SQLException, ClassNotFoundException {
+		getConnection();
+		String sql = "select m.m_no ,m.m_name ,m.m_ssn ,m.m_phone_no ,m.m_regist_date from member01 m where m.m_no=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, m_no);
+		ResultSet rs = pstmt.executeQuery();
+		MemberDTO dto = new MemberDTO();
+		if (rs.next()) {
+			dto.setName(rs.getString("m_name"));
+			dto.setNo(rs.getString("m_no"));
+			dto.setPhoneNum(rs.getString("m_phone_no"));
+			dto.setRegistdate(rs.getString("m_regist_date"));
+			dto.setSsn(rs.getString("m_ssn"));
+		}
+		System.out.println(dto);
+		connClose();
+	}
+
+	public void deleteMember(String m_no) throws SQLException, ClassNotFoundException {
+		getConnection();
 		String sql = "delete from member01 where m_no=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, m_no);
 		int r = pstmt.executeUpdate();
 		System.out.println(r + " 건이 삭제되었습니다.");
+		connClose();
 	}
 
 	public void updateMember(MemberDTO dto) throws SQLException, ClassNotFoundException {
+		getConnection();
 		String sql = "update member01 set m_name=?, m_ssn=?, m_phone_no=?, m_regist_date=sysdate where m_no=? ";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, dto.getName());
@@ -53,9 +74,11 @@ public class MembersDAO {
 		pstmt.setString(4, dto.getNo());
 		int r = pstmt.executeUpdate();
 		System.out.println(r + " 건이 변경되었습니다.");
+		connClose();
 	}
 
 	public void insertMember(MemberDTO dto) throws SQLException, ClassNotFoundException {
+		getConnection();
 		String sql = "INSERT INTO member01 (m_no ,m_name ,m_ssn ,m_phone_no ,m_regist_date) "
 				+ "VALUES ((select lpad(max(m_no)+1,4,'0') from member01) ,? ,? ,? ,sysdate)";
 		pstmt = conn.prepareStatement(sql);
@@ -64,9 +87,11 @@ public class MembersDAO {
 		pstmt.setString(3, dto.getPhoneNum());
 		int r = pstmt.executeUpdate();
 		System.out.println(r + " 건이 입력되었습니다.");
+		connClose();
 	}
 
 	public void getMemberList() throws SQLException, ClassNotFoundException {
+		getConnection();
 		String sql = "select m.m_no ,m.m_name ,m.m_ssn ,m.m_phone_no ,m.m_regist_date from member01 m order by 1";
 		pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
@@ -82,14 +107,10 @@ public class MembersDAO {
 			// System.out.println(dto);
 			lists.add(dto);
 		}
-		System.out.println("                             <전체리스트>");
-		System.out.println("============================================================================");
-		System.out.println("reg.No\t  이름 \t\t주민번호\t연락처\t\t등록일");
-		System.out.println("============================================================================");
 		for (MemberDTO s : lists) {
 			System.out.println(s);
 		}
-		System.out.println("============================================================================");
+		connClose();
 	}
 
 	public String inputCheck(Scanner scn) {
