@@ -1,11 +1,12 @@
 package memberCli;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MembersMgmt {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 		MembersProc mp = new MembersProc();
 		// String menu = "";
 		int menu = 0;
