@@ -90,7 +90,7 @@ public class MembersDAO {
 		connClose();
 	}
 
-	public void getMemberList() throws SQLException, ClassNotFoundException {
+	public List<MemberDTO> getMemberList() throws SQLException, ClassNotFoundException {
 		getConnection();
 		String sql = "select m.m_no ,m.m_name ,m.m_ssn ,m.m_phone_no ,m.m_regist_date from member01 m order by 1";
 		pstmt = conn.prepareStatement(sql);
@@ -107,10 +107,11 @@ public class MembersDAO {
 			// System.out.println(dto);
 			lists.add(dto);
 		}
-		for (MemberDTO s : lists) {
-			System.out.println(s);
-		}
+		// for (MemberDTO s : lists) {
+		// System.out.println(s);
+		// }
 		connClose();
+		return lists;
 	}
 
 	public String inputCheck(Scanner scn) {

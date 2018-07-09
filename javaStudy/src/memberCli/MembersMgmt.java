@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import jxl.write.WriteException;
+
 public class MembersMgmt {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException, WriteException {
 		MembersProc mp = new MembersProc();
 		// String menu = "";
 		int menu = 0;
