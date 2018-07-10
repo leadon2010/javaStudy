@@ -15,12 +15,12 @@ public class MembersMgmt {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			System.out.println();
-			System.out.println("menu를 선택하세요.[1:list, 2:insert, 3:update, 4:delete, 5:getMember]");
+			System.out.println("menu를 선택하세요.[1:list, 2:insert, 3:update, 4:delete, 5:getMember, 6:excel]");
 			// menu = sc.nextInt();sc.nextLine();
 			try {
 				menu = Integer.parseInt(sc.nextLine());
 			} catch (Exception e) {
-				System.out.println("[1-5] 번호를 선택하세요.[1:list, 2:insert, 3:update, 4:delete, 5:getMember]");
+				System.out.println("[1-5] 번호를 선택하세요.[1:list, 2:insert, 3:update, 4:delete, 5:getMember, 6:excel]");
 				System.out.println(menu);
 				// e.printStackTrace();
 			}
