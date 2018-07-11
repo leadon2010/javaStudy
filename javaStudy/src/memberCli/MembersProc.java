@@ -26,13 +26,24 @@ public class MembersProc {
 		System.out.println("============================================================================");
 		System.out.println("reg.No\t  이름 \t\t주민번호\t\t연락처\t\t등록일");
 		System.out.println("============================================================================");
-		dao.getMemberList();
+		List<MemberDTO> list = dao.getMemberList();
+		for (MemberDTO dto : list) {
+			MemberDTO d = new MemberDTO();
+			d.setNo(dto.getNo());
+			d.setName(dto.getName());
+			d.setSsn(dto.getSsn());
+			d.setPhoneNum(dto.getPhoneNum());
+			d.setRegistdate(dto.getRegistdate());
+			System.out.println(d);
+		}
 		System.out.println("============================================================================");
 	}
 
 	public void getMember() throws SQLException, ClassNotFoundException {
 		System.out.println("조회할 번호를 입력하세요.");
 		String sno = sc.nextLine();
+		System.out.println("<<" + sno + ">> 의 정보");
+		System.out.println("============================================================================");
 		System.out.println("reg.No\t  이름 \t\t주민번호\t연락처\t\t등록일");
 		System.out.println("============================================================================");
 		dao.getMemberDTO(sno);
@@ -110,7 +121,7 @@ public class MembersProc {
 			sheet.addCell(lblSsn);
 			sheet.addCell(lblPhone);
 			sheet.addCell(lblRegist);
-			
+
 			j++;
 		}
 		workbook.write();
