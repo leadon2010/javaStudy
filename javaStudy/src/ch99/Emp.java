@@ -1,71 +1,66 @@
 package ch99;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Emp {
 	public static void main(String[] args) {
-		Emp emp = new Emp();
+		EmployeeDAO dao = new EmployeeDAO();
+		EmployeeDTO dto = new EmployeeDTO();
 
-		List<EmployeeDTO> list = emp.getEmployeesList();
-		for (EmployeeDTO dto : list)
+		int menu = 6;
+
+		switch (menu) {
+		case 1: // 전체리스트
+			SearchVO vo = new SearchVO();
+			vo.setSearchCondition("hire_date");
+			vo.setSearchKeyword("2018-01-01");
+			List<EmployeeDTO> list = dao.getEmployeesList(vo);
+			for (EmployeeDTO dto1 : list)
+				System.out.println(dto1);
+			break;
+		case 2: // 단건조회
+			dto = dao.getEmployeeDTO("901");
 			System.out.println(dto);
+			break;
+		case 3: // 입력
+			dto.setEmployeeId("904");
+			dto.setFirstName("changho");
+			dto.setLastName("Lee");
+			dto.setEmail("CHANOHO");
+			dto.setJobId("AC_ACCOUNT");
+			dao.insertEmployee(dto);
+			break;
+		case 4: // 수정
+			dto.setEmployeeId("904");
+			dto.setFirstName("changho4");
+			dto.setLastName("Lee4");
+			dto.setEmail("CHANOHO4");
+			dto.setJobId("AC_ACCOUNT");
+			dao.updateEmployee(dto);
+			break;
+		case 5: // 삭제
+			dao.deleteEmployee("904");
+			break;
+		case 6:
+			List<Map<String, Object>> listm = dao.getEmpListMap();
+			for (Map<String, Object> m : listm) {
+				System.out.println(m);
+			}
+			System.out.println("end");
+
+			// Set<Integer> ks = map.keySet();
+			// for (Integer i : ks)
+			// System.out.println(i + " / " + map.get(i));
+			break;
+		case 9:
+			List<EmployeeDTO> listc = dao.getEmpListCursor();
+			for (EmployeeDTO dto1 : listc)
+				System.out.println(dto1);
+			break;
+		}
+
 	}// end of main
-
-	public List<EmployeeDTO> getEmployeesList() {
-		Connection conn = null;
-		try {
-			String user = "hr";
-			String pw = "hr";
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, pw);
-
-			System.out.println("Database에 연결되었습니다.\n");
-
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println("DB 드라이버 로딩 실패 :" + cnfe.toString());
-		} catch (SQLException sqle) {
-			System.out.println("DB 접속실패 : " + sqle.toString());
-		} catch (Exception e) {
-			System.out.println("Unkonwn error");
-			e.printStackTrace();
-		}
-		// return conn;
-		List<EmployeeDTO> list = new ArrayList<>();
-		EmployeeDTO dto = null;
-		PreparedStatement pstmt = null;
-		String sql = " select employee_id, first_name, last_name, email from employees";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				dto = new EmployeeDTO();
-				dto.setEmployeeId(rs.getString("employee_id"));
-				dto.setFirstName(rs.getString("first_name"));
-				dto.setLastName(rs.getString("last_name"));
-				dto.setEmail(rs.getString("email"));
-				list.add(dto);
-				// System.out.println(rs.getString("employee_id") + " / " +
-				// rs.getString("first_name"));
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return list;
-	}// end of getEmployeesList
 
 }

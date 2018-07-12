@@ -1,6 +1,6 @@
 package ch22;
 
-class Box<T> {
+class Box1<T> {
 	protected T ob;
 
 	public void set(T o) {
@@ -17,7 +17,7 @@ class Box<T> {
 	}
 }
 
-class SteelBox<T> extends Box<T> {
+class SteelBox<T> extends Box1<T> {
 	public SteelBox(T o) {
 		ob = o;
 	}
@@ -25,8 +25,8 @@ class SteelBox<T> extends Box<T> {
 
 class GenericInheritance {
 	public static void main(String[] args) {
-		Box<Integer> iBox = new SteelBox<>(7959);
-		Box<String> sBox = new SteelBox<>("Simple");
+		Box1<Integer> iBox = new SteelBox<>(7959);
+		Box1<String> sBox = new SteelBox<>("Simple");
 
 		System.out.println(iBox.get());
 		System.out.println(sBox.get());
