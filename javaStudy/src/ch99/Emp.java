@@ -9,7 +9,7 @@ public class Emp {
 		EmployeeDAO dao = new EmployeeDAO();
 		EmployeeDTO dto = new EmployeeDTO();
 
-		int menu = 6;
+		int menu = 9;
 
 		switch (menu) {
 		case 1: // 전체리스트
