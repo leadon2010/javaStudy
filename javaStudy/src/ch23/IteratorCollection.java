@@ -18,7 +18,7 @@ class IteratorCollection {
 		Iterator<String> itr = list.iterator();
 		System.out.println(itr);
 
-		// 반복자를 이용한 순차적 참조
+		// 반복자를 이용한 순차적 참조 
 		while (itr.hasNext())
 			System.out.print(itr.next() + '\t');
 

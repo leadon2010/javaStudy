@@ -14,7 +14,8 @@ class RemoveIfDemo {
 		ls2 = new ArrayList<>(ls2);
 
 		Predicate<Number> p = n -> n.doubleValue() < 0.0;
-		ls1.removeIf(p);
+		Predicate<Number> pi = n -> n.intValue() < 0;
+		ls1.removeIf(pi);
 		ls2.removeIf(p);
 
 		System.out.println(ls1);
