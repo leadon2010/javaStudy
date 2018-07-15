@@ -12,13 +12,11 @@ class Papers {
 	}
 
 	public Printable getPrinter() {
-		return new Printer();
-	}
-
-	private class Printer implements Printable {
-		public void print() {
-			System.out.println(con);
-		}
+		return new Printable() {
+			public void print() {
+				System.out.println(con);
+			}
+		};
 	}
 }
 
