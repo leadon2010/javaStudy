@@ -13,8 +13,8 @@ class RemoveIfDemo {
 		List<Double> ls2 = Arrays.asList(-1.1, 2.2, 3.3, -4.4, 5.5);
 		ls2 = new ArrayList<>(ls2);
 
-		Predicate<Number> p = n -> n.doubleValue() < 0.0;
-		Predicate<Number> pi = n -> n.intValue() < 0;
+		PredicateDemo<Number> p = n -> n.doubleValue() < 0.0;
+		PredicateDemo<Number> pi = n -> n.intValue() < 0;
 		ls1.removeIf(pi);
 		ls2.removeIf(p);
 

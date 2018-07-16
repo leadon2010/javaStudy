@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 class PredicateDemo {
-	public static int sum(Predicate<Integer> p, List<Integer> list) {
+	public static int sum(PredicateDemo<Integer> p, List<Integer> list) {
 		int sum = 0;
 		for (int i : list)
 			if (p.test(i))

@@ -23,7 +23,7 @@ class Papers {
 	}
 }
 
-public class first {
+public class First {
 	public static void main(String[] args) {
 		Papers p = new Papers("print this");
 		Printable prn = p.getPrinter();

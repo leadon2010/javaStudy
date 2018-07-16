@@ -14,7 +14,7 @@ class StrComp implements Comparator<String> {
 
 }
 
-public class second {
+public class Second {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("robot");
