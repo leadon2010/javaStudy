@@ -9,7 +9,6 @@ class Read7FromFile {
 		InputStream in = new FileInputStream("data.dat");
 		int dat = in.read();
 		in.close();
-
 		System.out.println(dat);
 	}
 }

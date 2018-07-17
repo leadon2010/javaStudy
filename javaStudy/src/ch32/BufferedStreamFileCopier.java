@@ -19,13 +19,17 @@ class BufferedStreamFileCopier {
 		try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(src));
 				BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(dst))) {
 
-			int data;
+			int data, j=0;
 			while (true) {
 				data = in.read();
 				if (data == -1)
 					break;
 				out.write(data);
+				if(j/1000==0)
+					System.out.println(j);
+				j++;
 			}
+			System.out.println("end of prgm");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

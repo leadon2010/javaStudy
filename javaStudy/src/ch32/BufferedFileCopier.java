@@ -17,7 +17,7 @@ class BufferedFileCopier {
 		String dst = sc.nextLine();
 
 		try (InputStream in = new FileInputStream(src); OutputStream out = new FileOutputStream(dst)) {
-			byte buf[] = new byte[64];
+			byte buf[] = new byte[1024];
 			int len;
 
 			int j = 0;
@@ -26,9 +26,9 @@ class BufferedFileCopier {
 				if (len == -1)
 					break;
 
-				for (int i = 0; i < buf.length; i++)
-					System.out.println("j번째시도: " + j + "===" + i + "::::" + buf[i] + " " + (char) buf[i]);
-
+				//for (int i = 0; i < buf.length; i++)
+				//	System.out.println("j번째시도: " + j + "===" + i + "::::" + buf[i] + " " + (char) buf[i]);
+				System.out.println(j+" "+len);
 				out.write(buf, 0, len);
 				j++;
 			}
