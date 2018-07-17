@@ -12,7 +12,7 @@ class Printer implements Printable1 {
 
 public class Third {
 	public static void main(String[] args) {
-		Printable1 prn = new Printer();
+		Printable1 prn = (s)-> System.out.println(s);//new Printer();
 		prn.print("Sample test");
 	}
 }

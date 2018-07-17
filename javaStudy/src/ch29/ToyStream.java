@@ -15,6 +15,10 @@ class ToyPriceInfo {
 	public int getPrice() {
 		return price;
 	}
+
+	public String getModel() {
+		return model;
+	}
 }
 
 class ToyStream {
@@ -24,8 +28,18 @@ class ToyStream {
 		ls.add(new ToyPriceInfo("TEDDY_BEAR_S_014", 350));
 		ls.add(new ToyPriceInfo("CAR_TRANSFORM_VER_7719", 550));
 
-		int sum = ls.stream().filter(p -> p.getPrice() < 500).mapToInt(t -> t.getPrice()).sum();
+		int sum = ls.stream()
+				    .filter(p -> p.getPrice() < 500)
+				    .mapToInt(t -> t.getPrice())
+				    .sum();
 
 		System.out.println("sum = " + sum);
+		
+		System.out.println("------------------------------");
+		
+		ls.stream()
+		  .filter(s -> s.getModel().length() > 10)
+		  .map(t -> t.getModel())
+		  .forEach(s -> System.out.println(s));
 	}
 }

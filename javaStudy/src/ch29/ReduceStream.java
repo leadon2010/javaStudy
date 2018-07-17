@@ -6,7 +6,7 @@ import java.util.function.BinaryOperator;
 
 class ReduceStream {
 	public static void main(String[] args) {
-		List<String> ls = Arrays.asList("Box", "Simple", "Complex", "Robot");
+		List<String> ls = Arrays.asList("Box", "Simplee6", "Complex", "Robot");
 
 		BinaryOperator<String> lc = (s1, s2) -> {
 			if (s1.length() > s2.length())
