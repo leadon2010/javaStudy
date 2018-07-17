@@ -14,11 +14,11 @@ class HowLongSequential {
 	}
 
 	public static void main(String[] args) {
-		List<Integer> nums = Arrays.asList(5,6,7,8,9);
+		List<Integer> nums = Arrays.asList(40, 41, 42, 43, 44, 45);
 
 		Instant start = Instant.now();
 
-		nums.stream().map(n -> fibonacci(n)).forEach(r -> System.out.println(r));
+		nums.parallelStream().map(n -> fibonacci(n)).forEach(r -> System.out.println(r));
 
 		Instant end = Instant.now();
 		System.out.println("Sequential Processing Time: " + Duration.between(start, end).toMillis());

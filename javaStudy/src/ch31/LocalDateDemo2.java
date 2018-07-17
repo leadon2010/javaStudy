@@ -16,6 +16,6 @@ class LocalDateDemo2 {
         // 크리스마스까지 앞으로 며칠?
         Period left = Period.between(today, xmas);
         System.out.println("Xmas까지 앞으로 " + 
-                 left.getMonths() + "월 " + left.getDays() + "일");
+                 left.getMonths() + "개월 " + left.getDays() + "일");
     }
 }
