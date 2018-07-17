@@ -18,7 +18,7 @@ class TextReader {
 				ch = in.read();
 				if (ch == -1)
 					break;
-				System.out.print((char) ch + "(" + ch + ")");
+				System.out.print((char) ch);// + "(" + ch + ")");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

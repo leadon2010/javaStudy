@@ -9,10 +9,10 @@ class CurrentDir {
 		String cdir;
 
 		if (cur.isAbsolute()) {
-			System.out.println("hre");
+			//System.out.println("hre");
 			cdir = cur.toString();
 		} else {
-			System.out.println("tre");
+			//System.out.println("tre");
 			cdir = cur.toAbsolutePath().toString();
 		}
 
