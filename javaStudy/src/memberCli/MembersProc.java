@@ -105,6 +105,7 @@ public class MembersProc {
 		sheet.addCell(new Label(2, 0, "주민번호", wcf));
 		sheet.addCell(new Label(3, 0, "연락처", wcf));
 		sheet.addCell(new Label(4, 0, "등록일", wcf));
+		sheet.addCell(new Label(5,0, "te", wcf));
 
 		List<MemberDTO> list = dao.getMemberList();
 		// 셀값 셋팅
