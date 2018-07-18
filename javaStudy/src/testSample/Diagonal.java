@@ -4,6 +4,7 @@ package testSample;
 public class Diagonal {
 	public static void main(String[] args) {
 		int array[][] = new int[5][5];
+		int[][] arr = new int[5][5];
 		int cnt;
 		int i = 1;
 		int row, col;
