@@ -1,5 +1,8 @@
 package ch34;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Counter3 {
@@ -32,10 +35,20 @@ class Counter3 {
 public class MutualAccessReentrantLock {
 	public static Counter3 cnt = new Counter3();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Runnable task1 = () -> {
 			for (int i = 0; i < 1000; i++)
 				cnt.increment();
 		};
+		Runnable task2 = () -> {
+			for (int i = 0; i < 1000; i++)
+				cnt.decrement();
+		};
+		ExecutorService exr = Executors.newFixedThreadPool(2);
+		exr.submit(task1);
+		exr.submit(task2);
+		exr.shutdown();
+		exr.awaitTermination(100, TimeUnit.SECONDS);
+		System.out.println(cnt.getCount());
 	}// end of main
 }// end of class
