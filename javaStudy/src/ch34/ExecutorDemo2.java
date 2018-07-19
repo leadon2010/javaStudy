@@ -1,5 +1,8 @@
 package ch34;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class ExecutorDemo2 {
 	public static void main(String[] args) {
 		Runnable task1 = () -> {
@@ -10,9 +13,13 @@ public class ExecutorDemo2 {
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " " + (7 - 5));
 		};
-		Runnable task3 = () -> {
+		ExecutorService exr = Executors.newFixedThreadPool(2);
+		exr.submit(task1, "first");
+		exr.submit(task2, "second");
+		exr.submit(() -> {
 			String name = Thread.currentThread().getName();
 			System.out.println(name + " " + (7 * 5));
-		};
+		});
+		exr.shutdown();
 	}// end of main
 }// end of class
