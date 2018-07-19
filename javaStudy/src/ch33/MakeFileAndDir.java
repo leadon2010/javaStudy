@@ -16,8 +16,12 @@ class MakeFileAndDir {
 		Path dp2 = Paths.get("C:\\JavaStudy3\\Empty");
 		dp2 = Files.createDirectories(dp2);
 
+		Path fp2 = Paths.get("C:\\JavaStudy4\\Empty4.txt");
+		fp2 = Files.createDirectories(fp2);
+
 		System.out.println("File: " + fp);
 		System.out.println("Dir1: " + dp1);
 		System.out.println("Dir2: " + dp2);
+		System.out.println("Dir2: " + fp2);
 	}
 }

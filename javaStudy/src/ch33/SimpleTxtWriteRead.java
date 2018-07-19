@@ -13,9 +13,10 @@ public class SimpleTxtWriteRead {
 		String st1 = "one simple text";
 		String st2 = "two simple text";
 		List<String> lst1 = Arrays.asList(st1, st2);
-		System.out.println("lst1: "+lst1);
+		System.out.println("lst1: " + lst1);
 		Files.write(fp, lst1);
 		List<String> lst2 = Files.readAllLines(fp);
-		System.out.println("lst2: "+lst2);
+		System.out.println("lst2: " + lst2);
+
 	}
 }
