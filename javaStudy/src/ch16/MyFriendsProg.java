@@ -15,6 +15,14 @@ class Friends {
 		System.out.println("이름: " + name);
 		System.out.println("전화: " + phone);
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
 }
 
 class UnivFriends extends Friends {
@@ -102,6 +110,7 @@ public class MyFriendsProg {
 
 			case 3:
 				System.out.println("전체리스트를 보여줍니다.");
+				System.out.println("=================");
 				for (int i = 0; i < cnt; i++) {
 					urf[i].showInfo();
 					System.out.println();
@@ -109,6 +118,30 @@ public class MyFriendsProg {
 				break;
 
 			case 4:
+				System.out.println("검색할 이름을 선택하세요.");
+				name = sc.nextLine();
+				System.out.println("=================");
+				for (int i = 0; i < cnt; i++) {
+					if (urf[i].getName().equals(name)) {
+						urf[i].showInfo();
+						System.out.println();
+					}
+				}
+				break;
+
+			case 5:
+				System.out.println("검색할 번호를 선택하세요.");
+				phone = sc.nextLine();
+				System.out.println("=================");
+				for (int i = 0; i < cnt; i++) {
+					if (urf[i].getPhone().equals(phone)) {
+						urf[i].showInfo();
+						System.out.println();
+					}
+				}
+				break;
+
+			case 9:
 				System.out.println("종료합니다.");
 				System.exit(0);
 
@@ -117,7 +150,9 @@ public class MyFriendsProg {
 	}// end of main
 
 	public static void mainMenu() {
-		System.out.println("메뉴를 선택하세요.");
-		System.out.println("1.대학친구입력 2.회사친구입력 3.전체조회 4.종료");
+		System.out.println();
+		System.out.println("메뉴를 선택하세요...");
+		System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
+		System.out.println("=======================================================");
 	}
 }// end of class
