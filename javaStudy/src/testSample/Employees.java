@@ -4,6 +4,7 @@ class Employees {
 	private String firstName;
 	private String lastName;
 	private int salary;
+	private String department;
 
 	public String getFirstName() {
 		return firstName;
@@ -29,9 +30,21 @@ class Employees {
 		this.salary = salary;
 	}
 
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getName() {
+		return String.format("%s %s", getFirstName(), getLastName());
+	}
+
 	@Override
 	public String toString() {
-		return "[Name=" + firstName + " " + lastName + ", salary=" + salary + "]";
+		return "[Name=" + firstName + " " + lastName + ", salary=" + salary + ", department= " + department + "]";
 	}
 
 }
