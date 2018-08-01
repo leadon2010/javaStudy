@@ -1,6 +1,6 @@
 package ch17;
 
-interface Printable {
+interface PrintableSS {
 	static void printLine(String str) {
 		System.out.println(str);
 	}
@@ -10,15 +10,15 @@ interface Printable {
 	}
 }
 
-class Printer implements Printable {
+class PrinterSS implements PrintableSS {
 }
 
 public class SimplePrinter {
 	public static void main(String[] args) {
 		String doc = "this is my report";
-		Printable prn = new Printer();
+		PrintableSS prn = new PrinterSS();
 		prn.print(doc);
 
-		Printable.printLine(doc);
+		PrintableSS.printLine(doc);
 	}// end of main
 }// end of class
