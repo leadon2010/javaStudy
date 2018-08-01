@@ -79,7 +79,12 @@ public class MyFriendsProg {
 
 		int cnt = 0;
 		while (true) {
-			mainMenu();
+
+			System.out.println();
+			System.out.println("메뉴를 선택하세요...");
+			System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
+			System.out.println("=======================================================");
+
 			int choice = sc.nextInt();
 			sc.nextLine();
 
