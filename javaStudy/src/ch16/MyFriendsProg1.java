@@ -2,72 +2,7 @@ package ch16;
 
 import java.util.Scanner;
 
-class Friends {
-	private String name;
-	private String phone;
-
-	public Friends(String na, String ph) {
-		name = na;
-		phone = ph;
-	}
-
-	public void showInfo() {
-		System.out.println("이름: " + name);
-		System.out.println("전화: " + phone);
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-}
-
-class UnivFriends extends Friends {
-	private String major;
-	// private String name;
-	// private String phone;
-
-	public UnivFriends(String na, String ma, String ph) {
-		super(na, ph);
-		// name = na;
-		// phone = ph;
-		major = ma;
-	}
-
-	public void showInfo() {
-		// System.out.println("이름: " + name);
-		// System.out.println("전화: " + phone);
-		super.showInfo();
-		System.out.println("전공: " + major);
-	}
-}
-
-class CompFriends extends Friends {
-	// private String name;
-	// private String phone;
-
-	private String department;
-
-	public CompFriends(String na, String de, String ph) {
-		// name = na;
-		// phone = ph;
-		super(na, ph);
-		department = de;
-	}
-
-	public void showInfo() {
-		// System.out.println("이름: " + name);
-		// System.out.println("전화: " + phone);
-		super.showInfo();
-		System.out.println("부서: " + department);
-	}
-
-}
-
-public class MyFriendsProg {
+public class MyFriendsProg1 {
 	public static void main(String[] args) {
 		Friends[] urf = new Friends[10];
 		Scanner sc = new Scanner(System.in);
