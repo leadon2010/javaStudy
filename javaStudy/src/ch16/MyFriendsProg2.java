@@ -2,8 +2,61 @@ package ch16;
 
 import java.util.Scanner;
 
+class MyFriend {
+	private static int cnt = 0;
+
+	Scanner sc = new Scanner(System.in);
+
+	private String name;
+	private String phone;
+	private String department;
+	private String major;
+
+	void showMenu() {
+		System.out.println();
+		System.out.println("메뉴를 선택하세요...");
+		System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
+		System.out.println("=======================================================");
+	}
+
+	void insertUnivFriend() {
+		System.out.println("대학친구의 정보를 입력합니다.");
+		System.out.println("이름을 입력하세요.");
+		name = sc.nextLine();
+		System.out.println("전화번호를 입력하세요.");
+		phone = sc.nextLine();
+		System.out.println("전공을 입력하세요.");
+		major = sc.nextLine();
+	}
+
+	void insertCompFriend() {
+
+	}
+
+	void showList() {
+
+	}
+
+	void showFriend() {
+
+	}
+
+	void deleteFriend() {
+
+	}
+
+	void updateFriend() {
+
+	}
+}
+
 public class MyFriendsProg2 {
+
 	public static void main(String[] args) {
+		
+		MyFriend[] frn = new MyFriend[10];
+		
+		
 		Friends[] urf = new Friends[10];
 		Scanner sc = new Scanner(System.in);
 
@@ -14,11 +67,6 @@ public class MyFriendsProg2 {
 
 		int cnt = 0;
 		while (true) {
-
-			System.out.println();
-			System.out.println("메뉴를 선택하세요...");
-			System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
-			System.out.println("=======================================================");
 
 			int choice = sc.nextInt();
 			sc.nextLine();
