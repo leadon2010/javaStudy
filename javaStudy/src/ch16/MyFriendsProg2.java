@@ -1,132 +1,52 @@
 package ch16;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
-class MyFriend {
-	private static int cnt = 0;
-
-	Scanner sc = new Scanner(System.in);
-
-	private String name;
-	private String phone;
-	private String department;
-	private String major;
-
-	void showMenu() {
-		System.out.println();
-		System.out.println("메뉴를 선택하세요...");
-		System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
-		System.out.println("=======================================================");
-	}
-
-	void insertUnivFriend() {
-		System.out.println("대학친구의 정보를 입력합니다.");
-		System.out.println("이름을 입력하세요.");
-		name = sc.nextLine();
-		System.out.println("전화번호를 입력하세요.");
-		phone = sc.nextLine();
-		System.out.println("전공을 입력하세요.");
-		major = sc.nextLine();
-	}
-
-	void insertCompFriend() {
-
-	}
-
-	void showList() {
-
-	}
-
-	void showFriend() {
-
-	}
-
-	void deleteFriend() {
-
-	}
-
-	void updateFriend() {
-
-	}
-}
 
 public class MyFriendsProg2 {
 
 	public static void main(String[] args) {
-		
-		MyFriend[] frn = new MyFriend[10];
-		
-		
-		Friends[] urf = new Friends[10];
+
+		MyFriendProc proc = new MyFriendProc();
 		Scanner sc = new Scanner(System.in);
+		int choice = 0;
 
-		String name;
-		String phone;
-		String department;
-		String major;
-
-		int cnt = 0;
 		while (true) {
-
-			int choice = sc.nextInt();
-			sc.nextLine();
-
+			proc.mainMenu();
+			try {
+				choice = sc.nextInt();
+				sc.nextLine();
+			} catch (InputMismatchException e) {
+				sc.nextLine();
+				System.out.println("정상적인 메뉴를 선택하세요.");
+			}
 			switch (choice) {
+
 			case 1:
-				System.out.println("대학친구의 정보를 입력합니다.");
-				System.out.println("이름을 입력하세요.");
-				name = sc.nextLine();
-				System.out.println("전화번호를 입력하세요.");
-				phone = sc.nextLine();
-				System.out.println("전공을 입력하세요.");
-				major = sc.nextLine();
-				urf[cnt] = new UnivFriends(name, major, phone);
-				cnt++;
+				proc.insertUnivFriend();
 				break;
 
 			case 2:
-				System.out.println("회사친구의 정보를 입력합니다.");
-				System.out.println("이름을 입력하세요.");
-				name = sc.nextLine();
-				System.out.println("전화번호를 입력하세요.");
-				phone = sc.nextLine();
-				System.out.println("부서를 입력하세요.");
-				department = sc.nextLine();
-				urf[cnt] = new UnivFriends(name, department, phone);
-				cnt++;
+				proc.insertCompFriend();
 				break;
 
 			case 3:
-				System.out.println("전체리스트를 보여줍니다.");
-				System.out.println("=================");
-				for (int i = 0; i < cnt; i++) {
-					urf[i].showInfo();
-					System.out.println();
-				}
+				proc.showList();
 				break;
 
 			case 4:
-				System.out.println("검색할 이름을 선택하세요.");
-				name = sc.nextLine();
-				System.out.println("=================");
-				for (int i = 0; i < cnt; i++) {
-					if (urf[i].getName().equals(name)) {
-						urf[i].showInfo();
-						System.out.println();
-					}
-				}
+				proc.searchName();
 				break;
 
 			case 5:
-				System.out.println("검색할 번호를 선택하세요.");
-				phone = sc.nextLine();
-				System.out.println("=================");
-				for (int i = 0; i < cnt; i++) {
-					if (urf[i].getPhone().equals(phone)) {
-						urf[i].showInfo();
-						System.out.println();
-					}
-				}
+				proc.searchPhone();
+				break;
+			case 6:
+				proc.deleteFriend();
+				break;
+
+			case 8:
+				proc.setData();
 				break;
 
 			case 9:
@@ -134,13 +54,8 @@ public class MyFriendsProg2 {
 				System.exit(0);
 
 			}// end of switch
+
 		} // while
 	}// end of main
 
-	public static void mainMenu() {
-		System.out.println();
-		System.out.println("메뉴를 선택하세요...");
-		System.out.println("[1.대학친구입력 2.회사친구입력 3.전체조회 4.이름조회 5.전화번호조회 9.종료]");
-		System.out.println("=======================================================");
-	}
 }// end of class
