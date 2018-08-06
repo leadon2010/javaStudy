@@ -11,8 +11,7 @@ class Point {
 
 	@Override
 	public boolean equals(Object obj) {
-		// return super.equals(obj);
-		if (xPos == ((Point) obj).xPos && yPos == ((Point) obj).yPos)
+		if (this.xPos == ((Point) obj).xPos && this.yPos == ((Point) obj).yPos)
 			return true;
 		else
 			return false;
@@ -50,7 +49,7 @@ public class Ex19 {
 			System.out.println("diff");
 
 		Rectangle r1 = new Rectangle(1, 2, 3, 4);
-		Rectangle r2 = new Rectangle(1, 2, 3, 4);
+		Rectangle r2 = new Rectangle(1, 2, 4, 4);
 		if (r1.equals(r2))
 			System.out.println("same1");
 		else
