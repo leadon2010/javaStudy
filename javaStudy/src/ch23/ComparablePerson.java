@@ -7,6 +7,10 @@ class Person implements Comparable<Person> {
 	String name;
 	int age;
 
+	Person() {
+
+	}
+
 	public Person(String n, int a) {
 		name = n;
 		age = a;
@@ -39,7 +43,7 @@ public class ComparablePerson {
 		Person p2 = new Person("lch2", 14);
 		Person p3 = new Person("lch3", 17);
 
-		TreeSet<Person> ts = new TreeSet<Person>(new PersonComparator());
+		TreeSet<Person> ts = new TreeSet<>(new PersonComparator());
 		ts.add(p1);
 		ts.add(p2);
 		ts.add(p3);
