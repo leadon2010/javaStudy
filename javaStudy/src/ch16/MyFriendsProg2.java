@@ -44,6 +44,10 @@ public class MyFriendsProg2 {
 			case 6:
 				proc.deleteFriend();
 				break;
+				
+			case 7:
+				proc.showSortList();
+				break;
 
 			case 8:
 				proc.setData();
