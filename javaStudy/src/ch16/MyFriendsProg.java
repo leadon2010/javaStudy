@@ -28,7 +28,8 @@ class Friends implements Comparable {
 	@Override
 	public int compareTo(Object o) {
 		Friends f = (Friends) o;
-		return this.age - f.age;
+		// return this.age - f.age;
+		return this.name.compareTo(f.name);
 	}
 
 }

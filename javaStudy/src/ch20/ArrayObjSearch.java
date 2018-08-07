@@ -9,7 +9,7 @@ public class ArrayObjSearch {
 		arr[1] = new Person("KIM", 25, 180);
 		arr[2] = new Person("PARK", 20, 185);
 		Arrays.sort(arr);
-		int idx = Arrays.binarySearch(arr, new Person("what", 20, 180));
+		int idx = Arrays.binarySearch(arr, new Person("LEE", 20, 180));
 		System.out.println(arr[idx]);
 	}
 }

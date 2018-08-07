@@ -61,17 +61,6 @@ public class MyFriendProc {
 		}
 	}
 
-	void showSortList() {
-		System.out.println("전체리스트를 보여줍니다.");
-		System.out.println("=================");
-		Arrays.sort(frn);
-		for (int i = 0; i < cnt; i++) {
-			System.out.println("List[" + i + "] / 전체: " + cnt + " 건");
-			frn[i].showInfo();
-			System.out.println();
-		}
-	}
-
 	void searchName() {
 		System.out.println("검색할 이름을 선택하세요.");
 		name = sc.nextLine();
@@ -131,6 +120,23 @@ public class MyFriendProc {
 		frn[cnt++] = new CompFriends("KWON", "Developer", "5555-5555", 36);
 		frn[cnt++] = new CompFriends("CHOI", "RND 1", "6666-6666", 38);
 
+	}
+
+	void showSortList() {
+		System.out.println("전체리스트를 보여줍니다.");
+		System.out.println("=================");
+		Friends[] newarr = new Friends[cnt];
+		newarr = Arrays.copyOf(frn, cnt);
+		Arrays.sort(newarr);
+		for (Friends f : newarr) {
+			f.showInfo();
+			System.out.println();
+		}
+		// for (int i = 0; i < cnt; i++) {
+		// System.out.println("List[" + i + "] / 전체: " + cnt + " 건");
+		// frn[i].showInfo();
+		// System.out.println();
+		// }
 	}
 
 	void mainMenu() {
