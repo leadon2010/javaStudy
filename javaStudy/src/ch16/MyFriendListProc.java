@@ -93,7 +93,6 @@ public class MyFriendListProc {
 	}
 
 	void deleteFriend() {
-		int checkNum = -1;
 
 		System.out.println("삭제할 이름을 입력하세요.");
 		name = sc.nextLine();
