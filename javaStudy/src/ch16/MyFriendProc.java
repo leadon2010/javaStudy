@@ -132,11 +132,6 @@ public class MyFriendProc {
 			f.showInfo();
 			System.out.println();
 		}
-		// for (int i = 0; i < cnt; i++) {
-		// System.out.println("List[" + i + "] / 전체: " + cnt + " 건");
-		// frn[i].showInfo();
-		// System.out.println();
-		// }
 	}
 
 	void mainMenu() {
