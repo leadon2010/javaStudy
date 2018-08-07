@@ -16,9 +16,9 @@ class IteratorCollection {
 
 		// 반복자 획득
 		Iterator<String> itr = list.iterator();
-		System.out.println(itr);
+		// System.out.println(itr);
 
-		// 반복자를 이용한 순차적 참조 
+		// 반복자를 이용한 순차적 참조
 		while (itr.hasNext())
 			System.out.print(itr.next() + '\t');
 
@@ -26,20 +26,19 @@ class IteratorCollection {
 
 		// 반복자 다시 획득
 		itr = list.iterator();
-		System.out.println(itr);
+		// System.out.println(itr);
 
 		// "Box"의 삭제
 		String str;
 		while (itr.hasNext()) {
 			str = itr.next();
-
 			if (str.equals("Box"))
 				itr.remove();
 		}
 
 		// 반복자 다시 획득
 		itr = list.iterator();
-		System.out.println(itr);
+		// System.out.println(itr);
 
 		// 삭제 후 결과 확인
 		while (itr.hasNext())

@@ -7,9 +7,6 @@ import java.util.List;
 
 class AsListCollection {
 	public static void main(String[] args) {
-		// List<String> list = Arrays.asList("Toy", "Box", "Robot", "Box");
-		// String[] ary = { "Toy", "Box", "Robot", "Box" };
-		// List<String> list = new ArrayList<>(Arrays.asList(ary));
 		List<String> list = Arrays.asList("Toy", "Box", "Robot", "Box");
 		list = new ArrayList<>(list);
 
