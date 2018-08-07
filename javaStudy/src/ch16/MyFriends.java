@@ -1,56 +1,71 @@
 package ch16;
 
-class Friend {
+class Friends implements Comparable {
 	private String name;
 	private String phone;
+	private int age;
 
-	public Friend(String na, String ph) {
+	public Friends(String na, String ph, int ag) {
 		name = na;
 		phone = ph;
+		age = ag;
 	}
 
 	public void showInfo() {
 		System.out.println("이름: " + name);
+		System.out.println("나이: " + age);
 		System.out.println("전화: " + phone);
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Friends f = (Friends) o;
+		// return this.age - f.age;
+		return this.name.compareTo(f.name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// return super.equals(obj);
+		if (this == obj)
+			return true;
+		else
+			return false;
+	}
+
 }
 
-class UnivFriend extends Friend {
+class UnivFriends extends Friends {
 	private String major;
-	// private String name;
-	// private String phone;
 
-	public UnivFriend(String na, String ma, String ph) {
-		super(na, ph);
-		// name = na;
-		// phone = ph;
+	public UnivFriends(String na, String ma, String ph, int age) {
+		super(na, ph, age);
 		major = ma;
 	}
 
 	public void showInfo() {
-		// System.out.println("이름: " + name);
-		// System.out.println("전화: " + phone);
 		super.showInfo();
 		System.out.println("전공: " + major);
 	}
 }
 
-class CompFriend extends Friend {
-	// private String name;
-	// private String phone;
-
+class CompFriends extends Friends {
 	private String department;
 
-	public CompFriend(String na, String de, String ph) {
-		// name = na;
-		// phone = ph;
-		super(na, ph);
+	public CompFriends(String na, String de, String ph, int age) {
+		super(na, ph, age);
 		department = de;
 	}
 
 	public void showInfo() {
-		// System.out.println("이름: " + name);
-		// System.out.println("전화: " + phone);
 		super.showInfo();
 		System.out.println("부서: " + department);
 	}
@@ -58,25 +73,10 @@ class CompFriend extends Friend {
 }
 
 public class MyFriends {
-	public static void main(String[] args) {
-		Friend[] urf = new Friend[10];
-		int ucnt = 0;
-		urf[ucnt++] = new UnivFriend("LEE", "Computer", "1111-1111");
-		urf[ucnt++] = new UnivFriend("KIM", "Electric", "2222-2222");
-		urf[ucnt++] = new UnivFriend("YOON", "Electronic", "3333-3333");
-		// Friend[] crf = new CompFriend[3];
-		// int ccnt = 0;
-		urf[ucnt++] = new CompFriend("PARK", "Account", "4444-4444");
-		urf[ucnt++] = new CompFriend("KWON", "Developer", "5555-5555");
-		urf[ucnt++] = new CompFriend("CHOI", "RND 1", "6666-6666");
-		// for (int i = 0; i < crf.length; i++) {
-		// crf[i].showInfo();
-		// System.out.println();
-		// }
-		for (int i = 0; i < ucnt; i++) {
-			urf[i].showInfo();
-			System.out.println();
-		}
-	}
 
-}
+	public static void main(String[] args) {
+		System.out.println("main");
+
+	}// end of main
+
+}// end of class
