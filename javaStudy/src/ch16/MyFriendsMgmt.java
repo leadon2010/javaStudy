@@ -3,11 +3,12 @@ package ch16;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MyFriendsProg2 {
+public class MyFriendsMgmt {
 
 	public static void main(String[] args) {
 
-		MyFriendProc proc = new MyFriendProc();
+		// MyFriendProc proc = new MyFriendProc();
+		MyFriendListProc proc = new MyFriendListProc();
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 
@@ -44,7 +45,7 @@ public class MyFriendsProg2 {
 			case 6:
 				proc.deleteFriend();
 				break;
-				
+
 			case 7:
 				proc.showSortList();
 				break;

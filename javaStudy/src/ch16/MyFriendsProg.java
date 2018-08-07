@@ -32,6 +32,15 @@ class Friends implements Comparable {
 		return this.name.compareTo(f.name);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// return super.equals(obj);
+		if (this == obj)
+			return true;
+		else
+			return false;
+	}
+
 }
 
 class UnivFriends extends Friends {
