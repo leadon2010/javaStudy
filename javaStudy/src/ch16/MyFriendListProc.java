@@ -43,6 +43,7 @@ public class MyFriendListProc {
 		department = sc.nextLine();
 		System.out.println("나이를 입력하세요.");
 		age = sc.nextInt();
+
 		frn.add(new UnivFriends(name, department, phone, age));
 		System.out.println();
 	}// end of insertCompFriend
