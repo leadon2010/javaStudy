@@ -33,7 +33,6 @@ public class MyFriendListProc {
 		System.out.println();
 		for (Friends f : frn)
 			f.showInfo();
-		// cnt++;
 	}// end of insertUnivFriend
 
 	void insertCompFriend() {
@@ -50,7 +49,6 @@ public class MyFriendListProc {
 		System.out.println();
 		for (Friends f : frn)
 			f.showInfo();
-		// cnt++;
 	}// end of insertCompFriend
 
 	void showList() {
@@ -70,11 +68,6 @@ public class MyFriendListProc {
 			if (f.getName().equals(name))
 				f.showInfo();
 		}
-		// for (int i = 0; i < cnt; i++) {
-		// if (frn[i].getName().equals(name)) {
-		// frn[i].showInfo();
-		// System.out.println();
-		// }
 	}
 
 	void searchPhone() {
@@ -85,11 +78,6 @@ public class MyFriendListProc {
 			if (f.getPhone().equals(phone))
 				f.showInfo();
 		}
-		// for (int i = 0; i < cnt; i++) {
-		// if (frn[i].getPhone().equals(phone)) {
-		// frn[i].showInfo();
-		// System.out.println();
-		// }
 	}
 
 	void deleteFriend() {
@@ -127,11 +115,6 @@ public class MyFriendListProc {
 			f.showInfo();
 			System.out.println();
 		}
-		// for (int i = 0; i < cnt; i++) {
-		// System.out.println("List[" + i + "] / 전체: " + cnt + " 건");
-		// frn[i].showInfo();
-		// System.out.println();
-		// }
 	}
 
 	void mainMenu() {

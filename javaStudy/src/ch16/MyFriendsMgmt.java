@@ -7,8 +7,8 @@ public class MyFriendsMgmt {
 
 	public static void main(String[] args) {
 
-		// MyFriendProc proc = new MyFriendProc();
-		MyFriendListProc proc = new MyFriendListProc();
+		MyFriendProc proc = new MyFriendProc();
+		// MyFriendListProc proc = new MyFriendListProc();
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 
