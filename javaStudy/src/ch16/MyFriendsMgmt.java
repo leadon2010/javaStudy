@@ -11,6 +11,8 @@ public class MyFriendsMgmt {
 		// MyFriendListProc proc = new MyFriendListProc();
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
+		
+		
 
 		while (true) {
 			proc.mainMenu();
