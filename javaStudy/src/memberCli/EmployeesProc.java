@@ -1,6 +1,5 @@
 package memberCli;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeesProc {
@@ -20,7 +19,6 @@ public class EmployeesProc {
 		for (EmployeesDTO dto : list) {
 			System.out.println(dto);
 		}
-
 	}
 
 	public void employeesDTOProc() {
