@@ -12,28 +12,20 @@ public class EmployeeProc {
 	int salary;
 
 	void insertEmp() {
-		while (true) {
-			System.out.println("EmployeeNo을 입력하세요.");
-			try {
-				employeeId = sc.nextInt();
-				sc.nextLine();
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
-			}
-			System.out.println("firstName을 입력하세요.");
-			firstName = sc.nextLine();
-			System.out.println("lastName을 입력하세요.");
-			lastName = sc.nextLine();
-			System.out.println("salary를 입력하세요.");
-			salary = sc.nextInt();
-			sc.nextLine();
-			emp[cnt] = new Employee(employeeId, firstName, lastName, salary);
-			System.out.println("한건 입력되었습니다.");
-			System.out.println(emp[cnt]);
-			cnt++;
-			break;
-		}
+		System.out.println("EmployeeNo을 입력하세요.");
+		employeeId = sc.nextInt();
+		sc.nextLine();
+		System.out.println("firstName을 입력하세요.");
+		firstName = sc.nextLine();
+		System.out.println("lastName을 입력하세요.");
+		lastName = sc.nextLine();
+		System.out.println("salary를 입력하세요.");
+		salary = sc.nextInt();
+		sc.nextLine();
+		emp[cnt] = new Employee(employeeId, firstName, lastName, salary);
+		System.out.println("한건 입력되었습니다.");
+		System.out.println(emp[cnt]);
+		cnt++;
 	}
 
 	void selectEmp() {

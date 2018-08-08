@@ -7,12 +7,10 @@ public class MyFriendsMgmt {
 
 	public static void main(String[] args) {
 
-		MyFriendProc proc = new MyFriendProc();
-		// MyFriendListProc proc = new MyFriendListProc();
+		// MyFriendProc proc = new MyFriendProc();
+		MyFriendListProc proc = new MyFriendListProc();
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
-		
-		
 
 		while (true) {
 			proc.mainMenu();
@@ -44,12 +42,9 @@ public class MyFriendsMgmt {
 			case 5:
 				proc.searchPhone();
 				break;
+
 			case 6:
 				proc.deleteFriend();
-				break;
-
-			case 7:
-				proc.showSortList();
 				break;
 
 			case 8:
