@@ -70,6 +70,11 @@ public class EmployeeProc {
 
 	public void getEmpProc() {
 		System.out.println("한건조회:");
+		System.out.println("employeeId =>");
+		employeeId = sc.nextInt();
+		sc.nextLine();
+		Employee emp = dao.getEmp(employeeId);
+		System.out.println(emp);
 	}
 
 	public void getEmpListProc() {

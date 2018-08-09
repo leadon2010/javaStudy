@@ -77,14 +77,14 @@ public class EmployeeDAO {
 
 	}// end of updateEmp
 
-	public Employee getEmp(Employee empl) {
+	public Employee getEmp(int empl) {
 		conn = getConnection();
 		Employee emp = new Employee();
 
 		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, empl.getEmployeeId());
+			pstmt.setInt(1, empl);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				emp.setEmployeeId(rs.getInt("employee_id"));
