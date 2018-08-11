@@ -12,6 +12,14 @@ public class MapDemo {
 		map.put("b", 20);
 		map.put("c", 30);
 
+		Set<String> set = map.keySet();
+		Iterator<String> itr = set.iterator();
+		while (itr.hasNext()) {
+			String keys = itr.next();
+			System.out.println(keys + " ==> " + map.get(keys));
+		}
+		System.out.println();
+
 		iteratorUsingForEach(map);
 		System.out.println();
 		iteratorUsingIterator2(map);
@@ -19,24 +27,25 @@ public class MapDemo {
 	}// end of main
 
 	static void iteratorUsingForEach(HashMap<String, Integer> map) {
-		Set<Map.Entry<String, Integer>> entries = map.entrySet();
-		for (Map.Entry<String, Integer> entry : entries) {
+		Set<Map.Entry<String, Integer>> set = map.entrySet();
+		System.out.println(set);
+		for (Map.Entry<String, Integer> entry : set) {
 			System.out.println(entry.getKey() + " ==> " + entry.getValue());
 		}
 	}
 
 	static void iteratorUsingIterator(HashMap<String, Integer> map) {
-		Set<Map.Entry<String, Integer>> entries = map.entrySet();
-
-		for (Iterator<Map.Entry<String, Integer>> itr = entries.iterator(); itr.hasNext();) {
+		Set<Map.Entry<String, Integer>> set = map.entrySet();
+		System.out.println(set);
+		for (Iterator<Map.Entry<String, Integer>> itr = set.iterator(); itr.hasNext();) {
 			System.out.println(itr.next());
 		}
 	}
 
 	static void iteratorUsingIterator2(HashMap<String, Integer> map) {
-		Set<Map.Entry<String, Integer>> entries = map.entrySet();
-		System.out.println(entries);
-		Iterator<Map.Entry<String, Integer>> itr = entries.iterator();
+		Set<Map.Entry<String, Integer>> set = map.entrySet();
+		System.out.println(set);
+		Iterator<Map.Entry<String, Integer>> itr = set.iterator();
 		while (itr.hasNext()) {
 			Map.Entry<String, Integer> ent = itr.next();
 			System.out.println(ent.getKey() + " --> " + ent.getValue());
