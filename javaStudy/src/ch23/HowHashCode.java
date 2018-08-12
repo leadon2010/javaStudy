@@ -1,6 +1,7 @@
 package ch23;
 
 import java.util.HashSet;
+import java.util.Objects;
 
 class Car {
 	private String model;
@@ -20,6 +21,7 @@ class Car {
 	@Override
 	public int hashCode() {
 		return (model.hashCode() + color.hashCode()) / 2;
+		// return Objects.hashCode(model);
 	}
 
 	@Override
@@ -47,6 +49,6 @@ public class HowHashCode {
 		System.out.println("인스턴스 수: " + set.size());
 
 		for (Car car : set)
-			System.out.println(car.toString() + '\t' + set.hashCode());
+			System.out.println(car.toString() + " " + set.hashCode());
 	}
 }

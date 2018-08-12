@@ -1,5 +1,6 @@
 package ch23;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.TreeSet;
 
@@ -42,6 +43,14 @@ public class ComparablePerson {
 		Person p1 = new Person("lch1", 20);
 		Person p2 = new Person("lch2", 14);
 		Person p3 = new Person("lch3", 17);
+		TreeSet<Person> t = new TreeSet<>();
+		t.add(p1);
+		t.add(p2);
+		t.add(p3);
+		for (Person p : t) {
+			System.out.println(p);
+		}
+		System.out.println();
 
 		TreeSet<Person> ts = new TreeSet<>(new PersonComparator());
 		ts.add(p1);
