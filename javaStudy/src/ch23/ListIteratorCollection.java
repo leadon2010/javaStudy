@@ -16,6 +16,7 @@ class ListIteratorCollection {
 
 		// 왼쪽에서 오른쪽으로
 		while (litr.hasNext()) {
+			System.out.print("nextindex() :" + litr.nextIndex() + " ");
 			str = litr.next();
 			System.out.print(str + '\t');
 
@@ -27,6 +28,7 @@ class ListIteratorCollection {
 		// litr = list.listIterator();
 		// 오른쪽에서 왼쪽으로
 		while (litr.hasPrevious()) {
+			System.out.print("nextindex() :" + litr.nextIndex() + " ");
 			str = litr.previous();
 			System.out.print(str + '\t');
 

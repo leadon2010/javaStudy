@@ -25,8 +25,5 @@ public class HashMapIteration {
 			System.out.println(keys + " " + map.get(keys));
 		}
 
-		// for (Iterator<Integer> itr = ks.iterator(); itr.hasNext();) {
-		// System.out.println(map.get(itr.next()));
-		// }
-	}
-}
+	}// end of main
+}// end of class
