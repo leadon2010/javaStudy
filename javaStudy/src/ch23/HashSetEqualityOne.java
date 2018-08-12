@@ -17,14 +17,14 @@ class Num1 {
 
 class HashSetEqualityOne {
 	public static void main(String[] args) {
-		HashSet<Num> set = new HashSet<>();
-		set.add(new Num(7799));
-		set.add(new Num(9955));
-		set.add(new Num(7799));
+		HashSet<Num1> set = new HashSet<>();
+		set.add(new Num1(7799));
+		set.add(new Num1(9955));
+		set.add(new Num1(7799));
 
 		System.out.println("인스턴스 수: " + set.size());
 
-		for (Num n : set)
+		for (Num1 n : set)
 			System.out.print(n.toString() + '\t');
 
 		System.out.println();
