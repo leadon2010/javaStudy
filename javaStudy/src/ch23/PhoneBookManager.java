@@ -40,4 +40,29 @@ public class PhoneBookManager {
 		return s;
 	}// end of getPhoneBooksByName
 
-}
+	public Set getPhoneBooksByAddress(String address) {
+		Set s = new HashSet();
+		Iterator<PhoneBook> itr = set.iterator();
+		while (itr.hasNext()) {
+			PhoneBook pb = itr.next();
+			if (pb.getAddress().indexOf(address) != -1)
+				s.add(pb);
+		}
+		return s;
+	}// end of getPhoneBooksByAddress
+
+	public Set getPhoneBooksByNumber(String number) {
+		Set s = new HashSet();
+		for (Iterator<PhoneBook> itr = set.iterator(); itr.hasNext();) {
+			PhoneBook pb = itr.next();
+			if (pb.getNumber().indexOf(number) != -1)
+				s.add(pb);
+		}
+		return s;
+	}// end of getPhoneBooksByNumber
+	
+	public int getPhoneBookSize() {
+		return set.size();
+	}
+
+}// end of PhoneBookManager
