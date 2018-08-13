@@ -5,6 +5,11 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private int salary;
+	private String email;
+	private String jobId;
+
+	Employee() {
+	}
 
 	Employee(int id, String fn, String ln, int sal) {
 		employeeId = id;
@@ -15,6 +20,22 @@ public class Employee {
 
 	public int getEmployeeId() {
 		return employeeId;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getJobId() {
+		return jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	public void setEmployeeId(int employeeId) {
