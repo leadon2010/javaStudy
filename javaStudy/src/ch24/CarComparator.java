@@ -34,6 +34,7 @@ public class CarComparator {
 
 		for (Iterator<Car> itr = list.iterator(); itr.hasNext();)
 			System.out.println(itr.next() + "\t");
+		System.out.println();
 
 		for (Iterator<ECar> itr = elist.iterator(); itr.hasNext();)
 			System.out.println(itr.next() + "\t");

@@ -9,8 +9,8 @@ class StrComp implements Comparator<String> {
 
 	@Override
 	public int compare(String o1, String o2) {
-		return o1.compareToIgnoreCase(o2);
-		//return o1.compareTo(o2);
+		// return o1.compareToIgnoreCase(o2);
+		return o1.compareTo(o2);
 	}
 
 }
@@ -18,12 +18,12 @@ class StrComp implements Comparator<String> {
 public class StringComparator {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
-		list.add("ROBOT");
-		list.add("APPLE");
-		list.add("BOX");
+		list.add("Robot");
+		list.add("Apple");
+		list.add("Box");
 		StrComp cmp = new StrComp();
 		Collections.sort(list, cmp);
-		int idx = Collections.binarySearch(list, "ROBOT", cmp);
-		System.out.println(list.get(idx));
-	}
-}
+		int idx = Collections.binarySearch(list, "Robot", cmp);
+		System.out.println(list.get(idx) + "[" + idx + "]");
+	}// end of main
+}// end of class
