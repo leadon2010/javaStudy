@@ -38,6 +38,20 @@ class ECar extends Car {
 
 }
 
+class EECar extends ECar {
+	private int charge;
+
+	public EECar(int d, int b, int c) {
+		super(d, b);
+		charge = c;
+	}
+
+	@Override
+	public String toString() {
+		return "EECar [charge=" + charge + ", disp=" + disp + "]";
+	}
+}
+
 public class ECarSortColelctions {
 	public static void main(String[] args) {
 		List<ECar> list = new ArrayList<>();
@@ -47,6 +61,16 @@ public class ECarSortColelctions {
 		Collections.sort(list);
 
 		for (Iterator<ECar> itr = list.iterator(); itr.hasNext();) {
+			System.out.println(itr.next() + "\t");
+		}
+		System.out.println();
+
+		List<EECar> elist = new ArrayList<>();
+		elist.add(new EECar(1200, 77, 90));
+		elist.add(new EECar(1300, 99, 90));
+		elist.add(new EECar(1400, 88, 90));
+		Collections.sort(elist);
+		for (Iterator<EECar> itr = elist.iterator(); itr.hasNext();) {
 			System.out.println(itr.next() + "\t");
 		}
 	}
