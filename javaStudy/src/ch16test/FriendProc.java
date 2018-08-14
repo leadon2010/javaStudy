@@ -1,6 +1,7 @@
 package ch16test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,6 +40,9 @@ public class FriendProc {
 			} else if (choice == 5) {
 				System.out.println("한건조회[전화번호]");
 				prc.showInfoByPhone();
+			} else if (choice == 6) {
+				System.out.println("삭제[이름]");
+				prc.deleteFriend();
 			} else if (choice == 9) {
 				prc.createInitInfo();
 			} else {
@@ -82,7 +86,14 @@ public class FriendProc {
 	}
 
 	public void deleteFriend() {
-
+		System.out.println("삭제할 이름을 입력하세요.");
+		String sname = sc.nextLine();
+		Friends itn;
+		for (Iterator<Friends> itr = list.iterator(); itr.hasNext();) {
+			itn = itr.next();
+			if (sname.equals(itn.getName()))
+				itr.remove();
+		}
 	}
 
 	public void showInfoByName() {
@@ -128,6 +139,6 @@ public class FriendProc {
 	}
 
 	public void showMenu() {
-		System.out.println("[1.대학동기 2.직장동료 3.전체조회 4.조회(이름) 5.조회(전화번호) 0.프로그램종료]");
+		System.out.println("[1.대학동기 2.직장동료 3.전체조회 4.조회(이름) 5.조회(전화번호) 6.삭제(이름) 0.프로그램종료]");
 	}
 }
