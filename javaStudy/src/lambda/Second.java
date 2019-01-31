@@ -23,10 +23,8 @@ public class Second {
 		StrComp cmp = new StrComp();
 		Collections.sort(list, cmp);
 		System.out.println(list);
+//		Collections.sort(list, (String s1, String s2) -> {
+//			return s1.length() - s2.length();
+//		});
 	}
 }
-/*
-Collections.sort(list, (String s1, String s2) -> {
-return s1.length() - s2.length();
-});
-*/
