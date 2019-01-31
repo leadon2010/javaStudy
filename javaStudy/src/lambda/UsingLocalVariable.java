@@ -7,7 +7,6 @@ public class UsingLocalVariable {
 		MyFunctionalInterface fi = () -> {
 			System.out.println("arg: " + arg);
 			System.out.println("localVar: " + localVar);
-
 		};
 		fi.method();
 	}
