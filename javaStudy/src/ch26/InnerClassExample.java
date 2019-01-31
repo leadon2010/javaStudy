@@ -1,7 +1,10 @@
 package ch26;
 
+@FunctionalInterface
 interface Printables {
 	void print();
+
+//	void printf();
 }
 
 class Paper {
@@ -13,14 +16,21 @@ class Paper {
 
 	public Printables getPrinter() {
 		return new Printer();
+
 	}
 
-	private class Printer implements Printables {
+	class Printer implements Printables {
 		@Override
 		public void print() {
 			System.out.println(con);
 		}
+
+//		@Override
+//		public void printf() {
+//			System.out.println();
+//		}
 	}
+
 }
 
 public class InnerClassExample {
