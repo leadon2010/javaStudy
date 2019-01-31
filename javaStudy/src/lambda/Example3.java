@@ -26,6 +26,6 @@ public class Example3 {
 		System.out.println("수학 평균 점수: " + mathAvg);
 		mathAvg = avg(Student::getMathScore);
 		System.out.println("수학 평균 점수: " + mathAvg);
-	}
+	}// end of main
 
 }
