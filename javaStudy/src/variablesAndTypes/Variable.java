@@ -8,7 +8,7 @@ public class Variable {
 		int totals = 36;
 
 		int a = 30;
-		int b = 07;
+		int b = 073;
 		int c = 0x1A;
 
 		System.out.println(a);
