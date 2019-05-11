@@ -14,6 +14,30 @@ public class Variable {
 		System.out.println(a);
 		System.out.println(b);
 		System.out.println(c);
+
+		System.out.println(5E7 * 3 - 13245);
+		boolean result = true;
+		// result = !result;
+		if (result) {
+			System.out.println("Result is " + result);
+		} else {
+			System.out.println("Result is " + result);
+		}
+
+		for (int i = 0; i < 10; i++) {
+			System.out.println("i is " + i);
+		}
+
+		int j = 10;
+		while (j > 0) {
+			System.out.println("j is " + j--);
+		}
+
+		int v1 = 15;
+		if (v1 > 10) {
+			int v2 = v1 - 10;
+		}
+		int v3 = v2 - v1; // 에러 발생. v2에 대한 값을 읽을 수가 없다.
 	}
 
 }
