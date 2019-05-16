@@ -25,19 +25,33 @@ public class Variable {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			System.out.println("i is " + i);
+			// System.out.println("i is " + i);
 		}
 
 		int j = 10;
 		while (j > 0) {
-			System.out.println("j is " + j--);
+			j--;// System.out.println("j is " + j--);
 		}
 
 		int v1 = 15;
 		if (v1 > 10) {
 			int v2 = v1 - 10;
 		}
-		int v3 = v2 - v1; // 에러 발생. v2에 대한 값을 읽을 수가 없다.
+		// int v3 = v2 - v1; // 에러 발생. v2에 대한 값을 읽을 수가 없다.
+
+		char charValue = 'A';
+		int intValue = charValue;
+		System.out.println(charValue);
+		System.out.println(intValue);
+
+		float floatValue = 3.14F;
+		double doubleValue = 3.14;
+		for (int i = 0; i < 10; i++) {
+			floatValue += 0.001;
+			doubleValue += 0.001;
+		}
+		System.out.println(floatValue);
+		System.out.println(doubleValue);
 	}
 
 }
