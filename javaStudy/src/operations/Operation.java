@@ -31,9 +31,23 @@ public class Operation {
 		System.out.println(num11);
 
 		int num13 = 10;
-		//num13 = num13 * 3.5;
+		// num13 = num13 * 3.5;
 		num13 *= 3.5;
 		System.out.println(num13);
+
+		int seven = 7;
+		System.out.println(~seven + 1);
+
+		int ten = 234;
+		String str = "";
+		while (ten > 0) {
+			str += ten % 2;
+			ten /= 2;
+		}
+		for (int i = str.length() - 1; i >= 0; i--)
+			System.out.print(str.charAt(i));
+		System.out.println();
+		System.out.println("end");
 
 	}
 }
