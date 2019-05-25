@@ -31,12 +31,13 @@ public class MethodDef {
 		System.out.println("프로그램의 시작");
 		hiEveryOne(12);
 		hiEveryOne(13);
+		hiEveryBody(25, 180.5);
 
 		Person p1 = new Person();
 		p1.setAge(30);
 		p1.setHeight(177.5);
 		p1.setName("James");
-		p1.showPeople();
+		//p1.showPeople();
 
 		System.out.println("프로그램의 종료");
 	}
@@ -44,5 +45,16 @@ public class MethodDef {
 	static void hiEveryOne(int age) {
 		System.out.println("Hi, EveryOne!!");
 		System.out.println("My age is : " + age);
+	}
+
+	static void hiEveryBody(int age, double height) {
+		System.out.println("Hi, EveryBody.");
+		System.out.println("I am " + age + " old.");
+		System.out.println("I am " + height + " cm.");
+		System.out.println("my score is " + sumScore(60, 70, 80));
+	}
+
+	static int sumScore(int math, int eng, int kor) {
+		return (math + eng + kor);
 	}
 }
