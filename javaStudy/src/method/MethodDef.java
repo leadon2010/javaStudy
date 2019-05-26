@@ -26,7 +26,15 @@ class Person {
 }
 
 public class MethodDef {
+
+	int speed = 0;
+	String carName = "BMW";
+
 	public static void main(String[] args) {
+
+		MethodDef md = new MethodDef();
+		md.speed = 10;
+		System.out.println(md.carName);
 
 		System.out.println("프로그램의 시작");
 		hiEveryOne(12);
@@ -37,7 +45,7 @@ public class MethodDef {
 		p1.setAge(30);
 		p1.setHeight(177.5);
 		p1.setName("James");
-		//p1.showPeople();
+		// p1.showPeople();
 
 		System.out.println("프로그램의 종료");
 	}
