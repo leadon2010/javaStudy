@@ -20,7 +20,7 @@ class Person {
 	public void showPeople() {
 		System.out.println("my name is " + this.name);
 		System.out.println("I am " + age + " years old.");
-		System.out.println("I am " + height + " tall.");
+		System.out.println("I am " + height + " cm.");
 	}
 
 }
