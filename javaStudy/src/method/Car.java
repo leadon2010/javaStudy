@@ -23,9 +23,11 @@ public class Car {
 	String model;
 	String color;
 	int maxSpeed;
+
 	// 상태
 	int speed;
 	int rpm;
+
 	// 부품
 	Body body;
 	Engine engine;
