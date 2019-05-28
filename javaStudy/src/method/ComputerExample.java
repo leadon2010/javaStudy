@@ -11,8 +11,8 @@ class Computer {
 
 	int sum2(int... values) {
 		int result = 0;
-		for (int i = 0; i < values.length; i++) {
-			result += values[i];
+		for (int a : values) {
+			result += a;
 		}
 		return result;
 	}
@@ -21,6 +21,8 @@ class Computer {
 public class ComputerExample {
 	public static void main(String[] args) {
 		Computer comp = new Computer();
+		int[] ary = {2,3,4,5,6};
+		System.out.println(comp.sum1(ary));
 		System.out.println(comp.sum2(1, 2, 3, 4, 5));
 	}
 }
