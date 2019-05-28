@@ -18,11 +18,21 @@ class Computer {
 	}
 }
 
+class Television {
+	static String company = "Kakao";
+	static String department = "Develop";
+	static String member;
+	static {
+		member = company + "-" + department;
+	}
+}
+
 public class ComputerExample {
 	public static void main(String[] args) {
 		Computer comp = new Computer();
-		int[] ary = {2,3,4,5,6};
+		int[] ary = { 2, 3, 4, 5, 6 };
 		System.out.println(comp.sum1(ary));
 		System.out.println(comp.sum2(1, 2, 3, 4, 5));
+		System.out.println(Television.member);
 	}
 }
