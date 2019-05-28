@@ -12,6 +12,8 @@ public class TireSample {
 		bt.showType();
 		com.yedam.hankook.Tire tr = new com.yedam.hankook.Tire();
 		tr.showTire();
+		com.yedam.kumho.Tire tr2 = new com.yedam.kumho.Tire();
+		tr2.showTire();
 	}
 
 }

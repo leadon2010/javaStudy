@@ -27,12 +27,45 @@ class Television {
 	}
 }
 
+class Triangle {
+	double width;
+	double height;
+
+	Triangle() {
+
+	}
+
+	Triangle(double a) {
+		this.width = a;
+		this.height = a;
+	}
+
+	Triangle(double width, double height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	double getWidth() {
+		if (width != 0 && height != 0)
+			return (width * height) / 2;
+		else
+			return 0;
+	}
+
+	double getWidth(double a) {
+		return (a * a) / 2;
+	}
+
+	double getWidth(double h, double w) {
+		return (h * w) / 2;
+	}
+
+}
+
 public class ComputerExample {
 	public static void main(String[] args) {
-		Computer comp = new Computer();
-		int[] ary = { 2, 3, 4, 5, 6 };
-		System.out.println(comp.sum1(ary));
-		System.out.println(comp.sum2(1, 2, 3, 4, 5));
-		System.out.println(Television.member);
+		Triangle tr1 = new Triangle(5);
+		double result = tr1.getWidth();
+		System.out.println(result);
 	}
 }
