@@ -64,8 +64,15 @@ class Triangle {
 
 public class ComputerExample {
 	public static void main(String[] args) {
-		Triangle tr1 = new Triangle(5);
-		double result = tr1.getWidth();
-		System.out.println(result);
+		int[] ary = { 1, 2, 3, 4, 5 };
+		System.out.println("결과값은 : " + sum(ary));
+	}
+
+	static int sum(int[] ary) {
+		int sum = 0;
+		for (int i = 0; i < ary.length; i++) {
+			sum += ary[i];
+		}
+		return sum;
 	}
 }
