@@ -15,7 +15,7 @@ class Computer {
 			result += a;
 		}
 		return result;
-	}
+	}// end of sum2
 }
 
 class Television {
