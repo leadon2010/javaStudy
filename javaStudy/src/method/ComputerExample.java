@@ -66,6 +66,9 @@ public class ComputerExample {
 	public static void main(String[] args) {
 		int[] ary = { 1, 2, 3, 4, 5 };
 		System.out.println("결과값은 : " + sum(ary));
+		
+		System.out.write(65);
+		System.out.println();
 	}
 
 	static int sum(int[] ary) {
