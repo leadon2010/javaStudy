@@ -14,6 +14,14 @@ public class Student extends People {
 		this.major = major;
 	}
 
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
 	@Override
 	public String toString() {
 		Formatter fm = new Formatter();
