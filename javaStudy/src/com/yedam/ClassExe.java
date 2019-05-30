@@ -1,5 +1,7 @@
 package com.yedam;
 
+import java.util.Scanner;
+
 class Person {
 	private String name;
 	private String phone;
@@ -52,15 +54,81 @@ class Person {
 
 public class ClassExe {
 	public static void main(String[] args) {
-		Person ps1 = new Person("aaa", "1111", 11);
-		Person ps2 = new Person("bbb", "2222", 22);
-		Person ps3 = new Person("ccc", "3333", 33);
-		Person ps4 = new Person("ddd", "4444", 44);
-
-		Person[] psAry = { ps1, ps2, ps3, ps4 };
-		for (int i = 0; i < psAry.length; i++) {
-			psAry[i].println();
+		Scanner sc = new Scanner(System.in);
+		Person[] ary = new Person[5];
+		while (true) {
+			System.out.println("choose menu: 1(입력), 2(조회) ");
+			int menu = sc.nextInt();
+			switch (menu) {
+			case 1:
+				int row = checkRow(ary);
+				if (row == 5) {
+					System.out.println("no more data");
+					break;
+				}
+				System.out.println("input value: [name][no][age]");
+				String name = sc.next();
+				String no = sc.next();
+				int age = sc.nextInt();
+				ary[row] = new Person(name, no, age);
+				break;
+			case 2:
+				showHeader();
+				showData(ary);
+				break;
+			default:
+				System.out.println("프로그램 종료.");// System.exit(0);
+				break;
+			}
 		}
+	}// end of main
 
+	static void showHeader() {
+		System.out.print("===================================\n");
+		System.out.print("name         phone          age\n");
+		System.out.print("===================================\n");
+	}
+
+	static int checkRow(Person[] ary) {
+		for (int i = 0; i < ary.length; i++) {
+			if (ary[i] == null)
+				return i;
+		}
+		return ary.length;
+	}
+
+	static void showData(Person[] ary) {
+		for (int i = 0; i < ary.length; i++) {
+			if (ary[i] != null)
+				ary[i].println();
+		}
+		System.out.println();
+	}
+
+	static Person[] createData(int dataCnt) {
+		int rowCnt = dataCnt;
+		int charNum = 97;
+		int charNo = 1;
+		Person[] pAry = new Person[rowCnt];
+		for (int i = 0; i < rowCnt; i++) {
+			pAry[i] = new Person(getName(charNum++), getNo(charNo), charNo++ * 11);
+		}
+		return pAry;
+	}
+
+	static String getNo(int a) {
+		String no = "";
+		for (int i = 0; i < 5; i++) {
+			no += a;
+		}
+		return no;
+	}
+
+	static String getName(int a) {
+		String name = "";
+		for (int i = 0; i < 5; i++) {
+			name += (char) (a);
+		}
+		return name;
 	}
 }
