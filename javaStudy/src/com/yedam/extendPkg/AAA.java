@@ -1,4 +1,4 @@
-package com.yedam.extend;
+package com.yedam.extendPkg;
 
 public class AAA {
 	protected String name;

@@ -1,4 +1,4 @@
-package com.yedam.extend;
+package com.yedam.extendPkg;
 
 public class MainExe {
 	public static void main(String[] args) {

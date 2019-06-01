@@ -1,6 +1,6 @@
 package com.yedam.extend.extpkg;
 
-import com.yedam.extend.AAA;
+import com.yedam.extendPkg.AAA;
 
 public class CCC extends AAA {
 	public CCC() {

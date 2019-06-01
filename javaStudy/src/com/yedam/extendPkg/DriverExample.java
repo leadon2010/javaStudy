@@ -1,4 +1,4 @@
-package com.yedam.extend;
+package com.yedam.extendPkg;
 
 class Driver {
 	void drive(Vehicle vehicle) {
