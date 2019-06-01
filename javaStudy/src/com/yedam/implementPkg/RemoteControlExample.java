@@ -2,7 +2,9 @@ package com.yedam.implementPkg;
 
 public class RemoteControlExample {
 	public static void main(String[] args) {
-		RemoteControl rc = new Television();
+		RemoteControl rc = null;
+
+		rc = new Television();
 		rc.turnOn();
 		rc = new Audio();
 		rc.turnOn();
