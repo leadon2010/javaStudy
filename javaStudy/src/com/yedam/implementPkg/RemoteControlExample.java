@@ -1,4 +1,4 @@
-package com.yedam.abstractPkg;
+package com.yedam.implementPkg;
 
 public class RemoteControlExample {
 	public static void main(String[] args) {
@@ -23,6 +23,7 @@ public class RemoteControlExample {
 			@Override
 			public void setVolume(int volume) {
 				this.volume = volume;
+				System.out.println("구현객체의 볼륨은 : " + this.volume);
 			}
 		};
 

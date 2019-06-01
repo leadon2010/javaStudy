@@ -1,16 +1,16 @@
-package com.yedam.abstractPkg;
+package com.yedam.implementPkg;
 
-public class Audio implements RemoteControl {
+public class Television implements RemoteControl {
 	private int volume;
 
 	@Override
 	public void turnOn() {
-		System.out.println("Audio를 켭니다.");
+		System.out.println("TV를 켭니다.");
 	}
 
 	@Override
 	public void turnOff() {
-		System.out.println("Audio를 끕니다.");
+		System.out.println("TV를 끕니다.");
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Audio implements RemoteControl {
 
 		else
 			this.volume = volume;
-		System.out.println("현재 Audio볼륨은 " + this.volume);
+		System.out.println("현재 TV볼륨은 " + this.volume);
 	}
 
-}
+}// end of class

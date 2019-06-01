@@ -1,4 +1,4 @@
-package com.yedam.abstractPkg;
+package com.yedam.implementPkg;
 
 public interface RemoteControl {
 	// 상수필드
