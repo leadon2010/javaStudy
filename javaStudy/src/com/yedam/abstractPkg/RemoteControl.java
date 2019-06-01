@@ -24,4 +24,5 @@ public interface RemoteControl {
 	static void changeBattery() {
 		System.out.println("change battery");
 	}
-}
+
+}// end of class
