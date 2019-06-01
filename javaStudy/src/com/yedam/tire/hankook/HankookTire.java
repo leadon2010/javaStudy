@@ -1,4 +1,4 @@
-package com.yedam.hankook;
+package com.yedam.tire.hankook;
 
 import com.yedam.tire.Tire;
 

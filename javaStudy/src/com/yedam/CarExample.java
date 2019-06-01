@@ -1,6 +1,6 @@
 package com.yedam;
 
-import com.yedam.hankook.HankookTire;
+import com.yedam.tire.hankook.HankookTire;
 
 public class CarExample {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.yedam.kumho;
+package com.yedam.tire.kumho;
 
 import com.yedam.tire.Tire;
 
