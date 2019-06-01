@@ -2,6 +2,7 @@ package com.yedam.implementPkg;
 
 public class Audio implements RemoteControl {
 	private int volume;
+	private boolean mute;
 
 	@Override
 	public void turnOn() {
@@ -24,6 +25,16 @@ public class Audio implements RemoteControl {
 		else
 			this.volume = volume;
 		System.out.println("현재 Audio볼륨은 " + this.volume);
+	}
+
+	@Override
+	public void setMute(boolean mute) {
+		// RemoteControl.super.setMute(mute);
+		this.mute = mute;
+		if (mute)
+			System.out.println("Audio 무음처리 합니다.");
+		else
+			System.out.println("Audio 무음해제 합니다.");
 	}
 
 }
