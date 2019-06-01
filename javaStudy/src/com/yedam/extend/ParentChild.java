@@ -1,11 +1,15 @@
 package com.yedam.extend;
 
 public class ParentChild extends Parent {
+	public String field2;
+
+	@Override
+	void method1() {
+		System.out.println("child method1");
+	}
 
 	@Override
 	void method2() {
-		// TODO Auto-generated method stub
-		// super.method2();
 		System.out.println("child method2");
 	}
 
