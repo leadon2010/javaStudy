@@ -18,4 +18,7 @@ public class SmartPhone extends Phone {
 		System.out.println("you stopped phone");
 	}
 
+	public void internetSearch() {
+		System.out.println("web searching...");
+	}
 }

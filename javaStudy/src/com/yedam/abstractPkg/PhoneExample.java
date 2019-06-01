@@ -5,6 +5,7 @@ public class PhoneExample {
 		// Phone phone = new Phone();
 		SmartPhone sp = new SmartPhone("nice");
 		sp.turnOn();
+		sp.internetSearch();
 		sp.turnOff();
 	}
 }
