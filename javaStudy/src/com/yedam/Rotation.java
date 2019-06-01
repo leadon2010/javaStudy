@@ -1,4 +1,4 @@
-package com.yedam.lch;
+package com.yedam;
 
 public class Rotation {
 	public static void main(String[] args) {
