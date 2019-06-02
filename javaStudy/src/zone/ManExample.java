@@ -1,5 +1,7 @@
 package zone;
 
+import java.util.Scanner;
+
 class Man {
 	String name;
 
@@ -54,14 +56,55 @@ class ComMan extends Man {
 
 public class ManExample {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
 		Man man1 = new UnivMan("name1", "major1");
 		Man man2 = new ComMan("name2", "dept2");
 
-		Man[] manAry = new Man[3];
+		Man[] manAry = new Man[4];
 		manAry[0] = man1;
 		manAry[1] = man2;
+
+		while (true) {
+			try {
+				System.out.println("input UnivMan name, major...");
+				String name = sc.next();
+				sc.nextLine();
+				String major = sc.next();
+				sc.nextLine();
+				System.out.println("input number type");
+				int num = sc.nextInt();
+				Man man3 = new UnivMan(name, major);
+				insertMan(manAry, man3);
+			} catch (Exception e) {
+				System.out.println("retry input...");
+				if (sc.hasNext())
+					sc.next();
+			}
+
+			if (isFull(manAry))
+				break;
+
+		}
+
 		showMan(manAry);
 
+	}
+
+	static boolean isFull(Man[] man) {
+		for (int i = 0; i < man.length; i++)
+			if (man[i] == null)
+				return false;
+		return true;
+	}
+
+	static void insertMan(Man[] mAry, Man man) {
+		for (int i = 0; i < mAry.length; i++) {
+			if (mAry[i] == null) {
+				mAry[i] = man;
+				break;
+			}
+		}
 	}
 
 	static void showMan(Man[] mAry) {
