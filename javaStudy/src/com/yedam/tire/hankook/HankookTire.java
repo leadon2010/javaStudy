@@ -3,6 +3,7 @@ package com.yedam.tire.hankook;
 import com.yedam.tire.Tire;
 
 public class HankookTire extends Tire {
+
 	public HankookTire(String location, int maxRotation) {
 		super(location, maxRotation);
 	}

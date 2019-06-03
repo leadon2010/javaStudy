@@ -3,6 +3,7 @@ package com.yedam.tire.kumho;
 import com.yedam.tire.Tire;
 
 public class KumhoTire extends Tire {
+
 	public KumhoTire(String location, int maxRotation) {
 		super(location, maxRotation);
 	}
