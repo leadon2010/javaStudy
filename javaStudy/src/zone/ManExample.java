@@ -62,21 +62,24 @@ public class ManExample {
 		Man man1 = new UnivMan("name1", "major1");
 		Man man2 = new ComMan("name2", "dept2");
 
-		Man[] manAry = new Man[4];
+		Man[] manAry = new Man[3];
 		manAry[0] = man1;
 		manAry[1] = man2;
-
+		String name = null, major = null;
+		
 		while (true) {
 			try {
 				System.out.println("input UnivMan name, major...");
-				String name = sc.next();
+				name = sc.next();
 				sc.nextLine();
-				String major = sc.next();
+				major = sc.next();
 				sc.nextLine();
 				System.out.println("input number type");
 				int num = sc.nextInt();
+
 				Man man3 = new UnivMan(name, major);
 				insertMan(manAry, man3);
+
 			} catch (Exception e) {
 				System.out.println("retry input...");
 				if (sc.hasNext())
