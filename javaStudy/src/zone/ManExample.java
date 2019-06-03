@@ -16,6 +16,7 @@ class Man {
 	String getInfo() {
 		return ("my name is " + this.name);
 	}
+
 }
 
 class UnivMan extends Man {
