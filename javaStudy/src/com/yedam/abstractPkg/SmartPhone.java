@@ -9,16 +9,16 @@ public class SmartPhone extends Phone {
 	@Override
 	public void turnOn() {
 		super.turnOn();
-		System.out.println("you are ready to use phone.");
+		System.out.println("전원을 켭니다.");
 	}
 
 	@Override
 	public void turnOff() {
 		super.turnOff();
-		System.out.println("you stopped phone");
+		System.out.println("전원을 끕니다.");
 	}
 
 	public void internetSearch() {
-		System.out.println("web searching...");
+		System.out.println("웹서치 합니다.");
 	}
 }

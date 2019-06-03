@@ -15,14 +15,14 @@ public interface RemoteControl {
 	// 디폴트 메소드
 	default void setMute(boolean mute) {
 		if (mute)
-			System.out.println("muting");
+			System.out.println("무음처리합니다.");
 		else
-			System.out.println("speaking");
+			System.out.println("무음해제합니다.");
 	}
 
 	// 정적 메소드
 	static void changeBattery() {
-		System.out.println("change battery");
+		System.out.println("건전지를 교화합니다.");
 	}
 
 }// end of class

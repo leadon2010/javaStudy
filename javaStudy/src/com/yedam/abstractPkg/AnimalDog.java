@@ -2,12 +2,12 @@ package com.yedam.abstractPkg;
 
 public class AnimalDog extends Animal {
 	public AnimalDog() {
-		this.kind = "mammalia";
+		this.kind = "포유류.";
 	}
 
 	@Override
 	public void sound() {
-		System.out.println("bow wow");
+		System.out.println("멍멍.");
 	}
 
 }
