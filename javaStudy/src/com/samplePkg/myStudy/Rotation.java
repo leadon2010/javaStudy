@@ -1,4 +1,4 @@
-package com.yedam;
+package com.samplePkg.myStudy;
 
 public class Rotation {
 	public static void main(String[] args) {
