@@ -1,14 +1,23 @@
 package zone.study;
 
 public class Student {
-	// 필드.
-	private String name;
-	private String sNo;
-	private String major;
+	// 필드. *) 변수와 필드의 차이점?
+	String name;
+	String sNo;
+	String major;
 
 	// 생성자.
-	Student() {
+	public Student() {
 
+	}
+
+	public Student(String name) {
+		this.name = name;
+	}
+
+	public Student(String name, String sNo) {
+		this.name = name;
+		this.sNo = sNo;
 	}
 
 	public Student(String name, String sNo, String major) {
