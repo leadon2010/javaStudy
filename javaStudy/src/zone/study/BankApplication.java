@@ -60,14 +60,49 @@ public class BankApplication {
 	}
 
 	private static void deposit() {
+		System.out.println("계좌번호를 입력하세요.");
+		String aNo = sc.next();
+		sc.nextLine();
+		System.out.println("입금금액을 입력하세요.");
+		int balance = sc.nextInt();
+		Account acnt = findAccount(aNo);
+		acnt.setBalance(acnt.getBalance() + balance);
+
+		System.out.println("------------------");
+		System.out.println("     [예금]");
+		System.out.println("------------------");
+		System.out.println("계좌번호: " + aNo);
+		System.out.println("출금액: " + balance);
+		System.out.println("결과: 예금이 성공되었습니다.");
 
 	}
 
 	private static void withdraw() {
+		System.out.println("계좌번호를 입력하세요.");
+		String aNo = sc.next();
+		sc.nextLine();
+		System.out.println("출금금액을 입력하세요.");
+		int balance = sc.nextInt();
+		Account acnt = findAccount(aNo);
+		acnt.setBalance(acnt.getBalance() - balance);
+
+		System.out.println("------------------");
+		System.out.println("     [출금]");
+		System.out.println("------------------");
+		System.out.println("계좌번호: " + aNo);
+		System.out.println("출금액: " + balance);
+		System.out.println("결과: 출금이 성공되었습니다.");
 
 	}
 
 	private static Account findAccount(String aNo) {
-		return null;
+		Account retAcnt = null;
+		for (int i = 0; i < acntAry.length; i++) {
+			if (acntAry[i].getaNo().equals(aNo)) {
+				retAcnt = acntAry[i];// return acntAry[i];
+				break;
+			}
+		}
+		return retAcnt;
 	}
 }
