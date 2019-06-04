@@ -41,5 +41,8 @@ class Television {
 public class TelevisionExample {
 	public static void main(String[] args) {
 		System.out.println(Television.company + ", " + Television.info);
+
+		// 싱글톤 설명 ===> SingletonExample.java
+
 	}
 }

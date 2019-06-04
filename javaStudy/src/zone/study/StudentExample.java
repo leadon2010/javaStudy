@@ -25,5 +25,6 @@ public class StudentExample {
 		// 실습1) 계산기 객체를 class로 구성하고 int형의 데이터를 계산할 수 있는 덧셈, 뺄셈, 곱셈, 나눗셈 기능을 담당하는 메소드를 정의하세요. ex) Calculator
 		// 실습1-1)  int, double 타입의 덧셈, 뺄셈, 곱셈, 나눗셈의 메소드를 정의하세요.(메소드 오버로딩 )
 		// 실습1-2) Calculator.execute("+ - * /", 20, 10) => 기호를 통해서 처리하는 메소드를 작성하세요. 
+		// 인스턴스 -> 정적 필드, 정적 메소드는 ===> CalculatorExample.java
 	}
 }
