@@ -1,6 +1,6 @@
 package com.yedam.extendPkg;
 
-public class MainExe {
+public class ParentExample {
 	public static void main(String[] args) {
 		Parent parent = new ParentChild();
 		Parent paretn = new Parent();
