@@ -14,6 +14,9 @@ public class Student {
 	public Student(String name) {
 		this.name = name;
 	}
+//	public Student(String name) {
+//		this(name, "s2222", "korean");
+//	}
 
 	public Student(String name, String sNo) {
 		this.name = name;
