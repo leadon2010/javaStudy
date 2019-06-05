@@ -12,7 +12,7 @@ public class BankApplication {
 			System.out.println("---------------------------------------");
 			System.out.println("1.계정생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
 			System.out.println("---------------------------------------");
-			System.out.println(">선택");
+			System.out.println(" 선택>");
 			int menu = sc.nextInt();
 			if (menu == 1) {
 				createAccount();
@@ -50,9 +50,9 @@ public class BankApplication {
 	}
 
 	private static void accountList() {
-		System.out.println("------------------");
-		System.out.println("     [계좌목록]");
-		System.out.println("------------------");
+		System.out.println("-------------------------------------");
+		System.out.println("              [계좌목록]");
+		System.out.println("-------------------------------------");
 		for (int i = 0; i < acntAry.length; i++) {
 			if (acntAry[i] != null)
 				acntAry[i].accountListInfo();

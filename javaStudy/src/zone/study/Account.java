@@ -43,6 +43,6 @@ public class Account {
 	}
 
 	public void accountListInfo() {
-		System.out.printf("%10s\t%10s\t%10d\n", aNo, owner, balance);
+		System.out.printf("%10s | %10s | %10d\n", aNo, owner, balance);
 	}
 }
