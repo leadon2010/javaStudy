@@ -36,6 +36,8 @@ public class SingletonExample {
 
 		System.out.println("============[Earth]==================");
 		EarthExample.main();
+		
+		// import 설명 ==> TireExample.java
 
 	}
 }
