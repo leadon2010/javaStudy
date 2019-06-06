@@ -45,5 +45,7 @@ public class SuperSonicAirplaneExample {
 
 		// final 클래스와 final 메소드 ==> 예제없음. final 클래스, 메소드, 필드의 경우 필드는 다른값으로 변경불가. 클래스와
 		// 메소드의 경우 상속불가.
+		
+		// 접근제한자 protected ==> AAA, BBB, CCC, DDD 클래스.
 	}
 }
