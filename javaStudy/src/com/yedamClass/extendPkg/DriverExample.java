@@ -30,11 +30,12 @@ class Taxi extends Vehicle {
 public class DriverExample {
 	public static void main(String[] args) {
 		Driver driver = new Driver();
-		Bus b1 = new Bus();
-		Taxi t1 = new Taxi();
-		Vehicle v1 = b1;
-		Vehicle v2 = t1;
-		driver.drive(v1);
-		driver.drive(v2);
+		Bus bus = new Bus();
+		Taxi taxi = new Taxi();
+
+		driver.drive(bus);
+		driver.drive(taxi);
+		
+		// 강제타입변환예제는 ==> ParentExample.java
 	}
 }

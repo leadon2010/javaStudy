@@ -57,8 +57,8 @@ public class CarExample {
 				break;
 			case 2:
 				System.out.println("앞오른쪽 KumhoTire로 교체");
-				car.frontRightTire = new HankookTire("앞오른쪽", 13);
-				// car.tires[1] = new HankookTire("앞오른쪽", 13);
+				car.frontRightTire = new KumhoTire("앞오른쪽", 13);
+				// car.tires[1] = new KumhoTire("앞오른쪽", 13);
 				break;
 			case 3:
 				System.out.println("뒤왼쪽 HankookTire로 교체");
@@ -67,11 +67,13 @@ public class CarExample {
 				break;
 			case 4:
 				System.out.println("뒤오른쪽 KumhoTire로 교체");
-				car.backRightTire = new HankookTire("뒤오른쪽", 17);
-				// car.tires[3] = new HankookTire("뒤오른쪽", 17);
+				car.backRightTire = new KumhoTire("뒤오른쪽", 17);
+				// car.tires[3] = new KumhoTire("뒤오른쪽", 17);
 				break;
 			}
 			System.out.println("---------------------------------------------");
+			
+			// 매개변수의 다형성. DriverExample.java
 		}
 	}// end of main
 } // end of CarExample
