@@ -1,29 +1,29 @@
-package zone.study;
+package com.yedamClass;
 
-public class Student {
+public class Students {
 	// 필드. *) 변수와 필드의 차이점?
 	String name;
 	String sNo;
 	String major;
 
 	// 생성자.
-	public Student() {
+	public Students() {
 
 	}
 
-	public Student(String name) {
+	public Students(String name) {
 		this.name = name;
 	}
 //	public Student(String name) {
 //		this(name, "s2222", "korean");
 //	}
 
-	public Student(String name, String sNo) {
+	public Students(String name, String sNo) {
 		this.name = name;
 		this.sNo = sNo;
 	}
 
-	public Student(String name, String sNo, String major) {
+	public Students(String name, String sNo, String major) {
 		super();
 		this.name = name;
 		this.sNo = sNo;

@@ -1,4 +1,4 @@
-package zone.study;
+package com.yedamClass;
 
 class Television {
 	static String company = "Google";

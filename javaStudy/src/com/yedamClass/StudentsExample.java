@@ -1,8 +1,8 @@
-package zone.study;
+package com.yedamClass;
 
-public class StudentExample {
+public class StudentsExample {
 	public static void main(String[] args) {
-		Student student1 = new Student();
+		Students student1 = new Students();
 		// 1. 필드에 직접 접근
 		student1.name = "name";
 		student1.sNo = "1111";
@@ -18,7 +18,7 @@ public class StudentExample {
 		student1.getStudentInfo();
 
 		// 3. 생성자를 통해서 접근
-		Student student2 = new Student("박문수", "s1234-1234");
+		Students student2 = new Students("박문수", "s1234-1234");
 		student2.setMajor("music");
 		student2.getStudentInfo();
 
