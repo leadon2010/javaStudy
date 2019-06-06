@@ -1,4 +1,4 @@
-package com.yedam;
+package com.yedamClass;
 
 public class People {
 	public String name;

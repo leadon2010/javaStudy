@@ -1,7 +1,7 @@
 package zone.study;
 
-import com.yedam.Student;
-import com.yedam.Teacher;
+import com.yedamClass.Student;
+import com.yedamClass.Teacher;
 
 class StudyClass {
 	Teacher teacher;

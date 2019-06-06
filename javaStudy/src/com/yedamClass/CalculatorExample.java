@@ -1,4 +1,4 @@
-package com.yedam;
+package com.yedamClass;
 
 public class CalculatorExample {
 	public static void main(String[] args) {

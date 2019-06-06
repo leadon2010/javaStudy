@@ -1,4 +1,4 @@
-package com.yedam;
+package com.yedamClass;
 
 public class Calculator {
 	static double PI = 3.14159;
