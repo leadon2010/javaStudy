@@ -5,6 +5,7 @@ class Television {
 	static String browser = "chrome";
 	static String version = "1.1";
 	static String info;
+
 	// 인스턴스 필드
 	String programInfo;
 
