@@ -108,6 +108,6 @@ public class DmbCellPhoneExample {
 		 * busCompany 메소드: start(), run(), stop() + checkCard(), bell()
 		 */
 
-		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> SuperSonicAirplane.java
+		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> ComputerExample.java, SuperSonicAirplane.java
 	}
 }
