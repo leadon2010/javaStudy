@@ -1,4 +1,4 @@
-package variablesAndTypes;
+package com.yedam.variablesAndTypes;
 
 public class ArgsTest {
 	public static void main(String[] args) {

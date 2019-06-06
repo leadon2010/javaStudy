@@ -1,4 +1,4 @@
-package operations;
+package com.yedam.operations;
 
 public class Operator {
 	public static void main(String[] args) {

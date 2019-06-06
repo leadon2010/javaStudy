@@ -1,4 +1,4 @@
-package control;
+package com.yedam.control;
 
 public class Test {
 	public static void main(String[] args) {
