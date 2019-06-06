@@ -1,6 +1,6 @@
-package com.yedam.tire.hankook;
+package com.yedamClass.tire.hankook;
 
-import com.yedam.tire.Tire;
+import com.yedamClass.tire.Tire;
 
 public class HankookTire extends Tire {
 

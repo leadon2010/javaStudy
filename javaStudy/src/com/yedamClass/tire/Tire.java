@@ -1,4 +1,4 @@
-package com.yedam.tire;
+package com.yedamClass.tire;
 
 public class Tire {
 

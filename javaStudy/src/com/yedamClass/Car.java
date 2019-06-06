@@ -1,6 +1,6 @@
 package com.yedamClass;
 
-import com.yedam.tire.Tire;
+import com.yedamClass.tire.Tire;
 
 public class Car {
 

@@ -1,6 +1,6 @@
-package com.yedam.tire.kumho;
+package com.yedamClass.tire.kumho;
 
-import com.yedam.tire.Tire;
+import com.yedamClass.tire.Tire;
 
 public class KumhoTire extends Tire {
 

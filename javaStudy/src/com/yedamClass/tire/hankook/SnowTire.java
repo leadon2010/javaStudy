@@ -1,4 +1,4 @@
-package com.yedam.tire.hankook;
+package com.yedamClass.tire.hankook;
 
 public class SnowTire {
 	public void showType() {
