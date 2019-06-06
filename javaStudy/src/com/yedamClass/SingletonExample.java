@@ -35,12 +35,12 @@ public class SingletonExample {
 
 //final 필드와 상수.
 //상수 = static final 의 의미가 있다.
-class Person {
+class Persona {
 	final String nation = "Korea";
 	final String ssn;
 	String name;
 
-	public Person(String ssn, String name) {
+	public Persona(String ssn, String name) {
 		this.ssn = ssn;
 		this.name = name;
 	}
@@ -53,7 +53,7 @@ class PersonExample {
 			System.out.println(args[i]);
 		}
 
-		Person person = new Person("123456789", "박문수");
+		Persona person = new Persona("123456789", "박문수");
 		System.out.println(person.nation);
 		System.out.println(person.ssn);
 		System.out.println(person.name);
