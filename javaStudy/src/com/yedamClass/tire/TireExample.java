@@ -38,7 +38,7 @@ public class TireExample {
 		tires2.setSpeed(50);
 		System.out.println(tires2.currentSpeed() + "km/h 입니다.");
 
-		// 다음 수업은 상속관련... DmbCellPhoneExample.java
+		// 다음 수업은 상속관련... extendPkg.DmbCellPhoneExample.java
 		
 	}
 }
