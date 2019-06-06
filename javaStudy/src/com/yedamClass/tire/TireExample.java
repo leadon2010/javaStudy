@@ -5,8 +5,23 @@ import com.yedamClass.tire.kumho.BigWideTire;
 //import com.yedamClass.tire.hankook.Tires;
 //import com.yedamClass.tire.kumho.Tires;
 
+class Wheel {
+	String wheelSize;
+
+	void changeWheel() {
+		System.out.println("휠을 교체합니다.");
+	}
+}
+
 public class TireExample {
 	public static void main(String[] args) {
+		// 동일한 패키지에 있을 경우에는 import 하지 않아도 됨.
+		Wheel wheel = new Wheel();
+		wheel.changeWheel();
+
+		// 패키지가 다를 경우에는 해당 경로를 다 표시해야함.
+		com.yedamClass.tire.hankook.SnowTire sTir = new com.yedamClass.tire.hankook.SnowTire();
+
 		SnowTire sTire = new SnowTire();
 		sTire.showType();
 		BigWideTire bTire = new BigWideTire();
@@ -22,7 +37,8 @@ public class TireExample {
 		tires2.start();
 		tires2.setSpeed(50);
 		System.out.println(tires2.currentSpeed() + "km/h 입니다.");
+
+		// 다음 수업은 상속관련... DmbCellPhoneExample.java
 		
-		// 다음 수업은 상속관련...
 	}
 }

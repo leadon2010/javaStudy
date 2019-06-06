@@ -1,4 +1,4 @@
-package com.yedamClass;
+package com.yedamClass.extendPkg;
 
 import com.yedamClass.tire.Tire;
 import com.yedamClass.tire.hankook.HankookTire;
@@ -49,6 +49,7 @@ public class CarExample {
 		Car car = new Car();
 		for (int i = 1; i <= 5; i++) {
 			int problemLocation = car.run();
+
 			switch (problemLocation) {
 			case 1:
 				System.out.println("앞왼쪽 HankookTire로 교체");
