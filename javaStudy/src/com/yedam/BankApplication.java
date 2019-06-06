@@ -1,4 +1,4 @@
-package zone.study;
+package com.yedam;
 
 import java.util.Scanner;
 

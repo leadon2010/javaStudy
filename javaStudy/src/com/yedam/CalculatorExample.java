@@ -1,4 +1,4 @@
-package zone.study;
+package com.yedam;
 
 public class CalculatorExample {
 	public static void main(String[] args) {

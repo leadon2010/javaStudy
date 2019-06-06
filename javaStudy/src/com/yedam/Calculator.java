@@ -1,4 +1,4 @@
-package zone.study;
+package com.yedam;
 
 public class Calculator {
 	static double PI = 3.14159;
