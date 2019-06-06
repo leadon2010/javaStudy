@@ -37,11 +37,13 @@ class CellPhone {
 		System.out.println("전화를 끊습니다.");
 	}
 
+	// 접근지시자가 private 일 경우에는 상속의 대상에서 제외된다.
 	private void folder() {
 		System.out.println("폴더기능");
 	}
 
 	protected void antenna() {
+		folder();
 		System.out.println("안테나 기능");
 	}
 }
@@ -105,7 +107,7 @@ public class DmbCellPhoneExample {
 		 * 예제1) Vehicle 클래스와 상속받는 Bus 클래스를 생성. 필드: engine, handle, tire + busNo,
 		 * busCompany 메소드: start(), run(), stop() + checkCard(), bell()
 		 */
-		
-		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> SuperSonicAirplane.java 
+
+		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> SuperSonicAirplane.java
 	}
 }
