@@ -52,7 +52,7 @@ class Person {
 
 }
 
-public class ClassExe {
+public class PersonArrayProgram {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Person[] ary = new Person[5];
