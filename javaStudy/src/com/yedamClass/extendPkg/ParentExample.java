@@ -31,21 +31,23 @@ class Child extends Parent {
 
 }
 
+// 자동타입변환이 일어난다...parent <- child.
 public class ParentExample {
 	public static void main(String[] args) {
-		Parent parent = new Child();
-		Parent paretn = new Parent();
+		Child child = new Child();
+		Parent parent = child;
 		System.out.println(parent instanceof Child);
-		System.out.println(paretn instanceof Parent);
 		parent.field1 = "data1";
 		parent.method1();
 		parent.method2();
 
 		if (parent instanceof Child) {
-			Child child = (Child) parent;
+			child = (Child) parent;
 
 			child.field2 = "data2";
 			child.method3();
 		}
+	
+		// 필드의 다형성..Car.java
 	}
 }

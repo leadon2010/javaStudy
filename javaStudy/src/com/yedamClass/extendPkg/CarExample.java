@@ -1,8 +1,6 @@
 package com.yedamClass.extendPkg;
 
-import com.yedamClass.tire.Tire;
-import com.yedamClass.tire.hankook.HankookTire;
-
+// 필드의 다형성을 확인해보자..!!!!
 class Car {
 
 	Tire frontLeftTire = new Tire("앞왼쪽", 6);
