@@ -2,17 +2,21 @@ package com.yedam.classes.extendPkg;
 
 // 부모클래스의 기능을 활용할 수 있다.
 class CellPhone {
+	// 필드
 	String model;
 	String color;
 
+	// 생성자
 	public CellPhone() {
 		super();
 	}
 
-	CellPhone(String model) {
+	public CellPhone(String model, String color) {
 		this.model = model;
+		this.color = color;
 	}
 
+	// 메소드
 	void powerOn() {
 		System.out.println("전원을 켭니다.");
 	}
@@ -43,25 +47,27 @@ class CellPhone {
 	}
 
 	protected void antenna() {
-		folder();
+		folder(); // 동일한 클래스에서는 private 접근제어자일 경우에도 접근가능함.
 		System.out.println("안테나 기능");
 	}
 }
 
 // 자식클래스는 부모클래스 + 자신의 고유한 기능을 가진다.
 class DmbCellPhone extends CellPhone {
+	// 자식클래스의 필드
 	int channel;
 
+	// 자식클래스의 생성자
 	DmbCellPhone() {
+		super();
 	};
 
 	DmbCellPhone(String model, String color, int channel) {
-		super();
-		this.model = model;
-		this.color = color;
+		super(model, color); // 부모생성자 호출은 super(). 생성자의 위치는 첫줄에 있어야 한다.
 		this.channel = channel;
 	}
 
+	// 자식클래스의 메소드
 	void turnOnDmb() {
 		System.out.println("채널 " + channel + "번 DMB 방송 수신을 시작합니다.");
 	}
@@ -106,9 +112,8 @@ public class DmbCellPhoneExample {
 		//
 		// 예제1) Vehicle 클래스와 상속받는 Bus 클래스를 생성. 필드: engine, handle, tire + busNo,
 		// busCompany 메소드: start(), run(), stop() + checkCard(), bell()
-		//
+		// 다형성에 대해서 설명할 때 사용합니다.
 
-		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> ComputerExample.java,
-		// SuperSonicAirplane.java
+		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> ComputerExample.java, SuperSonicAirplane.java
 	}
 }

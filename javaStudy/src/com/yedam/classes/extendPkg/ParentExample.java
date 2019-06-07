@@ -53,8 +53,7 @@ public class ParentExample {
 		// 필드의 다형성..Car.java
 
 		InstanceofExample.main();
-		
-		// 추상클래스 설명 
+
 	}
 }
 
@@ -84,8 +83,8 @@ class InstanceofExample {
 		Parent parentB = new Parent();
 		method1(parentB);
 		method2(parentB);
-		
-		// 추상클래스 설명  ==> PhoneExample.java
+
+		// 추상클래스 설명 ==> PhoneExample.java
 
 	}
 }
