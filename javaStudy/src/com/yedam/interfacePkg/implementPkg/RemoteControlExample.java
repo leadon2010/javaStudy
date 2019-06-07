@@ -1,4 +1,4 @@
-package com.yedam.implementPkg;
+package com.yedam.interfacePkg.implementPkg;
 
 public class RemoteControlExample {
 	public static void main(String[] args) {

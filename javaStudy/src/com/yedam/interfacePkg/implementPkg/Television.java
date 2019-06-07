@@ -1,4 +1,4 @@
-package com.yedam.implementPkg;
+package com.yedam.interfacePkg.implementPkg;
 
 public class Television implements RemoteControl {
 	private int volume;
