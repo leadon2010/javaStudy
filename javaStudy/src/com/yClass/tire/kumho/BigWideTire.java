@@ -1,4 +1,4 @@
-package com.yedamClass.tire.kumho;
+package com.yClass.tire.kumho;
 
 public class BigWideTire {
 	public void showType() {

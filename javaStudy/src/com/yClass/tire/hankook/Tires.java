@@ -1,4 +1,4 @@
-package com.yedamClass.tire.hankook;
+package com.yClass.tire.hankook;
 
 public class Tires {
 	private int velocity;

@@ -1,9 +1,7 @@
 package com.yClass.tire;
 
-import com.yedamClass.tire.hankook.SnowTire;
-import com.yedamClass.tire.kumho.BigWideTire;
-//import com.yedamClass.tire.hankook.Tires;
-//import com.yedamClass.tire.kumho.Tires;
+import com.yClass.tire.hankook.SnowTire;
+import com.yClass.tire.kumho.BigWideTire;
 
 class Wheel {
 	String wheelSize;
@@ -20,7 +18,7 @@ public class TireExample {
 		wheel.changeWheel();
 
 		// 패키지가 다를 경우에는 해당 경로를 다 표시해야함.
-		com.yedamClass.tire.hankook.SnowTire sTir = new com.yedamClass.tire.hankook.SnowTire();
+		com.yClass.tire.hankook.SnowTire sTir = new com.yClass.tire.hankook.SnowTire();
 
 		SnowTire sTire = new SnowTire();
 		sTire.showType();
@@ -28,12 +26,12 @@ public class TireExample {
 		bTire.showType();
 
 		// 동일한 클래스를 참조할 경우에는 직접 패키지명과 클래스명을 같이 적어주어야 한다.
-		com.yedamClass.tire.hankook.Tires tires = new com.yedamClass.tire.hankook.Tires();
+		com.yClass.tire.hankook.Tires tires = new com.yClass.tire.hankook.Tires();
 		tires.start();
 		tires.setVelocity(40);
 		System.out.println(tires.currentVelocity() + "km/h 입니다.");
 
-		com.yedamClass.tire.kumho.Tires tires2 = new com.yedamClass.tire.kumho.Tires();
+		com.yClass.tire.kumho.Tires tires2 = new com.yClass.tire.kumho.Tires();
 		tires2.start();
 		tires2.setSpeed(50);
 		System.out.println(tires2.currentSpeed() + "km/h 입니다.");
