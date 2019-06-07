@@ -2,7 +2,7 @@ package com.yedam.interfacePkg.implementPkg;
 
 public interface RemoteControl {
 	// 상수필드
-	int MAX_VOLUME = 10;
+	public static final int MAX_VOLUME = 10; // static final 의미가 숨겨져 있다.
 	int MIN_VOLUME = 0;
 
 	// 추상메소드
