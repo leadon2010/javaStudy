@@ -5,5 +5,6 @@ public class BBB {
 		AAA aaa = new AAA();
 		aaa.name = "sss";
 		aaa.getName();
+		aaa.setName("name");
 	}
 }

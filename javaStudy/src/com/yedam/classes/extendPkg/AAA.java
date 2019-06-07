@@ -5,21 +5,21 @@ public class AAA {
 	public String name;
 
 	// 생성자
-	public AAA() {
+	protected AAA() {
 
 	}
 
-	public AAA(String name) {
+	protected AAA(String name) {
 		this.name = name;
 	}
 
 	// 메소드
-	public String getName() {
-		return name;
+	void setName(String name) {
+		this.name = name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	private String getName() {
+		return name;
 	}
 
 	// 자동타입변환과 다형성. 다형성은 같은 타입이지만 실행결과가 다른 다양한 객체를 이용할 수 있는 성질.

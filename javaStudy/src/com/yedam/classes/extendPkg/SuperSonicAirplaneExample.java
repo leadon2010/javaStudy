@@ -1,5 +1,6 @@
 package com.yedam.classes.extendPkg;
 
+// 부모클래스의 메소드 호출은 super.메소드()
 class Airplane {
 	public void land() {
 		System.out.println("착륙합니다.");
@@ -11,6 +12,10 @@ class Airplane {
 
 	public void takeOff() {
 		System.out.println("이륙합니다.");
+	}
+
+	public final void noOverride() {
+		System.out.println("오버라이딩을 할 수 없는 메소드입니다.");
 	}
 }
 
@@ -28,8 +33,12 @@ class SuperSonicAirplane extends Airplane {
 			// Airplane 객체의 fly() 메소드 호출.
 			super.fly();
 		}
-
 	}
+
+//	@Override
+//	public void noOverride() {
+//
+//	}
 }
 
 public class SuperSonicAirplaneExample {
@@ -45,7 +54,7 @@ public class SuperSonicAirplaneExample {
 
 		// final 클래스와 final 메소드 ==> 예제없음. final 클래스, 메소드, 필드의 경우 필드는 다른값으로 변경불가. 클래스와
 		// 메소드의 경우 상속불가.
-		
+
 		// 접근제한자 protected ==> AAA, BBB, CCC, DDD 클래스.
 	}
 }

@@ -26,5 +26,6 @@ public class ComputerExample {
 		Computer computer = new Computer();
 		System.out.println("원의 면적: " + computer.areaCircle(r));
 
+		// 부모클래스의 메소드 호출은 ==> SuperSonicAirplaneExample.java
 	}
 }

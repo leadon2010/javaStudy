@@ -1,14 +1,15 @@
 package com.yedam.classes.extendPkg;
 
+// 자동형변환이 발생한다.
 class Parent {
 	public String field1;
 
 	void method1() {
-		System.out.println("parent method1");
+		System.out.println("부모클래스의 메소드1");
 	}
 
 	void method2() {
-		System.out.println("parent method2");
+		System.out.println("부모클래스의 메소드2");
 	}
 }
 
@@ -17,16 +18,16 @@ class Child extends Parent {
 
 	@Override
 	void method1() {
-		System.out.println("child method1");
+		System.out.println("자식클래스의 메소드1");
 	}
 
 	@Override
 	void method2() {
-		System.out.println("child method2");
+		System.out.println("자식클래스의 메소드2");
 	}
 
 	void method3() {
-		System.out.println("child method3");
+		System.out.println("자식클래스의 메소드3");
 	}
 
 }
