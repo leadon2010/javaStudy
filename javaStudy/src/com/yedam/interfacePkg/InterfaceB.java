@@ -1,4 +1,4 @@
-package com.yedam.classes.interfacePkg;
+package com.yedam.interfacePkg;
 
 public interface InterfaceB {
 	public void methodB();

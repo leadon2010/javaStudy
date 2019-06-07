@@ -1,4 +1,4 @@
-package com.yedam.classes.implementPkg;
+package com.yedam.implementPkg;
 
 public class Audio implements RemoteControl {
 	private int volume;
