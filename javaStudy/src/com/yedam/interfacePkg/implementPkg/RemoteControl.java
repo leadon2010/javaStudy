@@ -2,8 +2,8 @@ package com.yedam.interfacePkg.implementPkg;
 
 public interface RemoteControl {
 	// 상수필드
-	public static final int MAX_VOLUME = 10; // static final 의미가 숨겨져 있다.
-	int MIN_VOLUME = 0;
+	public static final int MAX_VOLUME = 10; // public static final 의미가 숨겨져 있다.
+	int MIN_VOLUME = 0; // 생략하더라도 public static final의 의미가 있다.
 
 	// 추상메소드
 	void turnOn();
@@ -13,7 +13,7 @@ public interface RemoteControl {
 	void setVolume(int volume);
 
 	// 디폴트 메소드
-	default void setMute(boolean mute) {
+	default void setMute(boolean mute) {  // public 이 선언된 특성.
 		if (mute)
 			System.out.println("무음처리합니다.");
 		else
@@ -21,7 +21,7 @@ public interface RemoteControl {
 	}
 
 	// 정적 메소드
-	static void changeBattery() {
+	static void changeBattery() {  // public의 특성.
 		System.out.println("건전지를 교화합니다.");
 	}
 
