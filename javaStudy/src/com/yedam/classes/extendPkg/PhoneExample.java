@@ -52,7 +52,7 @@ abstract class Animal {
 		System.out.println("숨을 쉰다.");
 	}
 
-	public abstract void sound();
+	public abstract void sound(); // 추상메소드.
 }
 
 class Dog extends Animal {
