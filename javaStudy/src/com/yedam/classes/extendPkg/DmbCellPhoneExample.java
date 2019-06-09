@@ -112,6 +112,7 @@ public class DmbCellPhoneExample {
 		//
 		// 예제1) Vehicle 클래스와 상속받는 Bus 클래스를 생성. 필드: engine, handle, tire + busNo,
 		// busCompany 메소드: start(), run(), stop() + checkCard(), bell()
+		// taxi 메소드: ....
 		// 다형성에 대해서 설명할 때 사용합니다.
 
 		// 메소드 재정의 (@Override) & 부모메소드 호출 ==> ComputerExample.java, SuperSonicAirplane.java
