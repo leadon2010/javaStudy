@@ -4,13 +4,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.FileInputStream;
 import java.io.OutputStream;
 
 public class TryWithResourceExample {
 	public static void main(String[] args) {
 		// try..catch..finally..
 		OutputStream out = null;
+		InputStream inpt = null;
 		try {
 			out = new FileOutputStream("data.txt");
 			out.write(7);
@@ -26,7 +26,6 @@ public class TryWithResourceExample {
 				e.printStackTrace();
 			}
 		}
-		InputStream inpt = null;
 		try {
 			inpt = new java.io.FileInputStream("data.txt");
 			System.out.println("data.txt => " + inpt.read());
