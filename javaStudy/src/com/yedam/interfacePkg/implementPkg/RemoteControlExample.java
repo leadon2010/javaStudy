@@ -7,12 +7,12 @@ public class RemoteControlExample {
 		rc = new Television();
 		rc.turnOn();
 		rc.setMute(true);
-		
+
 		rc = new Audio();
 		rc.turnOn();
 		rc.setMute(true);
 
-		// 익명구현 객체 --> RemoteControlExample$1,RemoteControlExample$2 ... 
+		// 익명구현 객체 --> RemoteControlExample$1,RemoteControlExample$2 ...
 		RemoteControl rc1 = new RemoteControl() {
 			private int volume;
 
@@ -31,13 +31,13 @@ public class RemoteControlExample {
 				this.volume = volume;
 				System.out.println("구현객체의 볼륨은 : " + this.volume);
 			}
-			
+
 		};
 
 		rc1.turnOn();
 		rc1.turnOff();
-		
-		// 정적메소드 호출		
+
+		// 정적메소드 호출
 		RemoteControl.changeBattery();
 	}
 }
