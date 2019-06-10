@@ -41,6 +41,7 @@ class Rectangle {
 		Rectangle r = (Rectangle) obj;
 		System.out.println(upperLeft + "/" + r.upperLeft);
 		if (upperLeft == r.upperLeft && lowerRight == r.lowerRight) {
+//		if (upperLeft.equals(r.upperLeft) && lowerRight.equals(r.lowerRight)) {
 			return true;
 		} else {
 			return false;
