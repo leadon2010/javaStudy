@@ -60,6 +60,17 @@ class Rectangle implements Cloneable {
 
 public class ShallowCopy {
 	public static void main(String[] args) {
+		Point p1 = new Point(1, 1);
+		try {
+			Point p2 = (Point) p1.clone();
+			p1.xPos = 2;
+			p1.showPosition();
+			p2.showPosition();
+
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+
 		Rectangle rect = new Rectangle(1, 1, 9, 9);
 		Rectangle cpy = rect.getRect();
 		cpy.upperLeft.xPos = 3;
