@@ -13,6 +13,8 @@ public class TryCatchFinallyRuntimeException {
 			System.out.println("[실행 방법]");
 			System.out.println("java TryCatchFinallyRuntimeException num1 num2");
 			return;
+		} finally {
+			System.out.println("프로그램 실행 종료");
 		}
 
 		try {
