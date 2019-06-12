@@ -1,34 +1,5 @@
 package generic;
 
-class Product<T, M> {
-	private T kind;
-	private M model;
-
-	public T getKind() {
-		return kind;
-	}
-
-	public M getModel() {
-		return model;
-	}
-
-	public void setKind(T kind) {
-		this.kind = kind;
-	}
-
-	public void setModel(M model) {
-		this.model = model;
-	}
-}
-
-class Tv {
-
-}
-
-class Car {
-
-}
-
 public class MultiTypeGeneric {
 	public static void main(String[] args) {
 		Product<Tv, String> product1 = new Product<Tv, String>();

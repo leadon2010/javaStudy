@@ -1,30 +1,5 @@
 package generic;
 
-class Box<T> {
-	private T t;
-
-	public T get() {
-		return t;
-	}
-
-	public void set(T t) {
-		this.t = t;
-	}
-}
-
-// ====> 해석.
-class Box<String> {
-	private String t;
-
-	public void set(String t) {
-		this.t = t;
-	}
-
-	public String get() {
-		return t;
-	}
-}
-
 public class GenericBox {
 	public static void main(String[] args) {
 		Box<String> strBox = new Box<String>();
