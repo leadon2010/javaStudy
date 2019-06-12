@@ -16,6 +16,10 @@ class Apple {
 
 }
 
+class Orange {
+
+}
+
 public class BoxExample {
 	public static void main(String[] args) {
 		Box box = new Box();
