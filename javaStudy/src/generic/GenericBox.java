@@ -2,6 +2,7 @@ package generic;
 
 public class GenericBox {
 	public static void main(String[] args) {
+
 		Box<String> strBox = new Box<String>();
 		strBox.set("hello");
 		String str = strBox.get();
@@ -11,5 +12,6 @@ public class GenericBox {
 		intBox.set(10);
 		int value = intBox.get();
 		System.out.println(value);
+
 	}
 }
