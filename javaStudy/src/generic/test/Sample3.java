@@ -44,9 +44,11 @@ class OtherPair<K, V> {
 }
 
 class Util {
-	public static <K, V> V getValue(Pair<K, V> p, V v) {
-
-		return v;
+	public static <K, V> V getValue(Pair<K, V> p, K k) {
+		if (p.getKey().equals(k))
+			return p.getValue();
+		else
+			return null;
 	}
 }
 
@@ -60,8 +62,8 @@ public class Sample3 {
 		Integer cage = Util.getValue(child, "홍삼원");
 		System.out.println(cage);
 
-		OtherPair<String, Integer> other = new OtherPair("홍삼원", 20);
-		Integer oage = Util.getValue(other, "홍삼원");
-		System.out.println(oage);
+//		OtherPair<String, Integer> other = new OtherPair("홍삼원", 20);
+//		Integer oage = Util.getValue(other, "홍삼원");
+//		System.out.println(oage);
 	}
 }
