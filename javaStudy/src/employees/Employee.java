@@ -1,4 +1,4 @@
-package arrayList;
+package employees;
 
 public class Employee {
 	private int employeeId;
