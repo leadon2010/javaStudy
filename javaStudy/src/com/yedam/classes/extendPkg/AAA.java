@@ -5,20 +5,20 @@ public class AAA {
 	public String name;
 
 	// 생성자
-	protected AAA() {
+	public AAA() {
 
 	}
 
-	protected AAA(String name) {
+	public AAA(String name) {
 		this.name = name;
 	}
 
 	// 메소드
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 

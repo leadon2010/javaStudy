@@ -1,4 +1,4 @@
-package nested;
+package com.yedam.classes.nested;
 
 class Person {
 	void wake() {
