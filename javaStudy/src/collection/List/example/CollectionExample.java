@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Student 클래스를 통해서 데이터를 조작하는 프로그램입니다.
  * 2019.06.13
  */
-class Student {
+class Studenta {
 	private int sno;
 	private String name;
 	private String major;
