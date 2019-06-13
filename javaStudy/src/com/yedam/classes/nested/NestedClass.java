@@ -28,7 +28,6 @@ public class NestedClass {
 
 			localClass() {
 				int localVar = 0;
-
 			}
 
 		}

@@ -1,6 +1,6 @@
 package com.yedam.classes.nested;
 
-public class AnonymousInterfaceSample {
+public class AnonymousInterfaceExample {
 	public static void main(String[] args) {
 		AnonymousInterface anony = new AnonymousInterface();
 		anony.field.turnOn();

@@ -1,6 +1,6 @@
 package com.yedam.classes.nested;
 
-public class AnonymousClassSample {
+public class AnonymousClassExample {
 	public static void main(String[] args) {
 
 		System.out.println("start of program.");
