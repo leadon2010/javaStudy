@@ -30,6 +30,7 @@ public class ComparableExample {
 		TreeSet<Person> treeSet = new TreeSet<>();
 		treeSet.add(new Person("홍길동", 45));
 		treeSet.add(new Person("박문수", 30));
+		treeSet.add(new Person("갑순이", 35));
 		treeSet.add(new Person("김갑수", 15));
 
 		Iterator<Person> iterator = treeSet.iterator();

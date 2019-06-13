@@ -1,5 +1,6 @@
 package collection.Set;
 
+import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
@@ -12,15 +13,21 @@ public class TreeSetExample2 {
 		scores.add(new Integer(95));
 		scores.add(new Integer(80));
 
+		Iterator<Integer> iter = scores.iterator();
+		while (iter.hasNext()) {
+			System.out.print(iter.next() + " ");
+		}
+		System.out.println();
+
 		NavigableSet<Integer> descendingSet = scores.descendingSet();
 		for (Integer score : descendingSet) {
-			System.out.println(score + " ");
+			System.out.print(score + " ");
 		}
 		System.out.println();
 
 		NavigableSet<Integer> ascendingSet = scores.descendingSet().descendingSet();
 		for (Integer score : ascendingSet) {
-			System.out.println(score + " ");
+			System.out.print(score + " ");
 		}
 	}
 }
