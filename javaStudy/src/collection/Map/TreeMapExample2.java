@@ -15,6 +15,9 @@ public class TreeMapExample2 {
 		scores.put(new Integer(95), "신용권");
 		scores.put(new Integer(80), "김자바");
 
+		System.out.println(scores);
+		System.out.println();
+
 		NavigableSet<Integer> navSet = scores.descendingKeySet();
 		for (Integer key : navSet) {
 			System.out.println(key + "- " + scores.get(key));
@@ -22,8 +25,10 @@ public class TreeMapExample2 {
 		System.out.println();
 
 		NavigableMap<Integer, String> descendMap = scores.descendingMap();
+//		System.out.println("descendMap ===> " + descendMap);
 		Set<Map.Entry<Integer, String>> descendSet = descendMap.entrySet();
-
+//		System.out.println("descendSet ===> " + descendSet);
+//		System.out.println();
 		for (Map.Entry<Integer, String> entry : descendSet) {
 			System.out.print(entry.getKey() + "-" + entry.getValue() + "  ");
 		}
