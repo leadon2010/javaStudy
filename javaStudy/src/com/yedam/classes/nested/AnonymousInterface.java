@@ -2,7 +2,6 @@ package com.yedam.classes.nested;
 
 interface RemoteControl {
 	public void turnOn();
-
 	public void turnOff();
 }
 

@@ -7,7 +7,6 @@ class Person {
 }
 
 public class AnonymousClass {
-
 	Person field = new Person() {
 		void work() {
 			System.out.println("출근합니다.");
@@ -33,7 +32,6 @@ public class AnonymousClass {
 			}
 		};
 		localVar.wake();
-
 	}
 
 	void method2(Person person) {
