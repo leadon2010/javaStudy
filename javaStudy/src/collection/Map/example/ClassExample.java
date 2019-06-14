@@ -1,4 +1,4 @@
-package collection.Map;
+package collection.Map.example;
 
 import java.util.HashMap;
 import java.util.Iterator;
