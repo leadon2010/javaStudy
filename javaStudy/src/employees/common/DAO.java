@@ -1,4 +1,4 @@
-package employees.impl;
+package employees.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

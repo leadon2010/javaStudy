@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import employees.Employees;
+import employees.common.DAO;
 
 public class EmpDAO {
 
@@ -25,8 +26,8 @@ public class EmpDAO {
 	ResultSet rs;
 
 	public void insertEmp(Employees e) {
-		String sql = "INSERT INTO EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
-				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES),?, ?, ?, SYSDATE, ?, ?)";
+		String sql = "INSERT INTO EMPLOYEES_temp (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
+				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES_temp),?, ?, ?, SYSDATE, ?, ?)";
 		int cnt = 0;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -40,14 +41,12 @@ public class EmpDAO {
 
 		} catch (SQLException e1) {
 			e1.printStackTrace();
-		} finally {
-			DAO.close(conn);
 		}
 
-	}// end of insertEmp
+	}
 
 	public void updateEmp(Employees e) {
-		String sql = "UPDATE EMPLOYEES SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
+		String sql = "UPDATE EMPLOYEES_temp SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
 		int cnt = 0;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -61,16 +60,14 @@ public class EmpDAO {
 			System.out.println(r + "건이 수정되었습니다.");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
-		} finally {
-			DAO.close(conn);
 		}
 
-	}// end of updateEmp
+	}
 
 	public Employees getEmp(int empl) {
 		Employees emp = new Employees();
 
-		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
+		String sql = "SELECT * FROM EMPLOYEES_temp WHERE EMPLOYEE_ID = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, empl);
@@ -85,17 +82,16 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DAO.close(conn);
 		}
+
 		return emp;
-	}// end of getEmp
+	}
 
 	public List<Employees> getEmpList() {
 		List<Employees> list = new ArrayList<>();
 		Employees emp;
 
-		String sql = "SELECT * FROM employees WHERE employee_id > 200 ORDER BY 1 DESC";
+		String sql = "SELECT * FROM EMPLOYEES_temp WHERE employee_id > 200 ORDER BY 1 DESC";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -111,14 +107,13 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DAO.close(conn);
 		}
+
 		return list;
-	}// end of getEmpList
+	}
 
 	public void deleteEmp(int empId) {
-		String sql = "delete from employees where employee_id = ?";
+		String sql = "delete from EMPLOYEES_temp where employee_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, empId);
@@ -126,8 +121,6 @@ public class EmpDAO {
 			System.out.println(r + " 건 삭제됨(deleted.)");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			DAO.close(conn);
 		}
 	}
 
