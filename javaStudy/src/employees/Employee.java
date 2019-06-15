@@ -8,10 +8,10 @@ public class Employee {
 	private String email;
 	private String jobId;
 
-	Employee() {
+	public Employee() {
 	}
 
-	Employee(int id, String fn, String ln, int sal) {
+	public Employee(int id, String fn, String ln, int sal) {
 		employeeId = id;
 		firstName = fn;
 		lastName = ln;

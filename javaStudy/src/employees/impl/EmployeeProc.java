@@ -1,8 +1,10 @@
-package employees;
+package employees.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import employees.Employee;
 
 public class EmployeeProc {
 	Scanner sc = new Scanner(System.in);
