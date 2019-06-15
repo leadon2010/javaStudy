@@ -1,4 +1,4 @@
-package employees.impl;
+package employees.control;
 
 import java.util.Scanner;
 

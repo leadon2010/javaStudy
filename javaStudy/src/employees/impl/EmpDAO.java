@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import employees.Employee;
+import employees.Employees;
 
-public class EmployeeDAO {
+public class EmpDAO {
 
 	Connection conn;
 	PreparedStatement pstmt;
@@ -39,7 +39,7 @@ public class EmployeeDAO {
 		return conn;
 	}// end of getConnection
 
-	public void insertEmp(Employee e) {
+	public void insertEmp(Employees e) {
 		conn = getConnection();
 		String sql = "INSERT INTO EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
 				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES),?, ?, ?, SYSDATE, ?, ?)";
@@ -59,7 +59,7 @@ public class EmployeeDAO {
 
 	}// end of insertEmp
 
-	public void updateEmp(Employee e) {
+	public void updateEmp(Employees e) {
 		conn = getConnection();
 		String sql = "UPDATE EMPLOYEES SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
 		int cnt = 0;
@@ -79,9 +79,9 @@ public class EmployeeDAO {
 
 	}// end of updateEmp
 
-	public Employee getEmp(int empl) {
+	public Employees getEmp(int empl) {
 		conn = getConnection();
-		Employee emp = new Employee();
+		Employees emp = new Employees();
 
 		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
 		try {
@@ -102,17 +102,17 @@ public class EmployeeDAO {
 		return emp;
 	}// end of getEmp
 
-	public List<Employee> getEmpList() {
+	public List<Employees> getEmpList() {
 		conn = getConnection();
-		List<Employee> list = new ArrayList<>();
-		Employee emp;
+		List<Employees> list = new ArrayList<>();
+		Employees emp;
 
 		String sql = "SELECT * FROM employees WHERE employee_id > 200 ORDER BY 1 DESC";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				emp = new Employee();
+				emp = new Employees();
 				emp.setEmployeeId(rs.getInt("employee_id"));
 				emp.setFirstName(rs.getString("first_name"));
 				emp.setLastName(rs.getString("last_name"));

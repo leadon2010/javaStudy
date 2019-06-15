@@ -1,10 +1,11 @@
-package employees.impl;
+package employees.control;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import employees.Employee;
+import employees.Employees;
+import employees.impl.EmpDAO;
 
 public class EmployeeProc {
 	Scanner sc = new Scanner(System.in);
@@ -15,8 +16,8 @@ public class EmployeeProc {
 	int salary;
 	int employeeId;
 
-	EmployeeDAO dao = new EmployeeDAO();
-	Employee emp = new Employee();
+	EmpDAO dao = new EmpDAO();
+	Employees emp = new Employees();
 
 	public void insertEmpProc() {
 
@@ -75,15 +76,15 @@ public class EmployeeProc {
 		System.out.println("employeeId =>");
 		employeeId = sc.nextInt();
 		sc.nextLine();
-		Employee emp = dao.getEmp(employeeId);
+		Employees emp = dao.getEmp(employeeId);
 		System.out.println(emp);
 	}
 
 	public void getEmpListProc() {
 		System.out.println("전체사원조회:");
-		List<Employee> list = new ArrayList<>();
+		List<Employees> list = new ArrayList<>();
 		list = dao.getEmpList();
-		for (Employee e : list) {
+		for (Employees e : list) {
 			System.out.println(e);
 		}
 	}

@@ -3,11 +3,11 @@ package employees;
 import java.util.List;
 
 public interface EmpService {
-	public Employee searchEmp(int empId);
+	public Employees searchEmp(int empId);
 
-	public List<Employee> searchAll();
+	public List<Employees> searchAll();
 
-	public void insertEmp(Employee emp);
+	public void insertEmp(Employees emp);
 
-	public void updateEmp(Employee emp);
+	public void updateEmp(Employees emp);
 }

@@ -1,6 +1,6 @@
 package employees;
 
-public class Employee {
+public class Employees {
 	private int employeeId;
 	private String firstName;
 	private String lastName;
@@ -8,10 +8,10 @@ public class Employee {
 	private String email;
 	private String jobId;
 
-	public Employee() {
+	public Employees() {
 	}
 
-	public Employee(int id, String fn, String ln, int sal) {
+	public Employees(int id, String fn, String ln, int sal) {
 		employeeId = id;
 		firstName = fn;
 		lastName = ln;
