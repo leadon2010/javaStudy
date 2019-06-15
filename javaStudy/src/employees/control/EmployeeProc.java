@@ -8,6 +8,7 @@ import employees.Employees;
 import employees.impl.EmpDAO;
 
 public class EmployeeProc {
+
 	Scanner sc = new Scanner(System.in);
 	String firstName;
 	String lastName;

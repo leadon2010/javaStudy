@@ -16,31 +16,8 @@ public class EmpDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 
-	public static Connection getConnection() {
-		Connection conn = null;
-		try {
-			String user = "hr";
-			String pw = "hr";
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, pw);
-
-			// System.out.println("Database에 연결되었습니다.\n");
-
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println("DB 드라이버 로딩 실패 :" + cnfe.toString());
-		} catch (SQLException sqle) {
-			System.out.println("DB 접속실패 : " + sqle.toString());
-		} catch (Exception e) {
-			System.out.println("Unkonwn error");
-			e.printStackTrace();
-		}
-		return conn;
-	}// end of getConnection
-
 	public void insertEmp(Employees e) {
-		conn = getConnection();
+		conn = DAO.getConnection();
 		String sql = "INSERT INTO EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
 				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES),?, ?, ?, SYSDATE, ?, ?)";
 		int cnt = 0;
@@ -55,12 +32,20 @@ public class EmpDAO {
 			System.out.println(r + "건이 입력되었습니다.");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+		} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 
 	}// end of insertEmp
 
 	public void updateEmp(Employees e) {
-		conn = getConnection();
+		conn = DAO.getConnection();
 		String sql = "UPDATE EMPLOYEES SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
 		int cnt = 0;
 		try {
@@ -75,12 +60,14 @@ public class EmpDAO {
 			System.out.println(r + "건이 수정되었습니다.");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 
 	}// end of updateEmp
 
 	public Employees getEmp(int empl) {
-		conn = getConnection();
+		conn = DAO.getConnection();
 		Employees emp = new Employees();
 
 		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
@@ -98,12 +85,14 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 		return emp;
 	}// end of getEmp
 
 	public List<Employees> getEmpList() {
-		conn = getConnection();
+		conn = DAO.getConnection();
 		List<Employees> list = new ArrayList<>();
 		Employees emp;
 
@@ -123,6 +112,8 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 		return list;
 	}// end of getEmpList

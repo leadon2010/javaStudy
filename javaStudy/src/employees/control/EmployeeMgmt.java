@@ -26,6 +26,9 @@ public class EmployeeMgmt {
 				e.getEmpListProc();
 
 			} else if (choice == 9) {
+				if (sc != null) {
+					sc.close();
+				}
 				System.exit(0);
 			}
 		}
