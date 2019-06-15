@@ -1,7 +1,6 @@
 package employees.impl;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,12 +11,20 @@ import employees.Employees;
 
 public class EmpDAO {
 
-	Connection conn;
+	private static EmpDAO dao = new EmpDAO();
+
+	private EmpDAO() {
+	}
+
+	public static EmpDAO getInstance() {
+		return dao;
+	}
+
+	Connection conn = DAO.getConnection();
 	PreparedStatement pstmt;
 	ResultSet rs;
 
 	public void insertEmp(Employees e) {
-		conn = DAO.getConnection();
 		String sql = "INSERT INTO EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
 				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES),?, ?, ?, SYSDATE, ?, ?)";
 		int cnt = 0;
@@ -30,22 +37,16 @@ public class EmpDAO {
 			pstmt.setInt(++cnt, e.getSalary());
 			int r = pstmt.executeUpdate();
 			System.out.println(r + "건이 입력되었습니다.");
+
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		} finally {
-			try {
-				if (conn != null)
-					conn.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			DAO.close(conn);
 		}
 
 	}// end of insertEmp
 
 	public void updateEmp(Employees e) {
-		conn = DAO.getConnection();
 		String sql = "UPDATE EMPLOYEES SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
 		int cnt = 0;
 		try {
@@ -67,7 +68,6 @@ public class EmpDAO {
 	}// end of updateEmp
 
 	public Employees getEmp(int empl) {
-		conn = DAO.getConnection();
 		Employees emp = new Employees();
 
 		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = ?";
@@ -92,7 +92,6 @@ public class EmpDAO {
 	}// end of getEmp
 
 	public List<Employees> getEmpList() {
-		conn = DAO.getConnection();
 		List<Employees> list = new ArrayList<>();
 		Employees emp;
 
@@ -117,5 +116,19 @@ public class EmpDAO {
 		}
 		return list;
 	}// end of getEmpList
+
+	public void deleteEmp(int empId) {
+		String sql = "delete from employees where employee_id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, empId);
+			int r = pstmt.executeUpdate();
+			System.out.println(r + " 건 삭제됨(deleted.)");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+	}
 
 }
