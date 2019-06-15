@@ -4,21 +4,50 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import employees.EmpService;
 import employees.Employees;
-import employees.impl.EmpDAO;
+import employees.impl.EmpServiceImpl;
 
 public class EmployeeProc {
 
 	Scanner sc = new Scanner(System.in);
-	String firstName;
-	String lastName;
-	String email;
-	String jobId;
-	int salary;
-	int employeeId;
 
-	EmpDAO dao = new EmpDAO();
+	EmpService service = new EmpServiceImpl();
 	Employees emp = new Employees();
+
+	String firstName, lastName, email, jobId;
+	int salary, employeeId;
+
+	public void execute() {
+		int choice = 0;
+
+		while (true) {
+			System.out.println();
+			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 9.종료]");
+			choice = sc.nextInt();
+			sc.nextLine();
+
+			if (choice == 1) {
+				insertEmpProc();
+
+			} else if (choice == 2) {
+				updateEmpProc();
+
+			} else if (choice == 3) {
+				getEmpProc();
+
+			} else if (choice == 4) {
+				getEmpListProc();
+
+			} else if (choice == 9) {
+				if (sc != null) {
+					sc.close();
+				}
+				System.exit(0);
+			}
+		}
+
+	}
 
 	public void insertEmpProc() {
 
@@ -40,7 +69,7 @@ public class EmployeeProc {
 		emp.setEmail(email);
 		emp.setJobId(jobId);
 
-		dao.insertEmp(emp);
+		service.insertEmp(emp);
 
 	}
 
@@ -68,7 +97,7 @@ public class EmployeeProc {
 		emp.setJobId(jobId);
 		emp.setEmployeeId(employeeId);
 
-		dao.updateEmp(emp);
+		service.updateEmp(emp);
 
 	}
 
@@ -77,14 +106,14 @@ public class EmployeeProc {
 		System.out.println("employeeId =>");
 		employeeId = sc.nextInt();
 		sc.nextLine();
-		Employees emp = dao.getEmp(employeeId);
+		Employees emp = service.searchEmp(employeeId);
 		System.out.println(emp);
 	}
 
 	public void getEmpListProc() {
 		System.out.println("전체사원조회:");
 		List<Employees> list = new ArrayList<>();
-		list = dao.getEmpList();
+		list = service.searchAll();
 		for (Employees e : list) {
 			System.out.println(e);
 		}
