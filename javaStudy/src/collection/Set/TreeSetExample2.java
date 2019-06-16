@@ -34,7 +34,7 @@ public class TreeSetExample2 {
 
 		System.out.println("[내림차순 descendingSet() ]");
 		NavigableSet<Integer> descendingSet = scores.descendingSet();
-		System.out.println("[Set]" + descendingSet);
+//		System.out.println("[Set]" + descendingSet);
 		for (Integer score : descendingSet) {
 			System.out.print(score + " ");
 		}
