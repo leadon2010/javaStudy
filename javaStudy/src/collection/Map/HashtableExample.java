@@ -24,8 +24,7 @@ public class HashtableExample {
 			String password = sc.nextLine();
 			System.out.println();
 
-			if (map.containsKey(id)) {
-//				if (map.containsValue(password)) {
+			if (map.containsKey(id)) {// if (map.containsValue(password)) {
 				if (map.get(id).equals(password)) {
 					System.out.println("로그인 되었습니다");
 					break;

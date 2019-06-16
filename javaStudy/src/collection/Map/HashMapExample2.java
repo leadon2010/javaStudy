@@ -37,7 +37,7 @@ public class HashMapExample2 {
 		Map<Student, Integer> map = new HashMap<>();
 
 		map.put(new Student(1, "홍길동"), 95);
-		map.put(new Student(1, "홍길동"), 95);
+		map.put(new Student(1, "홍길동"), 90);
 
 		System.out.println("총 Entry 수: " + map.size());
 	}
