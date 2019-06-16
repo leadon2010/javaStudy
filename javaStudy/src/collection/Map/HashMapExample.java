@@ -3,6 +3,7 @@ package collection.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class HashMapExample {
@@ -19,6 +20,9 @@ public class HashMapExample {
 		System.out.println();
 
 		Set<String> keySet = map.keySet();
+		for(String s :keySet) {
+			System.out.println(s+" // " + map.get(s));
+		}
 		Iterator<String> keyIterator = keySet.iterator();
 		while (keyIterator.hasNext()) {
 			String key = keyIterator.next();
