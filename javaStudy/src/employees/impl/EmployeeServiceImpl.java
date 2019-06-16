@@ -1,6 +1,7 @@
 package employees.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import employees.EmpService;
 import employees.Employees;
@@ -30,6 +31,11 @@ public class EmployeeServiceImpl implements EmpService {
 	@Override
 	public void deleteEmp(int empId) {
 
+	}
+
+	@Override
+	public Set<String> distinctJob() {
+		return null;
 	}
 
 }

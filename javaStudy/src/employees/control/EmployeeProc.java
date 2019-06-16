@@ -1,8 +1,10 @@
 package employees.control;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import employees.EmpService;
 import employees.Employees;
@@ -88,12 +90,21 @@ public class EmployeeProc {
 		}
 	}
 
+	public void getDistinctJob() {
+		System.out.println("전체 직무조회:");
+		Set<String> set = new HashSet<>();
+		set = (Set<String>) service.distinctJob();
+		for (String str : set) {
+			System.out.println(str);
+		}
+	}
+
 	public void execute() {
 		int choice = 0;
 
 		while (true) {
 			System.out.println();
-			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 9.종료]");
+			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 5.전체직무조회 9.종료]");
 			choice = sc.nextInt();
 			sc.nextLine();
 
@@ -108,6 +119,9 @@ public class EmployeeProc {
 
 			} else if (choice == 4) {
 				getEmpListProc();
+
+			} else if (choice == 5) {
+				getDistinctJob();
 
 			} else if (choice == 9) {
 				if (sc != null) {

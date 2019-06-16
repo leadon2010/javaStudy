@@ -1,6 +1,7 @@
 package employees.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import employees.EmpService;
 import employees.Employees;
@@ -41,6 +42,11 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	public void deleteEmp(int empId) {
 		dao.deleteEmp(empId);
+	}
+
+	@Override
+	public Set<String> distinctJob() {
+		return dao.getJob();
 	}
 
 }

@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import employees.Employees;
 import employees.common.DAO;
@@ -24,6 +26,26 @@ public class EmpDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
+
+	public Set<String> getJob() {
+		conn = DAO.getConnection();
+		String sql = "select job_id from employees_temp";
+		String job = null;
+		TreeSet<String> set = new TreeSet<>();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				job = rs.getString(1);
+				set.add(job);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+		return set;
+	}
 
 	public void insertEmp(Employees e) {
 		conn = DAO.getConnection();

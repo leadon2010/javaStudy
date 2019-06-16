@@ -1,6 +1,7 @@
 package employees;
 
 import java.util.List;
+import java.util.Set;
 
 public interface EmpService {
 	// 단건조회
@@ -17,5 +18,8 @@ public interface EmpService {
 
 	// 삭제
 	public void deleteEmp(int empId);
+
+	// Job_id
+	public Set<String> distinctJob();
 
 }
