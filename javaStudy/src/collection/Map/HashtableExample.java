@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class HashtableExample {
 	public static void main(String[] args) {
+
 		Map<String, String> map = new Hashtable<String, String>();
 
 		map.put("spring", "12");
@@ -24,7 +25,8 @@ public class HashtableExample {
 			System.out.println();
 
 			if (map.containsKey(id)) {
-				if (map.containsValue(password)) {
+//				if (map.containsValue(password)) {
+				if (map.get(id).equals(password)) {
 					System.out.println("로그인 되었습니다");
 					break;
 				} else {

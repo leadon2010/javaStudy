@@ -11,7 +11,7 @@ public class TreeMapExample {
 		scores.put(new Integer(75), "박길순");
 		scores.put(new Integer(95), "신용권");
 		scores.put(new Integer(80), "김자바");
-
+		
 		Map.Entry<Integer, String> entry = null;
 
 		entry = scores.firstEntry();

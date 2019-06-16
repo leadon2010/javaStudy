@@ -12,6 +12,10 @@ public class TreeSetExample2 {
 		scores.add(new Integer(75));
 		scores.add(new Integer(95));
 		scores.add(new Integer(80));
+		for (Integer i : scores) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
 
 		System.out.println("[오름차순 iterator() ]");
 		Iterator<Integer> iter = scores.iterator();

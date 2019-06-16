@@ -14,6 +14,11 @@ public class HashSetExample {
 		set.add("Java");
 		set.add("iBatis");
 
+		for (String s : set) {
+			System.out.println(s);
+		}
+		System.out.println();
+
 		int size = set.size();
 		System.out.println("총 객체수: " + size);
 
@@ -47,6 +52,11 @@ public class HashSetExample {
 		perset.add(new Person("박문수", 30));
 		perset.add(new Person("갑순이", 35));
 		perset.add(new Person("김갑수", 15));
+
+		for (Person p : perset) {
+			System.out.println(p.name + " - " + p.age);
+		}
+		System.out.println();
 
 		Iterator<Person> iter = perset.iterator();
 		while (iter.hasNext()) {
