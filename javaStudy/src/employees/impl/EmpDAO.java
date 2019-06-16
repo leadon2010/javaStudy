@@ -21,11 +21,12 @@ public class EmpDAO {
 		return dao;
 	}
 
-	Connection conn = DAO.getConnection();
+	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
 
 	public void insertEmp(Employees e) {
+		conn = DAO.getConnection();
 		String sql = "INSERT INTO EMPLOYEES_temp (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY) "
 				+ "VALUES ((SELECT MAX(EMPLOYEE_ID)+1 FROM EMPLOYEES_temp),?, ?, ?, SYSDATE, ?, ?)";
 		int cnt = 0;
@@ -41,11 +42,14 @@ public class EmpDAO {
 
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 
 	}
 
 	public void updateEmp(Employees e) {
+		conn = DAO.getConnection();
 		String sql = "UPDATE EMPLOYEES_temp SET FIRST_NAME=?, LAST_NAME=?, EMAIL=?, JOB_ID=?, SALARY=? WHERE EMPLOYEE_ID=?";
 		int cnt = 0;
 		try {
@@ -60,11 +64,15 @@ public class EmpDAO {
 			System.out.println(r + "건이 수정되었습니다.");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 
 	}
 
 	public Employees getEmp(int empl) {
+		conn = DAO.getConnection();
+
 		Employees emp = new Employees();
 
 		String sql = "SELECT * FROM EMPLOYEES_temp WHERE EMPLOYEE_ID = ?";
@@ -82,12 +90,16 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 
 		return emp;
 	}
 
 	public List<Employees> getEmpList() {
+		conn = DAO.getConnection();
+
 		List<Employees> list = new ArrayList<>();
 		Employees emp;
 
@@ -107,12 +119,16 @@ public class EmpDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 
 		return list;
 	}
 
 	public void deleteEmp(int empId) {
+		conn = DAO.getConnection();
+
 		String sql = "delete from EMPLOYEES_temp where employee_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -121,6 +137,8 @@ public class EmpDAO {
 			System.out.println(r + " 건 삭제됨(deleted.)");
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
 		}
 	}
 

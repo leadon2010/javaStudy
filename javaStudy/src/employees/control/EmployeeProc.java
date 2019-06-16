@@ -12,42 +12,11 @@ public class EmployeeProc {
 
 	Scanner sc = new Scanner(System.in);
 
-	EmpService service = new EmpServiceImpl();
+	EmpService service = EmpServiceImpl.getInstance();
 	Employees emp = new Employees();
 
 	String firstName, lastName, email, jobId;
 	int salary, employeeId;
-
-	public void execute() {
-		int choice = 0;
-
-		while (true) {
-			System.out.println();
-			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 9.종료]");
-			choice = sc.nextInt();
-			sc.nextLine();
-
-			if (choice == 1) {
-				insertEmpProc();
-
-			} else if (choice == 2) {
-				updateEmpProc();
-
-			} else if (choice == 3) {
-				getEmpProc();
-
-			} else if (choice == 4) {
-				getEmpListProc();
-
-			} else if (choice == 9) {
-				if (sc != null) {
-					sc.close();
-				}
-				System.exit(0);
-			}
-		}
-
-	}
 
 	public void insertEmpProc() {
 
@@ -118,4 +87,36 @@ public class EmployeeProc {
 			System.out.println(e);
 		}
 	}
+
+	public void execute() {
+		int choice = 0;
+
+		while (true) {
+			System.out.println();
+			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 9.종료]");
+			choice = sc.nextInt();
+			sc.nextLine();
+
+			if (choice == 1) {
+				insertEmpProc();
+
+			} else if (choice == 2) {
+				updateEmpProc();
+
+			} else if (choice == 3) {
+				getEmpProc();
+
+			} else if (choice == 4) {
+				getEmpListProc();
+
+			} else if (choice == 9) {
+				if (sc != null) {
+					sc.close();
+				}
+				System.exit(0);
+			}
+		}
+
+	}
+
 }

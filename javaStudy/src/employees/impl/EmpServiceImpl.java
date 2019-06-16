@@ -1,6 +1,5 @@
 package employees.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import employees.EmpService;
@@ -8,9 +7,16 @@ import employees.Employees;
 
 public class EmpServiceImpl implements EmpService {
 
+	private static EmpServiceImpl empService = new EmpServiceImpl();
+
+	private EmpServiceImpl() {
+	}
+
+	public static EmpServiceImpl getInstance() {
+		return empService;
+	}
+
 	EmpDAO dao = EmpDAO.getInstance();
-	Employees emp = null;
-	List<Employees> list = new ArrayList<Employees>();
 
 	@Override
 	public Employees searchEmp(int empId) {

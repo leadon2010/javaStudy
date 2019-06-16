@@ -17,4 +17,5 @@ public interface EmpService {
 
 	// 삭제
 	public void deleteEmp(int empId);
+
 }
