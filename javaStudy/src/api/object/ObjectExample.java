@@ -1,4 +1,4 @@
-package api;
+package api.object;
 
 class Key {
 	public int number;
