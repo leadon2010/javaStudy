@@ -1,6 +1,7 @@
 package employees.impl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import employees.EmpService;
@@ -35,6 +36,12 @@ public class EmployeeServiceImpl implements EmpService {
 
 	@Override
 	public Set<String> distinctJob() {
+		return null;
+	}
+
+	@Override
+	public Map<String, String> memberInfo() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

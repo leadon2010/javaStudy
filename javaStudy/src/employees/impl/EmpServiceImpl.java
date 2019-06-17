@@ -1,6 +1,7 @@
 package employees.impl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import employees.EmpService;
@@ -47,6 +48,11 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	public Set<String> distinctJob() {
 		return dao.getJob();
+	}
+
+	@Override
+	public Map<String, String> memberInfo() {
+		return dao.memberInfo();
 	}
 
 }

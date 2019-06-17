@@ -3,6 +3,7 @@ package employees.control;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -19,6 +20,60 @@ public class EmployeeProc {
 
 	String firstName, lastName, email, jobId;
 	int salary, employeeId;
+
+	public void execute() {
+		int choice = 0;
+		loginCheckProc();
+
+		while (true) {
+			System.out.println();
+			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 5.전체직무조회 9.종료]");
+			choice = sc.nextInt();
+			sc.nextLine();
+
+			if (choice == 1) {
+				insertEmpProc();
+
+			} else if (choice == 2) {
+				updateEmpProc();
+
+			} else if (choice == 3) {
+				getEmpProc();
+
+			} else if (choice == 4) {
+				getEmpListProc();
+
+			} else if (choice == 5) {
+				getDistinctJob();
+
+			} else if (choice == 9) {
+				if (sc != null) {
+					sc.close();
+				}
+				System.exit(0);
+			}
+		}
+	}
+
+	public void loginCheckProc() {
+		Map<String, String> map = service.memberInfo();
+		while (true) {
+			System.out.println("아이디를 입력하세요.");
+			String id = sc.nextLine();
+			System.out.println("비밀번호를 입력하세요.");
+			String pw = sc.nextLine();
+			if (map.containsKey(id)) {
+				if (map.get(id).equals(pw)) {
+					System.out.println("로그인 되었습니다.");
+					break;
+				} else {
+					System.out.println("비밀번호가 일치하지 않습니다.");
+				}
+			} else {
+				System.out.println("존재하지 않는 아이디입니다.");
+			}
+		}
+	}
 
 	public void insertEmpProc() {
 
@@ -97,40 +152,6 @@ public class EmployeeProc {
 		for (String str : set) {
 			System.out.println(str);
 		}
-	}
-
-	public void execute() {
-		int choice = 0;
-
-		while (true) {
-			System.out.println();
-			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 5.전체직무조회 9.종료]");
-			choice = sc.nextInt();
-			sc.nextLine();
-
-			if (choice == 1) {
-				insertEmpProc();
-
-			} else if (choice == 2) {
-				updateEmpProc();
-
-			} else if (choice == 3) {
-				getEmpProc();
-
-			} else if (choice == 4) {
-				getEmpListProc();
-
-			} else if (choice == 5) {
-				getDistinctJob();
-
-			} else if (choice == 9) {
-				if (sc != null) {
-					sc.close();
-				}
-				System.exit(0);
-			}
-		}
-
 	}
 
 }

@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -26,6 +28,27 @@ public class EmpDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
+
+	public Map<String, String> memberInfo() {
+		conn = DAO.getConnection();
+		String sql = "select id, passwd from login_test";
+		Map<String, String> map = new HashMap<>();
+		String id, pw;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				id = rs.getString("id");
+				pw = rs.getString("passwd");
+				map.put(id, pw);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+		return map;
+	}
 
 	public Set<String> getJob() {
 		conn = DAO.getConnection();

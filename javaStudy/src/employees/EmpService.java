@@ -1,6 +1,7 @@
 package employees;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public interface EmpService {
@@ -21,5 +22,7 @@ public interface EmpService {
 
 	// Job_id
 	public Set<String> distinctJob();
+	
+	public Map<String, String> memberInfo();
 
 }
