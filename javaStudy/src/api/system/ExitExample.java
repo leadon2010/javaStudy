@@ -1,0 +1,22 @@
+package api.system;
+
+public class ExitExample {
+	public static void main(String[] args) {
+		System.setSecurityManager(new SecurityManager() {
+			@Override
+			public void checkExit(int status) {
+				if (status != 5)
+					throw new SecurityException();
+			}
+		});
+
+		for (int i = 0; i < 10; i++) {
+			System.out.print(i);
+			try {
+				System.exit(i);
+			} catch (SecurityException e) {
+				System.out.println(" ==> exception process");
+			}
+		}
+	}
+}
