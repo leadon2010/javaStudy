@@ -1,8 +1,5 @@
 package api;
 
-import java.util.Date;
-import java.util.HashMap;
-
 class Key {
 	public int number;
 
@@ -25,26 +22,6 @@ class Key {
 		return number;
 	}
 
-}
-
-public class ObjectClass {
-	public static void main(String[] args) {
-		Member original = new Member("blue", "홍길동", "12345", 25, true);
-		Member cloned = null;
-		try {
-			cloned = (Member) original.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		original.age = 30;
-		System.out.println(original.age + "/" + cloned.age);
-		System.out.println("복제객체의 값");
-		System.out.println(cloned);
-		System.out.println("원본객체의 값");
-		System.out.println(original);
-
-	}
 }
 
 class Member implements Cloneable {
@@ -99,4 +76,23 @@ class Member implements Cloneable {
 //		return id + "," + name + "," + password + "," + age + "," + adult;
 //	}
 
+}
+
+public class ObjectExample {
+	public static void main(String[] args) {
+		Member original = new Member("blue", "홍길동", "12345", 25, true);
+		Member cloned = null;
+		try {
+			cloned = (Member) original.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		original.age = 30;
+		System.out.println(original.age + "/" + cloned.age);
+		System.out.println("복제객체의 값");
+		System.out.println(cloned);
+		System.out.println("원본객체의 값");
+		System.out.println(original);
+
+	}
 }
