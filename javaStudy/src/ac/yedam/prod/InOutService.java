@@ -1,7 +1,5 @@
 package ac.yedam.prod;
 
-import ac.yedam.prod.impl.InOutVO;
-
 public interface InOutService {
 	// 상품입고
 	public void receiveProduct(InOutVO vo);
