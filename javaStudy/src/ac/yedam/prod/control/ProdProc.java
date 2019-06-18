@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import ac.yedam.prod.InOutService;
+import ac.yedam.prod.InOutVO;
 import ac.yedam.prod.ProductService;
 import ac.yedam.prod.ProductVO;
 import ac.yedam.prod.impl.InOutServiceImpl;
@@ -84,13 +85,22 @@ public class ProdProc {
 			if (choice == 1) {
 
 			} else if (choice == 2) {
+				System.out.println("상품코드:");
+				String productCode = sc.nextLine();
+				System.out.println("상품수량:");
+				int txnQty = sc.nextInt();
+				sc.nextLine();
+				inOutService.receiveProduct(new InOutVO(productCode, txnQty));
 
 			} else if (choice == 3) {
 
 			} else if (choice == 4) {
-
+				List<InOutVO> list = inOutService.onhandProduct("");
+				for (InOutVO ivo : list) {
+					System.out.println(ivo);
+				}
 			} else if (choice == 5) {
-
+				return;
 			}
 		}
 	}

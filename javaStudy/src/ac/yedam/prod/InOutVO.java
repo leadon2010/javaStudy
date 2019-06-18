@@ -10,11 +10,10 @@ public class InOutVO {
 		super();
 	}
 
-	public InOutVO(String productCode, int txnQty, String txnDate) {
+	public InOutVO(String productCode, int txnQty) {
 		super();
 		this.productCode = productCode;
 		this.txnQty = txnQty;
-		this.txnDate = txnDate;
 	}
 
 	public String getProductCode() {
@@ -47,6 +46,12 @@ public class InOutVO {
 
 	public void setOnhandQty(int onhandQty) {
 		this.onhandQty = onhandQty;
+	}
+
+	@Override
+	public String toString() {
+		return "InOutVO [productCode=" + productCode + ", txnQty=" + txnQty + ", txnDate=" + txnDate + ", onhandQty="
+				+ onhandQty + "]";
 	}
 
 }
