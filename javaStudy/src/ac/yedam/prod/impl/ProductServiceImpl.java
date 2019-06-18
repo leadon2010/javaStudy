@@ -7,6 +7,15 @@ import ac.yedam.prod.ProductVO;
 
 public class ProductServiceImpl implements ProductService {
 
+	private static ProductServiceImpl singleton = new ProductServiceImpl();
+
+	private ProductServiceImpl() {
+	}
+
+	public static ProductServiceImpl getInstance() {
+		return singleton;
+	}
+
 	ProductDAO dao = ProductDAO.getInstance();
 
 	@Override

@@ -4,6 +4,14 @@ import ac.yedam.prod.InOutService;
 import ac.yedam.prod.InOutVO;
 
 public class InOutServiceImpl implements InOutService {
+	private static InOutServiceImpl singleton = new InOutServiceImpl();
+
+	private InOutServiceImpl() {
+	}
+
+	public static InOutServiceImpl getInstance() {
+		return singleton;
+	}
 
 	InOutDAO dao = InOutDAO.getInstance();
 
