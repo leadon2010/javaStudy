@@ -23,6 +23,7 @@ public interface EmpService {
 	// Job_id
 	public Set<String> distinctJob();
 	
+	// 로그인 처리.
 	public Map<String, String> memberInfo();
 
 }
