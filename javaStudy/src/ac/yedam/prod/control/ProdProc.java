@@ -96,13 +96,21 @@ public class ProdProc {
 
 			} else if (choice == 4) {
 				List<InOutVO> list = inOutService.onhandProduct("");
-				for (InOutVO ivo : list) {
-					System.out.println(ivo);
-				}
+				showOnhand(list);
+//				for (InOutVO ivo : list) {
+//					System.out.println(ivo);
+//				}
 			} else if (choice == 5) {
 				return;
 			}
 		}
 	}
 
+	public void showOnhand(List<InOutVO> list) {
+		System.out.println("ProductCode\tProductName\tQty");
+		System.out.println("----------------------------------");
+		for (InOutVO v : list) {
+			System.out.printf("%s\t\t%s\t%d\n", v.getProductCode(), v.getProductName(), v.getOnhandQty());
+		}
+	}
 }

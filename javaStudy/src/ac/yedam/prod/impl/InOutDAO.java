@@ -47,7 +47,7 @@ public class InOutDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getProductCode());
-			pstmt.setInt(2, vo.getTxnQty());
+			pstmt.setInt(2, -vo.getTxnQty());
 			int r = pstmt.executeUpdate();
 			System.out.println(r + " 건 입력.");
 		} catch (SQLException e) {
@@ -59,9 +59,10 @@ public class InOutDAO {
 
 	public List<InOutVO> onhandProduct(String productCode) {
 		conn = DAO.getConnection();
-		sql = "select product_code, onhand_qty from yedam_prod_onhand";// where product_code = nvl(?, product_code)";
+		sql = "select product_code, product_name, onhand_qty from yedam_prod_onhand";// where product_code = nvl(?, product_code)";
 		if (productCode != null && !productCode.equals(""))
 			sql += " where product_code = '" + productCode + "'";
+		sql += " order by product_code";
 		List<InOutVO> list = new ArrayList<>();
 		InOutVO vo = null;
 		try {
@@ -70,6 +71,7 @@ public class InOutDAO {
 			while (rs.next()) {
 				vo = new InOutVO();
 				vo.setProductCode(rs.getString("product_code"));
+				vo.setProductName(rs.getString("product_name"));
 				vo.setOnhandQty(rs.getInt("onhand_qty"));
 				list.add(vo);
 			}

@@ -2,6 +2,7 @@ package ac.yedam.prod;
 
 public class InOutVO {
 	String productCode;
+	String productName;
 	int txnQty;
 	String txnDate;
 	int onhandQty;
@@ -46,6 +47,14 @@ public class InOutVO {
 
 	public void setOnhandQty(int onhandQty) {
 		this.onhandQty = onhandQty;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	@Override
