@@ -47,7 +47,7 @@ public class InOutDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getProductCode());
-			pstmt.setInt(2, vo.getTxnQty());
+			pstmt.setInt(2, -vo.getTxnQty());
 			int r = pstmt.executeUpdate();
 			System.out.println(r + " 건 입력.");
 		} catch (SQLException e) {
