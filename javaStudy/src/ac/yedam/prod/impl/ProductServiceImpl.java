@@ -7,23 +7,25 @@ import ac.yedam.prod.ProductVO;
 
 public class ProductServiceImpl implements ProductService {
 
+	ProductDAO dao = ProductDAO.getInstance();
+
 	@Override
-	public void insertProduct() {
+	public void insertProduct(ProductVO vo) {
+		dao.insertProduct(vo);
+	}
+
+	@Override
+	public void updateProduct(ProductVO vo) {
 
 	}
 
 	@Override
-	public void updateProduct() {
+	public void deleteProduct(String productCode) {
 
 	}
 
 	@Override
-	public void deleteProduct() {
-
-	}
-
-	@Override
-	public ProductVO getProduct() {
+	public ProductVO getProduct(String productCode) {
 		return null;
 	}
 
