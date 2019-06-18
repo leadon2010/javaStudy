@@ -1,6 +1,6 @@
 package ac.yedam.prod;
 
-public class InOut {
+public class InOutVO {
 	String productCode;
 	int txnQty;
 	String txnDate;
