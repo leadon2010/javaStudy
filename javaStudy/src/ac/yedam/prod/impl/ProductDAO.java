@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ac.yedam.prod.ProductVO;
-import employees.common.DAO;
+import ac.yedam.prod.common.DAO;
 
 public class ProductDAO {
 	Connection conn;
