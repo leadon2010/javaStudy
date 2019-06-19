@@ -39,7 +39,7 @@ public class ProdProc {
 	// 1)상품조회 2)상품등록 3)상품변경 4)상품삭제 5)상위메뉴
 	public void prodInfo() {
 		ProductVO vo;
-		List<ProductVO> list = new ArrayList<>();
+		List<ProductVO> list = null;
 		int choice;
 		while (true) {
 			System.out.println("메뉴선택 1)상품조회 2)상품등록 3)상품변경 4)전체상품 5)상위메뉴 ");
@@ -62,6 +62,13 @@ public class ProdProc {
 				productService.insertProduct(new ProductVO(productCode, productName, productPrice));
 
 			} else if (choice == 3) {
+				System.out.println("상품코드:");
+				String productCode = sc.nextLine();
+				System.out.println("변경금액:");
+				int productPrice = sc.nextInt();
+				sc.nextLine();
+				ProductVO prod = new ProductVO(productCode, "", productPrice);
+				productService.updateProduct(prod);
 
 			} else if (choice == 4) {
 				list = productService.getProductList();
@@ -83,6 +90,10 @@ public class ProdProc {
 			choice = sc.nextInt();
 			sc.nextLine();
 			if (choice == 1) {
+				System.out.println("상품코드:");
+				String productCode = sc.nextLine();
+				List<InOutVO> list = inOutService.onhandProduct(productCode);
+				showOnhand(list);
 
 			} else if (choice == 2) {
 				System.out.println("상품코드:");
@@ -93,6 +104,12 @@ public class ProdProc {
 				inOutService.receiveProduct(new InOutVO(productCode, txnQty));
 
 			} else if (choice == 3) {
+				System.out.println("상품코드:");
+				String productCode = sc.nextLine();
+				System.out.println("상품수량:");
+				int txnQty = sc.nextInt();
+				sc.nextLine();
+				inOutService.issueProduct(new InOutVO(productCode, txnQty));
 
 			} else if (choice == 4) {
 				List<InOutVO> list = inOutService.onhandProduct("");
