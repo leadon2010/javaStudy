@@ -16,6 +16,6 @@ public interface ProductService {
 	public ProductVO getProduct(String productCode);
 
 	// 상품리스트
-	public List<ProductVO> getProductList();
+	public List<ProductVO> getProductList(String productCode);
 
 }

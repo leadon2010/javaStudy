@@ -48,8 +48,9 @@ public class ProdProc {
 			if (choice == 1) {
 				System.out.println("조회할 상품 선택");
 				String productCode = sc.nextLine();
-				vo = productService.getProduct(productCode);
-				System.out.println(vo);
+//				vo = productService.getProduct(productCode);
+				list = productService.getProductList(productCode);
+				showProdInfo(list);
 
 			} else if (choice == 2) {
 				System.out.println("상품코드:");
@@ -71,11 +72,11 @@ public class ProdProc {
 				productService.updateProduct(prod);
 
 			} else if (choice == 4) {
-				list = productService.getProductList();
-				for (ProductVO p : list) {
-					System.out.println(p);
-				}
-
+				list = productService.getProductList("");
+//				for (ProductVO p : list) {
+//					System.out.println(p);
+//				}
+				showProdInfo(list);
 			} else if (choice == 5) {
 				return;
 			}
@@ -121,6 +122,15 @@ public class ProdProc {
 				return;
 			}
 		}
+	}
+
+	public void showProdInfo(List<ProductVO> list) {
+		System.out.println("ProductCode\tProductName\tProductPrice");
+		System.out.println("----------------------------------------------");
+		for (ProductVO v : list) {
+			System.out.printf("%s\t\t%s\t%d\n", v.getProductCode(), v.getProductName(), v.getProductPrice());
+		}
+
 	}
 
 	public void showOnhand(List<InOutVO> list) {

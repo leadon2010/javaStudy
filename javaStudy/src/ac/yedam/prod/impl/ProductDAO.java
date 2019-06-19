@@ -41,13 +41,18 @@ public class ProductDAO {
 		}
 	}
 
-	public List<ProductVO> getProductList() {
+	public List<ProductVO> getProductList(String productCode) {
 		conn = DAO.getConnection();
-		sql = "select product_code, product_name, product_price from yedam_product order by 1";
+		sql = "select product_code, product_name, product_price from yedam_product ";
+		if (productCode != null && !productCode.equals(""))
+			sql += " where product_code = ?";
+		sql += " order by 1";
 		ProductVO vo = null;
 		List<ProductVO> list = new ArrayList<>();
 		try {
 			pstmt = conn.prepareStatement(sql);
+			if (productCode != null && !productCode.equals(""))
+				pstmt.setString(1, productCode);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
