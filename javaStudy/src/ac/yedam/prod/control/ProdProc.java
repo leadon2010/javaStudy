@@ -38,17 +38,17 @@ public class ProdProc {
 
 	// 1)상품조회 2)상품등록 3)상품변경 4)상품삭제 5)상위메뉴
 	public void prodInfo() {
-		ProductVO vo;
 		List<ProductVO> list = null;
 		int choice;
+
 		while (true) {
 			System.out.println("메뉴선택 1)상품조회 2)상품등록 3)상품변경 4)전체상품 5)상위메뉴 ");
 			choice = sc.nextInt();
 			sc.nextLine();
+
 			if (choice == 1) {
 				System.out.println("조회할 상품 선택");
 				String productCode = sc.nextLine();
-//				vo = productService.getProduct(productCode);
 				list = productService.getProductList(productCode);
 				showProdInfo(list);
 
@@ -73,10 +73,8 @@ public class ProdProc {
 
 			} else if (choice == 4) {
 				list = productService.getProductList("");
-//				for (ProductVO p : list) {
-//					System.out.println(p);
-//				}
 				showProdInfo(list);
+
 			} else if (choice == 5) {
 				return;
 			}
