@@ -12,5 +12,4 @@ public interface InOutService {
 	// 재고조회
 	public List<InOutVO> onhandProduct(String productCode);
 
-	//
 }
