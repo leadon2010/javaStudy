@@ -59,7 +59,7 @@ public class InOutDAO {
 
 	public List<InOutVO> onhandProduct(String productCode) {
 		conn = DAO.getConnection();
-		sql = "select product_code, product_name, onhand_qty from yedam_prod_onhand";// where product_code = nvl(?, product_code)";
+		sql = "select product_code, product_name, onhand_qty from yedam_prod_onhand_v";// where product_code = nvl(?, product_code)";
 		if (productCode != null && !productCode.equals(""))
 			sql += " where product_code = '" + productCode + "'";
 		sql += " order by product_code";
