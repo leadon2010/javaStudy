@@ -53,10 +53,10 @@ UPDATE login_test
 SET    passwd = '1234';
 
 -------------------------------
---»óÇ°Á¤º¸(»óÇ°ÄÚµå, »óÇ°¸í, ´Ü°¡) - yedam_product
---ÀÔ°íÁ¤º¸(»óÇ°ÄÚµå, ¼ö·®) - yedam_receipt
---Ãâ°íÁ¤º¸(»óÇ°ÄÚµå, ¼ö·®) - yedam_issue
---Àç°íÁ¤º¸(»óÇ°ÄÚµå, ÀÔÃâ°íÁ¤º¸) - yedam_onhand
+--ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ç°ï¿½Úµï¿½, ï¿½ï¿½Ç°ï¿½ï¿½, ï¿½Ü°ï¿½) - yedam_product
+--ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ç°ï¿½Úµï¿½, ï¿½ï¿½ï¿½ï¿½) - yedam_receipt
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ç°ï¿½Úµï¿½, ï¿½ï¿½ï¿½ï¿½) - yedam_issue
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Ç°ï¿½Úµï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) - yedam_onhand
 -------------------------------
 
 drop TABLE yedam_product purge;
@@ -72,7 +72,7 @@ CREATE TABLE yedam_prod_txn(product_code VARCHAR2(10)
 CREATE OR REPLACE view yedam_receipt_info_v AS
     SELECT p.product_code
           ,p.product_name
-          ,t.txn_qty
+          ,t.txn_qty receipt_qty
           ,t.receipt_issue_date
     FROM   yedam_product  p
           ,yedam_prod_txn t
@@ -82,17 +82,19 @@ CREATE OR REPLACE view yedam_receipt_info_v AS
 CREATE OR REPLACE view yedam_issue_info_v AS
     SELECT p.product_code
           ,p.product_name
-          ,t.txn_qty
+          ,t.txn_qty issue_qty
           ,t.receipt_issue_date
     FROM   yedam_product  p
           ,yedam_prod_txn t
     WHERE  p.product_code = t.product_code
     AND    t.txn_qty < 0;
 
-CREATE OR REPLACE view yedam_prod_onhand AS
+CREATE OR REPLACE view yedam_prod_onhand_v AS
     SELECT p.product_code
+          ,p.product_name
           ,SUM(t.txn_qty) AS onhand_qty
     FROM   yedam_prod_txn t
           ,yedam_product  p
     WHERE  t.product_code = p.product_code
-    GROUP  BY p.product_code;
+    GROUP  BY p.product_code
+             ,p.product_name;
