@@ -1,4 +1,4 @@
-package objectClass;
+package com.yedam.objectClass;
 
 class Point implements Cloneable {
 	private int xPos;
