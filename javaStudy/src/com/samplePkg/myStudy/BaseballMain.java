@@ -1,4 +1,4 @@
-package com.yedam.lambda;
+package com.samplePkg.myStudy;
 
 import java.util.Random;
 import java.util.Scanner;
