@@ -18,8 +18,8 @@ class FruitAndBoxFault_Generic {
 		Box_G<Orange> oBox = new Box_G<Orange>();
 
 		// 과일을 박스에 담은 것일까?
-		aBox.set("Apple");
-		oBox.set("Orange");
+//		aBox.set("Apple");
+//		oBox.set("Orange");
 		// aBox.set(new Apple());
 		// oBox.set(new Orange());
 

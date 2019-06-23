@@ -18,8 +18,8 @@ class FruitAndBoxFault_Generic {
 		Box2<Orange> oBox = new Box2<Orange>();
 
 		// 과일을 박스에 담은 것일까?
-		aBox.set("Apple");
-		oBox.set("Orange");
+//		aBox.set("Apple");
+//		oBox.set("Orange");
 
 		// 박스에서 과일을 제대로 꺼낼 수 있을까?
 		Apple ap = aBox.get();

@@ -49,6 +49,8 @@ public class BaseBall {
 				break;
 		}
 		System.out.println("game over");
+		if (sc != null)
+			sc.close();
 	}
 
 }
