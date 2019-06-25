@@ -4,26 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-class Student {
-	private String name;
-	private int score;
-
-	public Student(String name, int score) {
-		super();
-		this.name = name;
-		this.score = score;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public int getScore() {
-		return score;
-	}
-
-}
-
 public class lambdaExpressionExample {
 	public static void main(String[] args) {
 		List<Student> list = Arrays.asList(new Student("hong", 90), new Student("kang", 92));
