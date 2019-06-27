@@ -46,6 +46,7 @@ public class ClientExample extends Application {
 			}
 		};
 		thread.start();
+
 	}// end of startClient()
 
 	void stopClient() {
@@ -105,6 +106,10 @@ public class ClientExample extends Application {
 		thread.start();
 
 	}// end of send()
+
+	void displayText(String text) {
+		txtDisplay.appendText(text + "\n");
+	}
 
 	TextArea txtDisplay;
 	TextField txtInput;
@@ -167,10 +172,6 @@ public class ClientExample extends Application {
 		primaryStage.setOnCloseRequest(event -> stopClient());
 		primaryStage.show();
 
-	}
-
-	void displayText(String text) {
-		txtDisplay.appendText(text + "\n");
 	}
 
 	public static void main(String[] args) {

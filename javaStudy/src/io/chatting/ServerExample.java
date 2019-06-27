@@ -28,6 +28,7 @@ public class ServerExample extends Application {
 
 	void startServer() {
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
 		try {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress("localhost", 5001));
@@ -66,6 +67,7 @@ public class ServerExample extends Application {
 				}
 			}
 		};
+
 		executorService.submit(runnable);
 
 	}// end of startServer()
@@ -141,7 +143,9 @@ public class ServerExample extends Application {
 				}
 
 			};
+
 			executorService.submit(runnable);
+
 		}// end of receive()
 
 		void send(String data) {
@@ -170,10 +174,16 @@ public class ServerExample extends Application {
 				}
 
 			};
+
 			executorService.submit(runnable);
+
 		}// end of send()
 
 	}// end of Client
+
+	void displayText(String text) {
+		txtDisplay.appendText(text + "\n");
+	}
 
 	TextArea txtDisplay;
 	Button btnStartStop;
@@ -208,10 +218,6 @@ public class ServerExample extends Application {
 		primaryStage.setOnCloseRequest(event -> stopServer());
 		primaryStage.show();
 
-	}
-
-	void displayText(String text) {
-		txtDisplay.appendText(text + "\n");
 	}
 
 	public static void main(String[] args) {
