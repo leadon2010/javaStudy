@@ -6,29 +6,40 @@ import ac.yedam.board.Board;
 import ac.yedam.board.BoardService;
 
 public class BoardServiceImpl implements BoardService {
+	private static BoardServiceImpl service = new BoardServiceImpl();
+
+	private BoardServiceImpl() {
+	}
+
+	public static BoardServiceImpl getInstance() {
+		return service;
+	}
+
+	BoardDAO dao = BoardDAO.getInstance();
 
 	@Override
 	public void writeBoard(Board board) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void updateBoard(Board board) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public Board getBoard(int boardNo) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Board> getBoardList() {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String checkLogin(String id, String pw) {
+		return dao.checkLogin(id, pw);
 	}
 
 }
