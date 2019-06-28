@@ -29,7 +29,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board getBoard(int boardNo) {
-		return null;
+		return dao.getBoard(boardNo);
 	}
 
 	@Override
@@ -40,6 +40,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public String checkLogin(String id, String pw) {
 		return dao.checkLogin(id, pw);
+	}
+
+	@Override
+	public List<Board> getReplyList(int boardNo) {
+		return dao.getReplyList(boardNo);
+	}
+
+	@Override
+	public void writeReply(Board board) {
+		dao.writeReply(board);
 	}
 
 }

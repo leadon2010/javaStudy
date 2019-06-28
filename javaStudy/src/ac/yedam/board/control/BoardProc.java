@@ -86,7 +86,39 @@ public class BoardProc {
 	}
 
 	public void getBoard() {
-
+		System.out.println("조회할 번호:");
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		// 원본글
+		System.out.println("----------[원본글]------------");
+		Board board = service.getBoard(boardNo);
+		System.out.print("제목    :   " + board.getTitle() + "\n");
+		System.out.print("내용    :   " + board.getContent() + "\n");
+		System.out.print("작성자 :   " + board.getWriter() + "\n");
+		System.out.print("작성일 :   " + board.getCreateDate() + "\n");
+		System.out.println("----------[댓글]--------------");
+		// 댓글
+		List<Board> list = service.getReplyList(boardNo);
+		for (Board b : list) {
+			System.out.println(" --> " + b.getBoardNo() + " | " + b.getContent() + " | " + b.getWriter() + " | "
+					+ b.getCreateDate());
+		}
+		System.out.println("----------------------------");
+		System.out.println("1.댓글작성 2.이전메뉴");
+		int subMenu = sc.nextInt();
+		sc.nextLine();
+		if (subMenu == 1) {
+			System.out.println("내용입력:");
+			String content = sc.nextLine();
+			Board reply = new Board();
+			reply.setContent(content);
+			reply.setWriter(board.getWriter());
+			reply.setParentNo(board.getBoardNo());
+			service.writeReply(reply);
+			return;
+		} else {
+			return;
+		}
 	}
 
 	public void getBoardList() {

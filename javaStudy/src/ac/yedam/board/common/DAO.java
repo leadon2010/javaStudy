@@ -9,7 +9,8 @@ public class DAO {
 		Connection conn = null;
 		String user = "hr";
 		String pw = "hr";
-		String url = "jdbc:oracle:thin:@192.168.0.17:1521:orcl";
+//		String url = "jdbc:oracle:thin:@192.168.0.17:1521:orcl";
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

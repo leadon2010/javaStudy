@@ -13,4 +13,8 @@ public interface BoardService {
 	public Board getBoard(int boardNo);
 
 	public List<Board> getBoardList();
+
+	public List<Board> getReplyList(int boardNo);
+
+	public void writeReply(Board board);
 }
