@@ -19,7 +19,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void writeBoard(Board board) {
-
+		dao.insertBoard(board);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<Board> getBoardList() {
-		return null;
+		return dao.getBoardList();
 	}
 
 	@Override
