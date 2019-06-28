@@ -47,12 +47,12 @@ public class BoardProc {
 
 	public void checkLogin() {
 		while (true) {
-//			System.out.println("id를 입력하세요.");
-//			id = sc.nextLine();
-//			System.out.println("pw를 입력하세요.");
-//			pw = sc.nextLine();
-			id = "166";
-			pw = "1234";
+			System.out.println("id를 입력하세요.");
+			id = sc.nextLine();
+			System.out.println("pw를 입력하세요.");
+			pw = sc.nextLine();
+//			id = "166";
+//			pw = "1234";
 			name = service.checkLogin(id, pw);
 
 			if (name == null || name.equals(""))
@@ -65,10 +65,11 @@ public class BoardProc {
 	}
 
 	public void writeBoard() {
-		System.out.println("제목입력:");
+		System.out.print("제목입력:");
 		String title = sc.nextLine();
-		System.out.println("내용입력:");
+		System.out.print("내용입력:");
 		String content = sc.nextLine();
+
 		Board board = new Board();
 		board.setTitle(title);
 		board.setContent(content);
@@ -108,11 +109,11 @@ public class BoardProc {
 		int subMenu = sc.nextInt();
 		sc.nextLine();
 		if (subMenu == 1) {
-			System.out.println("내용입력:");
+			System.out.print("내용입력:");
 			String content = sc.nextLine();
 			Board reply = new Board();
 			reply.setContent(content);
-			reply.setWriter(board.getWriter());
+			reply.setWriter(id);
 			reply.setParentNo(board.getBoardNo());
 			service.writeReply(reply);
 			return;
