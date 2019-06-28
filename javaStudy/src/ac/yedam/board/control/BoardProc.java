@@ -51,8 +51,6 @@ public class BoardProc {
 			id = sc.nextLine();
 			System.out.println("pw를 입력하세요.");
 			pw = sc.nextLine();
-//			id = "166";
-//			pw = "1234";
 			name = service.checkLogin(id, pw);
 
 			if (name == null || name.equals(""))
