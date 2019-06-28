@@ -39,6 +39,7 @@ public class BoardDAO {
 				board.setBoardNo(rs.getInt("board_no"));
 				board.setTitle(rs.getString("title"));
 				board.setContent(rs.getString("content"));
+				board.setWriter(rs.getString("writer"));
 				board.setCreateDate(rs.getString("create_date"));
 				board.setParentNo(rs.getInt("parent_no"));
 				list.add(board);
