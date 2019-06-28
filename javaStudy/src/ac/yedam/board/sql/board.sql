@@ -4,6 +4,12 @@ FROM   tab;
 SELECT *
 FROM   login_test;
 
+CREATE TABLE login_test(
+id varchar2(10), passwd varchar2(10), name varchar2(100));
+
+insert into login_test values('1111','1234','changho');
+insert into login_test values('166','1234','Susan');
+
 --°Ô½ÃÆÇ
 CREATE TABLE board(board_no NUMBER NOT NULL
                   ,title VARCHAR2(100)
@@ -18,3 +24,5 @@ CREATE sequence board_seq;
 
 SELECT *
 FROM   board;
+
+

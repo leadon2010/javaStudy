@@ -8,6 +8,10 @@ CREATE OR REPLACE PACKAGE board_pkg IS
                          ,p_content VARCHAR2
                          ,p_write   VARCHAR2);
 
+    PROCEDURE write_reply(p_content   VARCHAR2
+                         ,p_writer    VARCHAR2
+                         ,p_parent_no VARCHAR2);
+
 END board_pkg;
 /
 CREATE OR REPLACE PACKAGE BODY board_pkg IS
@@ -34,6 +38,29 @@ CREATE OR REPLACE PACKAGE BODY board_pkg IS
         WHEN OTHERS THEN
             dbms_output.put_line(SQLERRM);
     END write_board;
+
+    PROCEDURE write_reply(p_content   VARCHAR2
+                         ,p_writer    VARCHAR2
+                         ,p_parent_no VARCHAR2) IS
+    BEGIN
+        INSERT INTO board
+            (board_no
+            ,title
+            ,content
+            ,writer
+            ,create_date
+            ,parent_no)
+        VALUES
+            (board_seq.nextval
+            ,NULL
+            ,p_content
+            ,p_writer
+            ,SYSDATE
+            ,p_parent_no);
+    EXCEPTION
+        WHEN OTHERS THEN
+            dbms_output.put_line(SQLERRM);
+    END write_reply;
 
 END board_pkg;
 /
