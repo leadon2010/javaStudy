@@ -3,8 +3,10 @@ package javaFx;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,6 +17,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class AppMain extends Application {
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getName() + ": main() 호출");
+		launch(args);
+	}
+
 	public AppMain() {
 		System.out.println(Thread.currentThread().getName() + ": AppMain() 호출");
 	}
@@ -25,15 +32,20 @@ public class AppMain extends Application {
 	}
 
 	@Override
-	public void stop() throws Exception {
-		System.out.println(Thread.currentThread().getName() + ": stop() 호출");
-	}
-
-	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		int showExam = 1;
-		if (showExam == 1) {
+		primaryStage.setTitle("AppMain");
+		int showExam = 3;
+
+		if (showExam == 0) {
+
+		} else if (showExam == 3) {
+			Parent root = FXMLLoader.load(getClass().getResource("roots.fxml"));
+			Scene scene = new Scene(root);
+
+			primaryStage.setScene(scene);
+
+		} else if (showExam == 1) {
 
 			HBox hbox = new HBox();
 			hbox.setPadding(new Insets(10));
@@ -51,7 +63,6 @@ public class AppMain extends Application {
 
 			Scene scene = new Scene(hbox);
 
-			primaryStage.setTitle("AppMain");
 			primaryStage.setScene(scene);
 
 		} else if (showExam == 2) {
@@ -75,7 +86,6 @@ public class AppMain extends Application {
 
 			Scene scene = new Scene(root);
 
-			primaryStage.setTitle("AppMain");
 			primaryStage.setScene(scene);
 
 		} ///////////////// [END] //////////////////
@@ -84,8 +94,9 @@ public class AppMain extends Application {
 		System.out.println(Thread.currentThread().getName() + ": start() 호출");
 	}
 
-	public static void main(String[] args) {
-		System.out.println(Thread.currentThread().getName() + ": main() 호출");
-		launch(args);
+	@Override
+	public void stop() throws Exception {
+		System.out.println(Thread.currentThread().getName() + ": stop() 호출");
 	}
+
 }
