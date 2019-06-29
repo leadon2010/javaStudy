@@ -44,7 +44,7 @@ public class AppMain extends Application {
 			System.out.println("oh, no");
 
 		} else if (showExam == 3) {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Circle.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Button.fxml"));
 			Scene scene = new Scene(root);
 
 			primaryStage.setScene(scene);
