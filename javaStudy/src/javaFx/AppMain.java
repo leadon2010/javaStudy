@@ -40,7 +40,7 @@ public class AppMain extends Application {
 		if (showExam == 0) {
 
 		} else if (showExam == 3) {
-			Parent root = FXMLLoader.load(getClass().getResource("roots.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Image.fxml"));
 			Scene scene = new Scene(root);
 
 			primaryStage.setScene(scene);
