@@ -42,6 +42,12 @@ public class AppMain extends Application {
 		if (showExam == 0) {
 			System.out.println("oh, no");
 
+		} else if (showExam == 3) {
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Circle.fxml"));
+			Scene scene = new Scene(root);
+
+			primaryStage.setScene(scene);
+
 		} else if (showExam == 4) {
 			HBox root = new HBox();
 			root.setPrefSize(200, 50);
@@ -65,12 +71,6 @@ public class AppMain extends Application {
 
 			primaryStage.setScene(scene);
 			primaryStage.setOnCloseRequest(event -> System.out.println("종료 클릭"));
-
-		} else if (showExam == 3) {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Root.fxml"));
-			Scene scene = new Scene(root);
-
-			primaryStage.setScene(scene);
 
 		} else if (showExam == 1) {
 
