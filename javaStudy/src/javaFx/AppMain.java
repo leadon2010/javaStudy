@@ -19,6 +19,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class AppMain extends Application {
+	
 	public static void main(String[] args) {
 		System.out.println(Thread.currentThread().getName() + ": main() 호출");
 		launch(args);
