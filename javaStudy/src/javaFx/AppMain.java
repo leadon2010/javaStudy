@@ -3,6 +3,8 @@ package javaFx;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -38,9 +40,34 @@ public class AppMain extends Application {
 		int showExam = 3;
 
 		if (showExam == 0) {
+			System.out.println("oh, no");
+
+		} else if (showExam == 4) {
+			HBox root = new HBox();
+			root.setPrefSize(200, 50);
+			root.setAlignment(Pos.CENTER);
+			root.setSpacing(20);
+
+			Button btn1 = new Button("버튼1");
+			btn1.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					System.out.println("버튼1 클릭");
+				}
+			});
+
+			Button btn2 = new Button("버튼2");
+			btn2.setOnAction(event -> System.out.println("버튼2 클릭"));
+
+			root.getChildren().addAll(btn1, btn2);
+			Scene scene = new Scene(root);
+
+			primaryStage.setScene(scene);
+			primaryStage.setOnCloseRequest(event -> System.out.println("종료 클릭"));
 
 		} else if (showExam == 3) {
-			Parent root = FXMLLoader.load(getClass().getResource("fxml/Grid.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("fxml/Root.fxml"));
 			Scene scene = new Scene(root);
 
 			primaryStage.setScene(scene);
