@@ -26,12 +26,12 @@ public class ReceiveThread extends Thread{
 				
 				if(receiveString == null)
 				{
-					System.out.println("���� ������ ������ϴ�.");
+					System.out.println("상대방 연결이 끊겼습니다.");
 					break;
 				}
 				else
 				{
-					System.out.println("���� : " + receiveString);
+					System.out.println("상대방 : " + receiveString);
 				}
 			}
 

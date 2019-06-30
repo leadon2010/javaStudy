@@ -7,32 +7,30 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.SocketException;
 
-public class ReceiveThread extends Thread{
+public class ReceiveThread extends Thread {
 
 	private Socket m_Socket;
-	
+
 	@Override
 	public void run() {
 		super.run();
-		
+
 		try {
 			BufferedReader tmpbuf = new BufferedReader(new InputStreamReader(m_Socket.getInputStream()));
-			
+
 			String receiveString;
-			
-			while(true)
-			{
+
+			while (true) {
 				receiveString = tmpbuf.readLine();
-				
-				System.out.println("���� : " + receiveString);
+
+				System.out.println("상대방 : " + receiveString);
 			}
-			
+
 		} catch (IOException e) {
 		}
 	}
-	
-	public void setSocket(Socket _socket)
-	{
+
+	public void setSocket(Socket _socket) {
 		m_Socket = _socket;
 	}
 
