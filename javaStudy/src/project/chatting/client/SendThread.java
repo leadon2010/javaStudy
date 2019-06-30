@@ -22,7 +22,7 @@ public class SendThread extends Thread{
 			
 			String sendString;
 			
-			System.out.println("����� ID�� �Է����ֽʽÿ� : ");
+			System.out.println("사용할 ID를 입력해주십시오 : ");
 			ChatClient.UserID = tmpbuf.readLine();
 			
 			sendWriter.println("IDhighkrs12345" + ChatClient.UserID);

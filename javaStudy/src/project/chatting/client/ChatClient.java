@@ -11,7 +11,7 @@ public class ChatClient {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			Socket c_socket = new Socket("192.168.0.2", 8888);
+			Socket c_socket = new Socket("localhost", 8888);
 			
 			ReceiveThread rec_thread = new ReceiveThread();
 			rec_thread.setSocket(c_socket);
