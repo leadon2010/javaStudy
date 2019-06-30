@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -29,6 +30,12 @@ public class ButtonController implements Initializable {
 	private ImageView radioImageView;
 	@FXML
 	private Button btnExit;
+	@FXML
+	private RadioButton rad1;
+	@FXML
+	private RadioButton rad2;
+	@FXML
+	private RadioButton rad3;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -36,7 +43,8 @@ public class ButtonController implements Initializable {
 
 			@Override
 			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-				Image image = new Image(getClass().getResource("../images/" + newValue.getUserData().toString() + ".png").toString());
+				Image image = new Image(
+						getClass().getResource("../images/" + newValue.getUserData().toString() + ".png").toString());
 				radioImageView.setImage(image);
 			}
 		});
