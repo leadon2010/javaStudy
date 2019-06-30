@@ -1,4 +1,4 @@
-package javaFx;
+package javaFx3;
 
 import javafx.beans.property.SimpleStringProperty;
 
@@ -11,20 +11,20 @@ public class Phone {
 		this.image = new SimpleStringProperty(image);
 	}
 
-	public String getSmartPhone() {
-		return smartPhone.get();
+	public SimpleStringProperty getSmartPhone() {
+		return smartPhone;
 	}
 
-	public void setSmartPhone(String smartPhone) {
-		this.smartPhone.set(smartPhone);
+	public void setSmartPhone(SimpleStringProperty smartPhone) {
+		this.smartPhone = smartPhone;
 	}
 
-	public String getImage() {
-		return image.get();
+	public SimpleStringProperty getImage() {
+		return image;
 	}
 
-	public void setImage(String image) {
-		this.image.set(image);
+	public void setImage(SimpleStringProperty image) {
+		this.image = image;
 	}
 
 }

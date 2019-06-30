@@ -1,9 +1,8 @@
-package javaFx.controller;
+package javaFx3;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javaFx.Phone;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,8 +29,9 @@ public class TableViewController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		listView.setItems(
-				FXCollections.observableArrayList("갤럭시S1", "갤럭시S2", "갤럭시S3", "갤럭시S4", "갤럭시S5", "갤럭시S6", "갤럭시S7"));
+		listView.setItems(FXCollections.observableArrayList(
+				"갤럭시S1", "갤럭시S2", "갤럭시S3", "갤럭시S4", "갤럭시S5", "갤럭시S6", "갤럭시S7"
+				));
 
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -42,16 +42,16 @@ public class TableViewController implements Initializable {
 			}
 		});
 
-		ObservableList<Phone> phoneList = FXCollections.observableArrayList(new Phone("갤럭시S1", "phone01.png"),
-				new Phone("갤럭시S2", "phone02.png"), new Phone("갤럭시S3", "phone03.png"), new Phone("갤럭시S4", "phone04.png"),
-				new Phone("갤럭시S5", "phone05.png"), new Phone("갤럭시S6", "phone06.png"),
-				new Phone("갤럭시S7", "phone07.png"));
+		ObservableList phoneList = FXCollections.observableArrayList(new Phone("갤럭시S1", "images/phone01.png"),
+				new Phone("갤럭시S2", "images/phone02.png"), new Phone("갤럭시S3", "images/phone03.png"),
+				new Phone("갤럭시S4", "images/phone04.png"), new Phone("갤럭시S5", "images/phone05.png"),
+				new Phone("갤럭시S6", "images/phone06.png"), new Phone("갤럭시S7", "images/phone07.png"));
 
-		TableColumn<Phone, ?> tcSmartPhone = tableView.getColumns().get(0);
+		TableColumn tcSmartPhone = tableView.getColumns().get(0);
 		tcSmartPhone.setCellValueFactory(new PropertyValueFactory<>("smartPhone"));
 		tcSmartPhone.setStyle("-fx-alignment: CENTER;");
 
-		TableColumn<Phone, ?> tcImage = tableView.getColumns().get(1);
+		TableColumn tcImage = tableView.getColumns().get(1);
 		tcImage.setCellValueFactory(new PropertyValueFactory<>("image"));
 		tcImage.setStyle("-fx-alignment: CENTER;");
 
@@ -62,8 +62,7 @@ public class TableViewController implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Phone> arg0, Phone oldValue, Phone newValue) {
 				if (newValue != null) {
-					imageView
-							.setImage(new Image(getClass().getResource("../images/" + newValue.getImage()).toString()));
+					imageView.setImage(new Image(getClass().getResource("images/" + newValue.getImage()).toString()));
 				}
 			}
 		});
