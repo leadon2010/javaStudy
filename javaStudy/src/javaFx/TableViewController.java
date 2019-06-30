@@ -28,8 +28,10 @@ public class TableViewController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 		listView.setItems(
 				FXCollections.observableArrayList("갤럭시S1", "갤럭시S2", "갤럭시S3", "갤럭시S4", "갤럭시S5", "갤럭시S6", "갤럭시S7"));
+
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -39,10 +41,10 @@ public class TableViewController implements Initializable {
 			}
 		});
 
-		ObservableList<Phone> phoneList = FXCollections.observableArrayList(new Phone("갤럭시S1", "phone01.png"),
-				new Phone("갤럭시S2", "phone02.png"), new Phone("갤럭시S3", "phone03.png"), new Phone("갤럭시S4", "phone04.png"),
-				new Phone("갤럭시S5", "phone05.png"), new Phone("갤럭시S6", "phone06.png"),
-				new Phone("갤럭시S7", "phone07.png"));
+		ObservableList<Phone> phoneList = FXCollections.observableArrayList(new Phone("갤럭시S1", "images/phone01.png"),
+				new Phone("갤럭시S2", "images/phone02.png"), new Phone("갤럭시S3", "images/phone03.png"),
+				new Phone("갤럭시S4", "images/phone04.png"), new Phone("갤럭시S5", "images/phone05.png"),
+				new Phone("갤럭시S6", "images/phone06.png"), new Phone("갤럭시S7", "images/phone07.png"));
 
 		TableColumn<Phone, ?> tcSmartPhone = tableView.getColumns().get(0);
 		tcSmartPhone.setCellValueFactory(new PropertyValueFactory<>("smartPhone"));
