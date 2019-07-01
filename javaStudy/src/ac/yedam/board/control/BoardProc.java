@@ -87,7 +87,7 @@ public class BoardProc {
 			board.setContent(content);
 			service.updateBoard(board);
 		}else {
-			System.out.println("변경권한이 없습니다.");
+			System.out.println("권한이 없습니다.");
 		}
 
 	}
@@ -104,7 +104,7 @@ public class BoardProc {
 		if (checkResponsibility(boardNo, id)) {
 			service.deleteBoard(boardNo);
 		}else {
-			System.out.println("변경권한이 없습니다.");
+			System.out.println("권한이 없습니다.");
 		}
 	}
 
