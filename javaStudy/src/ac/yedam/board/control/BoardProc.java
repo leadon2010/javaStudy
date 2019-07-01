@@ -86,14 +86,13 @@ public class BoardProc {
 			Board board = service.getBoard(boardNo);
 			board.setContent(content);
 			service.updateBoard(board);
-		}else {
+		} else {
 			System.out.println("권한이 없습니다.");
 		}
 
 	}
 
 	public boolean checkResponsibility(int boardNo, String id) {
-
 		return service.checkResponsibility(boardNo, id);
 	}
 
@@ -103,8 +102,10 @@ public class BoardProc {
 		sc.nextLine();
 		if (checkResponsibility(boardNo, id)) {
 			service.deleteBoard(boardNo);
-		}else {
+
+		} else {
 			System.out.println("권한이 없습니다.");
+
 		}
 	}
 
