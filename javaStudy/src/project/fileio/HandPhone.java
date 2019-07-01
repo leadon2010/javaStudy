@@ -134,8 +134,8 @@ public class HandPhone {
 			} else {
 				System.out.printf("%d 행이 삭제되었습니다", del);
 			}
-			br.close();
 		}
+		br.close();
 
 		BufferedWriter bw = new BufferedWriter(new FileWriter(fname));
 		for (i = 0; i < count; i++) {
