@@ -6,6 +6,7 @@ import ac.yedam.board.Board;
 import ac.yedam.board.BoardService;
 
 public class BoardServiceImpl implements BoardService {
+
 	private static BoardServiceImpl service = new BoardServiceImpl();
 
 	private BoardServiceImpl() {
@@ -24,7 +25,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void updateBoard(Board board) {
-
+		dao.updateBoard(board);
 	}
 
 	@Override
@@ -50,6 +51,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void writeReply(Board board) {
 		dao.writeReply(board);
+	}
+
+	@Override
+	public boolean checkResponsibility(int no, String id) {
+		return dao.checkResponsibility(no, id);
+	}
+
+	@Override
+	public void deleteBoard(int boardNo) {
+		dao.deleteBoard(boardNo);
 	}
 
 }

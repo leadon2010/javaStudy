@@ -77,11 +77,35 @@ public class BoardProc {
 	}
 
 	public void updateBoard() {
+		System.out.println("변경할 게시번호 선택:");
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		if (checkResponsibility(boardNo, id)) {
+			System.out.println("내용입력:");
+			String content = sc.nextLine();
+			Board board = service.getBoard(boardNo);
+			board.setContent(content);
+			service.updateBoard(board);
+		}else {
+			System.out.println("변경권한이 없습니다.");
+		}
 
 	}
 
-	public void deleteBoard() {
+	public boolean checkResponsibility(int boardNo, String id) {
 
+		return service.checkResponsibility(boardNo, id);
+	}
+
+	public void deleteBoard() {
+		System.out.println("삭제할 게시번호 선택:");
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		if (checkResponsibility(boardNo, id)) {
+			service.deleteBoard(boardNo);
+		}else {
+			System.out.println("변경권한이 없습니다.");
+		}
 	}
 
 	public void getBoard() {

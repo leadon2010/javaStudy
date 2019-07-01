@@ -10,6 +10,8 @@ public interface BoardService {
 
 	public void updateBoard(Board board);
 
+	public void deleteBoard(int boardNo);
+
 	public Board getBoard(int boardNo);
 
 	public List<Board> getBoardList();
@@ -17,4 +19,7 @@ public interface BoardService {
 	public List<Board> getReplyList(int boardNo);
 
 	public void writeReply(Board board);
+
+	// 추가함.
+	public boolean checkResponsibility(int no, String id);
 }

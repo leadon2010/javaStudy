@@ -26,6 +26,61 @@ public class BoardDAO {
 	PreparedStatement pstmt;
 	ResultSet rs;
 
+	public void deleteBoard(int boardNo) {
+		conn = DAO.getConnection();
+		String sql = "delete from board where board_no = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			int r = pstmt.executeUpdate();
+			System.out.println(r + " 건 삭제됨.");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+
+	}
+
+	public void updateBoard(Board board) {
+		conn = DAO.getConnection();
+		String sql = "update board set content = ? where board_no = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getContent());
+			pstmt.setInt(2, board.getBoardNo());
+			int r = pstmt.executeUpdate();
+			System.out.println(r + " 건 변경됨.");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+	}
+
+	public boolean checkResponsibility(int boardNo, String id) {
+		conn = DAO.getConnection();
+		String sql = "select count(*) as cnt from board where board_no = ? and writer = ?";
+		int row = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			pstmt.setString(2, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				row = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if (row > 0)
+			return true;
+		else
+			return false;
+	}
+
 	public void writeReply(Board board) {
 		conn = DAO.getConnection();
 		String sql = "{call board_pkg.write_reply(?,?,?)}";
