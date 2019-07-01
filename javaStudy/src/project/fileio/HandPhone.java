@@ -60,12 +60,15 @@ public class HandPhone {
 	}
 
 	static void view_juso() throws IOException {
+
 		String str = "";
 		File f = new File(fname);
+
 		if (!f.exists()) {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(fname));
 			bw.close();
 		}
+
 		BufferedReader br = new BufferedReader(new FileReader(fname));
 		int i;
 		for (i = 1;; i++) {
@@ -78,13 +81,13 @@ public class HandPhone {
 		}
 		if (i == 1) {
 			System.out.println("연락처에 전화번호가 없어요.");
-
 			br.close();
 		}
-	}
+	}// view_juso()
 
 	static void add_juso() throws IOException {
 		Scanner sc = new Scanner(System.in);
+
 		address adr = new address("", "", "");
 
 		String wstr = "";
@@ -103,10 +106,11 @@ public class HandPhone {
 
 		bw.close();
 
-	}
+	}// add_juso()
 
 	static void delete_juso() throws IOException {
 		Scanner sc = new Scanner(System.in);
+
 		String[] readStr = new String[50];
 		String str = "";
 		int del, i, count = 0;
@@ -114,8 +118,10 @@ public class HandPhone {
 		BufferedReader br = new BufferedReader(new FileReader(fname));
 		if (!br.ready()) {
 			System.out.println("연락처 파일이 없습니다.");
+			br.close();
 			return;
 		}
+
 		System.out.println("삭제할 행번호:");
 		del = sc.nextInt();
 		for (i = 0; i < 50; i++) {
@@ -130,11 +136,13 @@ public class HandPhone {
 			}
 			br.close();
 		}
+
 		BufferedWriter bw = new BufferedWriter(new FileWriter(fname));
 		for (i = 0; i < count; i++) {
 			bw.write(readStr[i]);
 			bw.newLine();
 		}
 		bw.close();
-	}
+
+	}// delete_juso()
 }
