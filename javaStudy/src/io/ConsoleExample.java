@@ -5,9 +5,9 @@ import java.io.Console;
 public class ConsoleExample {
 	public static void main(String[] args) {
 		Console console = System.console();
-		System.out.println("ID: ");
+		System.out.print("ID: ");
 		String id = console.readLine();
-		System.out.println("Passwd: ");
+		System.out.print("Passwd: ");
 		char[] pw = console.readPassword();
 		String strPw = new String(pw);
 
