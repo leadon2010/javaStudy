@@ -1,7 +1,11 @@
 package ac.yedam.prod.control;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import ac.yedam.prod.InOutService;
 import ac.yedam.prod.InOutVO;
@@ -9,6 +13,7 @@ import ac.yedam.prod.ProductService;
 import ac.yedam.prod.ProductVO;
 import ac.yedam.prod.impl.InOutServiceImpl;
 import ac.yedam.prod.impl.ProductServiceImpl;
+
 
 public class ProdProc {
 	InOutService inOutService = InOutServiceImpl.getInstance();
@@ -20,19 +25,80 @@ public class ProdProc {
 	public void execute() {
 		int menu;
 		while (true) {
-			System.out.println("메뉴선택 1)상품정보 2)재고정보");
+			System.out.println("메뉴선택 1)상품정보 2)재고정보 3)구매-판매정보생성");
 			menu = sc.nextInt();
 			sc.nextLine();
 			if (menu == 1)
 				prodInfo();
 			else if (menu == 2)
 				onhandInfo();
+			else if (menu == 3)
+				receiptIssueInfo();
 			else {
 				System.out.println("프로그램 종료.");
 				System.exit(0);
 			}
 		}
 
+	}
+
+	// 1)구매정보생성 2)판재정보생성 3)상위메뉴
+	public void receiptIssueInfo() {
+		int menu;
+		Map<String, Integer> map = new HashMap<>();
+		while (true) {
+			System.out.println("메뉴선택 1)구매정보생성 2)판매정보생성 3)상위메뉴");
+			menu = sc.nextInt();
+			sc.nextLine();
+			if (menu == 1) {
+				while (true) {
+					System.out.println("구입할 품목을 선택하세요.");
+					String prodCode = sc.nextLine();
+					System.out.println("수량을 입력하세요.");
+					int qty = sc.nextInt();
+					sc.nextLine();
+					map.put(prodCode, qty);
+					
+					System.out.println("추가하실래요? Y or N");
+					String addStr = sc.nextLine().toUpperCase();
+					if (addStr.equals("N"))
+						break;
+				}
+				// 입고정보생성
+				Set<Map.Entry<String, Integer>> set = map.entrySet();
+				Iterator<Map.Entry<String, Integer>> iter = set.iterator();
+				while (iter.hasNext()) {
+					Map.Entry<String, Integer> entry = iter.next();
+					System.out.println(entry.getKey() + " " + entry.getValue());
+				}
+
+			} else if (menu == 2) {
+				while (true) {
+					System.out.println("판매할 품목을 선택하세요.");
+					String prodCode = sc.nextLine();
+					System.out.println("수량을 입력하세요.");
+					int qty = sc.nextInt();
+					sc.nextLine();
+					map.put(prodCode, qty);
+					
+					System.out.println("추가하실래요? Y or N");
+					String addStr = sc.nextLine().toUpperCase();
+					if (addStr.equals("N"))
+						break;
+				}
+				// 출고정보생성
+
+				Set<Map.Entry<String, Integer>> set = map.entrySet();
+				Iterator<Map.Entry<String, Integer>> iter = set.iterator();
+				while (iter.hasNext()) {
+					Map.Entry<String, Integer> entry = iter.next();
+					System.out.println(entry.getKey() + " " + entry.getValue());
+				}
+
+			} else if (menu == 3) {
+				return;
+			}
+		}
 	}
 
 	// 1)상품조회 2)상품등록 3)상품변경 4)상품삭제 5)상위메뉴
