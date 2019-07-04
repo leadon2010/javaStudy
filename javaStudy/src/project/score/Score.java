@@ -104,32 +104,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.addMouseListener(this);
 		JScrollPane scroll = new JScrollPane(table);
 
-		// jTableSet(); //jtableset의 메소드 호출부분.
-		table.getTableHeader().setReorderingAllowed(false);
-		table.getTableHeader().setResizingAllowed(false);
-		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-
-		DefaultTableCellRenderer celAlignCenter = new DefaultTableCellRenderer();
-		celAlignCenter.setHorizontalAlignment(JLabel.CENTER);
-		DefaultTableCellRenderer celAlignRight = new DefaultTableCellRenderer();
-		celAlignRight.setHorizontalAlignment(JLabel.RIGHT);
-		DefaultTableCellRenderer celAlignLeft = new DefaultTableCellRenderer();
-		celAlignLeft.setHorizontalAlignment(JLabel.LEFT);
-
-		table.getColumnModel().getColumn(0).setPreferredWidth(10);
-		table.getColumnModel().getColumn(0).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(1).setPreferredWidth(10);
-		table.getColumnModel().getColumn(1).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(2).setPreferredWidth(10);
-		table.getColumnModel().getColumn(2).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(3).setPreferredWidth(10);
-		table.getColumnModel().getColumn(3).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(4).setPreferredWidth(10);
-		table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(5).setPreferredWidth(10);
-		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
-
-		//////////////////////////////////
+		jTableSet();
 		add(scroll);
 		scroll.setBounds(415, 10, 770, 250);
 
@@ -178,8 +153,53 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		String ButtonFlag = e.getActionCommand();
 
 		if (ButtonFlag.equals("추가")) {
+			try {
 			contentSet();
+			int result = scoreDAO.insertScore(scoreDTO);
+			if (result == 1) {
+				JOptionPane.showMessageDialog(this, "추가 되었습니다");
+				jTableRefresh();
+				contentClear();
+			}}catch(Exception e) {
+				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+			}
 		}
+	}
+
+	public void jTableRefresh() {
+		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(), col) {
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+		table.setModel(model);
+		jTableSet();
+	}
+
+	public void jTableSet() {
+		table.getTableHeader().setReorderingAllowed(false);
+		table.getTableHeader().setResizingAllowed(false);
+		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+		DefaultTableCellRenderer celAlignCenter = new DefaultTableCellRenderer();
+		celAlignCenter.setHorizontalAlignment(JLabel.CENTER);
+		DefaultTableCellRenderer celAlignRight = new DefaultTableCellRenderer();
+		celAlignRight.setHorizontalAlignment(JLabel.RIGHT);
+		DefaultTableCellRenderer celAlignLeft = new DefaultTableCellRenderer();
+		celAlignLeft.setHorizontalAlignment(JLabel.LEFT);
+
+		table.getColumnModel().getColumn(0).setPreferredWidth(10);
+		table.getColumnModel().getColumn(0).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(1).setPreferredWidth(10);
+		table.getColumnModel().getColumn(1).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(2).setPreferredWidth(10);
+		table.getColumnModel().getColumn(2).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(3).setPreferredWidth(10);
+		table.getColumnModel().getColumn(3).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(4).setPreferredWidth(10);
+		table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(5).setPreferredWidth(10);
+		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
 	}
 
 	public void contentSet() {
@@ -195,6 +215,31 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		} else {
 			kor = Integer.parseInt(jtKor.getText());
 		}
+		if (jtEng.getText().equals("") || jtEng.getText().equals(null)) {
+			eng = 0;
+		} else {
+			eng = Integer.parseInt(jtKor.getText());
+		}
+		if (jtMat.getText().equals("") || jtMat.getText().equals(null)) {
+			mat = 0;
+		} else {
+			mat = Integer.parseInt(jtKor.getText());
+		}
+		tot = kor + eng + mat;
+		ave = tot / 3;
+		scoreDTO.setName(name);
+		scoreDTO.setKor(kor);
+		scoreDTO.setEng(eng);
+		scoreDTO.setMat(mat);
+		scoreDTO.setTot(tot);
+		scoreDTO.setAve(ave);
+	}
+
+	public void contentClear() {
+		jtName.setText("");
+		jtKor.setText("");
+		jtEng.setText("");
+		jtMat.setText("");
 	}
 
 }
