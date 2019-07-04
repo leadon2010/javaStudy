@@ -1,6 +1,8 @@
 package project.score;
 
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -11,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -101,7 +104,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.addMouseListener(this);
 		JScrollPane scroll = new JScrollPane(table);
 
-		//		jTableSet(); //jtableset의 메소드 호출부분.
+		// jTableSet(); //jtableset의 메소드 호출부분.
 		table.getTableHeader().setReorderingAllowed(false);
 		table.getTableHeader().setResizingAllowed(false);
 		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -117,9 +120,27 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.getColumnModel().getColumn(0).setCellRenderer(celAlignCenter);
 		table.getColumnModel().getColumn(1).setPreferredWidth(10);
 		table.getColumnModel().getColumn(1).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(2).setPreferredWidth(10);
+		table.getColumnModel().getColumn(2).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(3).setPreferredWidth(10);
+		table.getColumnModel().getColumn(3).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(4).setPreferredWidth(10);
+		table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(5).setPreferredWidth(10);
+		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
 
 		//////////////////////////////////
 		add(scroll);
+		scroll.setBounds(415, 10, 770, 250);
+
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation((screenSize.width - 1200) / 2, (screenSize.height - 300) / 2);
+
+		setResizable(false);
+		setSize(1200, 300);
+		setTitle("성적 관리프로그램");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 
 	}
 
@@ -154,12 +175,32 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		String ButtonFlag = e.getActionCommand();
 
+		if (ButtonFlag.equals("추가")) {
+			contentSet();
+		}
+	}
+
+	public void contentSet() {
+		scoreDTO = new ScoreDTO();
+
+		String name = jtName.getText();
+		if (name.equals("") || name.equals(null))
+			JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+
+		int kor, eng, mat, tot, ave;
+		if (jtKor.getText().equals("") || jtKor.getText().equals(null)) {
+			kor = 0;
+		} else {
+			kor = Integer.parseInt(jtKor.getText());
+		}
 	}
 
 }
 
 public class Score {
-
+	public static void main(String[] args) {
+		new ScoreFrame();
+	}
 }
