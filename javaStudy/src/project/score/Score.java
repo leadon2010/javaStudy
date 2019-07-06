@@ -39,7 +39,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		add(jlName = new JLabel("이름", JLabel.CENTER));
 		jlName.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlName.setBorder(BorderFactory.createBevelBorder(0));
-		jlName.setBounds(10, 10, 10, 10);
+		jlName.setBounds(10, 10, 120, 50);
 		add(jtName = new JTextField());
 		jtName.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jtName.setHorizontalAlignment(JTextField.CENTER);
@@ -66,7 +66,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		add(jlMat = new JLabel("수학 점수", JLabel.CENTER));
 		jlMat.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlMat.setBorder(BorderFactory.createBevelBorder(0));
-		jlMat.setBounds(140, 190, 120, 50);
+		jlMat.setBounds(10, 190, 120, 50);
 		add(jtMat = new JTextField());
 		jtMat.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jtMat.setHorizontalAlignment(JTextField.CENTER);
@@ -88,6 +88,8 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jbChange.addActionListener(this);
 
 		col = new Vector();
+		
+		col.add("이름");
 		col.add("국어 점수");
 		col.add("영어 점수");
 		col.add("수학 점수");
@@ -121,46 +123,67 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		int rowIndex = table.getSelectedRow();
+		jtName.setText(table.getValueAt(rowIndex, 0) + "");
+		jtKor.setText(table.getValueAt(rowIndex, 1) + "");
+		jtEng.setText(table.getValueAt(rowIndex, 2) + "");
+		jtMat.setText(table.getValueAt(rowIndex, 3) + "");
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String ButtonFlag = e.getActionCommand();
+		String buttonFlag = e.getActionCommand();
 
-		if (ButtonFlag.equals("추가")) {
+		if (buttonFlag.equals("추가")) {
 			try {
-			contentSet();
-			int result = scoreDAO.insertScore(scoreDTO);
-			if (result == 1) {
-				JOptionPane.showMessageDialog(this, "추가 되었습니다");
-				jTableRefresh();
-				contentClear();
-			}}catch(Exception e) {
+				contentSet();
+				int result = scoreDAO.insertScore(scoreDTO);
+				if (result == 1) {
+					JOptionPane.showMessageDialog(this, "추가 되었습니다");
+					jTableRefresh();
+					contentClear();
+				}
+			} catch (Exception e1) {
+				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+			}
+		} else if (buttonFlag.equals("삭제")) {
+			try {
+				contentSet();
+				int result = scoreDAO.deleteScore(scoreDTO);
+				if (result == 1) {
+					JOptionPane.showMessageDialog(this, "삭제 되었습니다");
+					jTableRefresh();
+					contentClear();
+				}
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+			}
+		} else if (buttonFlag.equals("수정")) {
+			try {
+				contentSet();
+				int result = scoreDAO.updateScore(scoreDTO);
+				if (result == 1) {
+					JOptionPane.showMessageDialog(this, "수정 되었습니다");
+					jTableRefresh();
+					contentClear();
+				}
+			} catch (Exception e3) {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
 		}
@@ -191,14 +214,14 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.getColumnModel().getColumn(0).setPreferredWidth(10);
 		table.getColumnModel().getColumn(0).setCellRenderer(celAlignCenter);
 		table.getColumnModel().getColumn(1).setPreferredWidth(10);
-		table.getColumnModel().getColumn(1).setCellRenderer(celAlignCenter);
+		table.getColumnModel().getColumn(1).setCellRenderer(celAlignRight);
 		table.getColumnModel().getColumn(2).setPreferredWidth(10);
 		table.getColumnModel().getColumn(2).setCellRenderer(celAlignCenter);
 		table.getColumnModel().getColumn(3).setPreferredWidth(10);
 		table.getColumnModel().getColumn(3).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(4).setPreferredWidth(10);
+		table.getColumnModel().getColumn(4).setPreferredWidth(20);
 		table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
-		table.getColumnModel().getColumn(5).setPreferredWidth(10);
+		table.getColumnModel().getColumn(5).setPreferredWidth(20);
 		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
 	}
 
@@ -218,12 +241,12 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		if (jtEng.getText().equals("") || jtEng.getText().equals(null)) {
 			eng = 0;
 		} else {
-			eng = Integer.parseInt(jtKor.getText());
+			eng = Integer.parseInt(jtEng.getText());
 		}
 		if (jtMat.getText().equals("") || jtMat.getText().equals(null)) {
 			mat = 0;
 		} else {
-			mat = Integer.parseInt(jtKor.getText());
+			mat = Integer.parseInt(jtMat.getText());
 		}
 		tot = kor + eng + mat;
 		ave = tot / 3;
