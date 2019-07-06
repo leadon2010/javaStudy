@@ -28,7 +28,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 
 	JLabel jlName, jlKor, jlEng, jlMat;
 	JTextField jtName, jtKor, jtEng, jtMat;
-	JButton jbAdd, jbDel, jbChange;
+	JButton jbAdd, jbDel, jbChange, jbSearch;
 	JTable table;
 	Vector data, col;
 
@@ -87,8 +87,13 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jbChange.setBounds(270, 130, 120, 50);
 		jbChange.addActionListener(this);
 
+		add(jbSearch = new JButton("조회"));
+		jbSearch.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		jbSearch.setBounds(270, 190, 120, 50);
+		jbSearch.addActionListener(this);
+
 		col = new Vector();
-		
+
 		col.add("이름");
 		col.add("국어 점수");
 		col.add("영어 점수");
@@ -162,6 +167,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 			} catch (Exception e1) {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
+
 		} else if (buttonFlag.equals("삭제")) {
 			try {
 				contentSet();
@@ -174,6 +180,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
+
 		} else if (buttonFlag.equals("수정")) {
 			try {
 				contentSet();
@@ -186,6 +193,8 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 			} catch (Exception e3) {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
+		} else if (buttonFlag.equals("조회")) {
+			
 		}
 	}
 
