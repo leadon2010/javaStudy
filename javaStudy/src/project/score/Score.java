@@ -101,7 +101,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		col.add("총점");
 		col.add("평균");
 
-		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(), col) {
+		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(scoreDTO), col) {
 			public boolean isCellEditable(int row, int column) {
 				return false;
 			}
@@ -195,12 +195,15 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
 		} else if (buttonFlag.equals("조회")) {
-
+			contentSearch();
+			jTableRefresh();
+			contentClear();
 		}
 	}
 
 	public void jTableRefresh() {
-		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(), col) {
+		System.out.println(scoreDTO);
+		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(scoreDTO), col) {
 			public boolean isCellEditable(int row, int column) {
 				return false;
 			}
@@ -234,6 +237,12 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.getColumnModel().getColumn(5).setPreferredWidth(20);
 		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
 
+	}
+
+	public void contentSearch() {
+		String name = jtName.getText();
+		scoreDTO = new ScoreDTO();
+		scoreDTO.setName(name);
 	}
 
 	public void contentSet() {

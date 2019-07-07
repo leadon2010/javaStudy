@@ -64,14 +64,22 @@ public class ScoreDAO {
 		return result;
 	} // insertMember : 회원 정보를 저장하는 메소드, 성공 여부를 int형 result 를 반환한다.
 
-	public Vector getScore() {
+	public Vector getScore(ScoreDTO dto) {
+
 		Vector data = new Vector();
+
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
 			con = getConn();
-			String sql = "select * from score order by name asc";
+			String sql;
+			if (dto == null || dto.getName() == null || dto.getName().equals("")) {
+				sql = "select * from score order by name asc";
+			} else {
+				sql = "select * from score where name = '" + dto.getName() + "' order by name asc";
+			}
+
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 
