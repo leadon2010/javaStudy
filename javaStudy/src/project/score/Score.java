@@ -214,7 +214,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 
 	public void jTableSet() {
 		table.getTableHeader().setReorderingAllowed(false);
-		table.getTableHeader().setResizingAllowed(false);
+		table.getTableHeader().setResizingAllowed(true);
 		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
 		DefaultTableCellRenderer celAlignCenter = new DefaultTableCellRenderer();
