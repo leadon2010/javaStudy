@@ -29,6 +29,9 @@ public class ScoreDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int result = 0;
+		if (dto == null)
+			return 0;
+
 		try {
 			con = getConn();
 			String sql = "insert into score values(?,?,?,?,?,?)";

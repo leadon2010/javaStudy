@@ -163,7 +163,8 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 					JOptionPane.showMessageDialog(this, "추가 되었습니다");
 					jTableRefresh();
 					contentClear();
-				}
+				} else
+					JOptionPane.showMessageDialog(this, "다시 처리하세요.");
 			} catch (Exception e1) {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
@@ -194,7 +195,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 			}
 		} else if (buttonFlag.equals("조회")) {
-			
+
 		}
 	}
 
@@ -232,39 +233,42 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		table.getColumnModel().getColumn(4).setCellRenderer(celAlignCenter);
 		table.getColumnModel().getColumn(5).setPreferredWidth(20);
 		table.getColumnModel().getColumn(5).setCellRenderer(celAlignCenter);
+
 	}
 
 	public void contentSet() {
 		scoreDTO = new ScoreDTO();
 
 		String name = jtName.getText();
-		if (name.equals("") || name.equals(null))
-			JOptionPane.showMessageDialog(this, "이름을 입력하세요");
 
-		int kor, eng, mat, tot, ave;
-		if (jtKor.getText().equals("") || jtKor.getText().equals(null)) {
-			kor = 0;
-		} else {
-			kor = Integer.parseInt(jtKor.getText());
+		if (name == null || name.equals(""))
+			JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+		else {
+			int kor, eng, mat, tot, ave;
+			if (jtKor.getText().equals("") || jtKor.getText().equals(null)) {
+				kor = 0;
+			} else {
+				kor = Integer.parseInt(jtKor.getText());
+			}
+			if (jtEng.getText().equals("") || jtEng.getText().equals(null)) {
+				eng = 0;
+			} else {
+				eng = Integer.parseInt(jtEng.getText());
+			}
+			if (jtMat.getText().equals("") || jtMat.getText().equals(null)) {
+				mat = 0;
+			} else {
+				mat = Integer.parseInt(jtMat.getText());
+			}
+			tot = kor + eng + mat;
+			ave = tot / 3;
+			scoreDTO.setName(name);
+			scoreDTO.setKor(kor);
+			scoreDTO.setEng(eng);
+			scoreDTO.setMat(mat);
+			scoreDTO.setTot(tot);
+			scoreDTO.setAve(ave);
 		}
-		if (jtEng.getText().equals("") || jtEng.getText().equals(null)) {
-			eng = 0;
-		} else {
-			eng = Integer.parseInt(jtEng.getText());
-		}
-		if (jtMat.getText().equals("") || jtMat.getText().equals(null)) {
-			mat = 0;
-		} else {
-			mat = Integer.parseInt(jtMat.getText());
-		}
-		tot = kor + eng + mat;
-		ave = tot / 3;
-		scoreDTO.setName(name);
-		scoreDTO.setKor(kor);
-		scoreDTO.setEng(eng);
-		scoreDTO.setMat(mat);
-		scoreDTO.setTot(tot);
-		scoreDTO.setAve(ave);
 	}
 
 	public void contentClear() {
