@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class HandPhone {
-	static String fname = "c:\\temp\\juso.txt";
+	static String fname = "aaa.txt";
 
 	static class address {
 		String name;
