@@ -36,7 +36,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		setLayout(null);
 		scoreDAO = new ScoreDAO();
 
-		add(jlName = new JLabel("이름", JLabel.CENTER));
+		add(jlName = new JLabel("Name", JLabel.CENTER));
 		jlName.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlName.setBorder(BorderFactory.createBevelBorder(0));
 		jlName.setBounds(10, 10, 120, 50);
@@ -45,7 +45,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtName.setHorizontalAlignment(JTextField.CENTER);
 		jtName.setBounds(140, 10, 120, 50);
 
-		add(jlKor = new JLabel("국어 점수", JLabel.CENTER));
+		add(jlKor = new JLabel("Kor Score", JLabel.CENTER));
 		jlKor.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlKor.setBorder(BorderFactory.createBevelBorder(0));
 		jlKor.setBounds(10, 70, 120, 50);
@@ -54,7 +54,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtKor.setHorizontalAlignment(JTextField.CENTER);
 		jtKor.setBounds(140, 70, 120, 50);
 
-		add(jlEng = new JLabel("영어 점수", JLabel.CENTER));
+		add(jlEng = new JLabel("Eng Score", JLabel.CENTER));
 		jlEng.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlEng.setBorder(BorderFactory.createBevelBorder(0));
 		jlEng.setBounds(10, 130, 120, 50);
@@ -63,7 +63,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtEng.setHorizontalAlignment(JTextField.CENTER);
 		jtEng.setBounds(140, 130, 120, 50);
 
-		add(jlMat = new JLabel("수학 점수", JLabel.CENTER));
+		add(jlMat = new JLabel("Mat Score", JLabel.CENTER));
 		jlMat.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlMat.setBorder(BorderFactory.createBevelBorder(0));
 		jlMat.setBounds(10, 190, 120, 50);
@@ -72,34 +72,34 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtMat.setHorizontalAlignment(JTextField.CENTER);
 		jtMat.setBounds(140, 190, 120, 50);
 
-		add(jbAdd = new JButton("추가"));
+		add(jbAdd = new JButton("Add"));
 		jbAdd.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jbAdd.setBounds(270, 10, 120, 50);
 		jbAdd.addActionListener(this);
 
-		add(jbDel = new JButton("삭제"));
+		add(jbDel = new JButton("Del"));
 		jbDel.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jbDel.setBounds(270, 70, 120, 50);
 		jbDel.addActionListener(this);
 
-		add(jbChange = new JButton("수정"));
+		add(jbChange = new JButton("Upd"));
 		jbChange.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jbChange.setBounds(270, 130, 120, 50);
 		jbChange.addActionListener(this);
 
-		add(jbSearch = new JButton("조회"));
+		add(jbSearch = new JButton("Search"));
 		jbSearch.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jbSearch.setBounds(270, 190, 120, 50);
 		jbSearch.addActionListener(this);
 
 		col = new Vector();
 
-		col.add("이름");
-		col.add("국어 점수");
-		col.add("영어 점수");
-		col.add("수학 점수");
-		col.add("총점");
-		col.add("평균");
+		col.add("Name");
+		col.add("Korean");
+		col.add("English");
+		col.add("Math");
+		col.add("Total");
+		col.add("Average");
 
 		DefaultTableModel model = new DefaultTableModel(scoreDAO.getScore(scoreDTO), col) {
 			public boolean isCellEditable(int row, int column) {
@@ -154,47 +154,48 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String buttonFlag = e.getActionCommand();
+		System.out.println(buttonFlag);
 
-		if (buttonFlag.equals("추가")) {
+		if (buttonFlag.equals("Add")) {
 			try {
 				contentSet();
 				int result = scoreDAO.insertScore(scoreDTO);
 				if (result == 1) {
-					JOptionPane.showMessageDialog(this, "추가 되었습니다");
+					JOptionPane.showMessageDialog(this, result + " row(s) added.");
 					jTableRefresh();
 					contentClear();
 				} else
-					JOptionPane.showMessageDialog(this, "다시 처리하세요.");
+					JOptionPane.showMessageDialog(this, "retry it!!!");
 			} catch (Exception e1) {
-				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+				JOptionPane.showMessageDialog(this, "input name...");
 			}
 
-		} else if (buttonFlag.equals("삭제")) {
+		} else if (buttonFlag.equals("Del")) {
 			try {
 				contentSet();
 				int result = scoreDAO.deleteScore(scoreDTO);
 				if (result == 1) {
-					JOptionPane.showMessageDialog(this, "삭제 되었습니다");
+					JOptionPane.showMessageDialog(this, result + " row(s) deleted.");
 					jTableRefresh();
 					contentClear();
 				}
 			} catch (Exception e2) {
-				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+				JOptionPane.showMessageDialog(this, "input name...");
 			}
 
-		} else if (buttonFlag.equals("수정")) {
+		} else if (buttonFlag.equals("Upd")) {
 			try {
 				contentSet();
 				int result = scoreDAO.updateScore(scoreDTO);
 				if (result == 1) {
-					JOptionPane.showMessageDialog(this, "수정 되었습니다");
+					JOptionPane.showMessageDialog(this, result + " row(s) updated.");
 					jTableRefresh();
 					contentClear();
 				}
 			} catch (Exception e3) {
-				JOptionPane.showMessageDialog(this, "이름을 입력하세요");
+				JOptionPane.showMessageDialog(this, "input name...");
 			}
-		} else if (buttonFlag.equals("조회")) {
+		} else if (buttonFlag.equals("Search")) {
 			contentSearch();
 			jTableRefresh();
 			contentClear();
