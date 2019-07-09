@@ -28,9 +28,9 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 
 	JLabel jlName, jlKor, jlEng, jlMat;
 	JTextField jtName, jtKor, jtEng, jtMat;
-	JButton jbAdd, jbDel, jbChange, jbSearch;
+	JButton jbAdd, jbDel, jbChange, jbSearch, jbExit;
 	JTable table;
-	Vector data, col;
+	Vector<String> data, col;
 
 	ScoreFrame() {
 		setLayout(null);
@@ -45,7 +45,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtName.setHorizontalAlignment(JTextField.CENTER);
 		jtName.setBounds(140, 10, 120, 50);
 
-		add(jlKor = new JLabel("Kor Score", JLabel.CENTER));
+		add(jlKor = new JLabel("Korean", JLabel.CENTER));
 		jlKor.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlKor.setBorder(BorderFactory.createBevelBorder(0));
 		jlKor.setBounds(10, 70, 120, 50);
@@ -54,7 +54,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtKor.setHorizontalAlignment(JTextField.CENTER);
 		jtKor.setBounds(140, 70, 120, 50);
 
-		add(jlEng = new JLabel("Eng Score", JLabel.CENTER));
+		add(jlEng = new JLabel("English", JLabel.CENTER));
 		jlEng.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlEng.setBorder(BorderFactory.createBevelBorder(0));
 		jlEng.setBounds(10, 130, 120, 50);
@@ -63,7 +63,7 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jtEng.setHorizontalAlignment(JTextField.CENTER);
 		jtEng.setBounds(140, 130, 120, 50);
 
-		add(jlMat = new JLabel("Mat Score", JLabel.CENTER));
+		add(jlMat = new JLabel("Mathmatics", JLabel.CENTER));
 		jlMat.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		jlMat.setBorder(BorderFactory.createBevelBorder(0));
 		jlMat.setBounds(10, 190, 120, 50);
@@ -87,12 +87,17 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 		jbChange.setBounds(270, 130, 120, 50);
 		jbChange.addActionListener(this);
 
-		add(jbSearch = new JButton("Search"));
+		add(jbSearch = new JButton("Fnd"));
 		jbSearch.setFont(new Font("맑은 고딕", Font.BOLD, 20));
-		jbSearch.setBounds(270, 190, 120, 50);
+		jbSearch.setBounds(270, 190, 60, 50);
 		jbSearch.addActionListener(this);
 
-		col = new Vector();
+		add(jbExit = new JButton("Ext"));
+		jbExit.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		jbExit.setBounds(330, 190, 60, 50);
+		jbExit.addActionListener(this);
+
+		col = new Vector<>();
 
 		col.add("Name");
 		col.add("Korean");
@@ -154,7 +159,6 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String buttonFlag = e.getActionCommand();
-		System.out.println(buttonFlag);
 
 		if (buttonFlag.equals("Add")) {
 			try {
@@ -195,10 +199,18 @@ class ScoreFrame extends JFrame implements ActionListener, MouseListener {
 			} catch (Exception e3) {
 				JOptionPane.showMessageDialog(this, "input name...");
 			}
-		} else if (buttonFlag.equals("Search")) {
+
+		} else if (buttonFlag.equals("Fnd")) {
 			contentSearch();
 			jTableRefresh();
 			contentClear();
+
+		} else if (buttonFlag.equals("Ext")) {
+//			SecurityManager security = System.getSecurityManager();
+//			if (security != null) {
+//				security.checkExit(0);
+//			}
+			System.exit(0);
 		}
 	}
 
