@@ -1,8 +1,61 @@
 package thisisjava;
 
+import java.util.Calendar;
+
 public class Temp {
 
 	public static void main(String[] args) {
+
+		Calendar cal = Calendar.getInstance();
+		
+		int thisYear = cal.get(Calendar.YEAR);
+		int thisMonth = cal.get(Calendar.MONTH);
+		int lastDate = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+		cal.set(thisYear, thisMonth, 1);
+
+		int dayOfFirstDate = cal.get(Calendar.DAY_OF_WEEK);
+
+		System.out.println(thisYear); // 년도
+		System.out.println(thisMonth); // 월
+		System.out.println(lastDate); // 오늘날짜
+
+		System.out.println(dayOfFirstDate);
+
+		System.out.println(cal.get(Calendar.YEAR));
+		System.out.println(cal.get(Calendar.MONTH));
+		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
+		System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+
+		System.out.println();
+
+	}
+
+	////////////////////////////////////////
+	// enumMethod()
+	////////////////////////////////////////
+	static void enumMethod(String[] args) {
+		Week today = Week.SUNDAY;
+		args = new String[] { today.name() };
+
+		if (args.length == 1) {
+			String strDay = args[0];
+			Week weekDay = Week.valueOf(strDay);
+
+			if (weekDay == Week.SATURDAY || weekDay == Week.SUNDAY)
+				System.out.println("주말입니다.");
+			else
+				System.out.println("주중입니다.");
+		} else {
+			System.out.println("none");
+		}
+
+	}
+
+	////////////////////////////////////////
+	// ary2() method
+	////////////////////////////////////////
+	static void ary2() {
 		int[] firstAry = new int[5];
 		int[] secondAry = new int[5];
 		int[] thirdAry = new int[5];
@@ -51,6 +104,8 @@ public class Temp {
 
 	}
 
+	// ary() method.
+	////////////////////////////////////////
 	static void ary() {
 		int[] intAry = new int[5];
 		for (int i = 0; i < intAry.length; i++) {
@@ -68,6 +123,9 @@ public class Temp {
 		}
 	}
 
+	////////////////////////////////////////
+	// gugudan() method.
+	////////////////////////////////////////
 	static void gugudan() {
 		int i = 1;
 		while (i < 10) {
