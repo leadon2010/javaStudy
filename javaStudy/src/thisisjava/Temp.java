@@ -11,6 +11,7 @@ public class Temp {
 		int dayOfFirstDate = getDayOfFirstDate(thisMonth);
 
 		int calDay = 1;
+		getTitle(thisYear, thisMonth);
 		String[] strDay = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
 		for (String str : strDay) {
 			System.out.print(str + " ");
@@ -29,6 +30,12 @@ public class Temp {
 				System.out.println();
 			a++;
 		}
+	}
+
+	static void getTitle(int year, int month) {
+		System.out.println("===========================");
+		System.out.println("         " + year + "년 " + month + "월");
+		System.out.println("===========================");
 	}
 
 	static int getDayOfFirstDate(int month) {
