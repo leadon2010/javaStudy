@@ -5,9 +5,91 @@ import java.util.Calendar;
 public class Temp {
 
 	public static void main(String[] args) {
+		int thisYear = 2019;
+		int thisMonth = 8;
+		int lastDate = getLastDay(thisMonth);
+		int dayOfFirstDate = getDayOfFirstDate(thisMonth);
 
+		int calDay = 1;
+		String[] strDay = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
+		for (String str : strDay) {
+			System.out.print(str + " ");
+		}
+		System.out.println();
+		int r = 1;
+		while (r < dayOfFirstDate) {
+			System.out.print("    ");
+			r++;
+		}
+
+		int a = 1;
+		while (a <= lastDate) {
+			System.out.printf("%3d ", calDay++);
+			if ((a + r - 1) % 7 == 0)
+				System.out.println();
+			a++;
+		}
+	}
+
+	static int getDayOfFirstDate(int month) {
+		int day = 0;
+		if (month == 7) {
+			day = 2;
+		} else if (month == 8) {
+			day = 5;
+		}
+		return day;
+	}
+
+	static int getLastDay(int month) {
+		int lastDay = 0;
+		switch (month) {
+		case 1:
+			lastDay = 31;
+			break;
+		case 2:
+			lastDay = 28;
+			break;
+		case 3:
+			lastDay = 31;
+			break;
+		case 4:
+			lastDay = 30;
+			break;
+		case 5:
+			lastDay = 31;
+			break;
+		case 6:
+			lastDay = 30;
+			break;
+		case 7:
+			lastDay = 31;
+			break;
+		case 8:
+			lastDay = 31;
+			break;
+		case 9:
+			lastDay = 30;
+			break;
+		case 10:
+			lastDay = 31;
+			break;
+		case 11:
+			lastDay = 30;
+			break;
+		case 12:
+			lastDay = 31;
+			break;
+		}
+		return lastDay;
+	}
+
+	////////////////////////////////////////
+	// calendar()
+	////////////////////////////////////////
+	static void calendar() {
 		Calendar cal = Calendar.getInstance();
-		
+
 		int thisYear = cal.get(Calendar.YEAR);
 		int thisMonth = cal.get(Calendar.MONTH);
 		int lastDate = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -16,16 +98,11 @@ public class Temp {
 
 		int dayOfFirstDate = cal.get(Calendar.DAY_OF_WEEK);
 
-		System.out.println(thisYear); // 년도
-		System.out.println(thisMonth); // 월
-		System.out.println(lastDate); // 오늘날짜
+		System.out.println("올해는 " + thisYear); // 년도
+		System.out.println("이번달은 " + thisMonth); // 월
+		System.out.println("이번달의 마지막날은 " + lastDate); // 오늘날짜
 
-		System.out.println(dayOfFirstDate);
-
-		System.out.println(cal.get(Calendar.YEAR));
-		System.out.println(cal.get(Calendar.MONTH));
-		System.out.println(cal.get(Calendar.DAY_OF_MONTH));
-		System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+		System.out.println("1일의 요일은 " + dayOfFirstDate);
 
 		System.out.println();
 
