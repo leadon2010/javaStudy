@@ -4,12 +4,13 @@ import java.util.TreeSet;
 
 public class Temp {
 	public static void main(String[] args) {
-		int sum = 0;
-		for (int i = 1; i <= 10; i++) {
-			if (i % 2 == 1)
-				sum += i;
-
+		int maxValue = 0;
+		int[] intAry = { 2, 5, 9, 7, 5 };
+		for (int i = 0; i < intAry.length; i++) {
+			if (maxValue < intAry[i])
+				maxValue = intAry[i];
 		}
-		System.out.println("합계는 " + sum);
+
+		System.out.println("최대값은 " + maxValue);
 	}
 }
