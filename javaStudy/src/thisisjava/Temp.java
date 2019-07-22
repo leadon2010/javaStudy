@@ -1,16 +1,22 @@
 package thisisjava;
 
-import java.util.TreeSet;
-
 public class Temp {
 	public static void main(String[] args) {
-		int maxValue = 0;
-		int[] intAry = { 2, 5, 9, 7, 5 };
-		for (int i = 0; i < intAry.length; i++) {
-			if (maxValue < intAry[i])
-				maxValue = intAry[i];
-		}
+		int result = 0;
+		result = sum(1, 3);
+		System.out.println(result);
+		result = sum(3, 5, 2);
+		System.out.println(result);
+		result = sum(4, 7, 2, 6);
+		System.out.println(result);
+	}
 
-		System.out.println("최대값은 " + maxValue);
+	static int sum(int... arg) {
+		int result = 0;
+		for (int i = 0; i < arg.length; i++) {
+			result += arg[i];
+		}
+		return result;
+
 	}
 }
