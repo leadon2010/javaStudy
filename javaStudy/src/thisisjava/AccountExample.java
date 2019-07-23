@@ -3,12 +3,14 @@ package thisisjava;
 import java.util.Scanner;
 
 public class AccountExample {
-	public static void main(String[] args) {
+	public void execute() {
 		Account[] accntAry = new Account[5];
 		Scanner sc = new Scanner(System.in);
 		String menu = "";
 		while (true) {
+			System.out.println("=======================================");
 			System.out.println("메뉴를 선택하세요. 1)신규 2)입금 3)출금 4)조회 5)종료");
+			System.out.println("=======================================");
 			menu = sc.nextLine();
 			if ("1".equals(menu)) {
 				System.out.println("신규메뉴");
