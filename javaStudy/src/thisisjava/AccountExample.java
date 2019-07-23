@@ -96,19 +96,19 @@ public class AccountExample {
 			System.out.println("=======================================");
 			menu = sc.nextLine();
 
-			if ("1".equals(menu)) {
+			if (menu.equals("1")) {
 				createAccount();
-			
-			} else if ("2".equals(menu)) {
+
+			} else if (menu.equals("2")) {
 				depositAccount();
 
-			} else if ("3".equals(menu)) {
+			} else if (menu.equals("3")) {
 				withdrawAccount();
 
-			} else if ("4".equals(menu)) {
+			} else if (menu.equals("4")) {
 				checkAccount();
 
-			} else if ("5".equals(menu)) {
+			} else if (menu.equals("5")) {
 				System.out.println("종료메뉴");
 				break;
 
