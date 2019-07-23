@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AccountExample {
 	public void execute() {
-		Account[] accntAry = new Account[5];
+		Account[] accntAry = new Account[10];
 		Scanner sc = new Scanner(System.in);
 		String menu = "";
 		while (true) {
@@ -95,5 +95,6 @@ public class AccountExample {
 
 		}
 		System.out.println("프로그램종료.");
+		sc.close();
 	}
 }
