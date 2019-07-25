@@ -3,7 +3,6 @@ package thisisjava;
 public class MovePoint2 {
 	public static void main(String[] args) {
 		int[] scores = new int[5];
-		int[] results = new int[5];
 
 		scores = new int[] { 9, 8, 7, 6, 5 };
 		int temp = 0;
