@@ -22,7 +22,7 @@ public interface RemoteControl {
 
 	// 정적 메소드
 	static void changeBattery() {  // public의 특성.
-		System.out.println("건전지를 교화합니다.");
+		System.out.println("건전지를 교체합니다.");
 	}
 
 }// end of class
