@@ -1,9 +1,11 @@
 package thisisjava.interfaces.model;
 
 public interface EmpService {
-	public void registerEmp(Employees emp);
 
-	public void searchEmp(int empId);
+	public void registerEmp(Employees emp, Employees[] ary);
 
-	public void empList();
+	public void searchEmp(int empId, Employees[] ary);
+
+	public void empList(Employees[] ary);
+
 }
