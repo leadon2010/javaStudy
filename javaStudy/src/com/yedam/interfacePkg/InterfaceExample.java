@@ -1,6 +1,6 @@
 package com.yedam.interfacePkg;
 
-public class Example {
+public class InterfaceExample {
 	public static void main(String[] args) {
 		ImplementC impl = new ImplementC();
 
