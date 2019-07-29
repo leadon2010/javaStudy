@@ -29,10 +29,9 @@ public class HumanResources {
 				list();
 				break;
 			case 4:
-				System.out.println("Exit");
+				System.out.println("end of program");
 				System.exit(0);
 			}
-			System.out.println("end of program");
 		}
 	}
 
