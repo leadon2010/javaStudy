@@ -6,9 +6,9 @@ public interface RemoteControl {
 	int MIN_VOLUME = 0; // 생략하더라도 public static final의 의미가 있다.
 
 	// 추상메소드
-	void turnOn();
+	public abstract void turnOn();
 
-	void turnOff();
+	void turnOff(); // 생략이 되더라도 public abstract 가 있는 것과 동일함.
 
 	void setVolume(int volume);
 
