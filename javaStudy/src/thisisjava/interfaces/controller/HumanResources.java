@@ -3,13 +3,14 @@ package thisisjava.interfaces.controller;
 import java.util.Scanner;
 
 import thisisjava.interfaces.impl.EmpServiceImpl;
+import thisisjava.interfaces.impl.EmpServiceImpl2;
 import thisisjava.interfaces.model.EmpService;
 import thisisjava.interfaces.model.Employees;
 
 public class HumanResources {
 	Scanner sc = new Scanner(System.in);
 	Employees[] empls = new Employees[10];
-	EmpService service = new EmpServiceImpl();
+	EmpService service = new EmpServiceImpl2();
 
 	public void execute() {
 

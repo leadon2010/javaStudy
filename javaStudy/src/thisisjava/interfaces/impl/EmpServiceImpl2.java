@@ -3,14 +3,14 @@ package thisisjava.interfaces.impl;
 import thisisjava.interfaces.model.EmpService;
 import thisisjava.interfaces.model.Employees;
 
-public class EmpServiceImpl implements EmpService {
+public class EmpServiceImpl2 implements EmpService {
 
 	@Override
 	public void registerEmp(Employees emp, Employees[] ary) {
 		for (int i = 0; i < ary.length; i++) {
 			if (ary[i] == null) {
 				ary[i] = emp;
-//				break;
+				break;
 			}
 		}
 	}
