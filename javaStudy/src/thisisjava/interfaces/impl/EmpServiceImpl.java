@@ -32,4 +32,10 @@ public class EmpServiceImpl implements EmpService {
 		}
 	}
 
+	@Override
+	public void deleteEmp(int empId, Employees[] ary) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

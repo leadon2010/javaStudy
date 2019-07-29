@@ -30,14 +30,24 @@ public class HumanResources {
 				list();
 				break;
 			case 4:
+				delete();
+				break;
+			default:
 				System.out.println("end of program");
 				System.exit(0);
 			}
 		}
 	}
 
+	public void delete() {
+		System.out.print("삭제할 사원번호>> ");
+		int empId = sc.nextInt();
+		sc.nextLine();
+		service.deleteEmp(empId, empls);
+	}
+
 	public void printMenu() {
-		System.out.println("메뉴를 선택하세요. 1)등록 2)조회 3)전체리스트 4)종료 ");
+		System.out.println("메뉴를 선택하세요. 1)등록 2)조회 3)전체리스트  4)삭제 5)종료 ");
 	}
 
 	public void register() {

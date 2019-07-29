@@ -32,4 +32,16 @@ public class EmpServiceImpl2 implements EmpService {
 		}
 	}
 
+	@Override
+	public void deleteEmp(int empId, Employees[] ary) {
+		for (int i = 0; i < ary.length; i++) {
+			if (ary[i] != null && ary[i].getEmployeeId() == empId) {
+				while (i < ary.length && ary[i] != null) {
+					ary[i] = ary[i + 1];
+					i++;
+				}
+			}
+		}
+	}
+
 }
