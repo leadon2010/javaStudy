@@ -5,26 +5,27 @@ public class Outer {
 	// instance class
 	class B {
 		B() {
-			System.out.println("B체가 성됨.");
+			System.out.println("B객체가 생성됨.");
 		}
 
-		int field1;
+		int fieldB;
 
-		void method1() {
+		void methodB() {
 
 			class E {
 				E() {
+					System.out.println("E객체가 생성됨");
 				}
 
-				int field5;
+				int fieldE;
 
-				void method5() {
-					System.out.println(field5 + " method5 call.");
+				void methodE() {
+					System.out.println(fieldE + " methodE call.");
 				}
 			}
 			E e = new E();
-			e.field5 = 5;
-			e.method5();
+			e.fieldE = 5;
+			e.methodE();
 		}
 
 	}
@@ -32,24 +33,43 @@ public class Outer {
 	// static class
 	static class C {
 		C() {
+			System.out.println("C객체가 생성됨");
 		}
 
-		int field2;
-		static int field3;
+		int fieldC;
+		static int fieldCC;
 
-		void method2() {
-			System.out.println(field2 + " method2 call.");
+		void methodC() {
+			System.out.println(fieldC + " methodC call.");
 		}
 
-		static void method3() {
-			System.out.println(field3 + " method3 call.");
+		static void methodCC() {
+			System.out.println(fieldCC + " methodCC call.");
 		}
 	}
 
 	// nested interface
 	interface D {
-		int field4 = 4;
-		void method4();
+		int fieldD = 4;
+
+		void methodD();
+	}
+
+	void method() {
+		class F {
+			F() {
+				System.out.println("F객체가 생성됨");
+			}
+
+			int fieldF;
+
+			void methodF() {
+				System.out.println(fieldF + " methodF call");
+			}
+		}
+		F f = new F();
+		f.fieldF = 6;
+		f.methodF();
 	}
 
 }
