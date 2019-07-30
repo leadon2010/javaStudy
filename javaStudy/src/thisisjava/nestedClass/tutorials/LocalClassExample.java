@@ -1,4 +1,4 @@
-package thisisjava.nestedClass;
+package thisisjava.nestedClass.tutorials;
 
 public class LocalClassExample {
 

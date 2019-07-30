@@ -1,4 +1,4 @@
-package thisisjava.nestedClass;
+package thisisjava.nestedClass.tutorials;
 
 public class DataStructure {
 	private final static int SIZE = 15;
