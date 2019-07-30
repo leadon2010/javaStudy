@@ -5,6 +5,7 @@ public class Outer {
 	// instance class
 	class B {
 		B() {
+			System.out.println("B체가 성됨.");
 		}
 
 		int field1;
