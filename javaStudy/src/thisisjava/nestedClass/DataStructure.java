@@ -12,6 +12,10 @@ public class DataStructure {
 
 	public void printEven() {
 		DataStructureIterator iterator = this.new EvenIterator();
+		while (iterator.hasNext()) {
+			System.out.print(iterator.next() + " ");
+		}
+		System.out.println();
 	}
 
 	interface DataStructureIterator extends java.util.Iterator<Integer> {
@@ -33,5 +37,10 @@ public class DataStructure {
 			return retValue;
 		}
 
+	}
+
+	public static void main(String[] args) {
+		DataStructure ds = new DataStructure();
+		ds.printEven();
 	}
 }
