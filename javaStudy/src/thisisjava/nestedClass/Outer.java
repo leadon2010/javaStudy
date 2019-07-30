@@ -2,6 +2,7 @@ package thisisjava.nestedClass;
 
 public class Outer {
 
+	// instance class
 	class B {
 		B() {
 		}
@@ -27,6 +28,7 @@ public class Outer {
 
 	}
 
+	// static class
 	static class C {
 		C() {
 		}
@@ -43,6 +45,7 @@ public class Outer {
 		}
 	}
 
+	// nested interface
 	interface D {
 		int field4 = 4;
 		void method4();
