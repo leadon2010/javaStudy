@@ -1,5 +1,5 @@
 package thisisjava.collection.map;
 
-public class TreeMapExample {
+public class TreeMapExample1 {
 
 }
