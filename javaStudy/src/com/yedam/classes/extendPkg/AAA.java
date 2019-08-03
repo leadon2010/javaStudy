@@ -2,23 +2,23 @@ package com.yedam.classes.extendPkg;
 
 public class AAA {
 	// 필드
-	protected String name;
+	public String name;
 
 	// 생성자
-	protected AAA() {
+	public AAA() {
 
 	}
 
-	protected AAA(String name) {
+	public AAA(String name) {
 		this.name = name;
 	}
 
 	// 메소드
-	protected void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 

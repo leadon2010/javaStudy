@@ -208,7 +208,7 @@ public class EmployeeDAO {
 			CallableStatement cs = conn.prepareCall("{call get_emplist_proc(?,?,?)}");
 			cs.setInt(1, 100);
 			cs.setDate(2, new Date(107, 0, 1));
-			cs.registerOutParameter(3, oracle.jdbc.OracleTypes.CURSOR);
+//			cs.registerOutParameter(3, oracle.jdbc.OracleTypes.CURSOR);
 			cs.executeQuery();
 			ResultSet rs = (ResultSet) cs.getObject(3);
 			while (rs.next()) {
