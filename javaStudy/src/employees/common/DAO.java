@@ -22,7 +22,7 @@ public class DAO {
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 
 		Properties properties = new Properties();
-		String path = DAO.class.getResource("config/database.properties").getPath();
+		String path = DAO.class.getResource("database.properties").getPath();
 		try {
 			path = URLDecoder.decode(path, "utf-8");
 			properties.load(new FileReader(path));
