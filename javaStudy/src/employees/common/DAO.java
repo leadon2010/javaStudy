@@ -1,15 +1,40 @@
 package employees.common;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class DAO {
+
+	public static void main(String[] args) {
+		getConnection();
+	}
+
 	public static Connection getConnection() {
 		Connection conn = null;
 		String user = "hr";
 		String pw = "hr";
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+
+		Properties properties = new Properties();
+		String path = DAO.class.getResource("config/database.properties").getPath();
+		try {
+			path = URLDecoder.decode(path, "utf-8");
+			properties.load(new FileReader(path));
+			user = properties.getProperty("user");
+			pw = properties.getProperty("passwd");
+			url = properties.getProperty("url");
+			String driver = properties.getProperty("driver");
+			System.out.println(user + " " + pw + " " + url + " " + driver);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
