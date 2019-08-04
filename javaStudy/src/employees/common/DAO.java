@@ -20,9 +20,10 @@ public class DAO {
 		String user = "hr";
 		String pw = "hr";
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-
 		Properties properties = new Properties();
-		String path = DAO.class.getResource("database.properties").getPath();
+		String configPath = "/config/database.properties";
+		System.out.println("configPath : " + configPath);
+		String path = DAO.class.getResource(configPath).getPath();
 		try {
 			path = URLDecoder.decode(path, "utf-8");
 			properties.load(new FileReader(path));
