@@ -21,15 +21,18 @@ public class DAO {
 		String pw = "hr";
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 
-		Properties properties = new Properties();
-		String path = DAO.class.getResource("/config/database.properties").getPath();
 		try {
+			String path = DAO.class.getResource("/config/database.properties").getPath();
 			path = URLDecoder.decode(path, "utf-8");
+
+			Properties properties = new Properties();
 			properties.load(new FileReader(path));
+
 			user = properties.getProperty("user");
 			pw = properties.getProperty("passwd");
 			url = properties.getProperty("url");
 			String driver = properties.getProperty("driver");
+
 			System.out.println(user + " " + pw + " " + url + " " + driver);
 
 		} catch (IOException e1) {
