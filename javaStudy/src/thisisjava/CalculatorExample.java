@@ -68,7 +68,6 @@ class Key {
 			return true;
 		else
 			return false;
-//		return this.number != kkk.number;
 	}
 
 }
