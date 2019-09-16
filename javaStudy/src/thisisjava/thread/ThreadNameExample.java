@@ -1,4 +1,4 @@
-package thread;
+package thisisjava.thread;
 
 class ThreadA extends Thread {
 	public ThreadA() {

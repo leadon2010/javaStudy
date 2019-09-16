@@ -1,4 +1,4 @@
-package thread;
+package thisisjava.thread;
 
 import java.awt.Toolkit;
 

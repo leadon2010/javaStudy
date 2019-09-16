@@ -1,4 +1,4 @@
-package thread;
+package thisisjava.thread;
 
 public class BeepThreadExample3 {
 	public static void main(String[] args) {
