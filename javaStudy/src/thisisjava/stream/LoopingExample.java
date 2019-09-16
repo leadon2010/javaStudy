@@ -1,4 +1,4 @@
-package stream;
+package thisisjava.stream;
 
 import java.util.Arrays;
 

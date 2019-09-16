@@ -15,9 +15,10 @@ public class DoWhileExample {
 			inputStr = sc.nextLine();
 			System.out.println(": " + inputStr);
 		} while (!inputStr.equals("q"));
-		
+
 		System.out.println();
 		System.out.println("end of program");
+		sc.close();
 	}
 
 }
