@@ -1,4 +1,4 @@
-package collection.List.example;
+package thisisjava.collection.List.example;
 
 //	학생정보를 저장하는 프로그램(Ver.1.0)
 //	만든이: 김화정(2019.06.13)
