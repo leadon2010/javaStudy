@@ -32,6 +32,13 @@ public class ArrayExample4 {
 		for (int i = 0; i < newStr.length; i++) {
 			System.out.println(newStr[i]);
 		}
+		System.out.println();
+
+		// enhanced for
+		int[] scores = { 50, 60, 70, 80, 90 };
+		for (int score : scores) {
+			System.out.println(score);
+		}
 	}
 
 }
