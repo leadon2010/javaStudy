@@ -1,6 +1,6 @@
 package referenceType;
 
-public class ArrayExample {
+public class ArrayExample1 {
 	public static void main(String[] args) {
 		int[] intAry = { 1, 2, 3 };
 		String[] strAry = { "Hello", "Nice", "Good" };
