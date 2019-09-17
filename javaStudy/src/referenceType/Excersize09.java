@@ -51,7 +51,8 @@ public class Excersize09 {
 
 			}
 		}
+		sc.close();
 		System.out.println("프로그램 종료.");
-	}
+	} // end of main
 
 }
