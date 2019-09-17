@@ -17,9 +17,22 @@ public class MethodExample2 {
 
 		result = div(a, b);
 		System.out.printf("나눈 결과값: %.4f", result);
+		System.out.println();
 
+		int[] intAry = { 2, 3, 4, 5, 6, 7 };
+		int sum = sum(intAry);
+		System.out.println("배열의 합계는 " + sum);
+		
 		sc.close();
 
+	}
+
+	public static int sum(int[] ary) {
+		int sum = 0;
+		for (int i = 0; i < ary.length; i++) {
+			sum += ary[i];
+		}
+		return sum;
 	}
 
 	public static double sum(double firstValue, double secondValue) {
