@@ -21,4 +21,30 @@ public class Calculator {
 	void println(String str) {
 		System.out.println(str);
 	}
+
+	void println(double str) {
+		System.out.println(str);
+	}
+
+	void println(int str) {
+		System.out.println(str);
+	}
+
+	static double plus(double x, double y) {
+		double result = x + y;
+		return result;
+	}
+
+	static double minus(double x, double y) {
+		double result = x - y;
+		return result;
+	}
+
+	static double multi(double x, double y) {
+		return x * y;
+	}
+
+	static double div(double x, double y) {
+		return x / y;
+	}
 }
