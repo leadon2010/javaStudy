@@ -14,11 +14,13 @@ public class CatchByExceptionExample {
 			System.out.println("실행매개변수의 값이 부족합니다.");
 			System.out.println("[실행방법]");
 			System.out.println("java CatchByExceptionExample num1 num2");
+
 		} catch (NumberFormatException n) {
 			System.out.println("숫자로 변환할 수 없습니다.");
+
 		} finally {
 			System.out.println("다시 실행하세요.");
 		}
-		
+
 	}
 }
