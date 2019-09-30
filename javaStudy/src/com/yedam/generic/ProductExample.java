@@ -1,6 +1,6 @@
 package com.yedam.generic;
 
-public class MultiTypeGeneric {
+public class ProductExample {
 	public static void main(String[] args) {
 
 		Product<Tv, String> product1 = new Product<Tv, String>();
