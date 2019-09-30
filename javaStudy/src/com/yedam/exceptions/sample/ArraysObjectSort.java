@@ -47,7 +47,7 @@ public class ArraysObjectSort {
 
 		// Person[] 의 크기 비교??
 		Person p1 = new Person("aacc", 10);
-		Person p2 = new Person("bbb", 12);
+		Person p2 = new Person("aabb", 12);
 		Person p3 = new Person("aabbb", 20);
 		Person[] pAry = { p1, p2, p3 };
 
