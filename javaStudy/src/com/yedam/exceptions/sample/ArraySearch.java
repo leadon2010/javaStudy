@@ -45,7 +45,7 @@ public class ArraySearch {
 		Arrays.sort(mAry);
 		for (Member m : mAry)
 			System.out.println(m);
-		int ids = Arrays.binarySearch(mAry, new Member("jane", 17));
+		int ids = Arrays.binarySearch(mAry, new Member("charles", 17));
 		System.out.println(ids);
 	}
 }
