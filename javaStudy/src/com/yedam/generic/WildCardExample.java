@@ -137,4 +137,13 @@ public class WildCardExample {
 		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
 	}
 
+	public static Course<? super Worker> callCourse() {
+		Course<Person> coursePerson = new Course<>("일반인", 10);
+		Course<Worker> courseWorker = new Course<>("직장인", 10);
+		Course<Student> courseStudent = new Course<>("학생과정", 10);
+		Course<HighStudent> courseHigh = new Course<>("고등학생", 10);
+		return courseWorker;
+
+	}
+
 }
