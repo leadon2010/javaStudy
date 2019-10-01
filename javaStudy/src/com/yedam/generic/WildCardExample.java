@@ -92,18 +92,6 @@ class HighStudent extends Student {
 
 public class WildCardExample {
 
-	public static void registerCourse(Course<?> course) {
-		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
-	}
-
-	public static void registerCourseStudent(Course<? extends Student> course) {
-		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
-	}
-
-	public static void registerCourseWorker(Course<? super Worker> course) {
-		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
-	}
-
 	public static void main(String[] args) {
 
 		Course<Person> personCourse = new Course<Person>("일반인과정", 5);
@@ -116,28 +104,37 @@ public class WildCardExample {
 		workerCourse.add(new Worker("직장인2", null));
 
 		Course<Student> studentCourse = new Course<Student>("학생과정", 5);
-		studentCourse.add(new Student("학생2", null));
-		studentCourse.add(new HighStudent("고등학생2", null, null));
+		studentCourse.add(new Student("학생3", null));
+		studentCourse.add(new HighStudent("고등학생3", null, null));
 
 		Course<HighStudent> highStudentCourse = new Course<HighStudent>("고등학생과정", 5);
-		highStudentCourse.add(new HighStudent("고등학생3", null, null));
+		highStudentCourse.add(new HighStudent("고등학생4", null, null));
 
-		System.out.println("===========================");
-		registerCourse(personCourse);
-		registerCourse(workerCourse);
-		registerCourse(studentCourse);
-		registerCourse(highStudentCourse);
-		System.out.println();
-
-		registerCourseStudent(studentCourse);
-		registerCourseStudent(highStudentCourse);
-		System.out.println();
-
-		registerCourseWorker(personCourse);
-		registerCourseWorker(workerCourse);
-		System.out.println();
+		System.out.println("=============<?>==============");
+		registerCourse(personCourse);// Course<Person>
+		registerCourse(workerCourse);// Course<Worker>
+		registerCourse(studentCourse);// Course<Student>
+		registerCourse(highStudentCourse);// Course<HighStudent>
+		System.out.println("=============<? extends Student>==============");
+		registerCourseStudent(studentCourse);// Course<Student>
+		registerCourseStudent(highStudentCourse);// Course<HighSchool>
+		System.out.println("=============<? super Worker>==============");
+		registerCourseWorker(workerCourse);// Course<Worker>
+		registerCourseWorker(personCourse);// Course<Person>
 		System.out.println("===========================");
 
 	}// end of main
+
+	public static void registerCourse(Course<?> course) {
+		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
+	}
+
+	public static void registerCourseStudent(Course<? extends Student> course) {
+		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
+	}
+
+	public static void registerCourseWorker(Course<? super Worker> course) {
+		System.out.println(course.getName() + " 수강생: " + Arrays.toString(course.getStudents()));
+	}
 
 }
