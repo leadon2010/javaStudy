@@ -11,5 +11,10 @@ public class BoxExample {
 		box.set(new Apple());
 		Apple apple = (Apple) box.get();
 		System.out.println(apple);
+
+		box.set(new Orange());
+//		apple = (Apple) box.get();// error ******************
+		Orange orange = (Orange) box.get();
+		System.out.println(orange);
 	}
 }

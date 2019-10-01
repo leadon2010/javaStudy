@@ -1,10 +1,9 @@
 package com.yedam.generic;
 
-public class Apple {
-
+public class Orange {
 	@Override
 	public String toString() {
-		return "Apple class";
+		return "Orange class";
 	}
 
 }
