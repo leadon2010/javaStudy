@@ -12,6 +12,13 @@ public class Board {
 		super();
 	}
 
+	public Board(String title, String content, String writer) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
+
 	public Board(int boardNo, String title, String content, String writer, int parentNo) {
 		super();
 		this.boardNo = boardNo;
@@ -67,6 +74,11 @@ public class Board {
 
 	public void setParentNo(int parentNo) {
 		this.parentNo = parentNo;
+	}
+
+	@Override
+	public String toString() {
+		return "Board [title=" + title + ", content=" + content + ", writer=" + writer + "]";
 	}
 
 }
