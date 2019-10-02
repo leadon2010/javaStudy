@@ -35,5 +35,15 @@ public class HashMapExample {
 			Map.Entry<String, Integer> entry = iter2.next();
 			System.out.println(entry.getKey() + "의 값은 " + entry.getValue());
 		}
+		System.out.println();
+		System.out.println("방법: III");
+		for (Map.Entry<String, Integer> entry : entrySet) {
+			System.out.println(entry.getKey() + ", " + entry.getValue());
+		}
+		System.out.println();
+		System.out.println("방법: IV");
+		map.forEach((a, b) -> {
+			System.out.println(a + ", " + b);
+		});
 	}
 }
