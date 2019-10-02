@@ -10,4 +10,24 @@ public class Member {
 		this.age = age;
 	}
 
+	@Override
+	public int hashCode() {
+//		return super.hashCode();
+
+		return name.hashCode() + age;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+//		return super.equals(obj);
+		if (obj instanceof Member) {
+			Member mem = (Member) obj;
+			return (this.name.equals(mem.name) && this.age == mem.age);
+
+		} else {
+			return false;
+
+		}
+	}
+
 }
