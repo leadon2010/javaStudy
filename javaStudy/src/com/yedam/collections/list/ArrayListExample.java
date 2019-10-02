@@ -30,5 +30,12 @@ public class ArrayListExample {
 		for (String str2 : list) {
 			System.out.println(str2);
 		}
+		boolean bool1 = list.remove("Java2");
+		if (bool1)
+			System.out.println("Java2 removed.");
+		System.out.println();
+		for (String str2 : list) {
+			System.out.println(str2);
+		}
 	}
 }
