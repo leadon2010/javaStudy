@@ -1,5 +1,6 @@
 package com.yedam.collections.tree;
 
+import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
@@ -13,6 +14,11 @@ public class TreeSetExample2 {
 		scores.add(new Integer(80));
 
 		NavigableSet<Integer> descSet = scores.descendingSet();
+		Iterator<Integer> iter = descSet.iterator();
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		System.out.println();
 		for (Integer score : descSet) {
 			System.out.println(score);
 		}
