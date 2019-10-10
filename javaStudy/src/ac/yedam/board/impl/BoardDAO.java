@@ -201,7 +201,7 @@ public class BoardDAO {
 
 	public void insertBoard(Board board) {
 		conn = DAO.getConnection();
-		String sql = "{call write_board(?,?,?)";
+		String sql = "{call write_board(?,?,?)}";
 		try {
 			CallableStatement cstmt = conn.prepareCall(sql);
 			cstmt.setString(1, board.getTitle());
