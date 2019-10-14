@@ -56,10 +56,20 @@ public class FunctionalExample1 {
 
 	public static void main(String[] args) {
 		System.out.println("[학생이름]");
-		printString(t -> t.getName());
+		printString(t -> {
+			return t.getName();
+		});
 
 		System.out.println("[영어점수]");
 		printInt(t -> t.getEnglistScore());
+		System.out.println("[수학점수]");
+		printInt(t -> t.getMathScore());
+
+		System.out.println("[영어평균점수]");
+		double result = avg(s -> {
+			return s.getEnglistScore();
+		});
+		System.out.println(result);
 
 		System.out.println("[수학점수Avg]");
 		System.out.println(avg(t -> t.getMathScore()));
