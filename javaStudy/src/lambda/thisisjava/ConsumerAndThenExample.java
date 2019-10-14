@@ -46,6 +46,11 @@ class Address {
 		return city;
 	}
 
+	@Override
+	public String toString() {
+		return "Address [country=" + country + ", city=" + city + "]";
+	}
+
 }
 
 public class ConsumerAndThenExample {
@@ -60,5 +65,6 @@ public class ConsumerAndThenExample {
 
 		Consumer<Member> consumerAB = consumerA.andThen(consumerB);
 		consumerAB.accept(new Member("hong", "h", null));
+
 	}
 }
