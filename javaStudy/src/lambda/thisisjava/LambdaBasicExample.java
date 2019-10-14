@@ -5,14 +5,25 @@ interface MyInterface {
 	int print(int a, int b);
 }
 
+class RunnableClass implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("RunnableClass expression");
+	}
+
+}
+
 public class LambdaBasicExample {
 	public static void main(String[] args) {
+		Runnable runnable = new RunnableClass();
+		runnable.run();
 
-		Runnable runnable = new Runnable() {
+		runnable = new Runnable() {
 
 			@Override
 			public void run() {
-				System.out.println("Runnable express.");
+				System.out.println("AnonymousClass expression.");
 			}
 
 		};
