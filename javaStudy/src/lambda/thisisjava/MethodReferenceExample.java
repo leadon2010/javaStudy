@@ -28,14 +28,18 @@ public class MethodReferenceExample {
 		IntBinaryOperator operator;
 
 		// 정적메소드 참조
-		operator = (x, y) -> Calculator.staticMethod(x, y);
+		operator = (x, y) -> {
+			return Calculator.staticMethod(x, y);
+		};
 		System.out.println("결과1: " + operator.applyAsInt(1, 2));
 
 		operator = Calculator::staticMethod;
 		System.out.println("결과2: " + operator.applyAsInt(3, 4));
 
 		Calculator calculator = new Calculator();
-		operator = (x, y) -> calculator.instanceMethod(x, y);
+		operator = (x, y) -> {
+			return calculator.instanceMethod(x, y);
+		};
 		System.out.println("결과3: " + operator.applyAsInt(5, 6));
 
 		operator = calculator::instanceMethod;
