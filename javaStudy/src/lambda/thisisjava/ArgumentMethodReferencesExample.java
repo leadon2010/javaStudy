@@ -6,7 +6,9 @@ public class ArgumentMethodReferencesExample {
 	public static void main(String[] args) {
 		ToIntBiFunction<String, String> function;
 
-		function = (a, b) -> a.compareToIgnoreCase(b);
+		function = (a, b) -> {
+			return a.compareToIgnoreCase(b);
+		};
 		print(function.applyAsInt("Java8", "JAVA8"));
 
 		function = String::compareToIgnoreCase;
