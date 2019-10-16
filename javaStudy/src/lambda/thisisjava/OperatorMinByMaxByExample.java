@@ -29,6 +29,21 @@ public class OperatorMinByMaxByExample {
 		fruit = binaryOperator.apply(new Fruit("딸기", 6000), new Fruit("수박", 10000));
 		System.out.println("maxBy: " + fruit.name);
 
+		binaryOperator = new BinaryOperator<Fruit>() {
+
+			@Override
+			public Fruit apply(Fruit t, Fruit u) {
+				if (t.price > u.price) {
+					return t;
+				} else {
+					return u;
+				}
+			}
+
+		};
+		fruit = binaryOperator.apply(new Fruit("a", 100), new Fruit("b", 200));
+		System.out.println(fruit.name + ", " + fruit.price);
+
 	}// end of main
 
 }
