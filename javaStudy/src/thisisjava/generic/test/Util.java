@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public class Util {
 	public static <T> Box<T> boxing(T t) {

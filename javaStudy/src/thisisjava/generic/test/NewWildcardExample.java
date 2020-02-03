@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 import java.util.Arrays;
 

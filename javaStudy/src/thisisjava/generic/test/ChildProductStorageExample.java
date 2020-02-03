@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public class ChildProductStorageExample {
 	public static void main(String[] args) {

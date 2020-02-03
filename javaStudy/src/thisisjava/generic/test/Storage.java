@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public interface Storage<T> {
 	public void add(T item, int index);

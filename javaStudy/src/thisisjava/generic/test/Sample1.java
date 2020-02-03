@@ -1,4 +1,4 @@
-package com.yedam.generic.test;
+package thisisjava.generic.test;
 
 class Container1<T> {
 	private T name;

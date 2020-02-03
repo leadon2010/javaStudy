@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public class StorageImpl<T> implements Storage<T> {
 	private T[] array;

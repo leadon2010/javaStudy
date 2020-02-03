@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public class ChildProduct<T, M, C> extends Product<T, M> {
 	private C company;

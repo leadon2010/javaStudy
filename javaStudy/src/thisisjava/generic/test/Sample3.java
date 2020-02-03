@@ -1,4 +1,4 @@
-package com.yedam.generic.test;
+package thisisjava.generic.test;
 
 class Pair<K, V> {
 	private K key;

@@ -1,4 +1,4 @@
-package com.yedam.generic;
+package thisisjava.generic.test;
 
 public class Animal {
 	public static Animal animal = new Animal();
