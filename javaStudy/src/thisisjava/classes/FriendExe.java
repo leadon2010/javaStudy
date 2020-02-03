@@ -78,7 +78,7 @@ public class FriendExe {
 	}
 
 	static void addFriend() {
-		System.out.print("1.회사동료 2.학교동창 3.그외");
+		System.out.println("1.회사동료 2.학교동창 3.그외");
 		int subMenu = sc.nextInt();
 		sc.nextLine();
 		if (subMenu == 1) {
@@ -98,7 +98,7 @@ public class FriendExe {
 		String name = sc.nextLine();
 		for (Friends friend : fArray) {
 			if (friend != null && friend.getName().equals(name)) {
-				System.out.println(friend);
+				System.out.println(friend.showInfo());
 			}
 		}
 	}
@@ -106,7 +106,7 @@ public class FriendExe {
 	static void listFriend() {
 		for (Friends f : fArray) {
 			if (f != null) {
-				System.out.println(f);
+				System.out.println(f.showInfo());
 			}
 		}
 	}

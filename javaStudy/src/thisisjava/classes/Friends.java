@@ -29,6 +29,10 @@ public class Friends {
 		this.phone = phone;
 	}
 
+	public String showInfo() {
+		return "name=" + name + ", phone=" + phone;
+	}
+
 	@Override
 	public String toString() {
 		return "Friends [name=" + name + ", phone=" + phone + "]";

@@ -12,6 +12,12 @@ public class ComFriends extends Friends {
 	}
 
 	@Override
+	public String showInfo() {
+//		return super.showInfo();
+		return "name=" + super.getName() + ", phone=" + super.getPhone() + ", company=" + company + ", dept=" + dept;
+	}
+
+	@Override
 	public String toString() {
 		return "ComFriends [company=" + company + ", dept=" + dept + "]";
 	}
