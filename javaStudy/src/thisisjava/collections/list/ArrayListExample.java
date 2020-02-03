@@ -1,4 +1,4 @@
-package com.yedam.collections.list;
+package thisisjava.collections.list;
 
 import java.util.ArrayList;
 import java.util.List;

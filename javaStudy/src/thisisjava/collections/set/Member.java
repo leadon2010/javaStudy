@@ -1,4 +1,4 @@
-package com.yedam.collections.set;
+package thisisjava.collections.set;
 
 public class Member {
 	String name;

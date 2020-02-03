@@ -1,4 +1,4 @@
-package com.yedam.collections.list;
+package thisisjava.collections.list;
 
 import java.util.List;
 import java.util.Vector;

@@ -1,4 +1,4 @@
-package com.yedam.collections;
+package thisisjava.collections;
 
 public class CollectionExample {
 

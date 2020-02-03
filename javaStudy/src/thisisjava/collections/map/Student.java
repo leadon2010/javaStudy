@@ -1,4 +1,4 @@
-package com.yedam.collections.map;
+package thisisjava.collections.map;
 
 public class Student {
 	int sno;

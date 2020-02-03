@@ -1,4 +1,4 @@
-package com.yedam.collections.tree;
+package thisisjava.collections.tree;
 
 import java.util.NavigableSet;
 import java.util.TreeSet;

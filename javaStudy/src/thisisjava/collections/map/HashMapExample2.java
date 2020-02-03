@@ -1,4 +1,4 @@
-package com.yedam.collections.map;
+package thisisjava.collections.map;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.yedam.control;
+package thisisjava.control;
 
 public class ForLoop {
 	public static void main(String[] args) {
