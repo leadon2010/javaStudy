@@ -1,4 +1,4 @@
-package com.yedam.exceptions;
+package thisisjava.exception;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

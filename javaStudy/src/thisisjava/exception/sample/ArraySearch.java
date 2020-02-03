@@ -1,4 +1,4 @@
-package com.yedam.exceptions.sample;
+package thisisjava.exception.sample;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.yedam.exceptions.sample;
+package thisisjava.exception.sample;
 
 @SuppressWarnings("serial")
 class NotExistIDException extends Exception {

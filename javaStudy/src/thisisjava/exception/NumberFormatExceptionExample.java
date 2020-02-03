@@ -1,4 +1,4 @@
-package com.yedam.exceptions;
+package thisisjava.exception;
 
 // Integer.parseInt(String s) -> 주어진 문자열을 정수로 변환.
 // Double.parseDouble(String s) -> 주어진 문자열을 실수로 변환.

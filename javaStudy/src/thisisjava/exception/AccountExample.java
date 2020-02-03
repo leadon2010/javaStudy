@@ -1,4 +1,4 @@
-package com.yedam.exceptions;
+package thisisjava.exception;
 
 class Account {
 	private long balance;

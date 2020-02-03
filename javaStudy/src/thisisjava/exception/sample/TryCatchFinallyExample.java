@@ -1,4 +1,4 @@
-package com.yedam.exceptions.sample;
+package thisisjava.exception.sample;
 
 public class TryCatchFinallyExample {
 	public static void main(String[] args) {

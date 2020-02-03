@@ -1,4 +1,4 @@
-package com.yedam.exceptions.sample;
+package thisisjava.exception.sample;
 
 class Point {
 	private int xPos;

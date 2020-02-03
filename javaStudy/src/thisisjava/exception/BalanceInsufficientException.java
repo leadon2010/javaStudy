@@ -1,4 +1,4 @@
-package com.yedam.exceptions;
+package thisisjava.exception;
 
 @SuppressWarnings("serial")
 public class BalanceInsufficientException extends Exception {

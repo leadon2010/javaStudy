@@ -1,4 +1,4 @@
-package com.yedam.exceptions;
+package thisisjava.exception;
 
 public class TryCatchFinallyRuntimeException {
 	public static void main(String[] args) {
