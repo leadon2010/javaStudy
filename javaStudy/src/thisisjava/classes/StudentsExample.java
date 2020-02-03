@@ -1,4 +1,4 @@
-package com.yedam.classes;
+package thisisjava.classes;
 
 class Students {
 	// 필드. *) 변수와 필드의 차이점?

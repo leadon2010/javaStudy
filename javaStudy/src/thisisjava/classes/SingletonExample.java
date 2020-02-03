@@ -1,4 +1,4 @@
-package com.yedam.classes;
+package thisisjava.classes;
 
 /*
  * 전체프로그램에서 단 하나의 객체만을 만들도록 보장해야 할때...단 하나만 생성된다고 해서 Singleton.

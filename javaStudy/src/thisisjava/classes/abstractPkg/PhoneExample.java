@@ -1,4 +1,4 @@
-package com.yedam.classes.abstractPkg;
+package thisisjava.classes.abstractPkg;
 
 public class PhoneExample {
 	public static void main(String[] args) {

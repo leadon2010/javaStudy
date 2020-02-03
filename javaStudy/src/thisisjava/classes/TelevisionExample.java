@@ -1,4 +1,4 @@
-package com.yedam.classes;
+package thisisjava.classes;
 
 class Television {
 	static String company = "Google";

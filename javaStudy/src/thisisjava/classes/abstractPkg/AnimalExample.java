@@ -1,4 +1,4 @@
-package com.yedam.classes.abstractPkg;
+package thisisjava.classes.abstractPkg;
 
 abstract class Animal {
 	public String kind;

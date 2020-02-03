@@ -1,4 +1,4 @@
-package com.yedam.classes;
+package thisisjava.classes;
 
 import java.util.Formatter;
 

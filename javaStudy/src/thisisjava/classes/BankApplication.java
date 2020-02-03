@@ -3,93 +3,106 @@ package thisisjava.classes;
 import java.util.Scanner;
 
 public class BankApplication {
-	private static Account[] accountArray = new Account[100];
-	private static Scanner scn = new Scanner(System.in);
+	private static Account[] acntAry = new Account[10];
+	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		boolean run = true;
-
 		while (run) {
-			System.out.println("=====================");
-			System.out.println("1.계좌생성 2.계좌목록 3.예금 4.출금 5.종료 ");
-			System.out.println("=====================");
-			System.out.print("선택>");
-
-			int selectNo = scn.nextInt();
-			scn.nextLine();
-
-			if (selectNo == 1) {
+			System.out.println("---------------------------------------");
+			System.out.println("1.계정생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
+			System.out.println("---------------------------------------");
+			System.out.println(" 선택>");
+			int menu = sc.nextInt();
+			if (menu == 1) {
 				createAccount();
-			} else if (selectNo == 2) {
+			} else if (menu == 2) {
 				accountList();
-			} else if (selectNo == 3) {
+			} else if (menu == 3) {
 				deposit();
-			} else if (selectNo == 4) {
+			} else if (menu == 4) {
 				withdraw();
-			} else if (selectNo == 5) {
+			} else if (menu == 5) {
 				run = false;
 			}
 		}
 		System.out.println("프로그램 종료.");
 	}
 
-	public static void createAccount() {
-		System.out.print("계좌번호 입력:");
-		String ano = scn.nextLine();
-		System.out.print("이름입력:");
-		String owner = scn.nextLine();
-		System.out.print("금액입력:");
-		int balance = scn.nextInt();
-		Account acnt = new Account(ano, owner, balance);
-		for (int i = 0; i < 100; i++) {
-			if (accountArray[i] == null) {
-				accountArray[i] = acnt;
+	private static void createAccount() {
+		System.out.println("계좌번호 입력:");
+		String aNo = sc.next();
+		sc.nextLine();
+		System.out.println("계좌주 입력:");
+		String name = sc.next();
+		sc.nextLine();
+		System.out.println("최초 입금액");
+		int balance = sc.nextInt();
+
+		Account acnt = new Account(aNo, name, balance);
+		for (int i = 0; i < acntAry.length; i++) {
+			if (acntAry[i] == null) {
+				acntAry[i] = acnt;
 				break;
 			}
 		}
-		System.out.println("입력완료.");
+		acnt.showAccountInfo();
 	}
 
-	public static void accountList() {
-		for (Account accnt : accountArray) {
-			if (accnt != null) {
-				System.out.println(accnt);
-			}
+	private static void accountList() {
+		System.out.println("-------------------------------------");
+		System.out.println("              [계좌목록]");
+		System.out.println("-------------------------------------");
+		for (int i = 0; i < acntAry.length; i++) {
+			if (acntAry[i] != null)
+				acntAry[i].accountListInfo();
 		}
 	}
 
-	public static void deposit() {
-		System.out.print("조회할 구좌 입력:");
-		String ano = scn.nextLine();
-		System.out.print("금액입력:");
-		int amount = scn.nextInt();
-		scn.nextLine();
-		Account acnt = findAccount(ano);
-		int balance = acnt.getBalance();
-		acnt.setBalance(balance + amount);
+	private static void deposit() {
+		System.out.println("계좌번호를 입력하세요.");
+		String aNo = sc.next();
+		sc.nextLine();
+		System.out.println("입금금액을 입력하세요.");
+		int balance = sc.nextInt();
+		Account acnt = findAccount(aNo);
+		acnt.setBalance(acnt.getBalance() + balance);
+
+		System.out.println("------------------");
+		System.out.println("     [예금]");
+		System.out.println("------------------");
+		System.out.println("계좌번호: " + aNo);
+		System.out.println("출금액: " + balance);
+		System.out.println("결과: 예금이 성공되었습니다.");
 
 	}
 
-	public static void withdraw() {
-		System.out.print("조회할 구좌 입력:");
-		String ano = scn.nextLine();
-		System.out.print("금액입력:");
-		int amount = scn.nextInt();
-		scn.nextLine();
-		Account acnt = findAccount(ano);
-		int balance = acnt.getBalance();
-		acnt.setBalance(balance - amount);
+	private static void withdraw() {
+		System.out.println("계좌번호를 입력하세요.");
+		String aNo = sc.next();
+		sc.nextLine();
+		System.out.println("출금금액을 입력하세요.");
+		int balance = sc.nextInt();
+		Account acnt = findAccount(aNo);
+		acnt.setBalance(acnt.getBalance() - balance);
+
+		System.out.println("------------------");
+		System.out.println("     [출금]");
+		System.out.println("------------------");
+		System.out.println("계좌번호: " + aNo);
+		System.out.println("출금액: " + balance);
+		System.out.println("결과: 출금이 성공되었습니다.");
 
 	}
 
-	public static Account findAccount(String ano) {
-		Account accnt = null;
-		for (Account acnt : accountArray) {
-			if (ano.equals(acnt.getAno())) {
-				accnt = acnt;
+	private static Account findAccount(String aNo) {
+		Account retAcnt = null;
+		for (int i = 0; i < acntAry.length; i++) {
+			if (acntAry[i].getaNo().equals(aNo)) {
+				retAcnt = acntAry[i];// return acntAry[i];
 				break;
 			}
 		}
-		return accnt;
+		return retAcnt;
 	}
 }

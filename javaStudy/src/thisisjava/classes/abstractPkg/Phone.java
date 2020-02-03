@@ -1,4 +1,4 @@
-package com.yedam.classes.abstractPkg;
+package thisisjava.classes.abstractPkg;
 
 public abstract class Phone {
 	public String owner;

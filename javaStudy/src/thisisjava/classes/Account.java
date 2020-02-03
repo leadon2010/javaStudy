@@ -1,23 +1,22 @@
 package thisisjava.classes;
 
 public class Account {
-	private String ano;
+	private String aNo;
 	private String owner;
 	private int balance;
 
-	public Account(String ano, String owner, int balance) {
-		super();
-		this.ano = ano;
+	public Account(String aNo, String owner, int balance) {
+		this.aNo = aNo;
 		this.owner = owner;
 		this.balance = balance;
 	}
 
-	public String getAno() {
-		return ano;
+	public String getaNo() {
+		return aNo;
 	}
 
-	public void setAno(String ano) {
-		this.ano = ano;
+	public void setaNo(String aNo) {
+		this.aNo = aNo;
 	}
 
 	public String getOwner() {
@@ -36,9 +35,14 @@ public class Account {
 		this.balance = balance;
 	}
 
-	@Override
-	public String toString() {
-		return "Account [ano=" + ano + ", owner=" + owner + ", balance=" + balance + "]";
+	public void showAccountInfo() {
+		System.out.println("------------------");
+		System.out.println("     [계좌생성]");
+		System.out.println("------------------");
+		System.out.println("계좌번호: " + aNo + "\n계좌주: " + owner + "\n최초입금액: " + balance);
 	}
 
+	public void accountListInfo() {
+		System.out.printf("%10s | %10s | %10d\n", aNo, owner, balance);
+	}
 }
