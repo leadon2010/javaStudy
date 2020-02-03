@@ -1,4 +1,4 @@
-package com.yedam.classes.nested;
+package thisisjava.nestedClass.nested;
 
 interface Calculatable {
 	public int sum();

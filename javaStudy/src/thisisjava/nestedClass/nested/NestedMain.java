@@ -1,4 +1,4 @@
-package com.yedam.classes.nested;
+package thisisjava.nestedClass.nested;
 
 public class NestedMain {
 	public static void main(String[] args) {
