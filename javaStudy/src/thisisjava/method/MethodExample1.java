@@ -1,4 +1,4 @@
-package method;
+package thisisjava.method;
 
 public class MethodExample1 {
 
