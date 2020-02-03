@@ -1,4 +1,4 @@
-package referenceType;
+package thisisjava.referenceType;
 
 public class ArrayExample1 {
 	public static void main(String[] args) {

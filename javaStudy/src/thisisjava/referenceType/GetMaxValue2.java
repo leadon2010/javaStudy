@@ -1,4 +1,4 @@
-package referenceType;
+package thisisjava.referenceType;
 
 public class GetMaxValue2 {
 	public static void main(String[] args) {
