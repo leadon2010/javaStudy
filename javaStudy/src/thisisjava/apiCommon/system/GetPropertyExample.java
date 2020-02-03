@@ -1,4 +1,4 @@
-package api.system;
+package thisisjava.apiCommon.system;
 
 import java.util.Properties;
 import java.util.Set;

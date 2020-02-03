@@ -1,4 +1,4 @@
-package api.system;
+package thisisjava.apiCommon.system;
 
 public class SystemEnvExample {
 	public static void main(String[] args) {

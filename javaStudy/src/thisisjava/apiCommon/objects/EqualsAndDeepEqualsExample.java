@@ -1,4 +1,4 @@
-package api.objects;
+package thisisjava.apiCommon.objects;
 
 import java.util.Arrays;
 import java.util.Objects;

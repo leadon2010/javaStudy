@@ -1,4 +1,4 @@
-package api.objects;
+package thisisjava.apiCommon.objects;
 
 import java.util.Comparator;
 import java.util.Objects;

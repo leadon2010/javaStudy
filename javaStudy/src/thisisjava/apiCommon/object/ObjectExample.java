@@ -1,4 +1,4 @@
-package api.object;
+package thisisjava.apiCommon.object;
 
 class Key {
 	public int number;

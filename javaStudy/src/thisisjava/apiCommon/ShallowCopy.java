@@ -1,4 +1,4 @@
-package api;
+package thisisjava.apiCommon;
 
 class Point implements Cloneable {
 	int xPos;
