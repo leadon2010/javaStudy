@@ -1,7 +1,6 @@
 package interfaces.controller;
 
 import java.util.Scanner;
-
 import interfaces.impl.EmpServiceImpl;
 import interfaces.impl.EmpServiceImpl2;
 import interfaces.model.EmpService;
