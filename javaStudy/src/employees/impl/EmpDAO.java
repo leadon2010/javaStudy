@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import employees.Employees;
 import employees.common.DAO;
+import employees.model.Employees;
 
 public class EmpDAO {
 

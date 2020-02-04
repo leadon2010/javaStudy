@@ -1,4 +1,4 @@
-package employees;
+package employees.model;
 
 public class Departments {
 	private int departmentId;

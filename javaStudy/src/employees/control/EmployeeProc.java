@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import employees.EmpService;
-import employees.Employees;
 import employees.impl.EmpServiceImpl;
+import employees.model.EmpService;
+import employees.model.Employees;
 
 public class EmployeeProc {
 

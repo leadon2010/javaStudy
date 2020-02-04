@@ -1,4 +1,4 @@
-package employees;
+package employees.model;
 
 import java.util.List;
 import java.util.Map;
