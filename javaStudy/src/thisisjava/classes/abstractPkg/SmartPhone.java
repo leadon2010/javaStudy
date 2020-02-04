@@ -2,6 +2,9 @@ package thisisjava.classes.abstractPkg;
 
 public class SmartPhone extends Phone {
 
+	public SmartPhone() {
+	}
+
 	public SmartPhone(String owner) {
 		super(owner);
 	}

@@ -5,6 +5,9 @@ public abstract class Phone {
 	public String owner;
 
 	// constructor
+	public Phone() {
+	}
+
 	public Phone(String owner) {
 		this.owner = owner;
 	}
@@ -17,4 +20,6 @@ public abstract class Phone {
 	public void turnOff() {
 		System.out.println("turn off phone.");
 	}
+
+	public abstract void bell();
 }
