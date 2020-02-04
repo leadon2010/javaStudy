@@ -7,7 +7,10 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+import employees.impl.DeptServiceImpl;
 import employees.impl.EmpServiceImpl;
+import employees.model.Departments;
+import employees.model.DeptService;
 import employees.model.EmpService;
 import employees.model.Employees;
 
@@ -28,7 +31,7 @@ public class EmployeeProc {
 		int choice = 0;
 		while (true) {
 			System.out.println();
-			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 5.전체직무조회 9.종료]");
+			System.out.println("메뉴를 선택하세요. [1.입력 2.수정 3.한건조회 4.전체조회 5.전체직무조회 6.전체부서 9.종료]");
 			choice = sc.nextInt();
 			sc.nextLine();
 
@@ -47,12 +50,24 @@ public class EmployeeProc {
 			} else if (choice == 5) {
 				getDistinctJob();
 
+			} else if (choice == 6) {
+				getDeptList();
+
 			} else if (choice == 9) {
 				if (sc != null) {
 					sc.close();
 				}
 				System.exit(0);
 			}
+		}
+	}
+
+	public void getDeptList() {
+		DeptService service = DeptServiceImpl.getInstance();
+		Departments[] dpts = service.getDeptList();
+		for (int i = 0; i < dpts.length; i++) {
+			if (dpts[i] != null)
+				System.out.println(dpts[i]);
 		}
 	}
 
