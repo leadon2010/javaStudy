@@ -11,6 +11,7 @@ public class InterfaceExample {
 		ib.methodB();
 
 		InterfaceC ic = impl;
+
 		ic.methodA();
 		ic.methodB();
 		ic.methodC();

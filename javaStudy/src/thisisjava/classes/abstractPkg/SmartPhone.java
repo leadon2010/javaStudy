@@ -12,4 +12,10 @@ public class SmartPhone extends Phone {
 	public void internetSearch() {
 		System.out.println("웹서치 합니다.");
 	}
+
+	@Override
+	public void bell() {
+		// TODO Auto-generated method stub
+		
+	}
 }
