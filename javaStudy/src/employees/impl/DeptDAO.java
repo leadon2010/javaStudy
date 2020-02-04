@@ -39,7 +39,6 @@ public class DeptDAO {
 				departments[idx++] = dept;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
