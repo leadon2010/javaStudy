@@ -1,30 +1,17 @@
 package thisisjava.generic;
 
-class Box<T> {
-	private T object;
-
-	public void set(T object) {
-		this.object = object;
-	}
-
-	public T get() {
-		return this.object;
-	}
-}
-
-class Apple {
-
-}
-
-class Orange {
-
-}
-
 public class BoxExample {
 	public static void main(String[] args) {
-		Box<String> box = new Box<String>();
-		box.set("hello");
-		String str = box.get();
-		System.out.println(str);
+		Box<Apple> boxForApple = new Box<>();
+		Apple apple = new Apple();
+		boxForApple.set(apple);
+
+//		 Orange o1 = boxForApple.get(); 강력한 타입 체크.
+
+		Box<Orange> boxForOrange = new Box<>();
+		Orange orange = new Orange();
+		boxForOrange.set(orange);
+
+		Orange o = boxForOrange.get();
 	}
 }

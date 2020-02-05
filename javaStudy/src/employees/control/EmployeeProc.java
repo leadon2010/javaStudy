@@ -9,6 +9,7 @@ import java.util.Set;
 
 import employees.impl.DeptServiceImpl;
 import employees.impl.EmpServiceImpl;
+import employees.model.Board;
 import employees.model.Departments;
 import employees.model.DeptService;
 import employees.model.EmpService;
@@ -53,12 +54,23 @@ public class EmployeeProc {
 			} else if (choice == 6) {
 				getDeptList();
 
+			} else if (choice == 7) {
+				getBoard();
+
 			} else if (choice == 9) {
 				if (sc != null) {
 					sc.close();
 				}
 				System.exit(0);
 			}
+		}
+	}
+
+	public void getBoard() {
+		DeptService service = DeptServiceImpl.getInstance();
+		List list = service.getDepartmentsList();
+		for (Object obj : list) {
+			System.out.println(obj);
 		}
 	}
 
