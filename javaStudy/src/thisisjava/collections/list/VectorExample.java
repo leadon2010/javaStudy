@@ -3,8 +3,6 @@ package thisisjava.collections.list;
 import java.util.List;
 import java.util.Vector;
 
-import ac.yedam.board.Board;
-
 public class VectorExample {
 	public static void main(String[] args) {
 		List<Board> list = new Vector<>();
@@ -17,7 +15,7 @@ public class VectorExample {
 		System.out.println(board);
 		System.out.println();
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getTitle() + "/" + list.get(i).getContent() + "/" + list.get(i).getWriter());
+			System.out.println(list.get(i).getSubject() + "/" + list.get(i).getContent() + "/" + list.get(i).getWriter());
 		}
 	}
 }

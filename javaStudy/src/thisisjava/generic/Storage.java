@@ -1,4 +1,4 @@
-package thisisjava.generic.test;
+package thisisjava.generic;
 
 public interface Storage<T> {
 	public void add(T item, int index);

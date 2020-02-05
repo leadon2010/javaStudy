@@ -3,7 +3,7 @@ package thisisjava.collections.list;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayListExample2 {
+public class ArraysAsListExample {
 	public static void main(String[] args) {
 		List<String> list = Arrays.asList("홍길동", "김길동", "이길동");
 		for (String str : list) {

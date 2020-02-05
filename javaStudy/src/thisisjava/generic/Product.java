@@ -20,9 +20,7 @@ class Product<T, M> {
 		this.model = model;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [kind=" + kind + ", model=" + model + "]";
-	}
+}
 
+class Tv {
 }

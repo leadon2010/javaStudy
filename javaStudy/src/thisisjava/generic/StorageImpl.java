@@ -1,9 +1,8 @@
-package thisisjava.generic.test;
+package thisisjava.generic;
 
 public class StorageImpl<T> implements Storage<T> {
 	private T[] array;
 
-	@SuppressWarnings("unchecked")
 	public StorageImpl(int capacity) {
 		this.array = (T[]) (new Object[capacity]);
 	}

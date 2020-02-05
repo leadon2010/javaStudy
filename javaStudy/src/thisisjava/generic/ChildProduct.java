@@ -1,4 +1,6 @@
-package thisisjava.generic.test;
+package thisisjava.generic;
+
+import thisisjava.generic.test.Product;
 
 public class ChildProduct<T, M, C> extends Product<T, M> {
 	private C company;
