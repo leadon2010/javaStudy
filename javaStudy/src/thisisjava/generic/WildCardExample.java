@@ -2,50 +2,12 @@ package thisisjava.generic;
 
 import java.util.Arrays;
 
-class Course<T> {
-	private String name;
-	private T[] students;
-
-	public Course(String name, int capacity) {
-		this.name = name;
-		students = (T[]) new Object[capacity];
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public T[] getStudents() {
-		return this.students;
-	}
-
-	public void add(T t) {
-		for (int i = 0; i < students.length; i++) {
-			if (students[i] == null) {
-				students[i] = t;
-				break;
-			}
-		}
-	}
-}
-
-class Person {
-
-}
-
-class Worker extends Person {
-
-}
-
-class Student extends Person {
-
-}
-
-class HighStudent extends Student {
-
-}
-
 public class WildCardExample {
+	// 와일드카드를 사용하지 않고 타입파라미터에 제한을 두려면 extends는 가능하나 super 불가능.
+	public static <T extends Student> void registerCrs(Course<T> course) {
+		System.out.println(course.getName() + " 수강생:" + Arrays.toString(course.getStudents()));
+	}
+
 	public static void registerCourse(Course<?> course) {
 		System.out.println(course.getName() + " 수강생:" + Arrays.toString(course.getStudents()));
 	}
@@ -64,6 +26,13 @@ public class WildCardExample {
 		Course<Student> studentCourse = new Course<>("학생과정", 5);
 		Course<HighStudent> highCourse = new Course<>("고등학생과정", 5);
 
+		System.out.println("==============================");
+//		registerCrs(personCourse);
+//		registerCrs(workerCourse);
+		registerCrs(studentCourse);
+		registerCrs(highCourse);
+
+		System.out.println("==============================");
 		personCourse.add(new Person());
 		personCourse.add(new Worker());
 		personCourse.add(new Student());
@@ -74,17 +43,19 @@ public class WildCardExample {
 		studentCourse.add(new Student());
 		studentCourse.add(new HighStudent());
 
+		highCourse.add(new HighStudent());
+
+		System.out.println("==============================");
 		registerCourse(personCourse);
 		registerCourse(workerCourse);
 		registerCourse(studentCourse);
+		registerCourse(highCourse);
 
 		registerCourseWorker(personCourse);
 		registerCourseWorker(workerCourse);
 
 		registerCourseStudent(studentCourse);
 		registerCourseStudent(highCourse);
-		
-		
 
 	}
 }

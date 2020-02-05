@@ -1,4 +1,4 @@
-package thisisjava.generic.test;
+package thisisjava.generic;
 
 public class Course<T> {
 	private String name;

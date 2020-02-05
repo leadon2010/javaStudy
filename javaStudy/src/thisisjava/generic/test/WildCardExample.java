@@ -2,6 +2,8 @@ package thisisjava.generic.test;
 
 import java.util.Arrays;
 
+import thisisjava.generic.Course;
+
 class Person {
 	private String name;
 
