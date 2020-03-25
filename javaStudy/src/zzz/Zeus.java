@@ -1,43 +1,20 @@
 package zzz;
 
-class Student {
-	String name;
-	String studentNo;
-	String major;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getStudentNo() {
-		return studentNo;
-	}
-
-	public void setStudentNo(String studentNo) {
-		this.studentNo = studentNo;
-	}
-
-	public String getMajor() {
-		return major;
-	}
-
-	public void setMajor(String major) {
-		this.major = major;
-	}
-
-}
+import java.util.ArrayList;
+import java.util.List;
 
 public class Zeus {
 	public static void main(String[] args) {
-		execute();
-	}
-	public static void execute() {
-		System.out.println("=============================");
-		System.out.println("");
-		System.out.println("=============================");
+		Student s1 = new Student("Hong", "s111", "English");
+		Student s2 = new Student("Hong", "s111", "English");
+		Student s3 = new Student("Hong", "s111", "English");
+
+		Student[] students = { s1, s2, s3 };
+		for (Student s : students) {
+			System.out.println(s);
+		}
+
+		List<Student> list = new ArrayList<>();
+
 	}
 }

@@ -10,10 +10,10 @@ public class SystemInExample2 {
 		byte[] datas = new byte[100];
 		System.out.print("이름:");
 		int nameBytes = is.read(datas);
-		String name = new String(datas, 0, nameBytes - 2);
+		String name = new String(datas, 0, nameBytes - 1);
 		System.out.print("하고 싶은 말:");
 		int commentBytes = is.read(datas);
-		String comment = new String(datas, 0, commentBytes - 2);
+		String comment = new String(datas, 0, commentBytes - 1);
 		System.out.println();
 
 		System.out.println("name: " + name);
