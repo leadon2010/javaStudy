@@ -31,7 +31,7 @@ class Student {
 
 }
 
-public class FunctionalExample1 {
+public class FunctionalExample {
 	private static List<Student> list = Arrays.asList(new Student("hong", 90, 96), new Student("kang", 95, 93));
 
 	public static void printString(Function<Student, String> function) {
