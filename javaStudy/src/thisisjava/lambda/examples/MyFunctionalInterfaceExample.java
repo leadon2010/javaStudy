@@ -1,10 +1,5 @@
 package thisisjava.lambda.examples;
 
-@FunctionalInterface
-interface MyFunctionalInterface {
-	public void method();
-}
-
 public class MyFunctionalInterfaceExample {
 	public static void main(String[] args) {
 		MyFunctionalInterface fi;

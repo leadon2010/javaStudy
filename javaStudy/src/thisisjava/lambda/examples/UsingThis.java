@@ -10,10 +10,10 @@ public class UsingThis {
 			MyFunctionalInterface fi = () -> {
 				System.out.println("outterField : " + outterField);
 				System.out.println("outterField : " + UsingThis.this.outterField + "\n");
-				innerField = 22;
 
+				innerField++;
 				System.out.println("innerField : " + innerField);
-				innerField = 21;
+				innerField++;
 				System.out.println("innerField : " + this.innerField);
 
 			};
