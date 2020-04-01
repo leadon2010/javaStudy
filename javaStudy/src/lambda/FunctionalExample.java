@@ -32,47 +32,49 @@ class Student {
 }
 
 public class FunctionalExample {
-	private static List<Student> list = Arrays.asList(new Student("hong", 90, 96), new Student("kang", 95, 93));
+	static Student s1 = new Student("Hong", 88, 92);
+	static Student s2 = new Student("Hwang", 99, 88);
+	static Student s3 = new Student("Park", 89, 79);
 
-	public static void printString(Function<Student, String> function) {
-		for (Student student : list) {
-			System.out.println(function.apply(student));
+	static List<Student> list = Arrays.asList(s1, s2, s3);
+
+	public static void printString(Function<Student, String> func) {
+		for (Student s : list) {
+			System.out.println(func.apply(s));
 		}
 	}
 
-	public static void printInt(ToIntFunction<Student> function) {
-		for (Student student : list) {
-			System.out.println(function.applyAsInt(student));
+	public static void printInt(ToIntFunction<Student> func) {
+		for (Student s : list) {
+			System.out.println(func.applyAsInt(s));
 		}
 	}
 
-	public static double avg(ToIntFunction<Student> function) {
+	public static double avg(ToIntFunction<Student> func) {
 		double sum = 0;
-		for (Student student : list) {
-			sum += function.applyAsInt(student);
+		for (Student s : list) {
+			sum += func.applyAsInt(s);
 		}
-		return (sum / list.size());
+		return sum / list.size();
 	}
 
 	public static void main(String[] args) {
-		System.out.println("[학생이름]");
-		printString(t -> {
-			return t.getName();
+		System.out.println("학생이름:");
+		printString((a) -> {
+			return a.getName() + " => 영어: " + a.getEnglistScore() + ", 수학: " + a.getMathScore();
 		});
-
-		System.out.println("[영어점수]");
-		printInt(t -> t.getEnglistScore());
-		System.out.println("[수학점수]");
-		printInt(t -> t.getMathScore());
-
-		System.out.println("[영어평균점수]");
-		double result = avg(s -> {
-			return s.getEnglistScore();
+		System.out.println("영어점수:");
+		printInt((a) -> {
+			return a.getEnglistScore();
 		});
-		System.out.println(result);
-
-		System.out.println("[수학점수Avg]");
-		System.out.println(avg(t -> t.getMathScore()));
+		System.out.println("수학점수:");
+		printInt((t) -> {
+			return t.getMathScore();
+		});
+		System.out.println("English평균:");
+		System.out.println(avg((t) -> {
+			return t.getMathScore();
+		}));
 
 	}
 }

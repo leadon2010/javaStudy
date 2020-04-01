@@ -20,31 +20,23 @@ class HighStudent {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getSex() {
 		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
 	}
 
 	public int getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
-		this.score = score;
-	}
-
 }
 
 public class PredicatorExample {
-	private static List<HighStudent> list = Arrays.asList(new HighStudent("홍길동", "남자", 90),
-			new HighStudent("김순희", "여자", 90), new HighStudent("박길동", "남자", 85), new HighStudent("박순희", "여자", 92));
+	private static List<HighStudent> list = Arrays.asList( //
+			new HighStudent("홍길동", "남자", 90), //
+			new HighStudent("김순희", "여자", 90), //
+			new HighStudent("박길동", "남자", 85), //
+			new HighStudent("박순희", "여자", 92) //
+	);
 
 	public static double avg(Predicate<HighStudent> predicate) {
 		int cnt = 0, sum = 0;
