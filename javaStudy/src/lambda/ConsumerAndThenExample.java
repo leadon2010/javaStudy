@@ -2,57 +2,6 @@ package lambda;
 
 import java.util.function.Consumer;
 
-class Member {
-	private String name;
-	private String id;
-	private Address address;
-
-	public Member(String name, String id, Address address) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.address = address;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-}
-
-class Address {
-	private String country;
-	private String city;
-
-	public Address(String country, String city) {
-		super();
-		this.country = country;
-		this.city = city;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	@Override
-	public String toString() {
-		return "Address [country=" + country + ", city=" + city + "]";
-	}
-
-}
-
 public class ConsumerAndThenExample {
 	public static void main(String[] args) {
 		Consumer<Member> consumerA = (m) -> {
@@ -63,8 +12,14 @@ public class ConsumerAndThenExample {
 			System.out.println("consumerB: " + m.getId());
 		};
 
-		Consumer<Member> consumerAB = consumerA.andThen(consumerB);
-		consumerAB.accept(new Member("hong", "h", null));
+		Consumer<Member> consumerC = (m) -> {
+			System.out.println("consumerC: " + m.getAddress());
+		};
+
+		Consumer<Member> consumerAB = consumerA.andThen(consumerC).andThen(consumerB);
+		consumerAB.accept(new Member("Hong", "h1234", new Address("USA", "LosAngeles")));
+		
+		consumerA.andThen(consumerB).andThen(consumerC).accept(new Member("Hwang", "h1111", new Address("Mexico", "Mexico City")));
 
 	}
 }

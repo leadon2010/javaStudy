@@ -30,7 +30,17 @@ class HighStudent {
 
 }
 
-public class PredicatorExample {
+class PredicateClass<T> implements Predicate<T> {
+
+	@Override
+	public boolean test(T t) {
+		HighStudent h = (HighStudent) t;
+		return h.getSex().equals("남자");
+	}
+
+}
+
+public class PredicateExample {
 	private static List<HighStudent> list = Arrays.asList( //
 			new HighStudent("홍길동", "남자", 90), //
 			new HighStudent("김순희", "여자", 90), //
@@ -50,6 +60,9 @@ public class PredicatorExample {
 	}
 
 	public static void main(String[] args) {
+		double newAvg = avg(new PredicateClass<HighStudent>());
+		System.out.println("avg : " + newAvg);
+
 		double femaleAvg = avg((t) -> {
 			return t.getSex().equals("여자");
 		});

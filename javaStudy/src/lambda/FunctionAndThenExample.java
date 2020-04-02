@@ -8,13 +8,13 @@ public class FunctionAndThenExample {
 		Function<Member, Address> functionA;
 		Function<Address, String> functionB;
 		Function<Member, String> functionAB;
-
 		String city;
 
 		functionA = (m) -> {
 			return m.getAddress();
 		};
 		System.out.println(functionA.apply(new Member("name", "last", new Address("Korea", "Mokpo"))));
+
 		functionB = (a) -> {
 			return a.getCity();
 		};
@@ -27,5 +27,6 @@ public class FunctionAndThenExample {
 		functionAB = functionB.compose(functionA);
 		city = functionAB.apply(new Member("hongkildong", "hong", new Address("Korea", "Daejun")));
 		System.out.println(city);
+
 	}
 }
