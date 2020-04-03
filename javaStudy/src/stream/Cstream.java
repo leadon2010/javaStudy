@@ -29,7 +29,17 @@ public class Cstream {
 			System.out.println(i);
 		});
 
-		// double avg = stream.mapToInt(Student::getScore).average().getAsDouble();
-//		System.out.println("Average: " + avg);
+		System.out.println("============================");
+
+		stream = list.stream();
+		double avg = stream.mapToInt(Student::getScore).average().getAsDouble();
+		System.out.println("Average: " + avg);
+
+		System.out.println("============================");
+
+		intStream = IntStream.rangeClosed(1, 100);
+		intStream.forEach(i -> {
+			System.out.println(i);
+		});
 	}
 }
