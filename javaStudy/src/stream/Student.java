@@ -1,19 +1,26 @@
 package stream;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	String name;
 	int score;
 
-	Student(String name, int score) {
+	public Student(String name, int score) {
+		super();
 		this.name = name;
 		this.score = score;
 	}
 
-	String getName() {
-		return this.name;
+	public String getName() {
+		return name;
 	}
 
-	int getScore() {
-		return this.score;
+	public int getScore() {
+		return score;
 	}
+
+	@Override
+	public int compareTo(Student o) {
+		return this.score - o.score;
+	}
+
 }
