@@ -64,9 +64,9 @@ public class SendMail {
 	public static void sendMail(String title, String content, String toUser, String fname) throws Exception {
 		String host = "smtp.naver.com";
 		final String user = "leadon";
-		final String passwd = "!Q@w3e4r5t";
+		final String passwd = "";
 
-		String to = toUser;// "leadon@daum.net";
+		String to = toUser;//
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", host);
