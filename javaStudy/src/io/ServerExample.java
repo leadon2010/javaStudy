@@ -26,9 +26,7 @@ public class ServerExample extends Application {
 	ServerSocket serverSocket;
 	List<Client> connections = new Vector<Client>();
 
-	/////////////////////////////////////////////////
 	////////// startServer() ///////////////////////
-	/////////////////////////////////////////////////
 	void startServer() {
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 		Runnable runnable = new Runnable() {
@@ -59,9 +57,7 @@ public class ServerExample extends Application {
 		executorService.submit(runnable);
 	}
 
-	/////////////////////////////////////////////////
 	////////// stopServer() /////////////////////////
-	/////////////////////////////////////////////////
 	void stopServer() {
 		try {
 			Iterator<Client> iterator = connections.iterator();
@@ -86,9 +82,7 @@ public class ServerExample extends Application {
 
 	}
 
-	/////////////////////////////////////////////////
 	////////// Client /////////////////////////
-	/////////////////////////////////////////////////
 	class Client {
 		Socket socket;
 
@@ -163,9 +157,7 @@ public class ServerExample extends Application {
 	TextArea txtDisplay;
 	Button btnStartStop;
 
-	/////////////////////////////////////////////////
 	////////// @start() /////////////////////////
-	/////////////////////////////////////////////////
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BorderPane root = new BorderPane();
@@ -179,7 +171,7 @@ public class ServerExample extends Application {
 		btnStartStop = new Button("start");
 		btnStartStop.setPrefHeight(30);
 		btnStartStop.setMaxWidth(Double.MAX_VALUE);
-		btnStartStop.setOnAction(e -> {
+		btnStartStop.setOnAction(event -> {
 			if (btnStartStop.getText().equals("start")) {
 				startServer();
 			} else {
