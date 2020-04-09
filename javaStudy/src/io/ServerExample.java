@@ -98,6 +98,7 @@ public class ServerExample extends Application {
 
 		Client(Socket socket) {
 			this.socket = socket;
+			receive();
 		}
 
 		///////////// receive() ///////////////
@@ -105,9 +106,9 @@ public class ServerExample extends Application {
 			Runnable runnable = new Runnable() {
 				@Override
 				public void run() {
-					while (true) {
-						byte[] buf = new byte[100];
-						try {
+					try {
+						while (true) {
+							byte[] buf = new byte[100];
 							InputStream is = socket.getInputStream();
 							int readByte = is.read(buf);
 							if (readByte == -1) {
@@ -120,16 +121,16 @@ public class ServerExample extends Application {
 							for (Client client : connections) {
 								client.send(data);
 							}
-						} catch (Exception e) {
-							try {
-								connections.remove(Client.this);
-								String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : "
-										+ Thread.currentThread().getName() + "]";
-								Platform.runLater(() -> displayText(message));
-								socket.close();
-							} catch (IOException e1) {
-								e1.printStackTrace();
-							}
+						}
+					} catch (Exception e) {
+						try {
+							connections.remove(Client.this);
+							String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : "
+									+ Thread.currentThread().getName() + "]";
+							Platform.runLater(() -> displayText(message));
+							socket.close();
+						} catch (IOException e1) {
+							e1.printStackTrace();
 						}
 					}
 				}
@@ -148,11 +149,11 @@ public class ServerExample extends Application {
 						os.write(buf);
 						os.flush();
 					} catch (Exception e) {
-						String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : "
-								+ Thread.currentThread().getName() + "]";
-						Platform.runLater(() -> displayText(message));
-						connections.remove(Client.this);
 						try {
+							String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : "
+									+ Thread.currentThread().getName() + "]";
+							Platform.runLater(() -> displayText(message));
+							connections.remove(Client.this);
 							socket.close();
 						} catch (IOException e1) {
 							e1.printStackTrace();
