@@ -145,6 +145,7 @@ public class ServerExample extends Application {
 				public void run() {
 					try {
 						byte[] buf = data.getBytes("UTF-8");
+						System.out.println("send() " + data);
 						OutputStream os = socket.getOutputStream();
 						os.write(buf);
 						os.flush();
