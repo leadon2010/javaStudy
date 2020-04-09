@@ -31,7 +31,7 @@ public class ServerExample extends Application {
 
 		try {
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("localhost", 5001));
+			serverSocket.bind(new InetSocketAddress("192.168.0.16", 5001));
 
 		} catch (Exception e) {
 			if (!serverSocket.isClosed()) {
