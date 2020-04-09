@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Button?>
 
 <HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.RootController" prefHeight="50.0" prefWidth="200.0" 
-      alignment="CENTER" spacing="20.0">
+	alignment="CENTER" spacing="20.0">
 	<children>
 		<Button fx:id="btn1" text="버튼1" />
 		<Button fx:id="btn2" text="버튼2" />

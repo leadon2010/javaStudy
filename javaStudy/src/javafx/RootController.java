@@ -17,28 +17,25 @@ public class RootController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		btn1.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent event) {
 				handleBtn1Action(event);
 			}
-			
 		});
-		
 		btn2.setOnAction(event -> handleBtn2Action(event));
 		btn3.setOnAction(event -> handleBtn3Action(event));
 	}
-	
+
 	public void handleBtn1Action(ActionEvent event) {
-		System.out.println("click btn1");
+		System.out.println("click btn1 " + event);
 	}
 
 	public void handleBtn2Action(ActionEvent event) {
-		System.out.println("click btn2");
+		System.out.println("click btn2 " + event);
 	}
 
 	public void handleBtn3Action(ActionEvent event) {
-		System.out.println("click btn3");
+		System.out.println("click btn3 " + event.getTarget());
 	}
 
 }
