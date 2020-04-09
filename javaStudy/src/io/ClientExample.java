@@ -32,7 +32,8 @@ public class ClientExample extends Application {
 						btnConn.setText("stop");
 						btnSend.setDisable(false);
 					});
-				} catch (IOException e) {
+				} catch (Exception e) {
+					e.printStackTrace();
 					Platform.runLater(() -> displayText("[서버 통신 안됨]"));
 					if (!socket.isClosed()) {
 						stopClient();
@@ -85,7 +86,6 @@ public class ClientExample extends Application {
 
 	void send(String data) {
 		Thread thread = new Thread() {
-
 			@Override
 			public void run() {
 				try {
@@ -128,7 +128,7 @@ public class ClientExample extends Application {
 		txtInput.setPrefSize(60, 30);
 		BorderPane.setMargin(txtInput, new Insets(0, 1, 1, 1));
 
-		btnConn = new Button();
+		btnConn = new Button("start");
 		btnConn.setPrefSize(60, 30);
 		btnConn.setOnAction(e -> {
 			if (btnConn.getText().equals("start")) {

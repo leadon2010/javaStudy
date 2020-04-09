@@ -3,6 +3,7 @@ package io;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Iterator;
@@ -29,6 +30,15 @@ public class ServerExample extends Application {
 	////////// startServer() ///////////////////////
 	void startServer() {
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		try {
+			serverSocket = new ServerSocket();
+			serverSocket.bind(new InetSocketAddress("localhost", 5001));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			if (!serverSocket.isClosed()) {
+				stopServer();
+			}
+		}
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
@@ -171,19 +181,19 @@ public class ServerExample extends Application {
 		btnStartStop = new Button("start");
 		btnStartStop.setPrefHeight(30);
 		btnStartStop.setMaxWidth(Double.MAX_VALUE);
-		btnStartStop.setOnAction(event -> {
+		btnStartStop.setOnAction(e -> {
 			if (btnStartStop.getText().equals("start")) {
 				startServer();
 			} else {
 				stopServer();
 			}
 		});
-
 		root.setBottom(btnStartStop);
 
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("app.css").toString());
 
+		primaryStage.setScene(scene);
 		primaryStage.setTitle("Server");
 		primaryStage.setOnCloseRequest(event -> stopServer());
 		primaryStage.show();
