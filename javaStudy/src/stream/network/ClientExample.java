@@ -9,35 +9,33 @@ import java.net.Socket;
 public class ClientExample {
 	public static void main(String[] args) {
 		Socket socket = null;
-		socket = new Socket();
-		System.out.println("request connection...");
 		try {
-
+			socket = new Socket();
+			System.out.println("[연결 요청]");
 			socket.connect(new InetSocketAddress("localhost", 5001));
-			System.out.println("connection success.");
+			System.out.println("[연결 성공]");
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		byte[] bytes = null;
-		String message = null;
-
 		try {
+			byte[] bytes = null;
+			String message = null;
 
 			OutputStream os = socket.getOutputStream();
-			message = "Hello, World";
+			message = "Hello, Server";
 			bytes = message.getBytes("UTF-8");
 			os.write(bytes);
 			os.flush();
-			System.out.println("sending success.");
-			
+			System.out.println("[데이터 보내기 성공]");
+
 			InputStream is = socket.getInputStream();
 			bytes = new byte[100];
 			int readByte = is.read(bytes);
 			message = new String(bytes, 0, readByte, "UTF-8");
-			System.out.println("receiving success: " + message);
-			
+			System.out.println("[데이터 받기 성공]: " + message);
+
 			is.close();
 			os.close();
 

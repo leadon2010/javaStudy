@@ -15,11 +15,10 @@ public class ServerExample {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress("localhost", 5001));
 			while (true) {
-				System.out.println("waiting for connection...");
-				Socket socket;
-				socket = serverSocket.accept();
+				System.out.println("[연결 기다림]");
+				Socket socket = serverSocket.accept();
 				InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
-				System.out.println("accepted connection..." + isa.getHostName());
+				System.out.println("[연결 수락함] " + isa.getHostName());
 
 				byte[] bytes = null;
 				String message = null;
@@ -29,29 +28,32 @@ public class ServerExample {
 
 				int readByte = is.read(bytes);
 				message = new String(bytes, 0, readByte, "UTF-8");
-				System.out.println("receiving data " + message);
+				System.out.println("[데이터 받기 성공]: " + message);
 
 				OutputStream os = socket.getOutputStream();
 				message = "Hello, Client";
 				bytes = message.getBytes();
 				os.write(bytes);
 				os.flush();
-				System.out.println("sending success.");
+				System.out.println("[데이터 보내기 성공]");
 
 				is.close();
 				os.close();
-//				socket.close();
+				socket.close();
 			}
 		} catch (IOException e) {
-			if (!serverSocket.isClosed()) {
-				try {
-					serverSocket.close();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
 
-			}
 		} // end of try
+		
+		if (!serverSocket.isClosed()) {
+			try {
+				serverSocket.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+		}
 
 	} // end of main
+
 } // end of class
