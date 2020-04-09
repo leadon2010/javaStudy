@@ -32,7 +32,7 @@ public class ServerExample extends Application {
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 		try {
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("localhost", 5001));
+			serverSocket.bind(new InetSocketAddress("192.168.0.16", 5001));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			if (!serverSocket.isClosed()) {
