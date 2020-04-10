@@ -28,7 +28,7 @@ public class ClientExample2 extends Application {
 			public void run() {
 				try {
 					socket = new Socket();
-					socket.connect(new InetSocketAddress("192.168.0.16", 5001));
+					socket.connect(new InetSocketAddress("192.168.0.3", 5001));
 					Platform.runLater(() -> {
 						displayText("[연결 완료: " + socket.getRemoteSocketAddress() + "]");
 						btnConn.setText("stop");
@@ -163,7 +163,7 @@ public class ClientExample2 extends Application {
 		scene.getStylesheets().add(getClass().getResource("app.css").toString());
 
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Client");
+		primaryStage.setTitle("Client2");
 		primaryStage.setOnCloseRequest(event -> stopClient());
 		primaryStage.show();
 
