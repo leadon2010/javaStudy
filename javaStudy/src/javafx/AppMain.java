@@ -10,7 +10,7 @@ public class AppMain extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("Binding.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("BorderPane.fxml"));
 		Scene scene = new Scene(root);
 		
 		primaryStage.setTitle("AppMain");
