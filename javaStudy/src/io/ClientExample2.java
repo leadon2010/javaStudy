@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class ClientExample extends Application {
+public class ClientExample2 extends Application {
 	Socket socket;
 
 	///////////// startClient() //////////////
@@ -134,7 +134,7 @@ public class ClientExample extends Application {
 		txtInput.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				send("[이창호] " + txtInput.getText());
+				send("[최미경] " + txtInput.getText());
 				txtInput.setText("");
 			}
 		});
@@ -152,7 +152,7 @@ public class ClientExample extends Application {
 		btnSend = new Button("send");
 		btnSend.setPrefSize(60, 30);
 		btnSend.setDisable(true);
-		btnSend.setOnAction(e -> send("[이창호] " + txtInput.getText()));
+		btnSend.setOnAction(e -> send("[최미경] " + txtInput.getText()));
 		bottom.setCenter(txtInput);
 		bottom.setLeft(btnConn);
 		bottom.setRight(btnSend);
