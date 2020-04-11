@@ -1,4 +1,4 @@
-package javafx;
+package javafx.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +23,7 @@ public class RootController implements Initializable {
 			}
 		});
 		btn2.setOnAction(event -> handleBtn2Action(event));
-		btn3.setOnAction(event -> handleBtn3Action(event));
+//		btn3.setOnAction(event -> handleBtn3Action(event));
 	}
 
 	public void handleBtn1Action(ActionEvent event) {

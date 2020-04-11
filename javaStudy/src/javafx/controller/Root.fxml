@@ -8,7 +8,7 @@
 	<children>
 		<Button fx:id="btn1" text="버튼1" />
 		<Button fx:id="btn2" text="버튼2" />
-		<Button fx:id="btn3" text="버튼3" />
+		<Button fx:id="btn3" text="버튼3" onAction="#handleBtn3Action" />
 	</children>
 </HBox>
 
