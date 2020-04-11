@@ -31,13 +31,15 @@ public class ViewController implements Initializable {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		listView.setItems(FXCollections.observableArrayList("Galaxy S1", "Galaxy S2", "Galaxy S3", "Galaxy S4",
 				"Galaxy S5", "Galaxy S6", "Galaxy S7"));
 
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
+			
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				System.out.println(oldValue + "/" + newValue);
 				tableView.getSelectionModel().select(newValue.intValue());
 				tableView.scrollTo(newValue.intValue());
 			}
@@ -64,8 +66,10 @@ public class ViewController implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends Phone> observable, Phone oldValue, Phone newValue) {
 				if (newValue != null) {
-					imageView.setImage(new Image(Paths.get("images/" + newValue.getImage()).toString()));
+					imageView.setImage(new Image(Paths.get("images/" + newValue.getImage()).toUri().toString()));
 				}
+//				listView.getSelectionModel().select(newValue.getSmartPhone());
+//				listView.scrollTo();
 			}
 
 		});

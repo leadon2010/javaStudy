@@ -12,16 +12,16 @@ public class Phone {
 		this.image = new SimpleStringProperty(image);
 	}
 
-	public SimpleStringProperty getSmartPhone() {
-		return smartPhone;
+	public String getSmartPhone() {
+		return smartPhone.getValue().toString();
 	}
 
 	public void setSmartPhone(SimpleStringProperty smartPhone) {
 		this.smartPhone = smartPhone;
 	}
 
-	public SimpleStringProperty getImage() {
-		return image;
+	public String getImage() {
+		return image.getValue().toString();
 	}
 
 	public void setImage(SimpleStringProperty image) {
