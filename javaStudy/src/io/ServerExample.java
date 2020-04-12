@@ -29,10 +29,12 @@ public class ServerExample extends Application {
 
 	////////// startServer() ///////////////////////
 	void startServer() {
-		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		int processors = Runtime.getRuntime().availableProcessors();
+		System.out.println("프로세스 갯수:" + processors);
+		executorService = Executors.newFixedThreadPool(processors);
 		try {
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("192.168.0.3", 5001));
+			serverSocket.bind(new InetSocketAddress("192.168.0.16", 5001));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			if (!serverSocket.isClosed()) {
