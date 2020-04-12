@@ -12,10 +12,10 @@ import javax.mail.internet.MimeMessage;
 public class SimpleEmail {
 	public static void main(String[] args) {
 		// Recipient's email ID needs to be mentioned.
-		String to = "leadon@empal.com";
+		String to = "toEmailAddress";
 
 		// Sender's email ID needs to be mentioned
-		String from = "changno2010@gmail.com";
+		String from = "fromEmailAddress";
 
 		// Assuming you are sending email from localhost
 		String host = "localhost";
@@ -24,7 +24,7 @@ public class SimpleEmail {
 		Properties properties = System.getProperties();
 
 		// Setup mail server
-		properties.setProperty("mail.smtp.host", host);
+		properties.setProperty("smtp.naver.com", host);
 
 		// Get the default Session object.
 		Session session = Session.getDefaultInstance(properties);
