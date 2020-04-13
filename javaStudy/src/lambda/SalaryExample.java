@@ -46,7 +46,7 @@ public class SalaryExample {
 
 		list.stream().sorted().filter((e) -> e.getSalary() >= 20).forEach(s -> {
 			try {
-				os.write(s.getFirstName().getBytes());
+				os.write(s.getFirstName().getBytes("UTF-8"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
