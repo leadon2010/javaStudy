@@ -41,7 +41,7 @@ public class SalaryExample {
 		OutputStream os = new FileOutputStream("employee.txt");
 
 		Stream<Employee> stream = list.stream();
-		stream.filter((e) -> e.getSalary() >= 20).forEach((s) -> System.out.println(s.getFirstName()));
+		stream.filter((e) -> e.getSalary() >= 20).sorted().forEach((s) -> System.out.println(s.getFirstName()));
 		System.out.println("=======================");
 
 		list.stream().sorted().filter((e) -> e.getSalary() >= 20).forEach(s -> {
