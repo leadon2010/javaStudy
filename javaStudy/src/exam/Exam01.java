@@ -1,32 +1,9 @@
 package exam;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
-class Employee implements Comparable<Employee> {
-	String firstName;
-	int salary;
 
-	public Employee(String firstName, int salary) {
-		super();
-		this.firstName = firstName;
-		this.salary = salary;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
-	@Override
-	public int compareTo(Employee o) {
-		return this.firstName.compareTo(o.firstName);
-	}
-
-}
 
 public class Exam01 {
 	public static void main(String[] args) {
@@ -35,7 +12,7 @@ public class Exam01 {
 		Employee e3 = new Employee("firstName3", 25);
 
 //		List<Employee> list = Arrays.asList(e1, e2, e3);
-		List<Employee> list = new Vector<>();
+		List<Employee> list = new ArrayList<>();
 		list.add(e1);
 		list.add(e2);
 		list.add(e3);
