@@ -49,6 +49,7 @@ public class HandPhone {
 				System.out.println("잘못 입력했습니다. 다시 입력해주세요.");
 			}
 		}
+		sc.close();
 	}
 
 	static void print_menu() {
@@ -105,6 +106,7 @@ public class HandPhone {
 		bw.newLine();
 
 		bw.close();
+		sc.close();
 
 	}// add_juso()
 
@@ -119,6 +121,7 @@ public class HandPhone {
 		if (!br.ready()) {
 			System.out.println("연락처 파일이 없습니다.");
 			br.close();
+			sc.close();
 			return;
 		}
 
@@ -143,6 +146,7 @@ public class HandPhone {
 			bw.newLine();
 		}
 		bw.close();
+		sc.close();
 
 	}// delete_juso()
 }
