@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class HandPhone {
-	static String fname = "aaa.txt";
+	static String fname = "src/project/fileio/phone.txt";
 
 	static class address {
 		String name;
@@ -82,8 +82,8 @@ public class HandPhone {
 		}
 		if (i == 1) {
 			System.out.println("연락처에 전화번호가 없어요.");
-			br.close();
 		}
+		br.close();
 	}// view_juso()
 
 	static void add_juso() throws IOException {
