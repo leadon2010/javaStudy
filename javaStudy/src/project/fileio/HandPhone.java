@@ -25,8 +25,9 @@ public class HandPhone {
 
 	}
 
+	static Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
 		String select = "";
 		System.out.println("친구연락처관리");
 		while (select != "4") {
@@ -49,7 +50,6 @@ public class HandPhone {
 				System.out.println("잘못 입력했습니다. 다시 입력해주세요.");
 			}
 		}
-		sc.close();
 	}
 
 	static void print_menu() {
@@ -87,7 +87,6 @@ public class HandPhone {
 	}// view_juso()
 
 	static void add_juso() throws IOException {
-		Scanner sc = new Scanner(System.in);
 
 		address adr = new address("", "", "");
 
@@ -106,12 +105,10 @@ public class HandPhone {
 		bw.newLine();
 
 		bw.close();
-		sc.close();
 
 	}// add_juso()
 
 	static void delete_juso() throws IOException {
-		Scanner sc = new Scanner(System.in);
 
 		String[] readStr = new String[50];
 		String str = "";
@@ -121,7 +118,6 @@ public class HandPhone {
 		if (!br.ready()) {
 			System.out.println("연락처 파일이 없습니다.");
 			br.close();
-			sc.close();
 			return;
 		}
 
@@ -146,7 +142,6 @@ public class HandPhone {
 			bw.newLine();
 		}
 		bw.close();
-		sc.close();
 
 	}// delete_juso()
 }
