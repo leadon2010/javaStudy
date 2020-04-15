@@ -40,7 +40,7 @@ public class MailExam {
 		props.setProperty("mail.smtp.quitwait", "false");
 		Authenticator auth = new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("changno2010@gmail.com", "^y7u8i9o0p");
+				return new PasswordAuthentication("changno2010@gmail.com", "");
 			}
 		};
 		Session session = Session.getDefaultInstance(props, auth);
