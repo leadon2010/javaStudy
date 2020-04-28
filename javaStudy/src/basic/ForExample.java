@@ -7,6 +7,12 @@ public class ForExample {
 			sum += i;
 		}
 		System.out.println("sum: " + sum);
+
+		for (int i = 1, j = 0; i <= 5; i++) {
+			for (j = 0; j < i; j++)
+				System.out.print("*");
+			System.out.println();
+		}
 	}
 
 }
