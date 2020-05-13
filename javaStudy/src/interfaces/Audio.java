@@ -1,17 +1,17 @@
-package classes;
+package interfaces;
 
-public class Television implements RemoteControl {
-
+public class Audio implements RemoteControl {
+	
 	private int volume;
 
 	@Override
 	public void turnOn() {
-		System.out.println("TV을 켭니다.");
+		System.out.println("Audio을 켭니다.");
 	}
 
 	@Override
 	public void turnOff() {
-		System.out.println("TV을 끕니다.");
+		System.out.println("Audio을 끕니다.");
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Television implements RemoteControl {
 		} else {
 			this.volume = volume;
 		}
-		System.out.println("현재 TV 볼률: " + this.volume);
+		System.out.println("현재 Audio 볼률: " + this.volume);
 	}
 
 }

@@ -1,4 +1,4 @@
-package classes;
+package interfaces;
 
 public class SmartTelevision implements RemoteControl, Searchable {
 	int volume;
