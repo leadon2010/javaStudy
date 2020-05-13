@@ -1,6 +1,10 @@
 package classes.abstract_class;
 
 public class Bird extends Animal {
+	
+	public Bird(String species) {
+		super(species);
+	}
 
 	@Override
 	public void sound() {
