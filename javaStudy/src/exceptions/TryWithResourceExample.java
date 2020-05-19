@@ -15,9 +15,9 @@ public class TryWithResourceExample {
 				System.out.write(readByte);
 			}
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("파일을 찾을 수 없습니다.");
 		} catch (IOException e1) {
-			e1.printStackTrace();
+			System.out.println("파일을 읽을 수 없습니다.");
 		} finally {
 			try {
 				fis.close();
