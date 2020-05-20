@@ -1,7 +1,10 @@
 package javafx.ui;
 
-import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 public interface AppServiceUI {
-	public Parent showUI();
+
+	public String getTitle();
+
+	public Scene showUI();
 }

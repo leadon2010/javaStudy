@@ -7,7 +7,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.ui.AppServiceUI;
-import javafx.ui.AppUI;
+import javafx.ui.ProgUI;
 
 public class AppMain extends Application {
 
@@ -19,12 +19,10 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 
-		AppServiceUI root = new AppUI();
+		AppServiceUI scene = new ProgUI();
 
-		Scene scene = new Scene(root.showUI());
-
-		primaryStage.setTitle("App");
-		primaryStage.setScene(scene);
+		primaryStage.setTitle(scene.getTitle());
+		primaryStage.setScene(scene.showUI());
 		primaryStage.show();
 	}
 

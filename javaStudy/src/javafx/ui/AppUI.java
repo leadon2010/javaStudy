@@ -4,16 +4,20 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class AppUI implements AppServiceUI {
+	@Override
+	public String getTitle() {
+		return "AppUI";
+	}
 
 	@Override
-	public Parent showUI() {
+	public Scene showUI() {
 		VBox root = new VBox();
 		root.setPrefHeight(150);
 		root.setPrefWidth(350);
@@ -37,8 +41,9 @@ public class AppUI implements AppServiceUI {
 
 		root.getChildren().add(label);
 		root.getChildren().add(button);
+		Scene scene = new Scene(root);
 
-		return root;
+		return scene;
 	}
 
 }
