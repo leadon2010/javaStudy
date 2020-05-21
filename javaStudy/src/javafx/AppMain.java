@@ -2,7 +2,7 @@ package javafx;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.ui.AppServiceUI;
+import javafx.ui.SceneUI;
 import javafx.ui.ProgUI;
 
 public class AppMain extends Application {
@@ -15,7 +15,7 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 
-		AppServiceUI scene = new ProgUI();
+		SceneUI scene = new ProgUI();
 
 		primaryStage.setTitle(scene.getTitle());
 		primaryStage.setScene(scene.showUI());

@@ -2,7 +2,7 @@ package javafx.ui;
 
 import javafx.scene.Scene;
 
-public interface AppServiceUI {
+public interface SceneUI {
 
 	public String getTitle();
 
