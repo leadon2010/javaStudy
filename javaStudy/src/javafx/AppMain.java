@@ -1,10 +1,6 @@
 package javafx;
 
-import java.util.Map;
-import java.util.Set;
-
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.ui.AppServiceUI;
 import javafx.ui.ProgUI;
@@ -30,12 +26,12 @@ public class AppMain extends Application {
 	public void init() throws Exception {
 		System.out.println(Thread.currentThread() + ": init call");
 
-		Parameters params = getParameters();
-		Map<String, String> map = params.getNamed();
-		Set<String> set = map.keySet();
-		for (String s : set) {
+//		Parameters params = getParameters();
+//		Map<String, String> map = params.getNamed();
+//		Set<String> set = map.keySet();
+//		for (String s : set) {
 //			System.out.println("k: " + s + " v: " + map.get(s));
-		}
+//		}
 	}
 
 	@Override
