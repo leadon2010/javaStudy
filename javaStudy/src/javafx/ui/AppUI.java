@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
-public class AppUI implements AppServiceUI {
+public class AppUI implements SceneUI {
 	@Override
 	public String getTitle() {
 		return "AppUI";

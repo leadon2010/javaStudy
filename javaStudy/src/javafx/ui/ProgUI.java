@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
-public class ProgUI implements AppServiceUI {
+public class ProgUI implements SceneUI {
 	@Override
 	public String getTitle() {
 		return "ProgUI";
