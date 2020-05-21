@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.ui.SceneUI;
 import javafx.ui.ProgUI;
