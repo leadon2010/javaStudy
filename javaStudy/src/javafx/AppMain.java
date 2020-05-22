@@ -19,6 +19,8 @@ public class AppMain extends Application {
 
 		primaryStage.setTitle(scene.getTitle());
 		primaryStage.setScene(scene.showUI());
+		primaryStage.setWidth(300);
+		primaryStage.setHeight(190);
 		primaryStage.show();
 	}
 
