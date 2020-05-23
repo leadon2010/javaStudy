@@ -1,10 +1,10 @@
 package projectfx;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pfx.ui.AccordionUI;
-import pfx.ui.ButtonUI;
-import pfx.ui.SceneUI;
 
 public class AppMain extends Application {
 
@@ -16,10 +16,13 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 
-		SceneUI scene = new ButtonUI();
+		String control = "Sample.fxml";
 
-		primaryStage.setTitle(scene.getTitle());
-		primaryStage.setScene(scene.getScene());
+		Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+		Scene scene = new Scene(root);
+
+		primaryStage.setTitle("APP");
+		primaryStage.setScene(scene);
 		primaryStage.setOnCloseRequest(event -> System.out.println("closed."));
 //		primaryStage.setWidth(300);
 //		primaryStage.setHeight(190);
