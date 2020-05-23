@@ -1,4 +1,4 @@
-package javafx.ui;
+package pfx.ui;
 
 import javafx.scene.Scene;
 

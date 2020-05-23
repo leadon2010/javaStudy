@@ -1,4 +1,4 @@
-package javafx.ui;
+package pfx.ui;
 
 import javafx.animation.Animation;
 import javafx.animation.Transition;

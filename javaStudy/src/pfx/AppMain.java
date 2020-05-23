@@ -1,10 +1,10 @@
-package javafx;
+package pfx;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.ui.AccordionUI;
-import javafx.ui.ButtonUI;
-import javafx.ui.SceneUI;
+import pfx.ui.AccordionUI;
+import pfx.ui.ButtonUI;
+import pfx.ui.SceneUI;
 
 public class AppMain extends Application {
 

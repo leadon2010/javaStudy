@@ -1,4 +1,4 @@
-package javafx.control;
+package pfx.control;
 
 import javafx.beans.property.SimpleStringProperty;
 

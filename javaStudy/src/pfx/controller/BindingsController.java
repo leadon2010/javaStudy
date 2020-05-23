@@ -1,4 +1,4 @@
-package javafx.controller;
+package pfx.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -1,4 +1,4 @@
-package javafx.control;
+package pfx.control;
 
 import java.net.URL;
 import java.nio.file.Paths;
