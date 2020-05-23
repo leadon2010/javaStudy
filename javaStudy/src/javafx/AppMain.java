@@ -21,8 +21,8 @@ public class AppMain extends Application {
 		primaryStage.setTitle(scene.getTitle());
 		primaryStage.setScene(scene.getScene());
 		primaryStage.setOnCloseRequest(event -> System.out.println("closed."));
-		primaryStage.setWidth(300);
-		primaryStage.setHeight(190);
+//		primaryStage.setWidth(300);
+//		primaryStage.setHeight(190);
 		primaryStage.show();
 	}
 

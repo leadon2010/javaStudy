@@ -33,7 +33,9 @@ public class ButtonUI implements SceneUI {
 		btn2.setOnAction(event -> {
 			System.out.println("clicked.2");
 		});
-		
+
+		root.getChildren().addAll(btn1, btn2);
+
 		Scene scene = new Scene(root);
 
 		return scene;
