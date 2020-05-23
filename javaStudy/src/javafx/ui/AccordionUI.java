@@ -16,7 +16,7 @@ public class AccordionUI implements SceneUI {
 	}
 
 	@Override
-	public Scene showUI() {
+	public Scene getScene() {
 
 		Scene scene = new Scene(new Group());
 

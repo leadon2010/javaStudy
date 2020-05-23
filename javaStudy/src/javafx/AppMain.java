@@ -3,6 +3,7 @@ package javafx;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.ui.AccordionUI;
+import javafx.ui.ButtonUI;
 import javafx.ui.SceneUI;
 
 public class AppMain extends Application {
@@ -15,10 +16,11 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 
-		SceneUI scene = new AccordionUI();
+		SceneUI scene = new ButtonUI();
 
 		primaryStage.setTitle(scene.getTitle());
-		primaryStage.setScene(scene.showUI());
+		primaryStage.setScene(scene.getScene());
+		primaryStage.setOnCloseRequest(event -> System.out.println("closed."));
 		primaryStage.setWidth(300);
 		primaryStage.setHeight(190);
 		primaryStage.show();

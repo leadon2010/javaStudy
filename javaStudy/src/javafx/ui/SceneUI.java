@@ -6,5 +6,5 @@ public interface SceneUI {
 
 	public String getTitle();
 
-	public Scene showUI();
+	public Scene getScene();
 }

@@ -13,7 +13,7 @@ public class ProgUI implements SceneUI {
 	}
 
 	@Override
-	public Scene showUI() {
+	public Scene getScene() {
 		HBox hbox = new HBox();
 		hbox.setPadding(new Insets(10));
 		hbox.setSpacing(10);

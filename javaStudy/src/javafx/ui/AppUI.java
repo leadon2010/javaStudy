@@ -17,7 +17,7 @@ public class AppUI implements SceneUI {
 	}
 
 	@Override
-	public Scene showUI() {
+	public Scene getScene() {
 		VBox root = new VBox();
 		root.setPrefHeight(150);
 		root.setPrefWidth(350);
