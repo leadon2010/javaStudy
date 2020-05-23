@@ -15,13 +15,13 @@ public class AppMain extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
-
-		String control = "./control/Sample.fxml";
+		String ui = "Binding";
+		String control = "./control/" + ui + ".fxml";
 
 		Parent root = FXMLLoader.load(getClass().getResource(control));
 		Scene scene = new Scene(root);
 
-		primaryStage.setTitle("APP");
+		primaryStage.setTitle(ui);
 		primaryStage.setScene(scene);
 		primaryStage.setOnCloseRequest(event -> System.out.println("closed."));
 //		primaryStage.setWidth(300);
