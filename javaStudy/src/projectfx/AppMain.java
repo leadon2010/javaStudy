@@ -16,9 +16,9 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 
-		String control = "Sample.fxml";
+		String control = "./control/Sample.fxml";
 
-		Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource(control));
 		Scene scene = new Scene(root);
 
 		primaryStage.setTitle("APP");

@@ -3,8 +3,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 
-<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="../controller/SampleController" prefHeight="50" prefWidth="200"
-   alignment="CENTER" spaceing="20" >
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectfx.controller.SampleController" prefHeight="50" prefWidth="200"
+   alignment="CENTER" spacing="20" >
 	<children>
 		<Button fx:id="btn1" text="Btn1" />
 		<Button fx:id="btn2" text="Btn2" />
