@@ -97,6 +97,12 @@ public class WildCardExample {
 		registerCourse(courseHigh);
 
 		// 상위제한
-		register
+		registerCourseStudent(courseStudent);
+		registerCourseStudent(courseHigh);
+
+		// 하위제한
+		registerCourseWorker(courseWorker);
+		registerCourseWorker(coursePerson);
+
 	}
 }
