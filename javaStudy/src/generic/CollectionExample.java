@@ -3,22 +3,10 @@ package generic;
 import java.util.ArrayList;
 import java.util.List;
 
-class Student {
-	private String name;
-
-	Student(String name) {
-		this.name = name;
-	}
-
-	String getName() {
-		return this.name;
-	}
-}
-
 public class CollectionExample {
 
 	public static void main(String[] args) {
-		
+
 		showGeneric();
 
 	} // end of main()
