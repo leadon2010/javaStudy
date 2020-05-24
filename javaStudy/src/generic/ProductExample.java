@@ -42,6 +42,18 @@ class Product<T, M> {
 	}
 }
 
+class ChildProduct<T, M, C> extends Product<T, M> {
+	private C company;
+
+	public C getCompany() {
+		return this.company;
+	}
+
+	public void setCompany(C company) {
+		this.company = company;
+	}
+}
+
 public class ProductExample {
 	public static void main(String[] args) {
 		Product<Apple, String> product = new Product<Apple, String>();
@@ -50,11 +62,11 @@ public class ProductExample {
 		Apple type = product.getType();
 		String model = product.getModel();
 		System.out.println(type + model);
-		
+
 		Product<Orange, String> po = new Product<Orange, String>();
 		po.setType(new Orange(2500));
 		po.setModel("오렌지");
-		
+
 	}
 
 	public static void nonGeneric() {
