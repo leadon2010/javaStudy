@@ -15,7 +15,7 @@ public class AppMain extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
-		String ui = "Binding";
+		String ui = "TableView";
 		String control = "./control/" + ui + ".fxml";
 
 		Parent root = FXMLLoader.load(getClass().getResource(control));
