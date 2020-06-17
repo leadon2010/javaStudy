@@ -14,7 +14,7 @@ public class NoExample {
 		}).forEach(System.out::println);
 		System.out.println("----------------");
 
-		IntStream.range(0, 10).forEach(System.out::println);
+//		IntStream.range(0, 10).forEach(System.out::println);
 
 	}
 }
