@@ -1,6 +1,7 @@
 package stream.intermediate;
 
 import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -9,13 +10,11 @@ public class MappingExample {
 	public static void main(String[] args) {
 //		IntStream.rangeClosed(1, 5).map(opr -> opr * 2).forEach(System.out::println);
 
+		Employee.persons().stream().map(Employee::getName).forEach(System.out::println);
+		System.out.println("---------------------------------------");
+
 		// map example
-		Employee.persons().stream().map(new Function<Employee, String>() {
-			@Override
-			public String apply(Employee t) {
-				return t.toString();
-			}
-		}).forEach(System.out::println);
+		Employee.persons().stream().map(Employee::toString).forEach(System.out::println);
 		System.out.println("---------------------------------------");
 
 		Employee.persons().stream().flatMapToDouble(new Function<Employee, DoubleStream>() {
@@ -51,5 +50,7 @@ public class MappingExample {
 			}
 		}).sum();
 		System.out.println(sum);
+		System.out.println("---------------------------------------");
+
 	}
 }
