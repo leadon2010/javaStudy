@@ -8,22 +8,6 @@ import java.util.stream.Stream;
 
 public class MappingExample {
 	public static void main(String[] args) {
-//		IntStream.rangeClosed(1, 5).map(opr -> opr * 2).forEach(System.out::println);
-
-		Employee.persons().stream().map(Employee::getName).forEach(System.out::println);
-		System.out.println("---------------------------------------");
-
-		// map example
-		Employee.persons().stream().map(Employee::toString).forEach(System.out::println);
-		System.out.println("---------------------------------------");
-
-		Employee.persons().stream().flatMapToDouble(new Function<Employee, DoubleStream>() {
-			@Override
-			public DoubleStream apply(Employee t) {
-				return DoubleStream.of(t.getIncome());
-			}
-		}).forEach(System.out::println);
-		System.out.println("---------------------------------------");
 
 		// flatMap example
 		Stream.of(1, 2, 3).flatMap(new Function<Integer, Stream<Integer>>() {
@@ -50,6 +34,25 @@ public class MappingExample {
 			}
 		}).sum();
 		System.out.println(sum);
+		System.out.println("---------------------------------------");
+
+		// Map Example
+
+//		IntStream.rangeClosed(1, 5).map(opr -> opr * 2).forEach(System.out::println);
+
+		Employee.persons().stream().flatMapToDouble(new Function<Employee, DoubleStream>() {
+			@Override
+			public DoubleStream apply(Employee t) {
+				return DoubleStream.of(t.getIncome());
+			}
+		}).forEach(System.out::println);
+		System.out.println("---------------------------------------");
+
+		Employee.persons().stream().map(Employee::getName).forEach(System.out::println);
+		System.out.println("---------------------------------------");
+
+		// map example
+		Employee.persons().stream().map(Employee::toString).forEach(System.out::println);
 		System.out.println("---------------------------------------");
 
 	}

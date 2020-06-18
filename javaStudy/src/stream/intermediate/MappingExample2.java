@@ -28,16 +28,7 @@ public class MappingExample2 {
 		});
 		System.out.println("======================================");
 
-		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
-				.forEach(new Consumer<Character>() {
-					@Override
-					public void accept(Character t) {
-						System.out.println(t);
-					}
-				});
-		System.out.println("======================================");
-
-		// flatMap example
+		// map example
 		Stream.of("Hong", "Hwang", "Park").map(new Function<String, IntStream>() {
 			@Override
 			public IntStream apply(String t) {
@@ -54,6 +45,15 @@ public class MappingExample2 {
 				});
 			}
 		}).forEach(System.out::println);
+
+		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
+				.forEach(new Consumer<Character>() {
+					@Override
+					public void accept(Character t) {
+						System.out.println(t);
+					}
+				});
+		System.out.println("======================================");
 
 //				"Hello".chars().forEach(System.out::println);
 	}
