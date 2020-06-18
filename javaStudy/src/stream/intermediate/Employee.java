@@ -86,7 +86,7 @@ public class Employee {
 		Employee p4 = new Employee(4, "Park", Gender.MALE, LocalDate.of(1994, Month.OCTOBER, 16), 1800.0);
 		Employee p5 = new Employee(5, "Kim", Gender.FEMALE, LocalDate.of(1995, Month.DECEMBER, 13), 1234.0);
 		Employee p6 = new Employee(6, "Ryu", Gender.MALE, LocalDate.of(1996, Month.JUNE, 9), 3211.0);
-		List<Employee> persons = Arrays.asList(p1, p2, p3, p4, p5);
+		List<Employee> persons = Arrays.asList(p1, p2, p3, p4, p5, p6);
 		return persons;
 	}
 

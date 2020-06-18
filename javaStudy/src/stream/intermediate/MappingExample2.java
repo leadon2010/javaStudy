@@ -13,8 +13,8 @@ public class MappingExample2 {
 
 	public static void main(String[] args) {
 
-		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
-				.forEach(System.out::println);
+//		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
+//				.forEach(System.out::println);
 		System.out.println("======================================");
 
 		// flatMap example
