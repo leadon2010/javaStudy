@@ -9,6 +9,14 @@ public class Student implements Comparable<Student> {
 		this.score = score;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
 	@Override
 	public int hashCode() {
 		return this.name.hashCode() + this.score;
