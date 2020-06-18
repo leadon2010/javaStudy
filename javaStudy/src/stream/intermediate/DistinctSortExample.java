@@ -5,10 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-
-
-
-public class DistinceExample {
+public class DistinctSortExample {
 	public static void main(String[] args) {
 		List<Student> students = Arrays.asList(new Student("Hong", 20), new Student("Hong", 20),
 				new Student("Hwang", 30), new Student("Park", 25));
