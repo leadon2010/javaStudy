@@ -1,20 +1,40 @@
 package stream.intermediate;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MappingExample2 {
-//	public static void main(String[] args) {
-//		Stream.of("XML", "Java", "CSS").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
-//				.forEach(System.out::println);
-//	}
 
 	public static void main(String[] args) {
 
-//		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
-//				.forEach(System.out::println);
+		Stream.of("XML", "Java", "CSS").flatMap(new Function<String, Stream<Character>>() {
+			@Override
+			public Stream<Character> apply(String t) {
+				return IntStream.range(0, t.length()).mapToObj(new IntFunction<Character>() {
+					@Override
+					public Character apply(int value) {
+						return t.charAt(value);
+					}
+				});
+			}
+		}).forEach(new Consumer<Character>() {
+			@Override
+			public void accept(Character t) {
+				System.out.println(t);
+			}
+		});
+		System.out.println("======================================");
+
+		Stream.of("Hong", "Hwang", "Park").flatMap(name -> IntStream.range(0, name.length()).mapToObj(name::charAt))
+				.forEach(new Consumer<Character>() {
+					@Override
+					public void accept(Character t) {
+						System.out.println(t);
+					}
+				});
 		System.out.println("======================================");
 
 		// flatMap example
