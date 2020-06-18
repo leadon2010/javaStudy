@@ -1,4 +1,4 @@
-package stream.intermediate;
+package streams.intermediate;
 
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;

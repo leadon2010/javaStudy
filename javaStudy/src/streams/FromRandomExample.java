@@ -1,4 +1,4 @@
-package stream;
+package streams;
 
 import java.util.Random;
 import java.util.stream.IntStream;

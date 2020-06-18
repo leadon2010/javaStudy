@@ -1,4 +1,4 @@
-package stream.intermediate;
+package streams.intermediate;
 
 import java.util.function.Function;
 import java.util.function.IntFunction;

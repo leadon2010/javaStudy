@@ -1,4 +1,4 @@
-package stream.intermediate;
+package streams.intermediate;
 
 import java.time.LocalDate;
 import java.time.Month;

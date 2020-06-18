@@ -1,4 +1,4 @@
-package stream.intermediate;
+package streams.intermediate;
 
 import java.util.Arrays;
 import java.util.function.Consumer;

@@ -1,4 +1,4 @@
-package stream.intermediate;
+package streams.intermediate;
 
 public class Student implements Comparable<Student> {
 	private String name;
