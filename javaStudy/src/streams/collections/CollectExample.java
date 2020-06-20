@@ -19,6 +19,13 @@ public class CollectExample {
 		maleList.stream().forEach(s -> System.out.println(s.getName()));
 		System.out.println("============================================================");
 
+		Supplier<Set<Student>> supplier = new Supplier<Set<Student>>() {
+			@Override
+			public Set<Student> get() {
+				return new HashSet<>();
+			}
+		};
+
 		Set<Student> femaleList = totalist.stream().filter(s -> s.getSex() == Student.Sex.FEMALE)
 				.collect(Collectors.toCollection(new Supplier<Set<Student>>() {
 					@Override
