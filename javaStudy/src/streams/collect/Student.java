@@ -1,4 +1,4 @@
-package streams.collections;
+package streams.collect;
 
 public class Student {
 	public enum Sex {

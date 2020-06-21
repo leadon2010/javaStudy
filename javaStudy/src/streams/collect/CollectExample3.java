@@ -1,4 +1,4 @@
-package streams.collections;
+package streams.collect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import streams.collections.Student.Sex;
+import streams.collect.Student.Sex;
 
 public class CollectExample3 {
 	public static void main(String[] args) {
