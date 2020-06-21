@@ -18,7 +18,7 @@ public class AggregateExample3 {
 				return Integer.sum(t, u);
 			}
 		});
-		System.out.println("sum: " + sum);
+//		System.out.println("sum: " + sum);
 
 		////////////////////////////////////////////////////////
 		double dsum = Employee.persons().stream().map(new Function<Employee, Double>() {
@@ -32,7 +32,7 @@ public class AggregateExample3 {
 				return Double.sum(t, u);
 			}
 		});
-		System.out.println("dsum: " + dsum);
+//		System.out.println("dsum: " + dsum);
 
 		////////////////////////////////////////////////////////
 		dsum = Employee.persons().stream().reduce(0.0, new BiFunction<Double, Employee, Double>() {
@@ -46,7 +46,7 @@ public class AggregateExample3 {
 				return Double.sum(t, u);
 			}
 		});
-		System.out.println("dsum: " + dsum);
+//		System.out.println("dsum: " + dsum);
 
 		////////////////////////////////////////////////////////
 		double summ = Employee.persons().stream().reduce(0.0, new BiFunction<Double, Employee, Double>() {
@@ -89,31 +89,31 @@ public class AggregateExample3 {
 		System.out.println("result: " + summ);
 
 		////////////////////////////////////////////////////////
-		Optional<Integer> max = Stream.of(1, 2, 3, 4, 5).reduce(Integer::max);
-
-		if (max.isPresent()) {
-			System.out.println("max = " + max.get());
-		} else {
-			System.out.println("max is not  defined.");
-		}
-
-		max = Stream.<Integer>empty().reduce(Integer::max);
-		if (max.isPresent()) {
-			System.out.println("max = " + max.get());
-		} else {
-			System.out.println("max is not  defined.");
-		}
+//		Optional<Integer> max = Stream.of(1, 2, 3, 4, 5).reduce(Integer::max);
+//
+//		if (max.isPresent()) {
+//			System.out.println("max = " + max.get());
+//		} else {
+//			System.out.println("max is not  defined.");
+//		}
+//
+//		max = Stream.<Integer>empty().reduce(Integer::max);
+//		if (max.isPresent()) {
+//			System.out.println("max = " + max.get());
+//		} else {
+//			System.out.println("max is not  defined.");
+//		}
 
 		////////////////////////////////////////////////////////
-		Optional<Employee> person = Employee.persons().stream().reduce(new BinaryOperator<Employee>() {
-			@Override
-			public Employee apply(Employee t, Employee u) {
-				return t.getIncome() > u.getIncome() ? t : u;
-			}
-		});
-		if(person.isPresent())
-			System.out.println("Highest earner: " + person.get());
-		else
-			System.out.println("no");
+//		Optional<Employee> person = Employee.persons().stream().reduce(new BinaryOperator<Employee>() {
+//			@Override
+//			public Employee apply(Employee t, Employee u) {
+//				return t.getIncome() > u.getIncome() ? t : u;
+//			}
+//		});
+//		if(person.isPresent())
+//			System.out.println("Highest earner: " + person.get());
+//		else
+//			System.out.println("no");
 	}
 }
