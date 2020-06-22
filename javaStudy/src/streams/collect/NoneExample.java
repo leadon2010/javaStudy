@@ -1,30 +1,21 @@
 package streams.collect;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.stream.Stream;
+import java.util.function.IntConsumer;
+import java.util.stream.IntStream;
 
 public class NoneExample {
 	public static void main(String[] args) {
-		String concatenated = Stream.of("Hello", "World").reduce("", new BinaryOperator<String>() {
+		IntStream iStream = IntStream.of(new int[] { 23, 33, 54, 66, 33 });
+		iStream.forEach(new IntConsumer() {
+			int cnt = 0;
+			int sum = 0;
+
 			@Override
-			public String apply(String t, String u) {
-				return t.concat(u);
+			public void accept(int value) {
+				sum += value;
+				System.out.println("sum: " + sum + ", value: " + value);
+				System.out.println(sum / ++cnt);
 			}
 		});
-
-//		System.out.println(concatenated);
-
-		List<String> list1 = Arrays.asList("Hello", "World");
-
-		List<String> list2 = new ArrayList<String>();
-
-		list1.addAll(list2);
-
-		for (String str : list1) {
-			System.out.println(str);
-		}
 	}
 }
