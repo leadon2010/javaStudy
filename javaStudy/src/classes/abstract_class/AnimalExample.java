@@ -7,10 +7,12 @@ public class AnimalExample {
 		animal.breathe();
 		animal.sound();
 		animal.showInfo();
-		
+
 		Cat cat = new Cat("포유류");
 		cat.breathe();
 		cat.sound();
 		cat.showInfo();
+
+		Bird bird = new Bird();
 	}
 }
