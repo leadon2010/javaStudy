@@ -13,6 +13,20 @@ public class AnimalExample {
 		cat.sound();
 		cat.showInfo();
 
-		Bird bird = new Bird();
+		final int age = 10;
+		if (age > 5) {
+			age = 12;
+		}
+
 	}
+}
+
+final class LastClass {
+	void run() {
+		System.out.println("last class");
+	}
+}
+
+class FinalClass extends LastClass {
+
 }
