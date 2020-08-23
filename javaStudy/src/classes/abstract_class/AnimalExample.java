@@ -15,7 +15,7 @@ public class AnimalExample {
 
 		final int age = 10;
 		if (age > 5) {
-			age = 12;
+//			age = 12;
 		}
 
 	}
@@ -27,6 +27,6 @@ final class LastClass {
 	}
 }
 
-class FinalClass extends LastClass {
-
-}
+//class FinalClass extends LastClass {
+//
+//}
