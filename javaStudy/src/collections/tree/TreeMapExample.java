@@ -1,6 +1,9 @@
 package collections.tree;
 
 import java.util.Map;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapExample {
@@ -26,6 +29,17 @@ public class TreeMapExample {
 //			entry = scores.pollFirstEntry();
 			entry = scores.pollLastEntry();
 			System.out.println("점수: " + entry.getKey() + ", 이름: " + entry.getValue() + ", 남은 객체: " + scores.size());
+		}
+
+		NavigableSet<Integer> set = scores.descendingKeySet();
+		for (Integer icnt : set) {
+			System.out.println("key: " + icnt + ", value: " + scores.get(icnt));
+		}
+
+		NavigableMap<Integer, String> map = scores.descendingMap();
+		Set<Integer> keySet = map.keySet();
+		for (Integer icnt : keySet) {
+			System.out.println("key: " + icnt + ", value: " + scores.get(icnt));
 		}
 
 	}
