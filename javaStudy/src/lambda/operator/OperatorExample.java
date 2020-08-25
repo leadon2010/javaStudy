@@ -1,4 +1,4 @@
-package lambda;
+package lambda.operator;
 
 import java.util.function.IntBinaryOperator;
 

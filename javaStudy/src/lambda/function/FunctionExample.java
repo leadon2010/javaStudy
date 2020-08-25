@@ -1,4 +1,4 @@
-package lambda;
+package lambda.function;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,31 +6,6 @@ import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
 public class FunctionExample {
-
-	public static class Student {
-		String name;
-		int engScore;
-		int mathScore;
-
-		Student(String name, int engScore, int mathScore) {
-			this.name = name;
-			this.engScore = engScore;
-			this.mathScore = mathScore;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public int getEngScore() {
-			return engScore;
-		}
-
-		public int getMathScore() {
-			return mathScore;
-		}
-
-	}
 
 	static List<Student> list = Arrays.asList(new Student("Hong", 90, 95), new Student("Hwang", 80, 88));
 
@@ -57,10 +32,6 @@ public class FunctionExample {
 
 	public static void main(String[] args) {
 
-//		Function<Student, String> function = (Student t) -> {
-//			return t.getName();
-//		};
-//		System.out.println(function.apply(new Student("Hong", 90, 96)));
 		System.out.println("[학생이름]");
 		printString((Student t) -> {
 			return t.getName();
