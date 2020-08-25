@@ -24,7 +24,7 @@ public class TreeSetExample {
 		// 정렬관련 메소드
 		NavigableSet<Integer> set = scores.descendingSet(); // 내림차순정렬.
 		for (Integer s : set) {
-//			System.out.println(s);
+			System.out.println(s);
 		}
 
 		NavigableSet<Integer> ascSet = set.descendingSet();
