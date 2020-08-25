@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmpDAO {
-	Connection conn = null;;
+	Connection conn = null;
 
 	public EmpDAO() {
 		conn = DAO.getConnect();

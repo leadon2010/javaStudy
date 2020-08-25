@@ -16,7 +16,7 @@ public class AppMain extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		System.out.println(Thread.currentThread() + ": start call");
 		String ui = "TableView";
-		String control = "./control/" + ui + ".fxml";
+		String control = "./view/" + ui + ".fxml";
 
 		Parent root = FXMLLoader.load(getClass().getResource(control));
 		Scene scene = new Scene(root);
