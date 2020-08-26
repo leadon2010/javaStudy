@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class CompareExample {
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		Student s1 = new Student(1);
 		Student s2 = new Student(2);
@@ -24,15 +23,10 @@ public class CompareExample {
 		}
 	} // end of Student
 
-	@SuppressWarnings("rawtypes")
-	static class StudentComparator implements Comparator {
-
+	static class StudentComparator implements Comparator<Student> {
 		@Override
-		public int compare(Object o1, Object o2) {
-			Student st1 = (Student) o1;
-			Student st2 = (Student) o2;
-			return st1.sno - st2.sno;
+		public int compare(Student o1, Student o2) {
+			return o1.sno - o2.sno;
 		}
-
 	} // end of StudentComparator
 }

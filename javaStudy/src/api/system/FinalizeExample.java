@@ -1,4 +1,4 @@
-package api;
+package api.system;
 
 class Counter {
 	private int no;
@@ -22,7 +22,7 @@ public class FinalizeExample {
 			System.gc();
 		}
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
