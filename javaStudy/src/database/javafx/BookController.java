@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import database.console.BookDAO;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,7 +33,7 @@ public class BookController implements Initializable {
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
-	
+
 	BookDAO dao = new BookDAO();
 
 	@Override
@@ -145,13 +142,13 @@ public class BookController implements Initializable {
 	public void fetchColumn() {
 		TableColumn<Book, String> col1 = new TableColumn<>("책제목");
 		col1.setCellValueFactory(new PropertyValueFactory<>("bookTitle"));
-		
+
 		TableColumn<Book, String> col2 = new TableColumn<>("저자");
 		col2.setCellValueFactory(new PropertyValueFactory<>("author"));
 
 		TableColumn<Book, String> col3 = new TableColumn<>("출판사");
 		col3.setCellValueFactory(new PropertyValueFactory<>("press"));
-		
+
 		TableColumn<Book, String> col4 = new TableColumn<>("출판일자");
 		col4.setCellValueFactory(new PropertyValueFactory<>("pressDate"));
 

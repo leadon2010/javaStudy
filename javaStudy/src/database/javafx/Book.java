@@ -1,75 +1,72 @@
 package database.javafx;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Book {
-	String bookTitle;
-	String author;
-	String press;
-	String pressDate;
-	int price;
-	String isbn;
+	SimpleStringProperty bookTitle;
+	SimpleStringProperty author;
+	SimpleStringProperty press;
+	SimpleStringProperty pressDate;
+	SimpleIntegerProperty price;
+	SimpleStringProperty isbn;
 
 	public Book(String bookTitle, String author, String press, String pressDate, int price, String isbn) {
 		super();
-		this.bookTitle = bookTitle;
-		this.author = author;
-		this.press = press;
-		this.pressDate = pressDate;
-		this.price = price;
-		this.isbn = isbn;
+		this.bookTitle = new SimpleStringProperty(bookTitle);
+		this.author = new SimpleStringProperty(author);
+		this.press = new SimpleStringProperty(press);
+		this.pressDate = new SimpleStringProperty(pressDate);
+		this.price = new SimpleIntegerProperty(price);
+		this.isbn = new SimpleStringProperty(isbn);
 	}
 
 	public String getBookTitle() {
-		return bookTitle;
+		return bookTitle.get();
 	}
 
 	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
+		this.bookTitle.set(bookTitle);
 	}
 
 	public String getAuthor() {
-		return author;
+		return author.get();
 	}
 
 	public void setAuthor(String author) {
-		this.author = author;
+		this.author.set(author);
 	}
 
 	public String getPress() {
-		return press;
+		return press.get();
 	}
 
 	public void setPress(String press) {
-		this.press = press;
+		this.press.set(press);
 	}
 
 	public String getPressDate() {
-		return pressDate;
+		return pressDate.get();
 	}
 
 	public void setPressDate(String pressDate) {
-		this.pressDate = pressDate;
+		this.pressDate.set(pressDate);
 	}
 
 	public int getPrice() {
-		return price;
+		return price.get();
 	}
 
 	public void setPrice(int price) {
-		this.price = price;
+		this.price.set(price);
 	}
 
 	public String getIsbn() {
-		return isbn;
+		return isbn.get();
 	}
 
 	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	@Override
-	public String toString() {
-		return "Book [bookTitle=" + bookTitle + ", author=" + author + ", press=" + press + ", pressDate=" + pressDate
-				+ ", price=" + price + ", isbn=" + isbn + "]";
+		this.isbn.set(isbn);
 	}
 
 }
