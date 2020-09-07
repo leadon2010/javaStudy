@@ -1,4 +1,4 @@
-package stream.network;
+package streams.network;
 
 import java.io.IOException;
 import java.net.InetAddress;
