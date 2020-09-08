@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class FilterExample {
 	public static void main(String[] args) {
-		List<Employee> persons = Employee.persons();
+		List<Employee> persons = Employee.employees();
 		persons.stream().peek(System.out::println).filter(new Predicate<Employee>() {
 			@Override
 			public boolean test(Employee t) {

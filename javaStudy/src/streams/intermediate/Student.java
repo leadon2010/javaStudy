@@ -24,13 +24,9 @@ public class Student implements Comparable<Student> {
 
 	@Override
 	public boolean equals(Object obj) {
-		boolean val = false;
-		Student std = (Student) obj;
-		if (this.name.compareTo(std.name) == 0)
-			val = true;
-		else
-			val = false;
-		return val;
+//		return super.equals(obj);
+		Student that = (Student) obj;
+		return (this.name.equals(that.name) && this.score == that.score);
 	}
 
 	@Override

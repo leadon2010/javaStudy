@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Employee {
-	public static enum Gender {
+	public enum Gender {
 		MALE, FEMALE;
 	}
 
@@ -79,15 +79,15 @@ public class Employee {
 		return str;
 	}
 
-	public static List<Employee> persons() {
+	public static List<Employee> employees() {
 		Employee p1 = new Employee(1, "Hong", Gender.MALE, LocalDate.of(1991, Month.JANUARY, 1), 2343.0);
 		Employee p2 = new Employee(2, "Hwang", Gender.MALE, LocalDate.of(1992, Month.JULY, 21), 7100.0);
 		Employee p3 = new Employee(3, "Choi", Gender.FEMALE, LocalDate.of(1993, Month.MAY, 29), 5455.0);
 		Employee p4 = new Employee(4, "Park", Gender.MALE, LocalDate.of(1994, Month.OCTOBER, 16), 1800.0);
 		Employee p5 = new Employee(5, "Kim", Gender.FEMALE, LocalDate.of(1995, Month.DECEMBER, 13), 1234.0);
 		Employee p6 = new Employee(6, "Ryu", Gender.MALE, LocalDate.of(1996, Month.JUNE, 9), 3211.0);
-		List<Employee> persons = Arrays.asList(p1, p2, p3, p4, p5, p6);
-		return persons;
+		List<Employee> employees = Arrays.asList(p1, p2, p3, p4, p5, p6);
+		return employees;
 	}
 
 }

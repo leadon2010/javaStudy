@@ -40,7 +40,7 @@ public class MappingExample {
 
 //		IntStream.rangeClosed(1, 5).map(opr -> opr * 2).forEach(System.out::println);
 
-		Employee.persons().stream().flatMapToDouble(new Function<Employee, DoubleStream>() {
+		Employee.employees().stream().flatMapToDouble(new Function<Employee, DoubleStream>() {
 			@Override
 			public DoubleStream apply(Employee t) {
 				return DoubleStream.of(t.getIncome());
@@ -48,11 +48,11 @@ public class MappingExample {
 		}).forEach(System.out::println);
 		System.out.println("---------------------------------------");
 
-		Employee.persons().stream().map(Employee::getName).forEach(System.out::println);
+		Employee.employees().stream().map(Employee::getName).forEach(System.out::println);
 		System.out.println("---------------------------------------");
 
 		// map example
-		Employee.persons().stream().map(Employee::toString).forEach(System.out::println);
+		Employee.employees().stream().map(Employee::toString).forEach(System.out::println);
 		System.out.println("---------------------------------------");
 
 	}
