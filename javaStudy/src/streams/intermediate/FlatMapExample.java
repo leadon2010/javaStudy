@@ -1,7 +1,9 @@
 package streams.intermediate;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -46,5 +48,37 @@ public class FlatMapExample {
 			}
 
 		}).forEach(System.out::println);
+
+		System.out.println("==============================================");
+
+		List<Integer> intList = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+
+		intList.stream().flatMap(new Function<Integer, Stream<Double>>() {
+			@Override
+			public Stream<Double> apply(Integer t) {
+				System.out.println("apply: " + t);
+				return Stream.of(t.doubleValue());
+			}
+
+		}).forEach(System.out::println);
+
+		List<Double> doubleList = Arrays.asList(2.3, 4.5, 6.7, 3.4, 6.9);
+		Optional<Long> result = null;
+		doubleList.stream().flatMap(new Function<Double, Stream<Long>>() {
+			@Override
+			public Stream<Long> apply(Double t) {
+				return Stream.of(t.longValue());
+			}
+
+		}).max(new Comparator<Long>() {
+			@Override
+			public int compare(Long o1, Long o2) {
+				return o1.intValue() - o2.intValue();
+			}
+
+		}).ifPresent(System.out::println);
+
+		System.out.println("result: " + result.orElse(1L).toString());
+
 	}
 }

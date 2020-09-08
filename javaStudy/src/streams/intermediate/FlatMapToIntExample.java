@@ -1,30 +1,29 @@
 package streams.intermediate;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.DoubleConsumer;
 import java.util.function.Function;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class FlatMapToIntExample {
 	public static void main(String[] args) {
-		List<Integer> intList = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
 
-		long cnt = intList.stream().flatMap(new Function<Integer, Stream<Double>>() {
+		Member.getMembers().stream().flatMapToInt(new Function<Member, IntStream>() {
 			@Override
-			public Stream<Double> apply(Integer t) {
-				return Stream.
+			public IntStream apply(Member t) {
+				return IntStream.of(t.age);
 			}
 
-		}).count();
-
-//		List<Double> doubleList = Arrays.asList(2.3, 4.5, 6.7, 3.4, 6.9);
-//		cnt = doubleList.stream().flatMap(new Function<Double, Stream<Long>>() {
-//			@Override
-//			public Stream<Long> apply(Double t) {
-//				return Stream.of();
-//			}
-//
-//		}).count();
+		}).average().ifPresent(new DoubleConsumer() {
+			@Override
+			public void accept(double value) {
+				System.out.println("double Value: " + value);
+			}
+		});
 
 	}
 }
