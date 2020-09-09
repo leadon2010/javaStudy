@@ -44,8 +44,8 @@ public class CollectExample3 {
 
 		// 2. Map<T, List<T>>
 		System.out.println("-------------List<Student>---------------");
-		Map<Student.Sex, List<Student>> mapBySex = totalist.stream()
-				.collect(Collectors.groupingBy(new Function<Student, Student.Sex>() {
+		Map<Student.Sex, List<Student>> mapBySex = //
+				totalist.stream().collect(Collectors.groupingBy(new Function<Student, Student.Sex>() {
 					@Override
 					public Sex apply(Student t) {
 						return t.getSex();
@@ -55,26 +55,29 @@ public class CollectExample3 {
 			System.out.println(ent.getKey() + ", " + ent.getValue());
 		}
 
-		System.out.print("[남학생]: ");
-		mapBySex.get(Student.Sex.MALE).stream().forEach(s -> System.out.print(s.getName() + " "));
-		System.out.println();
-		System.out.print("[여학생]: ");
-		mapBySex.get(Student.Sex.FEMALE).stream().forEach(s -> System.out.print(s.getName() + " "));
-		System.out.println();
+//		System.out.print("[남학생]: ");
+//		mapBySex.get(Student.Sex.MALE).stream().forEach(s -> System.out.print(s.getName() + " "));
+//		System.out.println();
+//		System.out.print("[여학생]: ");
+//		mapBySex.get(Student.Sex.FEMALE).stream().forEach(s -> System.out.print(s.getName() + " "));
+//		System.out.println();
 
 		// 2-1. Student city
-		Map<Student.City, List<Student>> mapByCity = totalist.stream()
-				.collect(Collectors.groupingBy(Student::getCity, Collectors.toList()));
+		Map<Student.City, List<Student>> mapByCity = //
+				totalist.stream().collect(Collectors.groupingBy(Student::getCity, Collectors.toList()));
+		for (Map.Entry<Student.City, List<Student>> ent : mapByCity.entrySet()) {
+			System.out.println(ent.getKey() + ", " + ent.getValue());
+		}
 
-		System.out.print("[서울]: ");
-		mapByCity.get(Student.City.Seoul).stream().forEach(s -> System.out.print(s.getName() + " "));
-		System.out.println();
-		System.out.print("[부산]: ");
-		mapByCity.get(Student.City.Pusan).stream().forEach(s -> System.out.print(s.getName() + " "));
-		System.out.println();
+//		System.out.print("[서울]: ");
+//		mapByCity.get(Student.City.Seoul).stream().forEach(s -> System.out.print(s.getName() + " "));
+//		System.out.println();
+//		System.out.print("[부산]: ");
+//		mapByCity.get(Student.City.Pusan).stream().forEach(s -> System.out.print(s.getName() + " "));
+//		System.out.println();
 
 		// 3.
-		System.out.println("----------last----------");
+		System.out.println("----------last 1----------");
 		Function<Student, Student.City> classfier = new Function<Student, Student.City>() {
 			@Override
 			public City apply(Student t) {
@@ -88,11 +91,29 @@ public class CollectExample3 {
 			}
 		};
 		Collector<String, ?, List<String>> collector = Collectors.toList();
-		Collector<Student, ?, Map<Student.City, List<String>>> mainCol = Collectors.groupingBy(classfier,
-				Collectors.mapping(mapper, collector));
+		Collector<Student, ?, Map<Student.City, List<String>>> cityCol = //
+				Collectors.groupingBy(classfier, Collectors.mapping(mapper, collector));
 
-		for (Map.Entry<Student.City, List<String>> ent : totalist.stream().collect(mainCol).entrySet()) {
+		for (Map.Entry<Student.City, List<String>> ent : totalist.stream().collect(cityCol).entrySet()) {
 			System.out.println(ent.getKey() + ", " + ent.getValue());
 		}
-	}
+
+		System.out.println("----------last 2----------");
+		Function<Student, Student.Sex> sexClassfier = new Function<Student, Student.Sex>() {
+			@Override
+			public Sex apply(Student t) {
+				return t.getSex();
+			}
+		};
+		Function<Student, String> sexMapper = new Function<Student, String>() {
+			@Override
+			public String apply(Student t) {
+				return t.getName();
+			}
+		};
+		Collector<String, ?, List<String>> sexCollector = Collectors.toList();
+
+		Collectors.groupingBy(sexClassfier, Collectors.mapping(sexMapper, sexCollector));
+
+	} // end of main()
 }

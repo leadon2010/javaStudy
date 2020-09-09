@@ -13,8 +13,8 @@ public class NoneExample {
 			@Override
 			public void accept(int value) {
 				sum += value;
-				System.out.println("sum: " + sum + ", value: " + value);
-				System.out.println(sum / ++cnt);
+//				System.out.println("sum: " + sum + ", value: " + value);
+				System.out.println((double) sum / ++cnt);
 			}
 		});
 	}
