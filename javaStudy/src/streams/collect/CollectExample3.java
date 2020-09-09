@@ -10,10 +10,12 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import streams.collect.Student.City;
 import streams.collect.Student.Sex;
 
 public class CollectExample3 {
 	public static void main(String[] args) {
+
 		List<Student> totalist = Arrays.asList(//
 				new Student("Hong1", 23, Student.Sex.MALE, Student.City.Seoul), //
 				new Student("Hong2", 23, Student.Sex.FEMALE, Student.City.Pusan), //
@@ -21,7 +23,8 @@ public class CollectExample3 {
 				new Student("Hong4", 23, Student.Sex.FEMALE, Student.City.Pusan)//
 		);
 
-		// 1. Student.sex
+		// 1. Map<T, Set<T>>
+		System.out.println("---------Set<Student>------------");
 		Collector<Student, ?, Map<Sex, Set<Student>>> collectors = //
 				Collectors.groupingBy(new Function<Student, Student.Sex>() {
 					@Override
@@ -35,11 +38,12 @@ public class CollectExample3 {
 					}
 				}));
 		Map<Student.Sex, Set<Student>> toSet = totalist.stream().collect(collectors);
-		System.out.println("Set<Student>");
 		for (Map.Entry<Student.Sex, Set<Student>> ent : toSet.entrySet()) {
 			System.out.println(ent.getKey() + ", " + ent.getValue());
 		}
 
+		// 2. Map<T, List<T>>
+		System.out.println("-------------List<Student>---------------");
 		Map<Student.Sex, List<Student>> mapBySex = totalist.stream()
 				.collect(Collectors.groupingBy(new Function<Student, Student.Sex>() {
 					@Override
@@ -47,7 +51,6 @@ public class CollectExample3 {
 						return t.getSex();
 					}
 				}));
-		System.out.println("List<Student>");
 		for (Map.Entry<Student.Sex, List<Student>> ent : mapBySex.entrySet()) {
 			System.out.println(ent.getKey() + ", " + ent.getValue());
 		}
@@ -59,7 +62,7 @@ public class CollectExample3 {
 		mapBySex.get(Student.Sex.FEMALE).stream().forEach(s -> System.out.print(s.getName() + " "));
 		System.out.println();
 
-		// 2. Student city
+		// 2-1. Student city
 		Map<Student.City, List<Student>> mapByCity = totalist.stream()
 				.collect(Collectors.groupingBy(Student::getCity, Collectors.toList()));
 
@@ -68,5 +71,28 @@ public class CollectExample3 {
 		System.out.println();
 		System.out.print("[부산]: ");
 		mapByCity.get(Student.City.Pusan).stream().forEach(s -> System.out.print(s.getName() + " "));
+		System.out.println();
+
+		// 3.
+		System.out.println("----------last----------");
+		Function<Student, Student.City> classfier = new Function<Student, Student.City>() {
+			@Override
+			public City apply(Student t) {
+				return t.getCity();
+			}
+		};
+		Function<Student, String> mapper = new Function<Student, String>() {
+			@Override
+			public String apply(Student t) {
+				return t.getName();
+			}
+		};
+		Collector<String, ?, List<String>> collector = Collectors.toList();
+		Collector<Student, ?, Map<Student.City, List<String>>> mainCol = Collectors.groupingBy(classfier,
+				Collectors.mapping(mapper, collector));
+
+		for (Map.Entry<Student.City, List<String>> ent : totalist.stream().collect(mainCol).entrySet()) {
+			System.out.println(ent.getKey() + ", " + ent.getValue());
+		}
 	}
 }
