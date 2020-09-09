@@ -43,5 +43,11 @@ public class Student {
 	public City getCity() {
 		return city;
 	}
-	
+
+	@Override
+	public String toString() {
+		String str = String.format("%s - %d - %s", name, score, sex);
+		return str;
+	}
+
 }
