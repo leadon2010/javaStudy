@@ -20,9 +20,12 @@ import streams.collect.Student.Sex;
 public class CollectExample {
 	public static void main(String[] args) {
 
-		List<Student> totalist = Arrays.asList(new Student("Hong1", 80, Student.Sex.MALE),
-				new Student("Hong2", 56, Student.Sex.FEMALE), new Student("Hong3", 69, Student.Sex.MALE),
-				new Student("Hong4", 89, Student.Sex.FEMALE));
+		List<Student> totalist = Arrays.asList(//
+				new Student("Hong1", 80, Student.Sex.MALE), //
+				new Student("Hong2", 56, Student.Sex.FEMALE), //
+				new Student("Hong3", 69, Student.Sex.MALE), //
+				new Student("Hong4", 89, Student.Sex.FEMALE)//
+		);
 
 		// toList, toSet 컬렉터.
 		Collector<Student, ?, List<Student>> toList = Collectors.toList();
