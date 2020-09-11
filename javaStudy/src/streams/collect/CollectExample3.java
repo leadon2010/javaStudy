@@ -55,6 +55,13 @@ public class CollectExample3 {
 			System.out.println(ent.getKey() + ", " + ent.getValue());
 		}
 
+		Collectors.groupingBy(new Function<Student, Student.City>() {
+			@Override
+			public City apply(Student t) {
+				return t.getCity();
+			}
+		}, Collectors.toList());
+
 //		System.out.print("[남학생]: ");
 //		mapBySex.get(Student.Sex.MALE).stream().forEach(s -> System.out.print(s.getName() + " "));
 //		System.out.println();

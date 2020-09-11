@@ -29,6 +29,13 @@ public class CollectExample {
 
 		// toList, toSet 컬렉터.
 		Collector<Student, ?, List<Student>> toList = Collectors.toList();
+		Collectors.toCollection(new Supplier<List<Student>>() {
+			@Override
+			public List<Student> get() {
+				return new ArrayList<Student>();
+			}
+
+		});
 		Collector<Student, ?, Set<Student>> toSet = Collectors.toSet();
 
 		// toList 컬렉터에 저장.
