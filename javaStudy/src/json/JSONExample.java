@@ -21,6 +21,7 @@ public class JSONExample {
 						+ "              },"//
 						+ " \"phoneNumber\" : [\"011-111-1111\", \"012-222-2222\"]"//
 						+ "}";
+
 		JsonReader reader = Json.createReader(new StringReader(personJsonData));
 		JsonObject jsonObj = reader.readObject();
 		reader.close();
@@ -28,14 +29,14 @@ public class JSONExample {
 		System.out.println("name: " + jsonObj.getString("name"));
 		System.out.println("age: " + jsonObj.getInt("age"));
 		System.out.println("isMarried: " + jsonObj.getBoolean("isMarried"));
-		
+
 		JsonObject addressObj = jsonObj.getJsonObject("address");
 		System.out.println("address: ");
 		System.out.println("street: " + addressObj.getString("street"));
 		System.out.println("zipcode: " + addressObj.getInt("zipcode"));
-		
+
 		JsonArray aryObj = jsonObj.getJsonArray("phoneNumber");
-		for(JsonValue value : aryObj) {
+		for (JsonValue value : aryObj) {
 			System.out.println(value.toString());
 		}
 	}
