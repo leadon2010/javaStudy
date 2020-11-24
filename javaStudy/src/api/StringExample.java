@@ -2,6 +2,9 @@ package api;
 
 public class StringExample {
 	public static void main(String[] args) {
+		
+		String url = "https://www.daum.com";
+		
 
 		showGender("990205-1234567");
 		showGender("990205/3234567");
