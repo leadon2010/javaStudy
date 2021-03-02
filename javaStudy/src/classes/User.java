@@ -12,7 +12,7 @@ public class User {
 	}
 
 	public void userInfo() {
-		System.out.println("이름:" + userName + ", 학급:" + group + ", 도서:" + getBookTitle());
+		System.out.println("이름:" + userName + ", 학급:" + group + ", 도서:" + getBookInfo());
 	}
 
 	public void addBook(Book book) {
@@ -24,7 +24,7 @@ public class User {
 		}
 	}
 
-	public String getBookTitle() {
+	public String getBookInfo() {
 		String books = "[";
 		for (Book book : this.books) {
 			if (book != null) {
