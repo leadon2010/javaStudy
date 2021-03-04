@@ -38,4 +38,15 @@ public class Member {
 			}
 		}
 	}
+
+	public String getBookList() {
+		String result = this.memberName;
+		String rentList = "";
+		for (int i = 0; i < this.rentBooks.length; i++) {
+			if (rentBooks[i] != null)
+				rentList = rentList + " / " + this.rentBooks[i].getBookTitle();
+		}
+		rentList = (rentList.equals("")) ? "대출된 정보가 없습니다" : rentList;
+		return result + " 도서목록 : " + rentList;
+	}
 }
