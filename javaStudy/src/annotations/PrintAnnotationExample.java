@@ -5,7 +5,13 @@ import java.lang.reflect.Method;
 
 public class PrintAnnotationExample {
 	public static void main(String[] args) {
+		Service service = new Service();
+		
+		System.out.println("class1: " + Service.class);
+		System.out.println("class2: " + service.getClass());
+		
 		Method[] declaredMethods = Service.class.getDeclaredMethods();
+		declaredMethods = service.getClass().getDeclaredMethods();
 
 		for (Method method : declaredMethods) {
 			if (method.isAnnotationPresent(PrintAnnotation.class)) {
