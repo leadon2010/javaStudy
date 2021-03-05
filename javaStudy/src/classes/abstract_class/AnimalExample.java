@@ -13,6 +13,7 @@ public class AnimalExample {
 		cat.sound();
 		cat.showInfo();
 
+		// final 변수 일 경우에도 값을 변경할 수 없다.
 		final int age = 10;
 		if (age > 5) {
 //			age = 12;
