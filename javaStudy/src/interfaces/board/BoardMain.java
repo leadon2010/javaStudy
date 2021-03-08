@@ -6,6 +6,7 @@ public class BoardMain {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int menu = 0;
+		Service service = new ServiceImpl();
 
 		while (true) {
 			System.out.println("------------------------------------------------");
@@ -14,7 +15,8 @@ public class BoardMain {
 			menu = scn.nextInt();
 			scn.nextLine();
 			if (menu == 1) {
-
+				service.createBoard(null);
+				
 			} else if (menu == 2) {
 
 			} else if (menu == 3) {
@@ -22,6 +24,13 @@ public class BoardMain {
 			} else if (menu == 4) {
 
 			} else if (menu == 5) {
+				Board[] boards = service.getBoardList();
+
+				for (Board board : boards) {
+					if (board != null) {
+						System.out.println(board.toString());
+					}
+				}
 
 			} else if (menu == 9) {
 				break;
