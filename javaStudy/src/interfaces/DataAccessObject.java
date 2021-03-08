@@ -1,6 +1,7 @@
 package interfaces;
 
 public interface DataAccessObject {
+
 	public void select();
 
 	public void insert();
@@ -8,4 +9,5 @@ public interface DataAccessObject {
 	public void update();
 
 	public void delete();
+
 }
