@@ -21,7 +21,11 @@ class Cat extends Animal {
 public class ClassCastExceptionExample {
 	public static void main(String[] args) {
 		Dog dog = new Dog();
-		changeDog(dog);
+		try {
+			changeDog(dog);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		Cat cat = new Cat();
 		changeDog(cat);
@@ -33,6 +37,7 @@ public class ClassCastExceptionExample {
 			dog.sound();
 		} else {
 			System.out.println("변경 불가.");
+			throw new ClassCastException();
 		}
 	}
 }
