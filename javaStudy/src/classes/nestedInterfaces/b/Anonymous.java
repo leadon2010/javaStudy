@@ -1,4 +1,4 @@
-package classes.nestedInterfaces;
+package classes.nestedInterfaces.b;
 
 public class Anonymous {
 	RemoteControl field = new RemoteControl() {

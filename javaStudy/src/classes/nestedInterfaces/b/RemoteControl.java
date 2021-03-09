@@ -1,4 +1,4 @@
-package classes.nestedInterfaces;
+package classes.nestedInterfaces.b;
 
 public interface RemoteControl {
 	public void turnOn();

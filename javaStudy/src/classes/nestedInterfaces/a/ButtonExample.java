@@ -1,4 +1,4 @@
-package classes.nestedInterfaces;
+package classes.nestedInterfaces.a;
 
 public class ButtonExample {
 	public static void main(String[] args) {

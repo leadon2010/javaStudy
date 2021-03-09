@@ -1,4 +1,4 @@
-package classes.nestedInterfaces;
+package classes.nestedInterfaces.a;
 
 public class Button {
 	OnClickListener listener;
