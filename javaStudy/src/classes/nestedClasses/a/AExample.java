@@ -1,4 +1,4 @@
-package classes.nestedClasses;
+package classes.nestedClasses.a;
 
 class A {
 	A() {

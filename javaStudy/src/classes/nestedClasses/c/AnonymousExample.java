@@ -1,4 +1,4 @@
-package classes.nestedClasses;
+package classes.nestedClasses.c;
 
 public class AnonymousExample {
 	public static void main(String[] args) {

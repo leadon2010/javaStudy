@@ -1,4 +1,4 @@
-package classes.nestedClasses;
+package classes.nestedClasses.e;
 
 public class DataStructureExample {
 	public static void main(String[] args) {

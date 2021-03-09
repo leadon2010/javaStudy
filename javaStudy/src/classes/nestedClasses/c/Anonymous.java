@@ -1,4 +1,4 @@
-package classes.nestedClasses;
+package classes.nestedClasses.c;
 
 public class Anonymous {
 	Person field = new Person() {

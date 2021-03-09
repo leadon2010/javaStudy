@@ -1,4 +1,4 @@
-package classes.nestedClasses;
+package classes.nestedClasses.b;
 
 public class OuterExample {
 	public static void main(String[] args) {
