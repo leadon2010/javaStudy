@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class TryWithResourceExample {
+public class TryWithResourceWait {
 	public static void main(String[] args) {
 //		try (FileInputStream fis = new FileInputStream("src/exceptions/MultiCatchExample.java")) {
 		FileInputStream fis = null;
@@ -15,6 +15,11 @@ public class TryWithResourceExample {
 			int readByte = -1;
 			while ((readByte = fis.read()) != -1) {
 				System.out.write(readByte);
+//				try {
+//					Thread.sleep(500);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 			}
 			System.out.println();
 		} catch (FileNotFoundException e) {
