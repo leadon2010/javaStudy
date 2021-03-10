@@ -1,17 +1,17 @@
 package classes.nestedInterfaces.a;
 
 public class Button {
-	OnClickListener listener;
+	public OnClickListener listener;
 
-	void setOnClickListener(OnClickListener listener) {
+	public void setOnClickListener(OnClickListener listener) {
 		this.listener = listener;
 	}
 
-	void touch() {
+	public void touch() {
 		listener.onClick();
 	}
 
-	interface OnClickListener {
+	public interface OnClickListener {
 		void onClick();
 	}
 }
