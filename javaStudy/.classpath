@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -30,6 +30,6 @@
 	<classpathentry kind="lib" path="D:/Downloads/poi-4.1.2/ooxml-lib/curvesapi-1.06.jar"/>
 	<classpathentry kind="lib" path="D:/Downloads/poi-4.1.2/ooxml-lib/xmlbeans-3.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/javax.json-1.0.4.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_271/javafx-src.zip"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/javafx-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
