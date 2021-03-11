@@ -15,7 +15,7 @@ public class ExcelExample {
 
 		List<EmployeeVO> list = Arrays.asList(e1, e2, e3, e4, e5);
 		EmpExcelWriter writer = new EmpExcelWriter();
-		writer.xlsWriter(list);
+//		writer.xlsWriter(list);
 
 	}
 
