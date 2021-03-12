@@ -22,7 +22,7 @@ public class Main {
 		LocalDate ldt3 = LocalDate.parse("20200507122334", dtf);
 
 //		System.out.println(ldt3.format(dtf));
-		
+
 		System.out.println("hello-023".replace("-", "").replace("/", ""));
 	}
 }
