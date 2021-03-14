@@ -7,7 +7,9 @@ import java.util.Properties;
 public class PropertiesExample {
 	public static void main(String[] args) throws Exception {
 		Properties properties = new Properties();
-		String path = PropertiesExample.class.getResource("database.properties").getPath();
+		String path = "";
+//		path = PropertiesExample.class.getResource("config/database.properties").getPath();
+		path = "config/database.properties";
 		System.out.println(path);
 		path = URLDecoder.decode(path, "utf-8");
 		properties.load(new FileReader(path));
