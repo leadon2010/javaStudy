@@ -9,7 +9,7 @@ public class PropertiesExample {
 		Properties properties = new Properties();
 		String path = "";
 //		path = PropertiesExample.class.getResource("config/database.properties").getPath();
-		path = "설정파일/database.properties";
+		path = "설정파일/database.propertie";
 		System.out.println(path);
 		path = URLDecoder.decode(path, "utf-8");
 		properties.load(new FileReader(path));
