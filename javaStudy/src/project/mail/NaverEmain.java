@@ -14,10 +14,10 @@ import javax.mail.internet.MimeMessage;
 public class NaverEmain {
 	public static void main(String[] args) throws AddressException, MessagingException {
 		String host = "smtp.naver.com";
-		final String user = "leadon@naver.com";
+		final String user = " ";
 		final String passwd = "";
 
-		String to = "cholee@yedam.ac";//
+		String to = " ";//
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", host);

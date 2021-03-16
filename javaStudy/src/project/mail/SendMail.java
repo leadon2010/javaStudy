@@ -63,7 +63,7 @@ public class SendMail {
 
 	public static void sendMail(String title, String content, String toUser, String fname) throws Exception {
 		String host = "smtp.naver.com";
-		final String user = "leadon";
+		final String user = " ";
 		final String passwd = "";
 
 		String to = toUser;//
